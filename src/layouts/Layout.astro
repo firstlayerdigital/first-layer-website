@@ -8,6 +8,13 @@
 		<title>Astro Basics</title>
 	</head>
 	<body>
+		<nav>
+			<a href="/"><strong>FirstLayer Digital</strong></a>
+			<div class="links">
+				<a href="/">Home</a>
+				<a href="/about">About</a>
+			</div>
+		</nav>
 		<slot />
 	</body>
 </html>
@@ -18,5 +25,30 @@
 		margin: 0;
 		width: 100%;
 		height: 100%;
+	}
+	nav {
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		padding: 20px;
+		background-color: #f4f4f5; /* Light grey background */
+		border-bottom: 1px solid #e4e4e7;
+		margin-bottom: 40px;
+		font-family: system-ui, sans-serif;
+	}
+
+	nav a {
+		text-decoration: none;
+		color: #18181b;
+	}
+
+	.links a {
+		margin-left: 20px;
+		color: #52525b;
+	}
+	
+	.links a:hover {
+		color: #000;
+		text-decoration: underline;
 	}
 </style>
