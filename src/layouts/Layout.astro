@@ -1,5 +1,5 @@
 ---
-import '../styles/global.css';  //<-- UNCOMMENT THIS LINE if you have a src/styles/global.css file!
+import '../styles/global.css';
 ---
 
 <!doctype html>
@@ -11,7 +11,9 @@ import '../styles/global.css';  //<-- UNCOMMENT THIS LINE if you have a src/styl
 		<meta name="generator" content={Astro.generator} />
 		<title>FirstLayer Digital</title>
 	</head>
-	<body class="bg-white font-sans text-slate-800">
+	
+	<body class="bg-white font-sans text-slate-800 flex flex-col min-h-screen">
+		
 		<nav class="flex justify-between items-center p-5 bg-slate-100 border-b border-slate-200 mb-10">
 			<a href="/" class="font-bold text-lg text-slate-900 no-underline">
 				FirstLayer Digital
@@ -23,8 +25,25 @@ import '../styles/global.css';  //<-- UNCOMMENT THIS LINE if you have a src/styl
 				<a href="/about" class="text-slate-600 hover:text-black hover:underline transition-colors">
 					About
 				</a>
+				<a href="/contact" class="text-slate-600 hover:text-black hover:underline transition-colors">
+					Contact
+				</a>
 			</div>
 		</nav>
+
 		<slot />
+
+		<footer class="bg-slate-900 text-white py-12 mt-auto">
+			<div class="max-w-4xl mx-auto px-4 text-center">
+				<h3 class="text-xl font-bold mb-4">FirstLayer Digital</h3>
+				<p class="text-slate-400 mb-6">
+					Building the web of tomorrow, today.
+				</p>
+				<div class="border-t border-slate-800 pt-8 text-sm text-slate-500">
+					&copy; {new Date().getFullYear()} FirstLayer Digital. All rights reserved.
+				</div>
+			</div>
+		</footer>
+
 	</body>
 </html>
