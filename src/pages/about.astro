@@ -3,11 +3,54 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout>
-	<h1>About FirstLayer Digital</h1>
-	<p>
-		FirstLayer Digital is dedicated to building modern, high-performance web experiences.
-		We combine cutting-edge technology with clean design.
-	</p>
-	
-	<a href="/">Return Home</a>
+	<main class="max-w-4xl mx-auto mt-16 px-4">
+		
+		<div class="text-center mb-16">
+			<h1 class="text-4xl font-bold text-slate-900 mb-4">Engineering the Future of the Web</h1>
+			<p class="text-xl text-slate-600 max-w-2xl mx-auto">
+				We don't just build websites. We build digital assets that are fast, secure, and designed to grow with your business.
+			</p>
+		</div>
+
+		<div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+			<div>
+				<h2 class="text-2xl font-bold text-slate-900 mb-4">Who We Are</h2>
+				<p class="text-slate-600 mb-4 leading-relaxed">
+					FirstLayer Digital is a modern web development agency focused on performance and precision. In a world of slow, bloated websites, we take a different approach.
+				</p>
+				<p class="text-slate-600 leading-relaxed">
+					We use the latest technology to ensure your site loads instantly, ranks higher on Google, and converts visitors into customers.
+				</p>
+			</div>
+			
+			<div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
+				<h3 class="font-bold text-slate-900 mb-4">Our Tech Stack</h3>
+				<ul class="space-y-3 text-slate-600">
+					<li class="flex items-center">
+						<span class="text-blue-500 mr-2">✓</span> Astro & React Frameworks
+					</li>
+					<li class="flex items-center">
+						<span class="text-blue-500 mr-2">✓</span> Tailwind CSS Styling
+					</li>
+					<li class="flex items-center">
+						<span class="text-blue-500 mr-2">✓</span> Global Edge Hosting (CDN)
+					</li>
+					<li class="flex items-center">
+						<span class="text-blue-500 mr-2">✓</span> Modern SEO Architecture
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<div class="text-center bg-blue-600 rounded-2xl p-12 mb-20">
+			<h2 class="text-3xl font-bold text-white mb-4">Ready to upgrade your online presence?</h2>
+			<p class="text-blue-100 mb-8 max-w-xl mx-auto">
+				Let's discuss how we can bring your vision to life with modern technology.
+			</p>
+			<a href="/contact" class="bg-white text-blue-600 px-8 py-3 rounded-lg font-bold hover:bg-slate-100 transition-colors inline-block">
+				Get in Touch
+			</a>
+		</div>
+
+	</main>
 </Layout>
