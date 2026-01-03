@@ -1,0 +1,21 @@
+import { c as createComponent, d as createAstro, r as renderTemplate, j as renderSlot, k as renderHead, f as addAttribute } from './astro/server_j3K3mwhu.mjs';
+import 'piccolore';
+import 'clsx';
+/* empty css                         */
+
+var __freeze = Object.freeze;
+var __defProp = Object.defineProperty;
+var __template = (cooked, raw) => __freeze(__defProp(cooked, "raw", { value: __freeze(cooked.slice()) }));
+var _a;
+const $$Astro = createAstro();
+const $$Layout = createComponent(($$result, $$props, $$slots) => {
+  const Astro2 = $$result.createAstro($$Astro, $$props, $$slots);
+  Astro2.self = $$Layout;
+  const {
+    title = "FirstLayer Digital",
+    description = "FirstLayer Digital transforms ideas into high-performance websites. Fast, secure, and built for growth."
+  } = Astro2.props;
+  return renderTemplate(_a || (_a = __template(['<html lang="en"> <head><meta charset="UTF-8"><meta name="description"', '><meta name="viewport" content="width=device-width"><link rel="icon" type="image/svg+xml" href="/favicon.svg"><meta name="generator"', '><meta property="og:title"', '><meta property="og:description"', '><meta property="og:type" content="website"><meta property="og:url" content="https://firstlayer.digital"><meta property="og:image" content="https://firstlayer.digital/social.png"><title>', '</title><script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon="{&quot;token&quot;: &quot;d9a6d370f7284634a0bcb7486d55264e&quot;}"><\/script>', '</head> <body class="bg-white font-sans text-slate-800 flex flex-col min-h-screen"> <nav class="bg-slate-900 text-white shadow-lg sticky top-0 z-50"> <div class="max-w-6xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center"> <a href="/" class="font-bold text-xl tracking-tight text-white no-underline mb-4 md:mb-0 hover:text-blue-400 transition-colors">\nFirstLayer Digital\n</a> <div class="flex items-center space-x-6 text-sm font-medium"> <a href="/" class="text-slate-300 hover:text-white transition-colors">\nHome\n</a> <a href="/work" class="text-slate-300 hover:text-white transition-colors">\nWork\n</a> <a href="/about" class="text-slate-300 hover:text-white transition-colors">\nAbout\n</a> <a href="/contact" class="bg-blue-600 hover:bg-blue-500 text-white px-4 py-2 rounded-lg transition-colors">\nContact\n</a> </div> </div> </nav> ', ' <footer class="bg-slate-900 text-white py-12 mt-auto"> <div class="max-w-4xl mx-auto px-4 text-center"> <h3 class="text-xl font-bold mb-4">FirstLayer Digital</h3> <p class="text-slate-400 mb-6">\nBuilding the web of tomorrow, today.\n</p> <div class="border-t border-slate-800 pt-8 text-sm text-slate-500">\n&copy; ', " FirstLayer Digital. All rights reserved.\n</div> </div> </footer> </body></html>"])), addAttribute(description, "content"), addAttribute(Astro2.generator, "content"), addAttribute(title, "content"), addAttribute(description, "content"), title, renderHead(), renderSlot($$result, $$slots["default"]), (/* @__PURE__ */ new Date()).getFullYear());
+}, "C:/Users/kenny/Documents/FirstLayer Digital/Documents/first-layer-site/src/layouts/Layout.astro", void 0);
+
+export { $$Layout as $ };
