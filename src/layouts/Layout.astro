@@ -1,15 +1,32 @@
 ---
 import '../styles/global.css';
+
+interface Props {
+	title?: string;
+	description?: string;
+}
+
+const { 
+	title = "FirstLayer Digital",
+	description = "FirstLayer Digital transforms ideas into high-performance websites. Fast, secure, and built for growth."
+} = Astro.props;
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
 		<meta charset="UTF-8" />
+		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
-		<title>FirstLayer Digital</title>
+		
+		<meta property="og:title" content={title} />
+		<meta property="og:description" content={description} />
+		<meta property="og:type" content="website" />
+		<meta property="og:url" content="https://firstlayer.digital" />
+		
+		<title>{title}</title>
 	</head>
 	
 	<body class="bg-white font-sans text-slate-800 flex flex-col min-h-screen">
