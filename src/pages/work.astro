@@ -1,51 +1,64 @@
-<div class="grid md:grid-cols-2 gap-10">
-			
-	<div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all">
-		<div class="h-64 bg-slate-900 flex items-center justify-center border-b border-slate-100">
-			<span class="text-white font-bold text-xl">FirstLayer Digital (Custom)</span>
-		</div>
-		<div class="p-8">
-			<h3 class="text-2xl font-bold text-slate-900 mb-2">High-Performance Agency Site</h3>
-			<p class="text-slate-600 mb-6">
-				A custom-engineered site built with **Astro** and **Tailwind CSS**. Focused on sub-second load times and perfect SEO scores.
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="My Work - FirstLayer Digital" description="Portfolio of web development projects showcasing fast, reliable, and cost-effective websites.">
+	<main class="max-w-6xl mx-auto px-4 py-20">
+		<div class="text-center mb-16">
+			<h1 class="text-4xl font-bold text-slate-900 mb-4">My Work</h1>
+			<p class="text-xl text-slate-600 max-w-2xl mx-auto">
+				Projects that showcase fast performance, reliable infrastructure, and cost-effective solutions.
 			</p>
-			<div class="flex flex-wrap gap-2 mb-4">
-				<span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Astro</span>
-				<span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Netlify SSR</span>
+		</div>
+
+		<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+			<div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all">
+				<div class="h-64 bg-slate-900 flex items-center justify-center border-b border-slate-100">
+					<span class="text-white font-bold text-xl">FirstLayer Digital (Custom)</span>
+				</div>
+				<div class="p-8">
+					<h3 class="text-2xl font-bold text-slate-900 mb-2">High-Performance Agency Site</h3>
+					<p class="text-slate-600 mb-6">
+						A custom-engineered site built with **Astro** and **Tailwind CSS**. Focused on sub-second load times and perfect SEO scores.
+					</p>
+					<div class="flex flex-wrap gap-2 mb-4">
+						<span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Astro</span>
+						<span class="bg-blue-100 text-blue-700 text-xs px-2 py-1 rounded">Netlify SSR</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all">
+				<div class="h-64 bg-green-600 flex items-center justify-center border-b border-slate-100">
+					<span class="text-white font-bold text-xl">E-commerce Solutions</span>
+				</div>
+				<div class="p-8">
+					<h3 class="text-2xl font-bold text-slate-900 mb-2">Shopify & Inventory Systems</h3>
+					<p class="text-slate-600 mb-6">
+						Expertise in setting up **Shopify** and **Square** stores, including complex inventory management and payment gateway integration.
+					</p>
+					<div class="flex flex-wrap gap-2">
+						<span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Shopify</span>
+						<span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Inventory Management</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all">
+				<div class="h-64 bg-purple-600 flex items-center justify-center border-b border-slate-100">
+					<span class="text-white font-bold text-xl">Platform Mastery</span>
+				</div>
+				<div class="p-8">
+					<h3 class="text-2xl font-bold text-slate-900 mb-2">Wix & Squarespace Optimization</h3>
+					<p class="text-slate-600 mb-6">
+						Transforming standard builders into professional business assets with custom styling and improved user experience.
+					</p>
+					<div class="flex flex-wrap gap-2">
+						<span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded">Wix</span>
+						<span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded">Squarespace</span>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
-
-	<div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all">
-		<div class="h-64 bg-green-600 flex items-center justify-center border-b border-slate-100">
-			<span class="text-white font-bold text-xl">E-commerce Solutions</span>
-		</div>
-		<div class="p-8">
-			<h3 class="text-2xl font-bold text-slate-900 mb-2">Shopify & Inventory Systems</h3>
-			<p class="text-slate-600 mb-6">
-				Expertise in setting up **Shopify** and **Square** stores, including complex inventory management and payment gateway integration.
-			</p>
-			<div class="flex flex-wrap gap-2">
-				<span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Shopify</span>
-				<span class="bg-green-100 text-green-700 text-xs px-2 py-1 rounded">Inventory Management</span>
-			</div>
-		</div>
-	</div>
-
-	<div class="group bg-white rounded-2xl overflow-hidden shadow-sm border border-slate-200 hover:shadow-xl transition-all">
-		<div class="h-64 bg-purple-600 flex items-center justify-center border-b border-slate-100">
-			<span class="text-white font-bold text-xl">Platform Mastery</span>
-		</div>
-		<div class="p-8">
-			<h3 class="text-2xl font-bold text-slate-900 mb-2">Wix & Squarespace Optimization</h3>
-			<p class="text-slate-600 mb-6">
-				Transforming standard builders into professional business assets with custom styling and improved user experience.
-			</p>
-			<div class="flex flex-wrap gap-2">
-				<span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded">Wix</span>
-				<span class="bg-purple-100 text-purple-700 text-xs px-2 py-1 rounded">Squarespace</span>
-			</div>
-		</div>
-	</div>
-
-</div>
+	</main>
+</Layout>
