@@ -12,9 +12,13 @@ import Layout from '../layouts/Layout.astro';
 		<form 
 			name="contact" 
 			method="POST" 
+			action="/success"
 			data-netlify="true" 
+			netlify
 			class="bg-white p-8 rounded-xl shadow-lg border border-slate-100"
 		>
+			<input type="hidden" name="form-name" value="contact" />
+
 			<div class="mb-6">
 				<label for="name" class="block text-sm font-medium text-slate-700 mb-2">Name</label>
 				<input type="text" id="name" name="name" required
