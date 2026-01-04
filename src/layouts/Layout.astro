@@ -35,23 +35,23 @@ const {
 	<body class="bg-white font-sans text-slate-800 flex flex-col min-h-screen">
 		
 		<nav class="bg-slate-900/95 backdrop-blur-md text-white shadow-lg sticky top-0 z-50 border-b border-white/10">
-			<div class="max-w-7xl mx-auto px-4 py-4 flex flex-col md:flex-row justify-between items-center">
+			<div class="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col md:flex-row justify-between items-center">
 				
-				<a href="/" class="mb-4 md:mb-0 flex items-center hover:opacity-80 transition-opacity">
-					<img src="/logo.svg" alt="First Layer Digital" class="h-24 md:h-32 w-auto" />
+				<a href="/" class="mb-3 md:mb-0 flex items-center hover:opacity-80 transition-opacity touch-manipulation">
+					<img src="/logo.svg" alt="First Layer Digital" class="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto" />
 				</a>
 
-				<div class="flex items-center space-x-6 text-sm font-medium">
-					<a href="/" class="text-slate-300 hover:text-white transition-colors">
+				<div class="flex items-center flex-wrap justify-center gap-4 sm:gap-6 text-sm sm:text-base font-medium">
+					<a href="/" class="text-slate-300 hover:text-white transition-colors touch-manipulation py-2 min-h-[44px] flex items-center">
 						Home
 					</a>
-					<a href="/work" class="text-slate-300 hover:text-white transition-colors">
+					<a href="/work" class="text-slate-300 hover:text-white transition-colors touch-manipulation py-2 min-h-[44px] flex items-center">
 						Work
 					</a>
-					<a href="/about" class="text-slate-300 hover:text-white transition-colors">
+					<a href="/about" class="text-slate-300 hover:text-white transition-colors touch-manipulation py-2 min-h-[44px] flex items-center">
 						About
 					</a>
-					<a href="/contact" class="bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg transition-colors">
+					<a href="/contact" class="bg-cyan-600 hover:bg-cyan-500 active:bg-cyan-700 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-lg transition-colors touch-manipulation min-h-[44px] flex items-center justify-center">
 						Contact
 					</a>
 				</div>
@@ -61,16 +61,16 @@ const {
 
 		<slot />
 
-		<footer class="relative bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white py-16 mt-auto border-t border-white/10">
+		<footer class="relative bg-gradient-to-b from-slate-900 via-slate-900 to-slate-950 text-white py-12 sm:py-14 md:py-16 mt-auto border-t border-white/10">
 			<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(59,130,246,0.1),transparent_50%)]"></div>
-			<div class="relative max-w-4xl mx-auto px-4 text-center">
-				<div class="flex justify-center mb-6">
-					<img src="/logo.svg" alt="First Layer Digital" class="h-32 md:h-40 w-auto opacity-90" />
+			<div class="relative max-w-4xl 2xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<div class="flex justify-center mb-4 sm:mb-6">
+					<img src="/logo.svg" alt="First Layer Digital" class="h-24 sm:h-28 md:h-32 lg:h-36 xl:h-40 w-auto opacity-90" />
 				</div>
-				<p class="text-slate-300 mb-8 text-lg">
+				<p class="text-slate-300 mb-6 sm:mb-8 text-base sm:text-lg lg:text-lg 2xl:text-xl">
 					Building the web of tomorrow, today.
 				</p>
-				<div class="border-t border-slate-800/50 pt-8 text-sm text-slate-400">
+				<div class="border-t border-slate-800/50 pt-6 sm:pt-8 text-xs sm:text-sm text-slate-400">
 					&copy; {new Date().getFullYear()} FirstLayer Digital. All rights reserved.
 				</div>
 			</div>
