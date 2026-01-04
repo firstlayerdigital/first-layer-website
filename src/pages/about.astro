@@ -3,66 +3,123 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="About Us | FirstLayer Digital">
-	<main class="max-w-4xl mx-auto mt-16 px-4">
-		
-		<div class="text-center mb-16">
-			<h1 class="text-4xl font-bold text-slate-900 mb-4">Versatile Solutions, Engineered for Growth</h1>
-			<p class="text-xl text-slate-600 max-w-2xl mx-auto">
-				We bridge the gap between custom engineering and user-friendly platforms. Whether you need a high-speed custom site or a powerful e-commerce store, we have you covered.
-			</p>
+	<main class="relative overflow-hidden">
+		<!-- Background gradient layers for depth -->
+		<div class="fixed inset-0 -z-10">
+			<div class="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/20 to-slate-50"></div>
+			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/10 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl"></div>
 		</div>
 
-		<div class="grid md:grid-cols-2 gap-12 items-start mb-20">
-			<div>
-				<h2 class="text-2xl font-bold text-slate-900 mb-4">The Engineer's Advantage</h2>
-				<p class="text-slate-600 mb-4 leading-relaxed">
-					Many agencies are limited to one tool. At FirstLayer Digital, we take a <strong>Computer Science approach</strong> to the entire web ecosystem. We don't just drag and drop; we configure, optimize, and engineer solutions that fit <em>your</em> specific business needs.
-				</p>
-				<p class="text-slate-600 mb-4 leading-relaxed">
-					We specialize in setting up complex <strong>E-commerce</strong> environments, configuring <strong>Inventory Management</strong> systems, and building professional portfolios that stand out.
-				</p>
-				<p class="text-slate-600 leading-relaxed font-medium">
-					Already have a site? We can optimize it. Need something new? We can build it. We bring technical precision to every platform we touch.
-				</p>
-			</div>
+		<div class="max-w-6xl mx-auto px-4 py-20">
+			<!-- Floating decorative elements -->
+			<div class="absolute -left-20 top-32 hidden xl:block w-40 h-40 bg-gradient-to-br from-cyan-500/15 to-transparent rounded-3xl blur-xl rotate-12"></div>
+			<div class="absolute -right-20 top-48 hidden xl:block w-36 h-36 bg-gradient-to-br from-blue-500/15 to-transparent rounded-2xl blur-xl -rotate-12"></div>
 			
-			<div class="bg-slate-50 p-8 rounded-xl border border-slate-200">
-				<h3 class="font-bold text-slate-900 mb-4">Platforms We Master</h3>
-				<div class="grid grid-cols-2 gap-4 text-slate-700 text-sm font-medium mb-6">
-					<div class="flex items-center"><span class="text-cyan-500 mr-2">●</span> WordPress</div>
-					<div class="flex items-center"><span class="text-green-500 mr-2">●</span> Shopify</div>
-					<div class="flex items-center"><span class="text-purple-500 mr-2">●</span> Astro / Custom</div>
-					<div class="flex items-center"><span class="text-black mr-2">●</span> Wix</div>
-					<div class="flex items-center"><span class="text-slate-500 mr-2">●</span> Squarespace</div>
-					<div class="flex items-center"><span class="text-cyan-400 mr-2">●</span> Weebly</div>
-					<div class="flex items-center"><span class="text-gray-800 mr-2">●</span> Square</div>
-					<div class="flex items-center"><span class="text-orange-500 mr-2">●</span> Others on Request</div>
+			<div class="relative text-center mb-20">
+				<h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 mb-6 leading-tight">
+					Versatile Solutions, <span class="text-cyan-600 relative">
+						<span class="relative z-10">Engineered</span>
+						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/8 to-cyan-600/8 blur-lg -z-0"></span>
+					</span> for Growth
+				</h1>
+				<p class="text-xl md:text-2xl text-slate-600 max-w-3xl mx-auto leading-relaxed">
+					We bridge the gap between custom engineering and user-friendly platforms. Whether you need a high-speed custom site or a powerful e-commerce store, we have you covered.
+				</p>
+				<div class="w-24 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto mt-8"></div>
+			</div>
+
+			<div class="relative grid md:grid-cols-2 gap-12 items-start mb-20">
+				<div class="relative">
+					<div class="bg-white/70 backdrop-blur-xl rounded-3xl p-10 shadow-xl border border-white/20">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 rounded-3xl -z-10"></div>
+						<h2 class="text-3xl font-bold text-slate-900 mb-6">The Engineer's Advantage</h2>
+						<p class="text-slate-700 mb-5 leading-relaxed text-lg">
+							Many agencies are limited to one tool. At FirstLayer Digital, we take a <strong class="text-slate-900">Computer Science approach</strong> to the entire web ecosystem. We don't just drag and drop; we configure, optimize, and engineer solutions that fit <em class="text-slate-900">your</em> specific business needs.
+						</p>
+						<p class="text-slate-700 mb-5 leading-relaxed text-lg">
+							We specialize in setting up complex <strong class="text-slate-900">E-commerce</strong> environments, configuring <strong class="text-slate-900">Inventory Management</strong> systems, and building professional portfolios that stand out.
+						</p>
+						<p class="text-slate-700 leading-relaxed font-semibold text-lg">
+							Already have a site? We can optimize it. Need something new? We can build it. We bring technical precision to every platform we touch.
+						</p>
+					</div>
 				</div>
 				
-				<h3 class="font-bold text-slate-900 mb-2 border-t border-slate-200 pt-4">Core Services</h3>
-				<ul class="space-y-2 text-slate-600 text-sm">
-					<li class="flex items-start">
-						<span class="text-cyan-500 mr-2">✓</span> E-commerce & Inventory Setup
-					</li>
-					<li class="flex items-start">
-						<span class="text-cyan-500 mr-2">✓</span> Professional Portfolios
-					</li>
-					<li class="flex items-start">
-						<span class="text-cyan-500 mr-2">✓</span> Business Site Migrations
-					</li>
-				</ul>
+				<div class="relative">
+					<div class="bg-white/80 backdrop-blur-sm p-10 rounded-3xl shadow-xl border border-slate-200/60">
+						<div class="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-cyan-50/30 rounded-3xl -z-10"></div>
+						<h3 class="font-bold text-slate-900 mb-6 text-xl">Platforms We Master</h3>
+						<div class="grid grid-cols-2 gap-4 text-slate-700 text-sm font-medium mb-8">
+							<div class="flex items-center gap-2">
+								<div class="w-2 h-2 bg-cyan-500 rounded-full"></div>
+								<span>WordPress</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="w-2 h-2 bg-green-500 rounded-full"></div>
+								<span>Shopify</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="w-2 h-2 bg-purple-500 rounded-full"></div>
+								<span>Astro / Custom</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="w-2 h-2 bg-slate-800 rounded-full"></div>
+								<span>Wix</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="w-2 h-2 bg-slate-500 rounded-full"></div>
+								<span>Squarespace</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="w-2 h-2 bg-cyan-400 rounded-full"></div>
+								<span>Weebly</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="w-2 h-2 bg-gray-800 rounded-full"></div>
+								<span>Square</span>
+							</div>
+							<div class="flex items-center gap-2">
+								<div class="w-2 h-2 bg-orange-500 rounded-full"></div>
+								<span>Others on Request</span>
+							</div>
+						</div>
+						
+						<h3 class="font-bold text-slate-900 mb-4 border-t border-slate-200/60 pt-6 text-xl">Core Services</h3>
+						<ul class="space-y-3 text-slate-700">
+							<li class="flex items-start gap-3">
+								<div class="w-6 h-6 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0 shadow-md">✓</div>
+								<span class="font-medium">E-commerce & Inventory Setup</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<div class="w-6 h-6 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0 shadow-md">✓</div>
+								<span class="font-medium">Professional Portfolios</span>
+							</li>
+							<li class="flex items-start gap-3">
+								<div class="w-6 h-6 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0 shadow-md">✓</div>
+								<span class="font-medium">Business Site Migrations</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+
+			<div class="relative">
+				<div class="relative bg-gradient-to-br from-cyan-600 via-cyan-500 to-blue-600 rounded-3xl p-12 md:p-16 shadow-2xl overflow-hidden">
+					<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+					<div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>
+					<div class="relative z-10 text-center">
+						<h2 class="text-3xl md:text-4xl font-bold text-white mb-5">Not sure which platform is right for you?</h2>
+						<p class="text-cyan-50/90 mb-10 max-w-xl mx-auto text-lg leading-relaxed">
+							We can help you choose the best tool for your budget and goals.
+						</p>
+						<a href="/contact" class="inline-block bg-white text-cyan-600 px-8 py-4 rounded-xl font-bold hover:bg-cyan-50 transition-all duration-300 shadow-2xl hover:shadow-cyan-900/20 hover:-translate-y-0.5">
+							Book a Consultation
+						</a>
+					</div>
+					<div class="absolute bottom-0 left-0 w-full h-24 bg-gradient-to-t from-white/5 to-transparent"></div>
+				</div>
 			</div>
 		</div>
-
-		<div class="text-center bg-cyan-600 rounded-2xl p-12 mb-20">
-			<h2 class="text-3xl font-bold text-white mb-4">Not sure which platform is right for you?</h2>
-			<p class="text-cyan-100 mb-8 max-w-xl mx-auto">
-				We can help you choose the best tool for your budget and goals.
-			</p>
-			<a href="/contact" class="bg-white text-cyan-600 px-8 py-3 rounded-lg font-bold hover:bg-slate-100 transition-colors inline-block">
-				Book a Consultation
-			</a>
-		</div>
-
 	</main>
 </Layout>

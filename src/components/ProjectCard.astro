@@ -9,18 +9,25 @@ interface Props {
 const { title, description, metrics, link } = Astro.props;
 ---
 
-<div class="bg-white p-6 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-	<h3 class="text-xl font-bold text-slate-900 mb-2">{title}</h3>
-	<p class="text-slate-600 mb-4 leading-relaxed">
-		{description}
-	</p>
-	<ul class="text-sm text-slate-600 mb-4 space-y-1">
-		{metrics.map((metric) => (
-			<li>• {metric}</li>
-		))}
-	</ul>
-	<a href={link} class="text-cyan-600 font-semibold hover:text-cyan-700 transition-colors">
-		View Project →
-	</a>
+<div class="group relative bg-white/80 backdrop-blur-sm p-6 rounded-2xl shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-1">
+	<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/30 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+	<div class="relative z-10">
+		<h3 class="text-xl font-bold text-slate-900 mb-2 group-hover:text-cyan-700 transition-colors">{title}</h3>
+		<p class="text-slate-600 mb-4 leading-relaxed">
+			{description}
+		</p>
+		<ul class="text-sm text-slate-600 mb-4 space-y-1">
+			{metrics.map((metric) => (
+				<li class="flex items-center gap-2">
+					<span class="w-1.5 h-1.5 bg-cyan-500 rounded-full"></span>
+					{metric}
+				</li>
+			))}
+		</ul>
+		<a href={link} class="inline-flex items-center gap-2 text-cyan-600 font-semibold hover:text-cyan-700 hover:gap-3 transition-all group-hover:underline">
+			View Project 
+			<span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
+		</a>
+	</div>
 </div>
 

@@ -4,71 +4,159 @@ import ProjectCard from '../components/ProjectCard.astro';
 ---
 
 <Layout>
-	<main>
-		<section class="max-w-4xl mx-auto mt-20 text-center px-4 mb-24">
-			<h1 class="text-5xl font-extrabold tracking-tight text-slate-900 mb-6">
-				Fast, Reliable, and <span class="text-cyan-600">Scalable</span> Websites
-			</h1>
+	<main class="relative overflow-hidden">
+		<!-- Background gradient layers for depth -->
+		<div class="fixed inset-0 -z-10">
+			<div class="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/20 to-slate-50"></div>
+			<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-200/10 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl"></div>
+		</div>
+
+		<!-- Hero Section -->
+		<section class="relative max-w-6xl mx-auto mt-20 text-center px-4 mb-32">
+			<!-- Floating decorative elements -->
+			<div class="absolute -left-20 top-20 hidden xl:block w-32 h-32 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-2xl blur-xl rotate-12"></div>
+			<div class="absolute -right-20 top-40 hidden xl:block w-40 h-40 bg-gradient-to-br from-blue-500/20 to-transparent rounded-3xl blur-xl -rotate-12"></div>
 			
-			<p class="text-xl text-slate-600 mb-10 leading-relaxed max-w-2xl mx-auto">
-				FirstLayer Digital transforms ideas into high-performance websites.<br />
-				Fast, secure, and built for growth.
-			</p>
-
-			<div class="flex justify-center gap-4">
-				<a href="/contact" class="bg-cyan-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-cyan-700 transition-colors">
-					Start Your Project
-				</a>
-				<a href="/work" class="bg-white text-slate-700 border border-slate-300 px-8 py-3 rounded-lg font-semibold hover:bg-slate-50 transition-colors">
-					See My Work
-				</a>
-			</div>
-		</section>
-
-		<section class="bg-slate-50 py-16 border-t border-slate-200">
-			<div class="max-w-3xl mx-auto px-4 text-center">
-				<p class="text-lg text-slate-700 leading-relaxed">
-					Infrastructure and DevOps experience brings a reliability-first mindset to web development. 
-					Whether custom-built or platform-based, websites are engineered to be fast, beautiful, robust, and cost-effective. Great websites work as well behind the scenes as they do in the browser.
-				</p>
-			</div>
-		</section>
-
-		<section class="bg-white py-20 border-t border-slate-200">
-			<div class="max-w-5xl mx-auto px-4">
-				<h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Our Expertise</h2>
+			<div class="relative">
+				<h1 class="text-5xl md:text-6xl font-extrabold tracking-tight text-slate-900 mb-6 leading-tight">
+					Fast, Reliable, and <span class="text-cyan-600 relative">
+						<span class="relative z-10">Scalable</span>
+						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/8 to-cyan-600/8 blur-lg -z-0"></span>
+					</span> Websites
+				</h1>
 				
-				<div class="grid md:grid-cols-3 gap-8">
-					<div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-						<div class="text-cyan-600 text-4xl mb-4">⚡</div>
-						<h3 class="text-xl font-bold text-slate-900 mb-3">90+ Performance Scores</h3>
-						<p class="text-slate-600 leading-relaxed">
-							Sites optimized for speed and user experience that keep visitors engaged and convert better.
-						</p>
-					</div>
+				<p class="text-xl md:text-2xl text-slate-600 mb-12 leading-relaxed max-w-3xl mx-auto">
+					FirstLayer Digital transforms ideas into high-performance websites.<br />
+					<span class="text-slate-700 font-medium">Fast, secure, and built for growth.</span>
+				</p>
 
-					<div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-						<div class="text-cyan-600 text-4xl mb-4">📈</div>
-						<h3 class="text-xl font-bold text-slate-900 mb-3">Built to Scale</h3>
-						<p class="text-slate-600 leading-relaxed">
-							Reliable infrastructure that grows with your business, handling traffic spikes without breaking a sweat.
-						</p>
-					</div>
+				<div class="flex justify-center gap-4 mb-16">
+					<a href="/contact" class="bg-cyan-600 text-white px-8 py-4 rounded-xl font-semibold hover:bg-cyan-700 transition-all duration-300 shadow-lg shadow-cyan-600/30 hover:shadow-xl hover:shadow-cyan-600/40 hover:-translate-y-0.5">
+						Start Your Project
+					</a>
+					<a href="/work" class="group relative bg-white/80 backdrop-blur-sm text-slate-700 border-2 border-slate-200/60 px-8 py-4 rounded-xl font-semibold hover:bg-white hover:border-cyan-300/60 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5">
+						See My Work
+					</a>
+				</div>
+			</div>
+		</section>
 
-					<div class="bg-white p-8 rounded-xl shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
-						<div class="text-cyan-600 text-4xl mb-4">💰</div>
-						<h3 class="text-xl font-bold text-slate-900 mb-3">Cost-Effective Hosting</h3>
-						<p class="text-slate-600 leading-relaxed">
-							Modern stack that doesn't rack up unnecessary bills, so you can invest more in growing your business.
-						</p>
+		<!-- Enhanced About Section with Glassmorphism -->
+		<section class="relative py-20 mb-20">
+			<div class="max-w-5xl mx-auto px-4">
+				<div class="relative">
+					<!-- Glass card with depth -->
+					<div class="relative bg-white/70 backdrop-blur-xl rounded-3xl shadow-2xl border border-white/20 p-12 md:p-16">
+						<!-- Gradient overlay for depth -->
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/50 via-transparent to-blue-50/30 rounded-3xl -z-10"></div>
+						
+						<!-- Content grid -->
+						<div class="grid md:grid-cols-2 gap-12 items-center relative z-10">
+							<div>
+								<h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-6 leading-tight">
+									Built on <span class="text-cyan-600">Solid Foundations</span>
+								</h2>
+								<p class="text-lg text-slate-700 leading-relaxed mb-6">
+									Infrastructure and DevOps experience brings a reliability-first mindset to web development.
+								</p>
+								<p class="text-lg text-slate-600 leading-relaxed">
+									Whether custom-built or platform-based, websites are engineered to be fast, beautiful, robust, and cost-effective. Great websites work as well behind the scenes as they do in the browser.
+								</p>
+							</div>
+							
+							<!-- Stats/Features with transparency -->
+							<div class="space-y-4">
+								<div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/40 shadow-lg">
+									<div class="flex items-center gap-4">
+										<div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">⚡</div>
+										<div>
+											<div class="font-bold text-slate-900">Lightning Fast</div>
+											<div class="text-sm text-slate-600">Sub-second load times</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/40 shadow-lg">
+									<div class="flex items-center gap-4">
+										<div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">🔒</div>
+										<div>
+											<div class="font-bold text-slate-900">Enterprise Security</div>
+											<div class="text-sm text-slate-600">Built-in protection</div>
+										</div>
+									</div>
+								</div>
+								
+								<div class="bg-white/60 backdrop-blur-sm rounded-2xl p-6 border border-slate-200/40 shadow-lg">
+									<div class="flex items-center gap-4">
+										<div class="w-12 h-12 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white font-bold text-xl shadow-lg">📈</div>
+										<div>
+											<div class="font-bold text-slate-900">Scalable Infrastructure</div>
+											<div class="text-sm text-slate-600">Grows with your business</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						
+						<!-- Decorative corner elements -->
+						<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-400/10 to-transparent rounded-bl-full -z-10"></div>
+						<div class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-400/10 to-transparent rounded-tr-full -z-10"></div>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<section class="bg-slate-50 py-20 border-t border-slate-200">
+		<section class="relative py-24">
 			<div class="max-w-6xl mx-auto px-4">
-				<h2 class="text-3xl font-bold text-center text-slate-900 mb-12">Recent Work</h2>
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Our Expertise</h2>
+					<div class="w-24 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
+				</div>
+				
+				<div class="grid md:grid-cols-3 gap-8">
+					<div class="group relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="relative z-10">
+							<div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">⚡</div>
+							<h3 class="text-xl font-bold text-slate-900 mb-3">90+ Performance Scores</h3>
+							<p class="text-slate-600 leading-relaxed">
+								Sites optimized for speed and user experience that keep visitors engaged and convert better.
+							</p>
+						</div>
+					</div>
+
+					<div class="group relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="relative z-10">
+							<div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">📈</div>
+							<h3 class="text-xl font-bold text-slate-900 mb-3">Built to Scale</h3>
+							<p class="text-slate-600 leading-relaxed">
+								Reliable infrastructure that grows with your business, handling traffic spikes without breaking a sweat.
+							</p>
+						</div>
+					</div>
+
+					<div class="group relative bg-white/80 backdrop-blur-sm p-8 rounded-2xl shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="relative z-10">
+							<div class="w-16 h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-2xl flex items-center justify-center text-white text-3xl mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">💰</div>
+							<h3 class="text-xl font-bold text-slate-900 mb-3">Cost-Effective Hosting</h3>
+							<p class="text-slate-600 leading-relaxed">
+								Modern stack that doesn't rack up unnecessary bills, so you can invest more in growing your business.
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="relative py-24 bg-gradient-to-b from-transparent via-slate-50/50 to-transparent">
+			<div class="max-w-6xl mx-auto px-4">
+				<div class="text-center mb-16">
+					<h2 class="text-3xl md:text-4xl font-bold text-slate-900 mb-4">Recent Work</h2>
+					<div class="w-24 h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
+				</div>
 				
 				<div class="grid md:grid-cols-3 gap-8">
 					<ProjectCard
@@ -93,22 +181,30 @@ import ProjectCard from '../components/ProjectCard.astro';
 			</div>
 		</section>
 
-		<section class="bg-cyan-600 py-20 border-t border-cyan-700">
-			<div class="max-w-3xl mx-auto px-4 text-center">
-				<h2 class="text-4xl font-bold text-white mb-6">Ready to Build Something Great?</h2>
-				<p class="text-lg text-cyan-50 mb-8 leading-relaxed">
+		<section class="relative py-24 overflow-hidden">
+			<!-- Gradient background with depth -->
+			<div class="absolute inset-0 bg-gradient-to-br from-cyan-600 via-cyan-500 to-blue-600"></div>
+			<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+			<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>
+			
+			<div class="relative max-w-4xl mx-auto px-4 text-center">
+				<h2 class="text-4xl md:text-5xl font-bold text-white mb-6 leading-tight">Ready to Build Something Great?</h2>
+				<p class="text-lg md:text-xl text-cyan-50/90 mb-10 leading-relaxed max-w-2xl mx-auto">
 					Let's discuss your project and how I can help you build a fast, reliable, and cost-effective website. 
 					I'm here to answer your questions and explore how we can work together.
 				</p>
 				<div class="flex flex-col sm:flex-row justify-center items-center gap-4">
-					<a href="/contact" class="bg-white text-cyan-600 px-8 py-3 rounded-lg font-semibold hover:bg-cyan-50 transition-colors">
+					<a href="/contact" class="bg-white text-cyan-600 px-8 py-4 rounded-xl font-semibold hover:bg-cyan-50 transition-all duration-300 shadow-2xl hover:shadow-cyan-900/20 hover:-translate-y-0.5">
 						Start a Project
 					</a>
-					<a href="mailto:hello@firstlayer.digital" class="text-white font-semibold hover:text-cyan-100 transition-colors underline underline-offset-4">
+					<a href="mailto:hello@firstlayer.digital" class="text-white/90 font-semibold hover:text-white transition-colors underline underline-offset-4 decoration-white/40 hover:decoration-white">
 						hello@firstlayer.digital
 					</a>
 				</div>
 			</div>
+			
+			<!-- Decorative elements -->
+			<div class="absolute bottom-0 left-0 w-full h-32 bg-gradient-to-t from-white to-transparent"></div>
 		</section>
 	</main>
 </Layout>
