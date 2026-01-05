@@ -18,14 +18,34 @@ const {
 		<meta charset="UTF-8" />
 		<meta name="description" content={description} />
 		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		
+		<!-- Favicons -->
+		<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+		<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+		<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+		
 		<meta name="generator" content={Astro.generator} />
 		
-		<meta property="og:title" content={title} />
-		<meta property="og:description" content={description} />
+		<!-- Open Graph / Facebook / LinkedIn -->
 		<meta property="og:type" content="website" />
 		<meta property="og:url" content="https://firstlayer.digital" />
-		<meta property="og:image" content="https://firstlayer.digital/social.png" />
+		<meta property="og:title" content="First Layer Digital" />
+		<meta property="og:description" content={description} />
+		<meta property="og:image" content="https://firstlayer.digital/logo.svg" />
+		<meta property="og:image:type" content="image/svg+xml" />
+		<meta property="og:image:width" content="1200" />
+		<meta property="og:image:height" content="630" />
+		<meta property="og:site_name" content="First Layer Digital" />
+		
+		<!-- Twitter Card -->
+		<meta name="twitter:card" content="summary_large_image" />
+		<meta name="twitter:url" content="https://firstlayer.digital" />
+		<meta name="twitter:title" content="First Layer Digital" />
+		<meta name="twitter:description" content={description} />
+		<meta name="twitter:image" content="https://firstlayer.digital/logo.svg" />
+		
+		<!-- Additional meta for better sharing -->
+		<meta name="theme-color" content="#0891b2" />
 		
 		<title>{title}</title>
 		
