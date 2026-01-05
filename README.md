@@ -1,46 +1,49 @@
-# Astro Starter Kit: Basics
+# First Layer Digital | Official Website 🚀
 
-```sh
-npm create astro@latest -- --template basics
-```
+![First Layer Digital Logo](public/logo.svg) This repository houses the source code for the official **First Layer Digital** business website. We specialize in building fast, reliable, and cost-effective digital experiences that bridge the gap between complex infrastructure and beautiful user interfaces.
 
-> 🧑‍🚀 **Seasoned astronaut?** Delete this file. Have fun!
+[View Live Site](https://firstlayer.digital) | [Contact Us](mailto:hello@firstlayer.digital)
 
-## 🚀 Project Structure
+---
 
-Inside of your Astro project, you'll see the following folders and files:
+## 🛠 The Tech Stack
 
-```text
-/
-├── public/
-│   └── favicon.svg
-├── src
-│   ├── assets
-│   │   └── astro.svg
-│   ├── components
-│   │   └── Welcome.astro
-│   ├── layouts
-│   │   └── Layout.astro
-│   └── pages
-│       └── index.astro
-└── package.json
-```
+![Astro](https://img.shields.io/badge/Astro-FF5D01?style=for-the-badge&logo=astro&logoColor=white)
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=nodedotjs&logoColor=white)
+![Tailwind](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)
+![TypeScript](https://img.shields.io/badge/TypeScript-007ACC?style=for-the-badge&logo=typescript&logoColor=white)
 
-To learn more about the folder structure of an Astro project, refer to [our guide on project structure](https://docs.astro.build/en/basics/project-structure/).
+To ensure maximum performance and SEO, we chose a modern, developer-centric stack:
 
-## 🧞 Commands
+* **[Astro](https://astro.build/)**: A web framework designed for speed. We utilize Astro’s "Islands Architecture" to ship zero client-side JavaScript by default, ensuring lightning-fast load times.
+* **[Node.js](https://nodejs.org/)**: The powerhouse runtime environment that handles our build processes and server-side logic.
+* **[Tailwind CSS](https://tailwindcss.com/)**: A utility-first CSS framework that allows us to build a custom, high-contrast design system with "poppy" visuals.
 
-All commands are run from the root of the project, from a terminal:
+---
 
-| Command                   | Action                                           |
-| :------------------------ | :----------------------------------------------- |
-| `npm install`             | Installs dependencies                            |
-| `npm run dev`             | Starts local dev server at `localhost:4321`      |
-| `npm run build`           | Build your production site to `./dist/`          |
-| `npm run preview`         | Preview your build locally, before deploying     |
-| `npm run astro ...`       | Run CLI commands like `astro add`, `astro check` |
-| `npm run astro -- --help` | Get help using the Astro CLI                     |
+## 🤖 Modern Workflow & AI-Augmented Development
 
-## 👀 Want to learn more?
+At **First Layer Digital**, we leverage the latest in AI and development environments to deliver high-quality code with maximum efficiency. This project was built using an AI-augmented workflow:
 
-Feel free to check [our documentation](https://docs.astro.build) or jump into our [Discord server](https://astro.build/chat).
+* **[Cursor](https://cursor.com/) & [VS Code](https://code.visualstudio.com/)**: Our primary development environments, utilizing AI-native features for refactoring, boilerplate generation, and rapid prototyping.
+* **[Google Gemini](https://gemini.google.com/)**: Used as a high-level thought partner for architectural decisions, UI/UX color theory, and content strategy.
+* **[OpenAI](https://openai.com/)**: Leveraged for complex logic solving, creative copy assistance, and code optimization.
+
+---
+
+## 🏗 Why this Architecture?
+
+1.  **Performance**: Astro delivers industry-leading Core Web Vitals out of the box.
+2.  **Scalability**: The component-based structure allows us to grow the site as our agency services expand.
+3.  **Reliability**: A focus on static-site generation (SSG) ensures high uptime, security, and lower hosting overhead.
+
+---
+
+## 🚀 Getting Started
+
+To run this project locally, ensure you have **Node.js** (v18.14.1 or higher) installed.
+
+### 1. Clone the repository
+```bash
+git clone [https://github.com/firstlayerdigital/first-layer-website.git](https://github.com/firstlayerdigital/first-layer-website.git)
+cd first-layer-website
