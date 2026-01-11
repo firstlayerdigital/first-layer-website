@@ -38,12 +38,14 @@ export const prerender = true;
 				data-netlify="true"
 				netlify-honeypot="bot-field"
 				action="/success"
+				data-netlify-redirect="/success"
 				class="relative bg-white/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/20 p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden"
 			>
 				<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 rounded-2xl sm:rounded-3xl -z-10"></div>
 				
 				<!-- Hidden fields for Netlify -->
 				<input type="hidden" name="form-name" value="contact" />
+				<input type="hidden" name="_to" value="/success" />
 				<p class="hidden">
 					<label>
 						Don't fill this out if you're human: <input name="bot-field" />
