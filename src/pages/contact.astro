@@ -1,5 +1,8 @@
 ---
 import Layout from '../layouts/Layout.astro';
+
+// Make this page static so Netlify can detect the form at build time
+export const prerender = true;
 ---
 
 <Layout>
@@ -12,47 +15,112 @@ import Layout from '../layouts/Layout.astro';
 		</div>
 
 		<div class="max-w-2xl 2xl:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
-			<h1 class="text-3xl sm:text-4xl md:text-4xl lg:text-5xl 2xl:text-6xl font-bold text-slate-900 mb-4 sm:mb-6 text-center leading-tight">Let's Work Together</h1>
-			<p class="text-base sm:text-lg md:text-lg 2xl:text-xl text-slate-600 text-center mb-8 sm:mb-10 max-w-xl mx-auto px-2">
-				Tell us about your project. We'll get back to you within 24 hours.
-			</p>
+			<!-- Floating decorative elements -->
+			<div class="absolute -left-20 top-32 hidden xl:block 2xl:left-0 w-40 h-40 2xl:w-48 2xl:h-48 bg-gradient-to-br from-cyan-500/15 to-transparent rounded-3xl blur-xl rotate-12"></div>
+			<div class="absolute -right-20 top-48 hidden xl:block 2xl:right-0 w-36 h-36 2xl:w-44 2xl:h-44 bg-gradient-to-br from-blue-500/15 to-transparent rounded-2xl blur-xl -rotate-12"></div>
+
+			<div class="relative text-center mb-10 sm:mb-12 md:mb-16">
+				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-900 mb-4 sm:mb-6 leading-tight">
+					Let's Work <span class="text-cyan-600 relative">
+						<span class="relative z-10">Together</span>
+						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/8 to-cyan-600/8 blur-lg -z-0"></span>
+					</span>
+				</h1>
+				<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-slate-600 max-w-xl mx-auto leading-relaxed px-2">
+					Tell us about your project. We'll get back to you within 24 hours.
+				</p>
+				<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto mt-6 sm:mt-8"></div>
+			</div>
 
 			<form 
 				name="contact" 
 				method="POST" 
+				data-netlify="true"
+				netlify-honeypot="bot-field"
 				action="/success"
-				data-netlify="true" 
-				netlify
-				class="relative bg-white/80 backdrop-blur-sm p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-200/60"
+				class="relative bg-white/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/20 p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden"
 			>
-				<div class="absolute inset-0 bg-gradient-to-br from-white/50 via-transparent to-cyan-50/20 rounded-2xl sm:rounded-3xl -z-10"></div>
+				<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 rounded-2xl sm:rounded-3xl -z-10"></div>
 				
+				<!-- Hidden fields for Netlify -->
 				<input type="hidden" name="form-name" value="contact" />
+				<p class="hidden">
+					<label>
+						Don't fill this out if you're human: <input name="bot-field" />
+					</label>
+				</p>
 
-				<div class="mb-5 sm:mb-6">
-					<label for="name" class="block text-sm sm:text-base font-medium text-slate-700 mb-2">Name</label>
-					<input type="text" id="name" name="name" required
-						class="w-full px-4 py-3 sm:py-3.5 rounded-lg border-2 border-slate-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-base sm:text-lg min-h-[44px] touch-manipulation"
+				<!-- Name Field -->
+				<div class="mb-6 sm:mb-7 md:mb-8">
+					<label for="name" class="block text-sm sm:text-base md:text-lg font-semibold text-slate-900 mb-2.5 sm:mb-3 flex items-center gap-2">
+						<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
+						</svg>
+						<span>Name</span>
+					</label>
+					<input 
+						type="text" 
+						id="name" 
+						name="name" 
+						required
+						placeholder="Your full name"
+						class="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border-2 border-slate-300/60 focus:border-cyan-500 focus:ring-4 focus:ring-cyan-200/50 outline-none transition-all text-base sm:text-lg bg-white/80 backdrop-blur-sm text-slate-900 placeholder:text-slate-400 min-h-[48px] sm:min-h-[52px] touch-manipulation shadow-sm focus:shadow-md"
 					/>
 				</div>
 
-				<div class="mb-5 sm:mb-6">
-					<label for="email" class="block text-sm sm:text-base font-medium text-slate-700 mb-2">Email</label>
-					<input type="email" id="email" name="email" required
-						class="w-full px-4 py-3 sm:py-3.5 rounded-lg border-2 border-slate-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-base sm:text-lg min-h-[44px] touch-manipulation"
+				<!-- Email Field -->
+				<div class="mb-6 sm:mb-7 md:mb-8">
+					<label for="email" class="block text-sm sm:text-base md:text-lg font-semibold text-slate-900 mb-2.5 sm:mb-3 flex items-center gap-2">
+						<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
+						</svg>
+						<span>Email</span>
+					</label>
+					<input 
+						type="email" 
+						id="email" 
+						name="email" 
+						required
+						placeholder="your.email@example.com"
+						class="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border-2 border-slate-300/60 focus:border-cyan-500 focus:ring-4 focus:ring-cyan-200/50 outline-none transition-all text-base sm:text-lg bg-white/80 backdrop-blur-sm text-slate-900 placeholder:text-slate-400 min-h-[48px] sm:min-h-[52px] touch-manipulation shadow-sm focus:shadow-md"
 					/>
 				</div>
 
-				<div class="mb-5 sm:mb-6">
-					<label for="message" class="block text-sm sm:text-base font-medium text-slate-700 mb-2">Project Details</label>
-					<textarea id="message" name="message" rows="6" required
-						class="w-full px-4 py-3 sm:py-3.5 rounded-lg border-2 border-slate-300 focus:border-cyan-500 focus:ring-2 focus:ring-cyan-200 outline-none transition-all text-base sm:text-lg resize-y touch-manipulation min-h-[120px]"
+				<!-- Message Field -->
+				<div class="mb-8 sm:mb-10 md:mb-12">
+					<label for="message" class="block text-sm sm:text-base md:text-lg font-semibold text-slate-900 mb-2.5 sm:mb-3 flex items-center gap-2">
+						<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+						</svg>
+						<span>Project Details</span>
+					</label>
+					<textarea 
+						id="message" 
+						name="message" 
+						rows="6" 
+						required
+						placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
+						class="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border-2 border-slate-300/60 focus:border-cyan-500 focus:ring-4 focus:ring-cyan-200/50 outline-none transition-all text-base sm:text-lg resize-y bg-white/80 backdrop-blur-sm text-slate-900 placeholder:text-slate-400 min-h-[140px] sm:min-h-[160px] touch-manipulation shadow-sm focus:shadow-md leading-relaxed"
 					></textarea>
 				</div>
 
-				<button type="submit" class="w-full bg-cyan-600 text-white font-bold py-3.5 sm:py-4 rounded-xl text-base sm:text-lg hover:bg-cyan-700 active:bg-cyan-800 transition-all duration-300 shadow-lg shadow-cyan-600/30 hover:shadow-xl hover:shadow-cyan-600/40 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
-					Send Message
+				<!-- Submit Button -->
+				<button 
+					type="submit" 
+					class="group relative w-full bg-gradient-to-r from-cyan-600 via-cyan-500 to-cyan-600 text-white font-bold py-4 sm:py-4.5 md:py-5 rounded-xl text-base sm:text-lg hover:from-cyan-700 hover:via-cyan-600 hover:to-cyan-700 active:from-cyan-800 active:via-cyan-700 active:to-cyan-800 transition-all duration-300 shadow-lg shadow-cyan-600/30 hover:shadow-xl hover:shadow-cyan-600/40 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[52px] sm:min-h-[56px] overflow-hidden"
+				>
+					<span class="relative z-10 flex items-center justify-center gap-2">
+						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path>
+						</svg>
+						Send Message
+					</span>
+					<div class="absolute inset-0 bg-gradient-to-r from-white/0 via-white/20 to-white/0 translate-x-[-100%] group-hover:translate-x-[100%] transition-transform duration-1000"></div>
 				</button>
+
+				<!-- Decorative corner elements -->
+				<div class="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-cyan-400/10 to-transparent rounded-bl-full -z-10"></div>
+				<div class="absolute bottom-0 left-0 w-32 h-32 bg-gradient-to-tr from-blue-400/10 to-transparent rounded-tr-full -z-10"></div>
 			</form>
 		</div>
 	</main>
