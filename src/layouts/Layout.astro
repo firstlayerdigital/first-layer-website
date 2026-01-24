@@ -122,14 +122,27 @@ const {
 						</svg>
 					</a>
 				</div>
-				<div class="border-t border-slate-800/50 pt-6 sm:pt-8 text-xs sm:text-sm text-slate-400 space-y-2">
-					<div>
-						&copy; {new Date().getFullYear()} First Layer Digital LLC. All rights reserved.
+				<div class="border-t border-slate-800/50 pt-6 sm:pt-8 space-y-4">
+					<!-- Maryland Badge -->
+					<div class="flex justify-center mb-4">
+						<div class="inline-flex items-center gap-2 bg-slate-800/60 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-slate-700/50">
+							<svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+								<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+							</svg>
+							<span class="text-xs sm:text-sm text-slate-300 font-medium">Maryland-Owned & Operated</span>
+						</div>
 					</div>
-					<div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3">
-						<a href="/privacy" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
-						<span class="text-slate-600">|</span>
-						<a href="/terms" class="hover:text-slate-300 transition-colors">Client Terms</a>
+					
+					<!-- Copyright and Legal Links -->
+					<div class="text-xs sm:text-sm text-slate-400 space-y-2">
+						<div>
+							&copy; {new Date().getFullYear()} First Layer Digital LLC. All rights reserved.
+						</div>
+						<div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3">
+							<a href="/privacy" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+							<span class="text-slate-600">|</span>
+							<a href="/terms" class="hover:text-slate-300 transition-colors">Client Terms</a>
+						</div>
 					</div>
 				</div>
 			</div>
