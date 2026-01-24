@@ -1,0 +1,261 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout title="Services | FirstLayer Digital">
+	<main class="relative overflow-hidden">
+		<!-- Background gradient layers for depth -->
+		<div class="fixed inset-0 -z-10">
+			<div class="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/20 to-slate-50"></div>
+			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/10 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl"></div>
+		</div>
+
+		<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+			<!-- Hero Section -->
+			<div class="relative text-center mb-12 sm:mb-16 md:mb-20">
+				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-900 mb-4 sm:mb-6 leading-tight">
+					Professional <span class="text-cyan-600 relative">
+						<span class="relative z-10">Services</span>
+						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/8 to-cyan-600/8 blur-lg -z-0"></span>
+					</span>
+				</h1>
+				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-slate-600 max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2">
+					Engineering-driven solutions that deliver measurable results. From concept to deployment, we build with precision and purpose.
+				</p>
+			</div>
+
+			<!-- Core Services Section -->
+			<section class="mb-16 sm:mb-20 md:mb-24">
+				<div class="text-center mb-10 sm:mb-12 md:mb-16">
+					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-slate-900 mb-3 sm:mb-4">Core Services</h2>
+					<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
+				</div>
+
+				<div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+					<!-- Website Design/Development -->
+					<div class="group relative bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="relative z-10">
+							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">🌐</div>
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Website Design & Development</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 leading-relaxed mb-4">
+								Custom-built websites engineered for performance, security, and scalability. We leverage modern frameworks and best practices to deliver sites that load fast, rank well, and convert visitors into customers.
+							</p>
+							<ul class="text-sm sm:text-base text-slate-700 space-y-2">
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Responsive, mobile-first design</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>SEO-optimized architecture</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Performance optimization (90+ Lighthouse scores)</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Security hardening and best practices</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- Custom Software Development -->
+					<div class="group relative bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="relative z-10">
+							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">⚙️</div>
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Custom Software Development</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 leading-relaxed mb-4">
+								Tailored software solutions built to solve specific business challenges. From internal tools to customer-facing applications, we develop robust, maintainable code that scales with your needs.
+							</p>
+							<ul class="text-sm sm:text-base text-slate-700 space-y-2">
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Full-stack development</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>API design and integration</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Database architecture</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>DevOps and deployment automation</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- E-commerce Optimization -->
+					<div class="group relative bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="relative z-10">
+							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">🛒</div>
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">E-commerce Optimization</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 leading-relaxed mb-4">
+								Maximize your online store's performance and profitability. We optimize checkout flows, improve conversion rates, and integrate payment systems that reduce friction and increase sales.
+							</p>
+							<ul class="text-sm sm:text-base text-slate-700 space-y-2">
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Platform setup and configuration</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Inventory management systems</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Payment gateway integration</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Conversion rate optimization</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+
+					<!-- SEO -->
+					<div class="group relative bg-white/80 backdrop-blur-sm p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 rounded-xl sm:rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+						<div class="relative z-10">
+							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">📈</div>
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Search Engine Optimization (SEO)</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 leading-relaxed mb-4">
+								Technical SEO implementation that improves your search rankings and organic visibility. We optimize site structure, metadata, and performance to help you rank higher and attract qualified traffic.
+							</p>
+							<ul class="text-sm sm:text-base text-slate-700 space-y-2">
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>On-page optimization</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Technical SEO audits</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Schema markup implementation</span>
+								</li>
+								<li class="flex items-start gap-2">
+									<span class="text-cyan-600 font-bold mt-0.5">•</span>
+									<span>Site speed and Core Web Vitals optimization</span>
+								</li>
+							</ul>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- Hybrid Pricing Model Section -->
+			<section class="mb-16 sm:mb-20 md:mb-24">
+				<div class="relative bg-white/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/20 p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden">
+					<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 rounded-2xl sm:rounded-3xl -z-10"></div>
+					
+					<div class="text-center mb-8 sm:mb-10 md:mb-12">
+						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-slate-900 mb-3 sm:mb-4">Hybrid Pricing Model</h2>
+						<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed">
+							Flexible pricing structures designed to align with your project needs and budget. We offer multiple engagement models to ensure you get the right level of service at the right price.
+						</p>
+					</div>
+
+					<div class="grid md:grid-cols-3 gap-6 sm:gap-8">
+						<!-- Consultation Fees -->
+						<div class="bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-slate-200/40 shadow-lg">
+							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl sm:text-2xl mb-4 sm:mb-6 shadow-lg">💡</div>
+							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">Consultation Fees</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-700 leading-relaxed mb-4">
+								Strategic planning and technical consultation to help define your project scope, requirements, and optimal technology stack. Perfect for businesses that need expert guidance before committing to a full development project.
+							</p>
+							<div class="bg-cyan-50/60 rounded-lg p-3 sm:p-4 border border-cyan-200/40">
+								<p class="text-xs sm:text-sm text-slate-600">
+									<strong class="text-slate-900">Ideal for:</strong> Project scoping, technology selection, architecture planning, and feasibility analysis.
+								</p>
+							</div>
+						</div>
+
+						<!-- Fixed-Price MVPs -->
+						<div class="bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-slate-200/40 shadow-lg">
+							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl sm:text-2xl mb-4 sm:mb-6 shadow-lg">🚀</div>
+							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">Fixed-Price MVPs</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-700 leading-relaxed mb-4">
+								Predictable pricing for well-defined projects. We deliver complete, production-ready minimum viable products (MVPs) with clear deliverables, timelines, and budgets. Perfect for startups and businesses with specific feature requirements.
+							</p>
+							<div class="bg-cyan-50/60 rounded-lg p-3 sm:p-4 border border-cyan-200/40">
+								<p class="text-xs sm:text-sm text-slate-600">
+									<strong class="text-slate-900">Ideal for:</strong> New product launches, feature-complete websites, and projects with clearly defined scope.
+								</p>
+							</div>
+						</div>
+
+						<!-- Hourly Rates -->
+						<div class="bg-white/60 backdrop-blur-sm rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-slate-200/40 shadow-lg">
+							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl sm:text-2xl mb-4 sm:mb-6 shadow-lg">⏱️</div>
+							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-slate-900 mb-3 sm:mb-4">Hourly Rates for Ongoing Support</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-700 leading-relaxed mb-4">
+								Flexible hourly billing for maintenance, updates, enhancements, and ongoing support. Ideal for established projects that need iterative improvements, bug fixes, or feature additions without committing to a full project scope.
+							</p>
+							<div class="bg-cyan-50/60 rounded-lg p-3 sm:p-4 border border-cyan-200/40">
+								<p class="text-xs sm:text-sm text-slate-600">
+									<strong class="text-slate-900">Ideal for:</strong> Post-launch support, incremental improvements, maintenance, and agile development cycles.
+								</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 60-Day Support Section -->
+			<section class="mb-12 sm:mb-16 md:mb-20">
+				<div class="relative bg-gradient-to-br from-cyan-600 via-cyan-500 to-blue-600 rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl overflow-hidden">
+					<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+					<div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>
+					<div class="relative z-10 text-center">
+						<div class="w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-white text-3xl sm:text-4xl mb-6 sm:mb-8 mx-auto shadow-lg">🛡️</div>
+						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-white mb-4 sm:mb-6">60-Day Post-Launch Support</h2>
+						<p class="text-cyan-50/90 mb-6 sm:mb-8 max-w-2xl 2xl:max-w-3xl mx-auto text-base sm:text-lg lg:text-lg 2xl:text-xl leading-relaxed px-2">
+							Every project includes a comprehensive 60-day post-launch support period at no additional cost. During this time, we address bugs, provide technical assistance, and ensure your site performs as expected.
+						</p>
+						<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto text-left">
+							<div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20">
+								<h3 class="text-white font-bold text-sm sm:text-base mb-2">Bug Fixes</h3>
+								<p class="text-cyan-50/90 text-xs sm:text-sm">Rapid resolution of any issues discovered after launch</p>
+							</div>
+							<div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20">
+								<h3 class="text-white font-bold text-sm sm:text-base mb-2">Technical Support</h3>
+								<p class="text-cyan-50/90 text-xs sm:text-sm">Direct access to our team for questions and guidance</p>
+							</div>
+							<div class="bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20 sm:col-span-2 md:col-span-1">
+								<h3 class="text-white font-bold text-sm sm:text-base mb-2">Performance Monitoring</h3>
+								<p class="text-cyan-50/90 text-xs sm:text-sm">Ongoing monitoring to ensure optimal performance</p>
+							</div>
+						</div>
+					</div>
+					<div class="absolute bottom-0 left-0 w-full h-20 sm:h-24 bg-gradient-to-t from-white/5 to-transparent"></div>
+				</div>
+			</section>
+
+			<!-- CTA Section -->
+			<section class="text-center">
+				<div class="relative bg-white/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/20 p-8 sm:p-12 md:p-16 overflow-hidden">
+					<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 rounded-2xl sm:rounded-3xl -z-10"></div>
+					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-slate-900 mb-4 sm:mb-6">Ready to Get Started?</h2>
+					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-slate-600 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed">
+						Let's discuss your project and determine the best pricing model for your needs.
+					</p>
+					<a href="/contact" class="inline-block bg-cyan-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-cyan-700 active:bg-cyan-800 transition-all duration-300 shadow-lg shadow-cyan-600/30 hover:shadow-xl hover:shadow-cyan-600/40 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
+						Schedule a Consultation
+					</a>
+				</div>
+			</section>
+		</div>
+	</main>
+</Layout>

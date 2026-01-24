@@ -76,6 +76,11 @@ const {
 						<span class="absolute bottom-0 left-0 w-0 h-[2px] sm:h-0.5 md:h-0.5 bg-gradient-to-r from-cyan-400 to-cyan-600 group-hover:w-full group-active:w-full transition-all duration-300"></span>
 						<span class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></span>
 					</a>
+					<a href="/services" class="group relative text-slate-300 hover:text-white active:text-cyan-400 font-medium transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center">
+						<span class="relative z-10">Services</span>
+						<span class="absolute bottom-0 left-0 w-0 h-[2px] sm:h-0.5 md:h-0.5 bg-gradient-to-r from-cyan-400 to-cyan-600 group-hover:w-full group-active:w-full transition-all duration-300"></span>
+						<span class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></span>
+					</a>
 					<a href="/work" class="group relative text-slate-300 hover:text-white active:text-cyan-400 font-medium transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center">
 						<span class="relative z-10">Work</span>
 						<span class="absolute bottom-0 left-0 w-0 h-[2px] sm:h-0.5 md:h-0.5 bg-gradient-to-r from-cyan-400 to-cyan-600 group-hover:w-full group-active:w-full transition-all duration-300"></span>
@@ -117,8 +122,15 @@ const {
 						</svg>
 					</a>
 				</div>
-				<div class="border-t border-slate-800/50 pt-6 sm:pt-8 text-xs sm:text-sm text-slate-400">
-					&copy; {new Date().getFullYear()} FirstLayer Digital. All rights reserved. | <a href="/privacy" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+				<div class="border-t border-slate-800/50 pt-6 sm:pt-8 text-xs sm:text-sm text-slate-400 space-y-2">
+					<div>
+						&copy; {new Date().getFullYear()} First Layer Digital LLC. All rights reserved.
+					</div>
+					<div class="flex flex-wrap justify-center items-center gap-2 sm:gap-3">
+						<a href="/privacy" class="hover:text-slate-300 transition-colors">Privacy Policy</a>
+						<span class="text-slate-600">|</span>
+						<a href="/terms" class="hover:text-slate-300 transition-colors">Client Terms</a>
+					</div>
 				</div>
 			</div>
 		</footer>
