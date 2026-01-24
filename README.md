@@ -6,7 +6,7 @@
 
 **Engineering-driven web solutions that bridge infrastructure and design**
 
-[🌐 Live Site](https://firstlayer.digital) • [📧 Contact](mailto:projects@firstlayer.digital) • [📋 Services](https://firstlayer.digital/services) • [⚖️ Terms](https://firstlayer.digital/terms)
+[🌐 Live Site](https://www.firstlayer.digital/) • [📧 Contact](mailto:hello@firstlayer.digital) • [📋 Services](https://www.firstlayer.digital/services) • [⚖️ Terms](https://www.firstlayer.digital/terms)
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/your-badge-id/deploy-status)](https://app.netlify.com)
 [![License](https://img.shields.io/badge/License-Proprietary-blue.svg)](LICENSE)
@@ -332,9 +332,8 @@ Edit `src/pages/work.astro` and add to the `projects` array:
 
 This is a private repository for First Layer Digital LLC. For inquiries about contributing or collaboration, please contact:
 
-- **Email**: projects@firstlayer.digital
-- **Phone**: 443-261-5720
-- **Website**: https://firstlayer.digital
+- **Email**: hello@firstlayer.digital
+- **Website**: https://www.firstlayer.digital/
 
 ---
 
@@ -369,10 +368,8 @@ See `internal-docs/OPERATING AGREEMENT.md` for IP disclosure details.
 
 **First Layer Digital LLC**
 
-- **Address**: 4301 Mountain Road, Unit 202, Pasadena, Maryland 21123-0202
-- **Email**: projects@firstlayer.digital
-- **Phone**: 443-261-5720
-- **Website**: https://firstlayer.digital
+- **Email**: hello@firstlayer.digital
+- **Website**: https://www.firstlayer.digital/
 
 ---
 
@@ -382,6 +379,6 @@ See `internal-docs/OPERATING AGREEMENT.md` for IP disclosure details.
 
 *Engineering the web, one layer at a time.*
 
-[🌐 Live Site](https://firstlayer.digital) • [📧 Contact](mailto:projects@firstlayer.digital) • [📋 Services](https://firstlayer.digital/services)
+[🌐 Live Site](https://www.firstlayer.digital/) • [📧 Contact](mailto:hello@firstlayer.digital) • [📋 Services](https://www.firstlayer.digital/services)
 
 </div>

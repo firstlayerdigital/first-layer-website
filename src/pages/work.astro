@@ -27,6 +27,11 @@ interface Project {
 	ciCd?: boolean;
 	testing?: boolean;
 	anonymous?: boolean; // If true, don't show client name
+	additionalDetails?: {
+		architecture?: string;
+		features?: string[];
+		results?: string;
+	};
 }
 
 const projects: Project[] = [
@@ -53,7 +58,12 @@ const projects: Project[] = [
 		githubUrl: 'https://github.com/firstlayerdigital/first-layer-website',
 		ciCd: true,
 		testing: false,
-		anonymous: false
+		anonymous: false,
+		additionalDetails: {
+			architecture: 'Islands Architecture ships zero JS by default, resulting in industry-leading Core Web Vitals. Features glassmorphism design elements, gradient effects, and fully responsive mobile-first layout.',
+			features: ['Legal compliance pages (Terms, Privacy Policy)', 'Services page with hybrid pricing model', 'Portfolio showcase with MVP methodology', 'Netlify Forms integration', 'Automated CI/CD via GitHub Actions', 'Analytics integration (Google Analytics, Cloudflare)'],
+			results: 'Achieved 98+ Lighthouse scores across all metrics, sub-0.5s load times, and perfect Core Web Vitals. Site serves as both portfolio showcase and demonstration of engineering excellence.'
+		}
 	},
 	{
 		id: '2',
@@ -75,7 +85,12 @@ const projects: Project[] = [
 			loadTime: '< 1.2s',
 			coreWebVitals: 'All Green'
 		},
-		anonymous: true // Example of anonymous portfolio option
+		anonymous: true, // Example of anonymous portfolio option
+		additionalDetails: {
+			architecture: 'Automated inventory synchronization between warehouse management system and Shopify, reducing manual data entry by 85%. Custom theme development with mobile-first responsive design.',
+			features: ['Automated inventory sync via Shopify API', 'Multiple payment options (Stripe, PayPal, Apple Pay, Google Pay)', 'Optimized product pages with rich media galleries', 'Streamlined checkout flow', 'SEO optimization with structured data markup', 'Real-time stock updates'],
+			results: 'Achieved 40% reduction in checkout friction, improved mobile conversion rates, and seamless inventory management workflow. Comprehensive analytics dashboard for tracking performance metrics.'
+		}
 	},
 	{
 		id: '3',
@@ -99,7 +114,12 @@ const projects: Project[] = [
 		},
 		ciCd: true,
 		testing: true,
-		anonymous: true
+		anonymous: true,
+		additionalDetails: {
+			architecture: 'Multi-tenant architecture with isolated data per organization, ensuring security and scalability for enterprise use. JWT-based authentication with refresh tokens and role-based access control.',
+			features: ['JWT authentication with refresh tokens', 'Role-based access control (admin, user, viewer)', 'File upload system with cloud storage', 'Data export functionality (CSV, PDF)', 'Real-time data synchronization', 'Comprehensive error handling and logging'],
+			results: 'Production-ready application with automated testing suite, CI/CD pipeline, and comprehensive API documentation. Includes monitoring, logging, and 60-day post-launch support for maintenance and optimization.'
+		}
 	}
 ];
 
@@ -179,11 +199,13 @@ const projectCategories = Object.entries(groupedProjects) as [Project['category'
 						<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
 					</div>
 
-					<div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+					<div class="space-y-6 sm:space-y-8">
 						{categoryProjects.map((project) => {
 							const colorClasses = getCategoryColorClasses(project.category);
 							return (
-								<article class="group relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
+								<div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+									<!-- Left: Main Project Card -->
+									<article class="group relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
 									<div class={`absolute inset-0 bg-gradient-to-br ${colorClasses.hover} rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
 									
 									<!-- Project Image/Header -->
@@ -329,6 +351,61 @@ const projectCategories = Object.entries(groupedProjects) as [Project['category'
 										)}
 									</div>
 								</article>
+
+								<!-- Right: Additional Details -->
+								{project.additionalDetails && (
+									<div class="space-y-4 sm:space-y-6">
+										{project.additionalDetails.architecture && (
+											<div class="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/60">
+												<h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4 flex items-center gap-2">
+													<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+													</svg>
+													Architecture
+												</h4>
+												<p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+													{project.additionalDetails.architecture}
+												</p>
+											</div>
+										)}
+
+										{project.additionalDetails.features && project.additionalDetails.features.length > 0 && (
+											<div class="bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/60">
+												<h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4 flex items-center gap-2">
+													<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
+													</svg>
+													Key Features
+												</h4>
+												<ul class="space-y-2 sm:space-y-3">
+													{project.additionalDetails.features.map((feature) => (
+														<li class="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-slate-700">
+															<svg class="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+																<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
+															</svg>
+															<span>{feature}</span>
+														</li>
+													))}
+												</ul>
+											</div>
+										)}
+
+										{project.additionalDetails.results && (
+											<div class="bg-gradient-to-br from-cyan-50/60 to-blue-50/40 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-cyan-200/40">
+												<h4 class="text-lg sm:text-xl font-bold text-slate-900 mb-3 sm:mb-4 flex items-center gap-2">
+													<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+													</svg>
+													Results & Impact
+												</h4>
+												<p class="text-sm sm:text-base text-slate-700 leading-relaxed">
+													{project.additionalDetails.results}
+												</p>
+											</div>
+										)}
+									</div>
+								)}
+								</div>
 							);
 						})}
 					</div>
