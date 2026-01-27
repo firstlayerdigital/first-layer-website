@@ -48,21 +48,23 @@ VantageDash transforms manual price tracking into a fully automated market intel
 
 ### System Specs
 
+**STACK: NODE.JS + STREAMLIT + PROXMOX LXC + GITHUB ACTIONS**
+
 **Technology Stack:**
-- **Backend**: Node.js (v18+), Python 3.11+
-- **Visualization**: Streamlit
-- **Infrastructure**: Proxmox VE
-- **Networking**: Cloudflared tunnels
+- **Backend**: Node.js (v18+) scraping engine with intelligent rate limiting
+- **Visualization**: Streamlit dashboard for real-time market intelligence
+- **Infrastructure**: Proxmox LXC containerization for isolated, scalable deployment
+- **CI/CD**: GitHub Actions for automated deployment and health monitoring
 - **Data Storage**: Time-series database with automated retention policies
 
 **Deployment:**
 - Containerized architecture for portability and scalability
 - Automated health monitoring and self-healing capabilities
-- Zero-downtime update procedures
+- Zero-downtime update procedures via GitHub Actions
 
 **Security:**
 - Encrypted data transmission
-- Secure credential management
+- Secure credential management via Proxmox secrets
 - Access control and audit logging
 
 ## The Impact: Measurable Business Value

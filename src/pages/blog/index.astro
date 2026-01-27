@@ -1,87 +1,93 @@
 ---
 import { getCollection } from 'astro:content';
+import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
-const blogPosts = (await getCollection('blog')).sort((a, b) => 
+const allBlogPosts = await getCollection('blog');
+const blogPosts = [...allBlogPosts].sort((a, b) => 
 	b.data.pubDate.getTime() - a.data.pubDate.getTime()
 );
 ---
 
-<Layout title="Blog | FirstLayer Digital" description="Insights on data sovereignty, private cloud infrastructure, technical consulting, and engineering-driven solutions.">
+<Layout title="Insights | FirstLayer Digital" description="Engineering-driven insights on data sovereignty, private cloud infrastructure, technical consulting, and operational resilience.">
 	<main class="relative overflow-hidden">
-		<!-- Background gradient layers for depth -->
+		<!-- Obsidian Background with Blueprint Grid -->
 		<div class="fixed inset-0 -z-10">
-			<div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-cyan-50/20 to-slate-50 dark:from-[#020617] dark:via-[#020617] dark:to-[#020617] transition-colors duration-300"></div>
-			<div class="absolute inset-0 dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] dark:bg-[size:24px_24px]"></div>
-			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/10 dark:bg-cyan-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
-			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-200/10 dark:bg-blue-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
+			<div class="absolute inset-0 bg-[#020617]"></div>
+			<div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
+			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-900/10 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl"></div>
 		</div>
 
-		<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+		<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 relative z-10">
 			<!-- Hero Section -->
 			<div class="relative text-center mb-12 sm:mb-16 md:mb-20">
-				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-950 dark:text-white dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
-					Blog <span class="text-cyan-600 relative">
+				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-white font-bold mb-4 sm:mb-6 leading-tight">
+					Technical <span class="text-cyan-400 relative">
 						<span class="relative z-10">Insights</span>
 						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/8 to-cyan-600/8 blur-lg -z-0"></span>
 					</span>
 				</h1>
-				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-slate-600 dark:text-slate-400 max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2 transition-colors duration-300">
-					Engineering-driven insights on data sovereignty, private cloud infrastructure, and technical consulting.
+				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-slate-400 max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2">
+					Engineering-driven insights on data sovereignty, private cloud infrastructure, and operational resilience.
 				</p>
 			</div>
 
-			<!-- Blog Posts -->
-			<div class="space-y-6 sm:space-y-8">
-				{blogPosts.map((post) => (
-					<article class="group relative bg-white/80 dark:bg-slate-900/40 backdrop-blur-md rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 dark:border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] transition-all duration-300 hover:-translate-y-2">
-						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/30 dark:from-cyan-500/0 dark:to-cyan-500/5 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-						
-						<div class="p-6 sm:p-8 relative z-10">
-							<div class="flex items-start justify-between gap-4 mb-4">
-								<div class="flex-1">
-									<h2 class="text-xl sm:text-2xl lg:text-2xl 2xl:text-3xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 group-hover:text-cyan-700 dark:group-hover:text-cyan-400 transition-colors">
+			<!-- Insight Cards Grid -->
+			<div class="grid md:grid-cols-2 gap-6 sm:gap-8">
+				{blogPosts.map((post) => {
+					const primaryTag = (post.data.tags && post.data.tags.length > 0) 
+						? post.data.tags[0].toUpperCase() 
+						: 'TECHNICAL';
+					
+					return (
+						<article class="group relative bg-slate-900/40 backdrop-blur-xl rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_25px_rgba(6,182,212,0.15)] transition-all duration-300 hover:-translate-y-2">
+							<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/0 to-cyan-500/5 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+							
+							<div class="p-6 sm:p-8 relative z-10">
+								<!-- Technical Tag -->
+								<div class="mb-4">
+									<div class="inline-block bg-slate-950/60 border border-slate-700 px-3 py-1.5 rounded-xl">
+										<span class="text-xs font-mono text-cyan-400">TAG: </span>
+										<span class="text-xs font-mono text-white">{primaryTag}</span>
+									</div>
+								</div>
+
+								<!-- Title and Date -->
+								<div class="mb-4">
+									<h2 class="text-xl sm:text-2xl lg:text-2xl 2xl:text-3xl font-bold text-white font-bold mb-2 sm:mb-3 group-hover:text-cyan-400 transition-colors">
 										<a href={`/blog/${post.slug}`} class="hover:underline">
 											{post.data.title}
 										</a>
 									</h2>
-									<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-4 transition-colors duration-300">
-										{post.data.description}
-									</p>
+									<time datetime={post.data.pubDate.toISOString()} class="text-xs sm:text-sm text-slate-500 font-mono">
+										{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+									</time>
+								</div>
+
+								<!-- Short Snippet -->
+								<p class="text-sm sm:text-base text-slate-400 leading-relaxed mb-4 line-clamp-3">
+									{post.data.description}
+								</p>
+
+								<!-- Read More Link -->
+								<div class="mt-4">
+									<a href={`/blog/${post.slug}`} class="inline-flex items-center gap-2 text-sm text-cyan-400 hover:text-cyan-300 font-medium transition-colors group font-mono">
+										Read Insight
+										<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+										</svg>
+									</a>
 								</div>
 							</div>
-
-							<div class="flex flex-wrap items-center gap-4 text-xs sm:text-sm text-slate-500 dark:text-slate-500">
-								<time datetime={post.data.pubDate.toISOString()} class="font-mono">
-									{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
-								</time>
-								{post.data.tags && post.data.tags.length > 0 && (
-									<div class="flex flex-wrap gap-2">
-										{post.data.tags.map((tag) => (
-											<span class="bg-cyan-100/80 dark:bg-slate-800/50 text-cyan-700 dark:text-slate-300 px-2.5 py-1 rounded-lg font-medium border border-cyan-200/50 dark:border-slate-700">
-												{tag}
-											</span>
-										))}
-									</div>
-								)}
-							</div>
-
-							<div class="mt-4">
-								<a href={`/blog/${post.slug}`} class="inline-flex items-center gap-2 text-sm text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 font-medium transition-colors group">
-									Read more
-									<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-									</svg>
-								</a>
-							</div>
-						</div>
-					</article>
-				))}
+						</article>
+					);
+				})}
 			</div>
 
 			{blogPosts.length === 0 && (
 				<div class="text-center py-12">
-					<p class="text-slate-600 dark:text-slate-400 text-lg">No blog posts yet. Check back soon!</p>
+					<p class="text-slate-400 text-lg">No blog posts yet. Check back soon!</p>
 				</div>
 			)}
 		</div>

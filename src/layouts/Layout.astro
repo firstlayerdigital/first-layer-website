@@ -111,6 +111,11 @@ const {
 						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
 						<span class="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 					</a>
+					<a href="/blog" class="group relative text-slate-300 hover:text-white font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/blog">
+						<span class="relative z-10">INSIGHTS</span>
+						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
+						<span class="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+					</a>
 					<a href="/about" class="group relative text-slate-300 hover:text-white font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/about">
 						<span class="relative z-10">ABOUT</span>
 						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
@@ -135,7 +140,7 @@ const {
 				const navLinks = document.querySelectorAll('nav a[data-path]');
 				navLinks.forEach(link => {
 					const linkPath = link.getAttribute('data-path');
-					if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) {
+					if (linkPath === currentPath || (currentPath === '/' && linkPath === '/') || (linkPath === '/blog' && currentPath.startsWith('/blog'))) {
 						link.classList.add('text-cyan-400');
 						const underline = link.querySelector('span[class*="bg-cyan-400"]');
 						if (underline) {
