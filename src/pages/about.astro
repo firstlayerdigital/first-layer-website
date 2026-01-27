@@ -6,9 +6,9 @@ import Layout from '../layouts/Layout.astro';
 	<main class="relative overflow-hidden">
 		<!-- Background gradient layers for depth -->
 		<div class="fixed inset-0 -z-10">
-			<div class="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/20 to-slate-50"></div>
-			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/10 rounded-full blur-3xl"></div>
-			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl"></div>
+			<div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-cyan-50/20 to-slate-50 dark:from-[#020617] dark:via-[#020617] dark:to-[#020617] transition-colors duration-300"></div>
+			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/10 dark:bg-cyan-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
+			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-200/10 dark:bg-blue-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
 		</div>
 
 		<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
@@ -17,42 +17,42 @@ import Layout from '../layouts/Layout.astro';
 			<div class="absolute -right-20 top-48 hidden xl:block 2xl:right-0 w-36 h-36 2xl:w-44 2xl:h-44 bg-gradient-to-br from-blue-500/15 to-transparent rounded-2xl blur-xl -rotate-12"></div>
 			
 			<div class="relative text-center mb-12 sm:mb-16 md:mb-20">
-				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-900 mb-4 sm:mb-6 leading-tight">
+				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-950 dark:text-white dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
 					Versatile Solutions, <span class="text-cyan-600 relative">
 						<span class="relative z-10">Engineered</span>
 						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/8 to-cyan-600/8 blur-lg -z-0"></span>
 					</span> for Growth
 				</h1>
-				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-slate-600 max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2">
+				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-slate-600 dark:text-slate-400 max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2 transition-colors duration-300">
 					We bridge the gap between custom engineering and operational infrastructure. From data dashboards and private cloud deployments to high-speed websites and e-commerce platforms, we build the tools your business needs.
 				</p>
 			</div>
 
 			<div class="relative grid md:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-start mb-12 sm:mb-16 md:mb-20">
 				<div class="relative">
-					<div class="bg-white/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border border-white/20">
-						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 rounded-2xl sm:rounded-3xl -z-10"></div>
-						<h2 class="text-2xl sm:text-3xl lg:text-3xl 2xl:text-4xl font-bold text-slate-900 mb-4 sm:mb-6">The Engineer's Advantage</h2>
-						<p class="text-slate-700 mb-4 sm:mb-5 leading-relaxed text-base sm:text-lg lg:text-lg 2xl:text-xl">
-							Many agencies are limited to one tool. At FirstLayer Digital, we take a Computer Science approach to the entire web ecosystem. We don't just drag and drop; we configure, optimize, and engineer solutions that fit <em class="text-slate-900">your</em> specific business needs.
+					<div class="bg-white/70 dark:bg-slate-900/50 backdrop-blur-xl rounded-2xl sm:rounded-3xl p-6 sm:p-8 md:p-10 shadow-xl border border-white/20 dark:border-slate-800">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 dark:from-slate-800/30 dark:via-transparent dark:to-slate-800/20 rounded-2xl sm:rounded-3xl -z-10"></div>
+						<h2 class="text-2xl sm:text-3xl lg:text-3xl 2xl:text-4xl font-bold text-slate-950 dark:text-white dark:font-bold mb-4 sm:mb-6 transition-colors duration-300">The Engineer's Advantage</h2>
+						<p class="text-slate-600 dark:text-slate-400 mb-4 sm:mb-5 leading-relaxed text-base sm:text-lg lg:text-lg 2xl:text-xl transition-colors duration-300">
+							Many agencies are limited to one tool. At FirstLayer Digital, we take a Computer Science approach to the entire web ecosystem. We don't just drag and drop; we configure, optimize, and engineer solutions that fit <em class="text-slate-950 dark:text-white dark:font-bold">your</em> specific business needs.
 						</p>
-						<p class="text-slate-700 mb-4 sm:mb-5 leading-relaxed text-base sm:text-lg lg:text-lg 2xl:text-xl">
-							We specialize in <strong class="text-slate-900">Operational Infrastructure</strong> including <strong class="text-slate-900">Data Dashboards</strong> (Streamlit), <strong class="text-slate-900">Private Cloud</strong> solutions (Proxmox, Nextcloud), and <strong class="text-slate-900">Internal Tools</strong> development. We also build complex <strong class="text-slate-900">E-commerce</strong> environments, configure <strong class="text-slate-900">Inventory Management</strong> systems, and create <strong class="text-slate-900">Professional Portfolios</strong> that stand out.
+						<p class="text-slate-600 dark:text-slate-400 mb-4 sm:mb-5 leading-relaxed text-base sm:text-lg lg:text-lg 2xl:text-xl transition-colors duration-300">
+							We specialize in <strong class="text-slate-950 dark:text-white dark:font-bold">Operational Infrastructure</strong> including <strong class="text-slate-950 dark:text-white dark:font-bold">Data Dashboards</strong> (<span class="text-cyan-400 font-mono">Streamlit</span>), <strong class="text-slate-950 dark:text-white dark:font-bold">Private Cloud</strong> solutions (<span class="text-cyan-400 font-mono">Proxmox</span>, Nextcloud), and <strong class="text-slate-950 dark:text-white dark:font-bold">Internal Tools</strong> development. We also build complex <strong class="text-slate-950 dark:text-white dark:font-bold">E-commerce</strong> environments, configure <strong class="text-slate-950 dark:text-white dark:font-bold">Inventory Management</strong> systems, and create <strong class="text-slate-950 dark:text-white dark:font-bold">Professional Portfolios</strong> that stand out.
 						</p>
-						<p class="text-slate-700 mb-4 sm:mb-5 leading-relaxed text-base sm:text-lg lg:text-lg 2xl:text-xl">
+						<p class="text-slate-600 dark:text-slate-400 mb-4 sm:mb-5 leading-relaxed text-base sm:text-lg lg:text-lg 2xl:text-xl transition-colors duration-300">
 							Photo, video, and text editing services are standard services we perform as part of most website development projects, ensuring your content looks polished and professional.
 						</p>
-						<p class="text-slate-700 leading-relaxed font-semibold text-base sm:text-lg lg:text-lg 2xl:text-xl">
+						<p class="text-slate-600 dark:text-slate-400 leading-relaxed font-semibold text-base sm:text-lg lg:text-lg 2xl:text-xl transition-colors duration-300">
 							Already have a site? We can optimize it. Need something new? We can build it. We bring technical precision to every platform we touch.
 						</p>
 					</div>
 				</div>
 				
 				<div class="relative">
-					<div class="bg-white/80 backdrop-blur-sm p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-200/60">
-						<div class="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-cyan-50/30 rounded-2xl sm:rounded-3xl -z-10"></div>
-						<h3 class="font-bold text-slate-900 mb-4 sm:mb-6 text-lg sm:text-xl lg:text-xl 2xl:text-2xl">Platforms We Master</h3>
-						<div class="grid grid-cols-2 gap-3 sm:gap-4 text-slate-700 text-xs sm:text-sm lg:text-sm 2xl:text-base font-medium mb-6 sm:mb-8">
+					<div class="bg-white/80 dark:bg-slate-900/50 backdrop-blur-md p-6 sm:p-8 md:p-10 rounded-2xl sm:rounded-3xl shadow-xl border border-slate-200/60 dark:border-slate-800">
+						<div class="absolute inset-0 bg-gradient-to-br from-slate-50/50 to-cyan-50/30 dark:from-slate-800/30 dark:to-slate-800/20 rounded-2xl sm:rounded-3xl -z-10"></div>
+						<h3 class="font-bold text-slate-950 dark:text-white dark:font-bold mb-4 sm:mb-6 text-lg sm:text-xl lg:text-xl 2xl:text-2xl transition-colors duration-300">Platforms We Master</h3>
+						<div class="grid grid-cols-2 gap-3 sm:gap-4 text-slate-600 dark:text-slate-400 text-xs sm:text-sm lg:text-sm 2xl:text-base font-medium mb-6 sm:mb-8 transition-colors duration-300">
 							<div class="flex items-center gap-2">
 								<div class="w-2 h-2 bg-cyan-500 rounded-full"></div>
 								<span>WordPress</span>
@@ -63,7 +63,7 @@ import Layout from '../layouts/Layout.astro';
 							</div>
 							<div class="flex items-center gap-2">
 								<div class="w-2 h-2 bg-purple-500 rounded-full"></div>
-								<span>Astro / Custom</span>
+								<span><span class="text-cyan-400 font-mono">Astro</span> / Custom</span>
 							</div>
 							<div class="flex items-center gap-2">
 								<div class="w-2 h-2 bg-slate-800 rounded-full"></div>
@@ -87,8 +87,8 @@ import Layout from '../layouts/Layout.astro';
 							</div>
 						</div>
 						
-						<h3 class="font-bold text-slate-900 mb-3 sm:mb-4 border-t border-slate-200/60 pt-4 sm:pt-6 text-lg sm:text-xl lg:text-xl 2xl:text-2xl">Core Services</h3>
-						<ul class="space-y-2 sm:space-y-3 text-slate-700 mb-6">
+						<h3 class="font-bold text-slate-950 dark:text-white dark:font-bold mb-3 sm:mb-4 border-t border-slate-200/60 dark:border-slate-800 pt-4 sm:pt-6 text-lg sm:text-xl lg:text-xl 2xl:text-2xl transition-colors duration-300">Core Services</h3>
+						<ul class="space-y-2 sm:space-y-3 text-slate-600 dark:text-slate-400 mb-6 transition-colors duration-300">
 							<li class="flex items-start gap-3">
 								<div class="w-6 h-6 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white text-xs font-bold mt-0.5 flex-shrink-0 shadow-md">✓</div>
 								<span class="font-medium">E-commerce & Inventory Setup</span>
@@ -108,8 +108,8 @@ import Layout from '../layouts/Layout.astro';
 						</ul>
 						
 						<div class="border-t border-slate-200/60 pt-4 sm:pt-6">
-							<h3 class="font-bold text-slate-900 mb-3 sm:mb-4 text-lg sm:text-xl lg:text-xl 2xl:text-2xl">Follow Us</h3>
-							<a href="https://www.instagram.com/firstlayerdigital/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-slate-700 hover:text-cyan-600 transition-colors group">
+							<h3 class="font-bold text-slate-950 dark:text-white dark:font-bold mb-3 sm:mb-4 text-lg sm:text-xl lg:text-xl 2xl:text-2xl transition-colors duration-300">Follow Us</h3>
+							<a href="https://www.instagram.com/firstlayerdigital/" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-slate-600 dark:text-slate-400 hover:text-cyan-600 dark:hover:text-cyan-400 transition-colors group">
 								<svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-label="Instagram">
 									<path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/>
 								</svg>
@@ -123,14 +123,14 @@ import Layout from '../layouts/Layout.astro';
 			<!-- Development Process Section -->
 			<div class="relative mb-12 sm:mb-16 md:mb-20">
 				<div class="text-center mb-10 sm:mb-12 md:mb-16">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-slate-900 mb-3 sm:mb-4">Our Development Process</h2>
-					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-2">
+					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-slate-950 dark:text-white dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">Our Development Process</h2>
+					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed px-2 transition-colors duration-300">
 						From initial concept to a high-performance launch, here is how we build your digital presence.
 					</p>
 				</div>
 
-				<div class="relative bg-white/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/20 p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden">
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 rounded-2xl sm:rounded-3xl -z-10"></div>
+				<div class="relative bg-white/70 dark:bg-slate-900/50 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/20 dark:border-slate-800 p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden">
+					<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 dark:from-slate-800/30 dark:via-transparent dark:to-slate-800/20 rounded-2xl sm:rounded-3xl -z-10"></div>
 					
 					<!-- Timeline container -->
 					<div class="relative">
@@ -151,12 +151,12 @@ import Layout from '../layouts/Layout.astro';
 									</div>
 								</div>
 								<div class="flex-1 min-w-0">
-									<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-3xl font-bold text-slate-900 mb-2 sm:mb-3 md:mb-4">1. Discovery & Strategy</h3>
-									<p class="text-slate-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+									<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-3xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 md:mb-4 transition-colors duration-300">1. Discovery & Strategy</h3>
+									<p class="text-slate-600 dark:text-slate-400 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base md:text-lg transition-colors duration-300">
 										Before we write a single line of code, we focus on your business goals. We conduct a deep dive into your brand, target audience, and competitors to define the site's requirements.
 									</p>
 									<div class="space-y-2.5 sm:space-y-3 md:space-y-4 mt-3 sm:mt-4">
-										<div class="bg-cyan-50/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-cyan-200/40">
+										<div class="bg-cyan-50/60 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-cyan-200/40 dark:border-slate-700">
 											<div class="flex items-start gap-2.5 sm:gap-3">
 												<div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md mt-0.5">
 													<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -164,12 +164,12 @@ import Layout from '../layouts/Layout.astro';
 													</svg>
 												</div>
 												<div class="min-w-0 flex-1">
-													<div class="font-bold text-slate-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1">Deliverable</div>
-													<div class="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">A project roadmap and technical requirements document.</div>
+													<div class="font-bold text-slate-950 dark:text-white dark:font-bold text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 transition-colors duration-300">Deliverable</div>
+													<div class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300">A project roadmap and technical requirements document.</div>
 												</div>
 											</div>
 										</div>
-										<div class="bg-blue-50/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-blue-200/40">
+										<div class="bg-blue-50/60 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-blue-200/40 dark:border-slate-700">
 											<div class="flex items-start gap-2.5 sm:gap-3">
 												<div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md mt-0.5">
 													<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -177,8 +177,8 @@ import Layout from '../layouts/Layout.astro';
 													</svg>
 												</div>
 												<div class="min-w-0 flex-1">
-													<div class="font-bold text-slate-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1">The Goal</div>
-													<div class="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">Ensuring the final product solves a real business problem.</div>
+													<div class="font-bold text-slate-950 dark:text-white dark:font-bold text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 transition-colors duration-300">The Goal</div>
+													<div class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300">Ensuring the final product solves a real business problem.</div>
 												</div>
 											</div>
 										</div>
@@ -196,12 +196,12 @@ import Layout from '../layouts/Layout.astro';
 									</div>
 								</div>
 								<div class="flex-1 min-w-0">
-									<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-3xl font-bold text-slate-900 mb-2 sm:mb-3 md:mb-4">2. Architecture & Design</h3>
-									<p class="text-slate-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+									<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-3xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 md:mb-4 transition-colors duration-300">2. Architecture & Design</h3>
+									<p class="text-slate-600 dark:text-slate-400 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base md:text-lg transition-colors duration-300">
 										We map out the user journey. This begins with a sitemap and wireframes to define the structure, followed by high-fidelity UI designs. We focus on creating an intuitive experience that guides visitors toward your calls to action.
 									</p>
 									<div class="space-y-2.5 sm:space-y-3 md:space-y-4 mt-3 sm:mt-4">
-										<div class="bg-cyan-50/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-cyan-200/40">
+										<div class="bg-cyan-50/60 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-cyan-200/40 dark:border-slate-700">
 											<div class="flex items-start gap-2.5 sm:gap-3">
 												<div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md mt-0.5">
 													<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -209,12 +209,12 @@ import Layout from '../layouts/Layout.astro';
 													</svg>
 												</div>
 												<div class="min-w-0 flex-1">
-													<div class="font-bold text-slate-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1">Deliverable</div>
-													<div class="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">Interactive prototypes and visual design mockups.</div>
+													<div class="font-bold text-slate-950 dark:text-white dark:font-bold text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 transition-colors duration-300">Deliverable</div>
+													<div class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300">Interactive prototypes and visual design mockups.</div>
 												</div>
 											</div>
 										</div>
-										<div class="bg-blue-50/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-blue-200/40">
+										<div class="bg-blue-50/60 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-blue-200/40 dark:border-slate-700">
 											<div class="flex items-start gap-2.5 sm:gap-3">
 												<div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md mt-0.5">
 													<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -222,8 +222,8 @@ import Layout from '../layouts/Layout.astro';
 													</svg>
 												</div>
 												<div class="min-w-0 flex-1">
-													<div class="font-bold text-slate-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1">The Goal</div>
-													<div class="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">A beautiful, user-centric design that reflects your brand identity.</div>
+													<div class="font-bold text-slate-950 dark:text-white dark:font-bold text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 transition-colors duration-300">The Goal</div>
+													<div class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300">A beautiful, user-centric design that reflects your brand identity.</div>
 												</div>
 											</div>
 										</div>
@@ -241,12 +241,12 @@ import Layout from '../layouts/Layout.astro';
 									</div>
 								</div>
 								<div class="flex-1 min-w-0">
-									<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-3xl font-bold text-slate-900 mb-2 sm:mb-3 md:mb-4">3. Agile Development</h3>
-									<p class="text-slate-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+									<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-3xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 md:mb-4 transition-colors duration-300">3. Agile Development</h3>
+									<p class="text-slate-600 dark:text-slate-400 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base md:text-lg transition-colors duration-300">
 										This is where the vision comes to life. Using a modern tech stack, we build your site with clean, scalable code. We develop in "sprints," providing you with a staging link so you can see progress in real-time and provide feedback.
 									</p>
 									<div class="space-y-2.5 sm:space-y-3 md:space-y-4 mt-3 sm:mt-4">
-										<div class="bg-cyan-50/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-cyan-200/40">
+										<div class="bg-cyan-50/60 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-cyan-200/40 dark:border-slate-700">
 											<div class="flex items-start gap-2.5 sm:gap-3">
 												<div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md mt-0.5">
 													<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -254,12 +254,12 @@ import Layout from '../layouts/Layout.astro';
 													</svg>
 												</div>
 												<div class="min-w-0 flex-1">
-													<div class="font-bold text-slate-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1">Deliverable</div>
-													<div class="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">A fully functional beta version of your website.</div>
+													<div class="font-bold text-slate-950 dark:text-white dark:font-bold text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 transition-colors duration-300">Deliverable</div>
+													<div class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300">A fully functional beta version of your website.</div>
 												</div>
 											</div>
 										</div>
-										<div class="bg-blue-50/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-blue-200/40">
+										<div class="bg-blue-50/60 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-blue-200/40 dark:border-slate-700">
 											<div class="flex items-start gap-2.5 sm:gap-3">
 												<div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md mt-0.5">
 													<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -267,8 +267,8 @@ import Layout from '../layouts/Layout.astro';
 													</svg>
 												</div>
 												<div class="min-w-0 flex-1">
-													<div class="font-bold text-slate-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1">The Goal</div>
-													<div class="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">Clean, efficient code optimized for speed and security.</div>
+													<div class="font-bold text-slate-950 dark:text-white dark:font-bold text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 transition-colors duration-300">The Goal</div>
+													<div class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300">Clean, efficient code optimized for speed and security.</div>
 												</div>
 											</div>
 										</div>
@@ -286,12 +286,12 @@ import Layout from '../layouts/Layout.astro';
 									</div>
 								</div>
 								<div class="flex-1 min-w-0">
-									<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-3xl font-bold text-slate-900 mb-2 sm:mb-3 md:mb-4">4. Quality Assurance (QA) & Optimization</h3>
-									<p class="text-slate-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+									<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-3xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 md:mb-4 transition-colors duration-300">4. Quality Assurance (QA) & Optimization</h3>
+									<p class="text-slate-600 dark:text-slate-400 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base md:text-lg transition-colors duration-300">
 										We put the site through a rigorous testing phase. This includes cross-browser testing, mobile responsiveness checks, speed optimization, and basic SEO configuration to ensure you rank well on search engines.
 									</p>
 									<div class="space-y-2.5 sm:space-y-3 md:space-y-4 mt-3 sm:mt-4">
-										<div class="bg-cyan-50/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-cyan-200/40">
+										<div class="bg-cyan-50/60 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-cyan-200/40 dark:border-slate-700">
 											<div class="flex items-start gap-2.5 sm:gap-3">
 												<div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md mt-0.5">
 													<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -299,12 +299,12 @@ import Layout from '../layouts/Layout.astro';
 													</svg>
 												</div>
 												<div class="min-w-0 flex-1">
-													<div class="font-bold text-slate-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1">Deliverable</div>
-													<div class="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">A bug-free, lightning-fast website.</div>
+													<div class="font-bold text-slate-950 dark:text-white dark:font-bold text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 transition-colors duration-300">Deliverable</div>
+													<div class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300">A bug-free, lightning-fast website.</div>
 												</div>
 											</div>
 										</div>
-										<div class="bg-blue-50/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-blue-200/40">
+										<div class="bg-blue-50/60 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-blue-200/40 dark:border-slate-700">
 											<div class="flex items-start gap-2.5 sm:gap-3">
 												<div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md mt-0.5">
 													<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -312,8 +312,8 @@ import Layout from '../layouts/Layout.astro';
 													</svg>
 												</div>
 												<div class="min-w-0 flex-1">
-													<div class="font-bold text-slate-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1">The Goal</div>
-													<div class="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">Flawless performance across all devices and platforms.</div>
+													<div class="font-bold text-slate-950 dark:text-white dark:font-bold text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 transition-colors duration-300">The Goal</div>
+													<div class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300">Flawless performance across all devices and platforms.</div>
 												</div>
 											</div>
 										</div>
@@ -331,12 +331,12 @@ import Layout from '../layouts/Layout.astro';
 									</div>
 								</div>
 								<div class="flex-1 min-w-0">
-									<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-3xl font-bold text-slate-900 mb-2 sm:mb-3 md:mb-4">5. Launch & Beyond</h3>
-									<p class="text-slate-700 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base md:text-lg">
+									<h3 class="text-lg sm:text-xl md:text-2xl lg:text-3xl 2xl:text-3xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 md:mb-4 transition-colors duration-300">5. Launch & Beyond</h3>
+									<p class="text-slate-600 dark:text-slate-400 mb-3 sm:mb-4 leading-relaxed text-sm sm:text-base md:text-lg transition-colors duration-300">
 										Once you've given the final approval, we go live. But our partnership doesn't end at deployment. We provide training on how to manage your content and offer ongoing maintenance packages to keep your site secure and updated.
 									</p>
 									<div class="space-y-2.5 sm:space-y-3 md:space-y-4 mt-3 sm:mt-4">
-										<div class="bg-cyan-50/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-cyan-200/40">
+										<div class="bg-cyan-50/60 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-cyan-200/40 dark:border-slate-700">
 											<div class="flex items-start gap-2.5 sm:gap-3">
 												<div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md mt-0.5">
 													<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -344,12 +344,12 @@ import Layout from '../layouts/Layout.astro';
 													</svg>
 												</div>
 												<div class="min-w-0 flex-1">
-													<div class="font-bold text-slate-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1">Deliverable</div>
-													<div class="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">Your live website and a post-launch documentation guide.</div>
+													<div class="font-bold text-slate-950 dark:text-white dark:font-bold text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 transition-colors duration-300">Deliverable</div>
+													<div class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300">Your live website and a post-launch documentation guide.</div>
 												</div>
 											</div>
 										</div>
-										<div class="bg-blue-50/60 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-blue-200/40">
+										<div class="bg-blue-50/60 dark:bg-slate-800/50 backdrop-blur-sm rounded-lg sm:rounded-xl p-3 sm:p-4 border border-blue-200/40 dark:border-slate-700">
 											<div class="flex items-start gap-2.5 sm:gap-3">
 												<div class="w-7 h-7 sm:w-8 sm:h-8 bg-gradient-to-br from-blue-500 to-blue-600 rounded-lg flex items-center justify-center text-white text-xs font-bold flex-shrink-0 shadow-md mt-0.5">
 													<svg class="w-3.5 h-3.5 sm:w-4 sm:h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -357,8 +357,8 @@ import Layout from '../layouts/Layout.astro';
 													</svg>
 												</div>
 												<div class="min-w-0 flex-1">
-													<div class="font-bold text-slate-900 text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1">The Goal</div>
-													<div class="text-slate-700 text-xs sm:text-sm md:text-base leading-relaxed">Long-term success and technical peace of mind.</div>
+													<div class="font-bold text-slate-950 dark:text-white dark:font-bold text-xs sm:text-sm md:text-base mb-0.5 sm:mb-1 transition-colors duration-300">The Goal</div>
+													<div class="text-slate-600 dark:text-slate-400 text-xs sm:text-sm md:text-base leading-relaxed transition-colors duration-300">Long-term success and technical peace of mind.</div>
 												</div>
 											</div>
 										</div>
@@ -379,7 +379,7 @@ import Layout from '../layouts/Layout.astro';
 						<p class="text-cyan-50/90 mb-8 sm:mb-10 max-w-xl 2xl:max-w-2xl mx-auto text-base sm:text-lg lg:text-lg 2xl:text-xl leading-relaxed px-2">
 							We can help you choose the best tool for your budget and goals.
 						</p>
-						<a href="/contact" class="inline-block bg-white text-cyan-600 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold text-base sm:text-lg hover:bg-cyan-50 active:bg-cyan-100 transition-all duration-300 shadow-2xl hover:shadow-cyan-900/20 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
+						<a href="/contact" class="inline-block bg-white text-cyan-600 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-bold font-mono text-base sm:text-lg hover:bg-cyan-50 active:bg-cyan-100 transition-all duration-300 shadow-2xl hover:shadow-cyan-900/20 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
 							Book a Consultation
 						</a>
 					</div>

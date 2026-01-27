@@ -9,24 +9,24 @@ export const prerender = true;
 	<main class="relative overflow-hidden">
 		<!-- Background gradient layers for depth -->
 		<div class="fixed inset-0 -z-10">
-			<div class="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/20 to-slate-50"></div>
+			<div class="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/20 to-slate-50 dark:from-[#020617] dark:via-[#020617] dark:to-[#020617] transition-colors duration-300"></div>
 			<div class="absolute top-1/4 left-1/4 w-96 h-96 bg-cyan-200/10 rounded-full blur-3xl"></div>
 			<div class="absolute bottom-1/4 right-1/4 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl"></div>
 		</div>
 
-		<div class="max-w-2xl 2xl:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+		<div class="max-w-2xl 2xl:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 bg-white dark:bg-[#020617]">
 			<!-- Floating decorative elements -->
 			<div class="absolute -left-20 top-32 hidden xl:block 2xl:left-0 w-40 h-40 2xl:w-48 2xl:h-48 bg-gradient-to-br from-cyan-500/15 to-transparent rounded-3xl blur-xl rotate-12"></div>
 			<div class="absolute -right-20 top-48 hidden xl:block 2xl:right-0 w-36 h-36 2xl:w-44 2xl:h-44 bg-gradient-to-br from-blue-500/15 to-transparent rounded-2xl blur-xl -rotate-12"></div>
 
 			<div class="relative text-center mb-10 sm:mb-12 md:mb-16">
-				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-900 mb-4 sm:mb-6 leading-tight">
+				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-950 dark:text-white dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
 					Let's Work <span class="text-cyan-600 relative">
 						<span class="relative z-10">Together</span>
 						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/8 to-cyan-600/8 blur-lg -z-0"></span>
 					</span>
 				</h1>
-				<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-slate-600 max-w-xl mx-auto leading-relaxed px-2">
+				<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-slate-600 dark:text-slate-400 max-w-xl mx-auto leading-relaxed px-2 transition-colors duration-300">
 					Tell us about your project. We'll get back to you within 24 hours.
 				</p>
 			</div>
@@ -38,9 +38,9 @@ export const prerender = true;
 				netlify-honeypot="bot-field"
 				action="/success"
 				data-netlify-redirect="/success"
-				class="relative bg-white/70 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-white/20 p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden"
+				class="relative bg-white dark:bg-[#020617] backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-slate-200 dark:border-slate-800 p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden"
 			>
-				<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 rounded-2xl sm:rounded-3xl -z-10"></div>
+				<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 dark:from-cyan-900/10 dark:via-transparent dark:to-slate-900/10 rounded-2xl sm:rounded-3xl -z-10"></div>
 				
 				<!-- Hidden fields for Netlify -->
 				<input type="hidden" name="form-name" value="contact" />
@@ -53,7 +53,7 @@ export const prerender = true;
 
 				<!-- Name Field -->
 				<div class="mb-6 sm:mb-7 md:mb-8">
-					<label for="name" class="block text-sm sm:text-base md:text-lg font-semibold text-slate-900 mb-2.5 sm:mb-3 flex items-center gap-2">
+					<label for="name" class="block text-sm sm:text-base md:text-lg font-semibold text-slate-600 dark:text-slate-400 mb-2.5 sm:mb-3 flex items-center gap-2 transition-colors duration-300">
 						<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path>
 						</svg>
@@ -65,13 +65,13 @@ export const prerender = true;
 						name="name" 
 						required
 						placeholder="Your full name"
-						class="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border-2 border-slate-300/60 focus:border-cyan-500 focus:ring-4 focus:ring-cyan-200/50 outline-none transition-all text-base sm:text-lg bg-white/80 backdrop-blur-sm text-slate-900 placeholder:text-slate-400 min-h-[48px] sm:min-h-[52px] touch-manipulation shadow-sm focus:shadow-md"
+						class="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 focus:border-cyan-500 focus:ring-cyan-500 outline-none transition-all text-base sm:text-lg bg-white dark:bg-slate-900 backdrop-blur-sm text-slate-950 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 min-h-[48px] sm:min-h-[52px] touch-manipulation shadow-sm focus:shadow-md"
 					/>
 				</div>
 
 				<!-- Email Field -->
 				<div class="mb-6 sm:mb-7 md:mb-8">
-					<label for="email" class="block text-sm sm:text-base md:text-lg font-semibold text-slate-900 mb-2.5 sm:mb-3 flex items-center gap-2">
+					<label for="email" class="block text-sm sm:text-base md:text-lg font-semibold text-slate-600 dark:text-slate-400 mb-2.5 sm:mb-3 flex items-center gap-2 transition-colors duration-300">
 						<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path>
 						</svg>
@@ -83,13 +83,13 @@ export const prerender = true;
 						name="email" 
 						required
 						placeholder="your.email@example.com"
-						class="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border-2 border-slate-300/60 focus:border-cyan-500 focus:ring-4 focus:ring-cyan-200/50 outline-none transition-all text-base sm:text-lg bg-white/80 backdrop-blur-sm text-slate-900 placeholder:text-slate-400 min-h-[48px] sm:min-h-[52px] touch-manipulation shadow-sm focus:shadow-md"
+						class="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 focus:border-cyan-500 focus:ring-cyan-500 outline-none transition-all text-base sm:text-lg bg-white dark:bg-slate-900 backdrop-blur-sm text-slate-950 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 min-h-[48px] sm:min-h-[52px] touch-manipulation shadow-sm focus:shadow-md"
 					/>
 				</div>
 
 				<!-- Message Field -->
 				<div class="mb-8 sm:mb-10 md:mb-12">
-					<label for="message" class="block text-sm sm:text-base md:text-lg font-semibold text-slate-900 mb-2.5 sm:mb-3 flex items-center gap-2">
+					<label for="message" class="block text-sm sm:text-base md:text-lg font-semibold text-slate-600 dark:text-slate-400 mb-2.5 sm:mb-3 flex items-center gap-2 transition-colors duration-300">
 						<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
 						</svg>
@@ -101,7 +101,7 @@ export const prerender = true;
 						rows="6" 
 						required
 						placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
-						class="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border-2 border-slate-300/60 focus:border-cyan-500 focus:ring-4 focus:ring-cyan-200/50 outline-none transition-all text-base sm:text-lg resize-y bg-white/80 backdrop-blur-sm text-slate-900 placeholder:text-slate-400 min-h-[140px] sm:min-h-[160px] touch-manipulation shadow-sm focus:shadow-md leading-relaxed"
+						class="w-full px-4 sm:px-5 py-3.5 sm:py-4 rounded-xl border-2 border-slate-200 dark:border-slate-800 focus:border-cyan-500 focus:ring-cyan-500 outline-none transition-all text-base sm:text-lg resize-y bg-white dark:bg-slate-900 backdrop-blur-sm text-slate-950 dark:text-white placeholder:text-slate-400 dark:placeholder:text-slate-500 min-h-[140px] sm:min-h-[160px] touch-manipulation shadow-sm focus:shadow-md leading-relaxed"
 					></textarea>
 				</div>
 

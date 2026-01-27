@@ -7,9 +7,9 @@ import ProjectCard from '../components/ProjectCard.astro';
 	<main class="relative overflow-hidden">
 		<!-- Background gradient layers for depth -->
 		<div class="fixed inset-0 -z-10">
-			<div class="absolute inset-0 bg-gradient-to-br from-white via-cyan-50/20 to-slate-50"></div>
-			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/10 rounded-full blur-3xl"></div>
-			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-200/10 rounded-full blur-3xl"></div>
+			<div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-cyan-50/20 to-slate-50 dark:from-[#020617] dark:via-[#020617] dark:to-[#020617] transition-colors duration-300"></div>
+			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/10 dark:bg-cyan-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
+			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-200/10 dark:bg-blue-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
 		</div>
 
 		<!-- Hero Section with Mesh Gradient -->
@@ -26,24 +26,24 @@ import ProjectCard from '../components/ProjectCard.astro';
 			<div class="absolute -right-20 top-40 hidden xl:block 2xl:right-0 w-40 h-40 2xl:w-48 2xl:h-48 bg-gradient-to-br from-blue-500/20 to-transparent rounded-3xl blur-xl -rotate-12"></div>
 			
 			<div class="relative py-12 sm:py-16 md:py-20">
-				<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold tracking-tight text-slate-900 mb-4 sm:mb-6 leading-tight">
-					Fast, Reliable, and <span class="text-cyan-600 relative inline-block">
+				<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold tracking-tight text-slate-950 dark:text-white dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
+					Fast, Reliable, and <span class="text-cyan-600 dark:text-cyan-400 dark:text-blue-500 relative inline-block">
 						<span class="relative z-10">Scalable</span>
-						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-cyan-600/20 blur-2xl -z-0"></span>
-						<span class="absolute -inset-1 bg-gradient-to-r from-cyan-400/10 via-blue-400/10 to-cyan-600/10 blur-xl -z-0"></span>
+						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-cyan-600/20 dark:from-cyan-400/30 dark:to-cyan-500/30 blur-2xl -z-0"></span>
+						<span class="absolute -inset-1 bg-gradient-to-r from-cyan-400/10 via-blue-400/10 to-cyan-600/10 dark:from-cyan-300/20 dark:via-blue-400/20 dark:to-cyan-500/20 blur-xl -z-0"></span>
 					</span> Websites
 				</h1>
 				
-				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-slate-600 mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-3xl 2xl:max-w-4xl mx-auto px-2">
-					Maryland-based engineering firm specializing in <span class="text-slate-700 font-semibold">Operational Infrastructure</span>, <span class="text-slate-700 font-semibold">Internal Tools</span>, and <span class="text-slate-700 font-semibold">Custom Systems Design</span>.<br class="hidden sm:block" />
-					<span class="text-slate-700 font-medium">Data dashboards, private cloud solutions, and custom business infrastructure.</span>
+				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-slate-600 dark:text-slate-400 mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-3xl 2xl:max-w-4xl mx-auto px-2 transition-colors duration-300">
+					Maryland-based engineering firm specializing in <span class="text-slate-600 dark:text-slate-400 font-semibold">Operational Infrastructure</span>, <span class="text-slate-600 dark:text-slate-400 font-semibold">Internal Tools</span>, and <span class="text-slate-600 dark:text-slate-400 font-semibold">Custom Systems Design</span>.<br class="hidden sm:block" />
+					<span class="text-slate-600 dark:text-slate-400 font-medium">Data dashboards, private cloud solutions, and custom business infrastructure.</span>
 				</p>
 
 				<div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-4 mb-12 sm:mb-16 px-2">
-					<a href="/contact" class="bg-cyan-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 md:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-cyan-700 active:bg-cyan-800 transition-all duration-300 shadow-lg shadow-cyan-600/30 hover:shadow-xl hover:shadow-cyan-600/40 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px] flex items-center justify-center">
+					<a href="/contact" class="bg-cyan-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 md:py-4 rounded-xl font-semibold font-mono text-base sm:text-lg hover:bg-cyan-700 active:bg-cyan-800 transition-all duration-300 shadow-lg shadow-cyan-600/30 hover:shadow-xl hover:shadow-cyan-600/40 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px] flex items-center justify-center">
 						Start Your Project
 					</a>
-					<a href="/work" class="bg-white/80 backdrop-blur-sm text-slate-700 border-2 border-slate-200/60 px-6 sm:px-8 py-3.5 sm:py-4 md:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-white hover:border-cyan-300/60 active:bg-slate-50 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px] flex items-center justify-center">
+					<a href="/work" class="bg-white/80 backdrop-blur-sm text-slate-700 border-2 border-slate-200/60 px-6 sm:px-8 py-3.5 sm:py-4 md:py-4 rounded-xl font-semibold font-mono text-base sm:text-lg hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] active:bg-slate-50 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px] flex items-center justify-center">
 						See My Work
 					</a>
 				</div>
@@ -54,10 +54,10 @@ import ProjectCard from '../components/ProjectCard.astro';
 		<section class="relative py-12 sm:py-16 md:py-20 mb-12 sm:mb-16 md:mb-20">
 			<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-10 sm:mb-12 md:mb-16">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-slate-900 mb-3 sm:mb-4">
-						Built on <span class="text-cyan-600">Solid Foundations</span>
+					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-slate-950 dark:text-white dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">
+						Built on <span class="text-cyan-600 dark:text-cyan-400 dark:text-blue-500">Solid Foundations</span>
 					</h2>
-					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-slate-600 max-w-3xl mx-auto leading-relaxed px-2">
+					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-slate-600 dark:text-slate-400 max-w-3xl mx-auto leading-relaxed px-2 transition-colors duration-300">
 						Infrastructure and DevOps experience brings a reliability-first mindset to web development. Whether custom-built or platform-based, websites are engineered to be fast, beautiful, robust, and cost-effective.
 					</p>
 				</div>
@@ -65,78 +65,78 @@ import ProjectCard from '../components/ProjectCard.astro';
 				<!-- Bento Grid Layout -->
 				<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6">
 					<!-- Lightning Fast - Large Card -->
-					<div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2 md:col-span-2 lg:row-span-2">
-						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-white/80 dark:bg-slate-900/40 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/60 dark:border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300 hover:-translate-y-2 md:col-span-2 lg:row-span-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 dark:from-cyan-500/5 dark:to-cyan-500/10 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative z-10 h-full flex flex-col">
 							<div class="w-14 h-14 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300 flex-shrink-0">
 								<svg class="w-8 h-8 sm:w-9 sm:h-9" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
 								</svg>
 							</div>
-							<h3 class="text-xl sm:text-2xl lg:text-2xl 2xl:text-3xl font-bold text-slate-900 mb-2 sm:mb-3">90+ Performance Scores</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 leading-relaxed flex-1">
-								Sites optimized for speed and user experience that keep visitors engaged and convert better. Achieved through Astro's Islands Architecture and modern static site generation.
+							<h3 class="text-xl sm:text-2xl lg:text-2xl 2xl:text-3xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 transition-colors duration-300">90+ Performance Scores</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 dark:text-slate-400 leading-relaxed flex-1 transition-colors duration-300">
+								Sites optimized for speed and user experience that keep visitors engaged and convert better. Achieved through <span class="text-cyan-400 font-mono">Astro</span>'s Islands Architecture and modern static site generation.
 							</p>
 							<div class="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t border-slate-200/40">
-								<div class="text-xs sm:text-sm text-slate-500">Sub-second load times</div>
+								<div class="text-xs sm:text-sm text-slate-500 dark:text-slate-400 font-mono">Sub-second load times</div>
 							</div>
 						</div>
 					</div>
 
 					<!-- Built to Scale -->
-					<div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
-						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-white/80 dark:bg-slate-900/40 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/60 dark:border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 dark:from-cyan-500/5 dark:to-cyan-500/10 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative z-10">
 							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
 								<svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12"></path>
 								</svg>
 							</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Built to Scale</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 leading-relaxed">
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 transition-colors duration-300">Built to Scale</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 dark:text-slate-400 leading-relaxed transition-colors duration-300">
 								Reliable infrastructure that grows with your business, handling traffic spikes without breaking a sweat.
 							</p>
 						</div>
 					</div>
 
 					<!-- Cost-Effective Hosting -->
-					<div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
-						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-white/80 dark:bg-slate-900/40 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/60 dark:border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 dark:from-cyan-500/5 dark:to-cyan-500/10 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative z-10">
 							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
 								<svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-4c1.11 0 2.08.402 2.599 1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
 								</svg>
 							</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Cost-Effective Hosting</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 leading-relaxed">
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 transition-colors duration-300">Cost-Effective Hosting</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 dark:text-slate-400 leading-relaxed transition-colors duration-300">
 								Modern stack that doesn't rack up unnecessary bills, so you can invest more in growing your business.
 							</p>
 						</div>
 					</div>
 
 					<!-- Legal & IP Transparency - New Card -->
-					<div class="group relative bg-gradient-to-br from-blue-50/80 to-cyan-50/60 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-blue-200/60 hover:shadow-2xl hover:border-blue-300/60 transition-all duration-300 hover:-translate-y-2 md:col-span-2">
-						<div class="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/50 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-gradient-to-br from-blue-50/80 to-cyan-50/60 dark:from-slate-900/40 dark:to-slate-900/40 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-blue-200/60 dark:border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300 hover:-translate-y-2 md:col-span-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-blue-50/0 to-blue-50/50 dark:from-cyan-500/5 dark:to-cyan-500/10 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative z-10">
 							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-blue-500 to-blue-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
 								<svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
 								</svg>
 							</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Legal & IP Transparency</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 leading-relaxed mb-3 sm:mb-4">
-								Full transparency in our Master Service Agreement. Clients receive a <strong class="text-slate-900">perpetual, non-exclusive license</strong> to custom code upon full payment.
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 transition-colors duration-300">Legal & IP Transparency</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 dark:text-slate-400 leading-relaxed mb-3 sm:mb-4 transition-colors duration-300">
+								Full transparency in our Master Service Agreement. Clients receive a <strong class="text-slate-950 dark:text-white dark:font-bold">perpetual, non-exclusive license</strong> to custom code upon full payment.
 							</p>
-							<div class="space-y-2 text-xs sm:text-sm">
-								<div class="flex items-center gap-2 text-slate-700">
-									<svg class="w-4 h-4 text-blue-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+							<div class="space-y-2 text-xs sm:text-sm font-mono">
+								<div class="flex items-center gap-2 text-slate-600 dark:text-slate-400 transition-colors duration-300">
+									<svg class="w-4 h-4 text-blue-600 dark:text-cyan-400 flex-shrink-0 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
 										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
 									</svg>
 									<span>60-day post-launch support guarantee</span>
 								</div>
-								<div class="flex items-center gap-2 text-slate-700">
-									<svg class="w-4 h-4 text-blue-600 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
+								<div class="flex items-center gap-2 text-slate-600 dark:text-slate-400 transition-colors duration-300">
+									<svg class="w-4 h-4 text-blue-600 dark:text-cyan-400 flex-shrink-0 transition-colors duration-300" fill="currentColor" viewBox="0 0 20 20">
 										<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
 									</svg>
 									<span>Clear IP ownership terms</span>
@@ -146,16 +146,16 @@ import ProjectCard from '../components/ProjectCard.astro';
 					</div>
 
 					<!-- Enterprise Security -->
-					<div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
-						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-white/80 dark:bg-slate-900/40 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/60 dark:border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)] transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/50 dark:from-cyan-500/5 dark:to-cyan-500/10 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative z-10">
 							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
 								<svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z"></path>
 								</svg>
 							</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-900 mb-2 sm:mb-3">Enterprise Security</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 leading-relaxed">
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 transition-colors duration-300">Enterprise Security</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-slate-600 dark:text-slate-400 leading-relaxed transition-colors duration-300">
 								Built-in protection with security best practices and compliance standards.
 							</p>
 						</div>
@@ -165,11 +165,14 @@ import ProjectCard from '../components/ProjectCard.astro';
 		</section>
 
 		<!-- MVP Case Studies Section -->
-		<section class="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-b from-transparent via-slate-50/50 to-transparent">
-			<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+		<section class="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-[#020617]">
+			<!-- Blueprint Grid Pattern Background -->
+			<div class="absolute inset-0 opacity-30" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 19px, rgba(148, 163, 184, 0.1) 19px, rgba(148, 163, 184, 0.1) 20px), repeating-linear-gradient(90deg, transparent, transparent 19px, rgba(148, 163, 184, 0.1) 19px, rgba(148, 163, 184, 0.1) 20px); background-size: 20px 20px;"></div>
+			
+			<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 				<div class="text-center mb-10 sm:mb-12 md:mb-16">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-slate-900 mb-3 sm:mb-4">MVP Case Studies</h2>
-					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-slate-600 max-w-2xl mx-auto leading-relaxed px-2">
+					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-white mb-3 sm:mb-4 transition-colors duration-300">MVP Case Studies</h2>
+					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-slate-400 max-w-2xl mx-auto leading-relaxed px-2 transition-colors duration-300">
 						Real projects delivered through our Minimum Viable Product methodology: Consultation → Scope → Launch
 					</p>
 					<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto mt-4"></div>
@@ -177,37 +180,57 @@ import ProjectCard from '../components/ProjectCard.astro';
 				
 				<div class="grid md:grid-cols-3 gap-6 sm:gap-8">
 					<!-- MVP Case Study 1 -->
-					<div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-cyan-300/60 transition-all duration-300 hover:-translate-y-2">
-						<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/0 to-cyan-50/30 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-transparent backdrop-blur-xl rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-cyan-500/15 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative z-10">
 							<!-- Header with gradient -->
 							<div class="h-32 sm:h-40 bg-gradient-to-br from-cyan-600 via-cyan-500 to-blue-600 flex items-center justify-center relative overflow-hidden">
 								<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
 								<div class="relative z-10 text-center px-4">
-									<div class="text-white text-xs sm:text-sm font-semibold uppercase tracking-wider mb-1">MVP Case Study</div>
+									<div class="text-white text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider mb-1">MVP Case Study</div>
 									<div class="text-white text-lg sm:text-xl font-bold">Digital Transformation</div>
 								</div>
 							</div>
 							<div class="p-6 sm:p-8">
-								<h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3 group-hover:text-cyan-700 transition-colors">High-Performance Agency Site</h3>
-								<p class="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6 leading-relaxed">
-									Custom-engineered marketing website built with Astro's Islands Architecture, achieving industry-leading performance metrics.
+								<h3 class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">High-Performance Agency Site</h3>
+								<p class="text-sm sm:text-base text-slate-400 mb-4 sm:mb-6 leading-relaxed transition-colors duration-300">
+									Custom-engineered marketing website built with <span class="text-cyan-400 font-mono">Astro</span>'s Islands Architecture, achieving industry-leading performance metrics.
 								</p>
+								
+								<!-- Technical Specs -->
+								<div class="mb-4 sm:mb-6">
+									<h4 class="text-xs sm:text-sm font-bold text-white mb-2 sm:mb-3 uppercase tracking-wide font-mono">Technical Specs</h4>
+									<ul class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm font-mono text-slate-400">
+										<li class="flex items-start gap-2">
+											<span class="text-cyan-400 mt-0.5">→</span>
+											<span>Architecture: <span class="text-cyan-400">Node.js API</span></span>
+										</li>
+										<li class="flex items-start gap-2">
+											<span class="text-cyan-400 mt-0.5">→</span>
+											<span>Deployment: <span class="text-cyan-400">Netlify</span></span>
+										</li>
+										<li class="flex items-start gap-2">
+											<span class="text-cyan-400 mt-0.5">→</span>
+											<span>Framework: <span class="text-cyan-400">Astro</span></span>
+										</li>
+									</ul>
+								</div>
+								
 								<div class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
 									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-slate-600">Lighthouse Score</span>
-										<span class="font-bold text-cyan-600">98/100</span>
+										<span class="text-slate-400 font-mono">Lighthouse Score</span>
+										<span class="font-bold text-cyan-400 font-mono">98/100</span>
 									</div>
 									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-slate-600">Tech Stack</span>
-										<span class="font-semibold text-slate-900">Astro + Tailwind</span>
+										<span class="text-slate-400 font-mono">Tech Stack</span>
+										<span class="font-semibold text-white"><span class="text-cyan-400 font-mono">Astro</span> + <span class="text-cyan-400 font-mono">Tailwind</span></span>
 									</div>
 									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-slate-600">Result</span>
-										<span class="font-bold text-green-600">40% Faster Load</span>
+										<span class="text-slate-400 font-mono">Result</span>
+										<span class="font-bold text-green-400 font-mono">40% Faster Load</span>
 									</div>
 								</div>
-								<a href="/work" class="inline-flex items-center gap-2 text-cyan-600 font-semibold hover:text-cyan-700 hover:gap-3 transition-all group-hover:underline text-sm sm:text-base">
+								<a href="/work" class="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg font-semibold hover:gap-3 transition-all text-sm sm:text-base font-mono">
 									View Case Study 
 									<span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
 								</a>
@@ -216,36 +239,56 @@ import ProjectCard from '../components/ProjectCard.astro';
 					</div>
 
 					<!-- MVP Case Study 2 -->
-					<div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-green-300/60 transition-all duration-300 hover:-translate-y-2">
-						<div class="absolute inset-0 bg-gradient-to-br from-green-50/0 to-green-50/30 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-transparent backdrop-blur-xl rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-cyan-500/15 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative z-10">
 							<div class="h-32 sm:h-40 bg-gradient-to-br from-green-600 via-green-500 to-green-600 flex items-center justify-center relative overflow-hidden">
 								<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
 								<div class="relative z-10 text-center px-4">
-									<div class="text-white text-xs sm:text-sm font-semibold uppercase tracking-wider mb-1">MVP Case Study</div>
+									<div class="text-white text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider mb-1">MVP Case Study</div>
 									<div class="text-white text-lg sm:text-xl font-bold">E-commerce Optimization</div>
 								</div>
 							</div>
 							<div class="p-6 sm:p-8">
-								<h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3 group-hover:text-green-700 transition-colors">Shopify Store Setup</h3>
-								<p class="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6 leading-relaxed">
+								<h3 class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Shopify Store Setup</h3>
+								<p class="text-sm sm:text-base text-slate-400 mb-4 sm:mb-6 leading-relaxed transition-colors duration-300">
 									Complete e-commerce platform with inventory management, payment integration, and conversion optimization.
 								</p>
+								
+								<!-- Technical Specs -->
+								<div class="mb-4 sm:mb-6">
+									<h4 class="text-xs sm:text-sm font-bold text-white mb-2 sm:mb-3 uppercase tracking-wide font-mono">Technical Specs</h4>
+									<ul class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm font-mono text-slate-400">
+										<li class="flex items-start gap-2">
+											<span class="text-cyan-400 mt-0.5">→</span>
+											<span>Platform: <span class="text-cyan-400">Shopify</span></span>
+										</li>
+										<li class="flex items-start gap-2">
+											<span class="text-cyan-400 mt-0.5">→</span>
+											<span>Backend: <span class="text-cyan-400">Node.js API</span></span>
+										</li>
+										<li class="flex items-start gap-2">
+											<span class="text-cyan-400 mt-0.5">→</span>
+											<span>Integration: <span class="text-cyan-400">Payment Gateway</span></span>
+										</li>
+									</ul>
+								</div>
+								
 								<div class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
 									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-slate-600">Lighthouse Score</span>
-										<span class="font-bold text-green-600">92/100</span>
+										<span class="text-slate-400 font-mono">Lighthouse Score</span>
+										<span class="font-bold text-green-400 font-mono">92/100</span>
 									</div>
 									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-slate-600">Tech Stack</span>
-										<span class="font-semibold text-slate-900">Shopify + Node.js</span>
+										<span class="text-slate-400 font-mono">Tech Stack</span>
+										<span class="font-semibold text-white font-mono">Shopify + Node.js</span>
 									</div>
 									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-slate-600">Result</span>
-										<span class="font-bold text-green-600">40% Checkout Improvement</span>
+										<span class="text-slate-400 font-mono">Result</span>
+										<span class="font-bold text-green-400 font-mono">40% Checkout Improvement</span>
 									</div>
 								</div>
-								<a href="/work" class="inline-flex items-center gap-2 text-green-600 font-semibold hover:text-green-700 hover:gap-3 transition-all group-hover:underline text-sm sm:text-base">
+								<a href="/work" class="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg font-semibold hover:gap-3 transition-all text-sm sm:text-base font-mono">
 									View Case Study 
 									<span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
 								</a>
@@ -254,36 +297,56 @@ import ProjectCard from '../components/ProjectCard.astro';
 					</div>
 
 					<!-- MVP Case Study 3 -->
-					<div class="group relative bg-white/80 backdrop-blur-sm rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg border border-slate-200/60 hover:shadow-2xl hover:border-purple-300/60 transition-all duration-300 hover:-translate-y-2">
-						<div class="absolute inset-0 bg-gradient-to-br from-purple-50/0 to-purple-50/30 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+					<div class="group relative bg-transparent backdrop-blur-xl rounded-2xl sm:rounded-3xl overflow-hidden border border-slate-800 hover:border-cyan-500/50 hover:shadow-[0_0_30px_rgba(6,182,212,0.2)] transition-all duration-300 hover:-translate-y-2">
+						<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-cyan-500/15 rounded-2xl sm:rounded-3xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
 						<div class="relative z-10">
 							<div class="h-32 sm:h-40 bg-gradient-to-br from-purple-600 via-purple-500 to-purple-600 flex items-center justify-center relative overflow-hidden">
 								<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
 								<div class="relative z-10 text-center px-4">
-									<div class="text-white text-xs sm:text-sm font-semibold uppercase tracking-wider mb-1">MVP Case Study</div>
+									<div class="text-white text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider mb-1">MVP Case Study</div>
 									<div class="text-white text-lg sm:text-xl font-bold">Custom Software</div>
 								</div>
 							</div>
 							<div class="p-6 sm:p-8">
-								<h3 class="text-xl sm:text-2xl font-bold text-slate-900 mb-3 group-hover:text-purple-700 transition-colors">Full-Stack Application</h3>
-								<p class="text-sm sm:text-base text-slate-600 mb-4 sm:mb-6 leading-relaxed">
+								<h3 class="text-xl sm:text-2xl font-bold text-white mb-3 group-hover:text-cyan-400 transition-colors">Full-Stack Application</h3>
+								<p class="text-sm sm:text-base text-slate-400 mb-4 sm:mb-6 leading-relaxed transition-colors duration-300">
 									Enterprise web application with RESTful API, authentication, and real-time data synchronization.
 								</p>
+								
+								<!-- Technical Specs -->
+								<div class="mb-4 sm:mb-6">
+									<h4 class="text-xs sm:text-sm font-bold text-white mb-2 sm:mb-3 uppercase tracking-wide font-mono">Technical Specs</h4>
+									<ul class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm font-mono text-slate-400">
+										<li class="flex items-start gap-2">
+											<span class="text-cyan-400 mt-0.5">→</span>
+											<span>Architecture: <span class="text-cyan-400">RESTful API</span></span>
+										</li>
+										<li class="flex items-start gap-2">
+											<span class="text-cyan-400 mt-0.5">→</span>
+											<span>Deployment: <span class="text-cyan-400">Docker</span></span>
+										</li>
+										<li class="flex items-start gap-2">
+											<span class="text-cyan-400 mt-0.5">→</span>
+											<span>Database: <span class="text-cyan-400">PostgreSQL</span></span>
+										</li>
+									</ul>
+								</div>
+								
 								<div class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
 									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-slate-600">Lighthouse Score</span>
-										<span class="font-bold text-purple-600">95/100</span>
+										<span class="text-slate-400 font-mono">Lighthouse Score</span>
+										<span class="font-bold text-purple-400 font-mono">95/100</span>
 									</div>
 									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-slate-600">Tech Stack</span>
-										<span class="font-semibold text-slate-900">React + Express</span>
+										<span class="text-slate-400 font-mono">Tech Stack</span>
+										<span class="font-semibold text-white font-mono">React + Express</span>
 									</div>
 									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-slate-600">Result</span>
-										<span class="font-bold text-purple-600">50% Faster API Response</span>
+										<span class="text-slate-400 font-mono">Result</span>
+										<span class="font-bold text-purple-400 font-mono">50% Faster API Response</span>
 									</div>
 								</div>
-								<a href="/work" class="inline-flex items-center gap-2 text-purple-600 font-semibold hover:text-purple-700 hover:gap-3 transition-all group-hover:underline text-sm sm:text-base">
+								<a href="/work" class="inline-flex items-center gap-2 bg-cyan-600 hover:bg-cyan-500 text-white px-4 py-2 rounded-lg font-semibold hover:gap-3 transition-all text-sm sm:text-base font-mono">
 									View Case Study 
 									<span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
 								</a>
@@ -294,30 +357,20 @@ import ProjectCard from '../components/ProjectCard.astro';
 			</div>
 		</section>
 
-		<section class="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden">
-			<!-- Gradient background with depth -->
-			<div class="absolute inset-0 bg-gradient-to-br from-cyan-600 via-cyan-500 to-blue-600"></div>
-			<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
-			<div class="absolute top-0 left-0 w-full h-full bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>
-			
-			<div class="relative max-w-4xl 2xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-				<h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">Ready to Build Something Great?</h2>
-				<p class="text-base sm:text-lg md:text-xl lg:text-xl 2xl:text-2xl text-cyan-50/90 mb-8 sm:mb-10 leading-relaxed max-w-2xl 2xl:max-w-3xl mx-auto">
-					Let's discuss your project and how I can help you build a fast, reliable, and cost-effective website. 
-					I'm here to answer your questions and explore how we can work together.
-				</p>
-				<div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-4">
-					<a href="/contact" class="bg-white text-cyan-600 px-6 sm:px-8 py-3.5 sm:py-4 md:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-cyan-50 active:bg-cyan-100 transition-all duration-300 shadow-2xl hover:shadow-cyan-900/20 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px] flex items-center justify-center">
-						Start a Project
-					</a>
-					<a href="mailto:hello@firstlayer.digital" class="text-white/90 font-semibold text-base sm:text-lg hover:text-white transition-colors underline underline-offset-4 decoration-white/40 hover:decoration-white py-2 touch-manipulation min-h-[44px] sm:min-h-[48px] flex items-center justify-center">
-						hello@firstlayer.digital
+		<!-- CTA Section -->
+		<section class="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden bg-white dark:bg-[#020617] transition-colors duration-300">
+			<div class="relative max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="bg-white dark:bg-[#020617] backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl p-8 sm:p-12 md:p-16 lg:p-20 text-center">
+					<h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-bold text-slate-950 dark:text-white mb-4 sm:mb-6 leading-tight transition-colors duration-300">Ready to Build Something Great?</h2>
+					<p class="text-base sm:text-lg md:text-xl lg:text-xl 2xl:text-2xl text-slate-600 dark:text-slate-400 mb-8 sm:mb-10 leading-relaxed max-w-2xl 2xl:max-w-3xl mx-auto transition-colors duration-300">
+						Let's discuss your project and how I can help you build a fast, reliable, and cost-effective website. 
+						I'm here to answer your questions and explore how we can work together.
+					</p>
+					<a href="/contact" class="inline-block bg-cyan-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 md:py-4 rounded-xl font-semibold font-mono text-base sm:text-lg hover:bg-cyan-700 active:bg-cyan-800 transition-all duration-300 shadow-lg shadow-cyan-600/30 hover:shadow-xl hover:shadow-cyan-600/40 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
+						Contact Me
 					</a>
 				</div>
 			</div>
-			
-			<!-- Decorative elements -->
-			<div class="absolute bottom-0 left-0 w-full h-24 sm:h-32 bg-gradient-to-t from-white to-transparent"></div>
 		</section>
 	</main>
 </Layout>
