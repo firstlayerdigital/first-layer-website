@@ -1,0 +1,172 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const blogPosts = await getCollection('blog');
+	return blogPosts.map((post) => ({
+		params: { slug: post.slug },
+		props: { post },
+	}));
+}
+
+type Props = {
+	post: CollectionEntry<'blog'>;
+};
+
+const { post } = Astro.props;
+const { Content } = await post.render();
+---
+
+<Layout title={`${post.data.title} | FirstLayer Digital Blog`} description={post.data.description}>
+	<main class="relative overflow-hidden">
+		<!-- Background gradient layers for depth -->
+		<div class="fixed inset-0 -z-10">
+			<div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-cyan-50/20 to-slate-50 dark:from-[#020617] dark:via-[#020617] dark:to-[#020617] transition-colors duration-300"></div>
+			<div class="absolute inset-0 dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] dark:bg-[size:24px_24px]"></div>
+			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/10 dark:bg-cyan-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
+			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-200/10 dark:bg-blue-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
+		</div>
+
+		<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+			<!-- Back Link -->
+			<div class="mb-6 sm:mb-8">
+				<a href="/blog" class="inline-flex items-center gap-2 text-sm text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 font-medium transition-colors group">
+					<svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+					</svg>
+					Back to Blog
+				</a>
+			</div>
+
+			<!-- Article Header -->
+			<header class="mb-8 sm:mb-12">
+				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-950 dark:text-white dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
+					{post.data.title}
+				</h1>
+				<p class="text-lg sm:text-xl md:text-xl lg:text-2xl text-slate-600 dark:text-slate-400 mb-6 leading-relaxed transition-colors duration-300">
+					{post.data.description}
+				</p>
+				<div class="flex flex-wrap items-center gap-4 text-sm text-slate-500 dark:text-slate-500">
+					<time datetime={post.data.pubDate.toISOString()} class="font-mono">
+						{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+					</time>
+					{post.data.updatedDate && (
+						<span class="font-mono text-xs">
+							Updated: {post.data.updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+						</span>
+					)}
+					<span class="font-mono">By {post.data.author}</span>
+				</div>
+				{post.data.tags && post.data.tags.length > 0 && (
+					<div class="flex flex-wrap gap-2 mt-4">
+						{post.data.tags.map((tag) => (
+							<span class="bg-cyan-100/80 dark:bg-slate-800/50 text-cyan-700 dark:text-slate-300 px-2.5 py-1 rounded-lg text-xs font-medium border border-cyan-200/50 dark:border-slate-700">
+								{tag}
+							</span>
+						))}
+					</div>
+				)}
+			</header>
+
+			<!-- Article Content -->
+			<article class="prose prose-slate dark:prose-invert prose-lg max-w-none mb-12">
+				<div class="text-slate-700 dark:text-slate-300 leading-relaxed">
+					<Content />
+				</div>
+			</article>
+
+			<!-- CTA Section -->
+			<div class="relative bg-gradient-to-br from-cyan-600 via-cyan-500 to-blue-600 rounded-2xl sm:rounded-3xl p-8 sm:p-12 shadow-2xl overflow-hidden mt-12">
+				<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
+				<div class="relative z-10 text-center">
+					<h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">Ready to Build Your Infrastructure?</h2>
+					<p class="text-cyan-50/90 mb-6 max-w-2xl mx-auto">
+						Let's discuss your private cloud deployment and data sovereignty strategy.
+					</p>
+					<a href="/contact" class="inline-block bg-white text-cyan-600 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-cyan-50 active:bg-cyan-100 transition-all duration-300 shadow-2xl hover:shadow-cyan-900/20 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
+						Schedule a Consultation
+					</a>
+				</div>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.prose {
+		color: rgb(51 65 85);
+	}
+	.dark .prose {
+		color: rgb(203 213 225);
+	}
+	.prose h2 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: rgb(2 6 23);
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+	@media (min-width: 640px) {
+		.prose h2 {
+			font-size: 1.875rem;
+		}
+	}
+	.dark .prose h2 {
+		color: rgb(255 255 255);
+	}
+	.prose h3 {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: rgb(2 6 23);
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+	@media (min-width: 640px) {
+		.prose h3 {
+			font-size: 1.5rem;
+		}
+	}
+	.dark .prose h3 {
+		color: rgb(255 255 255);
+	}
+	.prose p {
+		margin-bottom: 1rem;
+		line-height: 1.625;
+	}
+	.prose ul, .prose ol {
+		margin-bottom: 1rem;
+		margin-left: 1.5rem;
+	}
+	.prose li {
+		margin-bottom: 0.5rem;
+	}
+	.prose strong {
+		font-weight: 700;
+		color: rgb(2 6 23);
+	}
+	.dark .prose strong {
+		color: rgb(255 255 255);
+	}
+	.prose a {
+		color: rgb(8 145 178);
+		text-decoration: underline;
+	}
+	.dark .prose a {
+		color: rgb(34 211 238);
+	}
+	.prose a:hover {
+		text-decoration: underline;
+	}
+	.prose code {
+		background-color: rgb(241 245 249);
+		padding: 0.125rem 0.375rem;
+		border-radius: 0.25rem;
+		font-size: 0.875rem;
+		font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+	}
+	.dark .prose code {
+		background-color: rgb(30 41 59);
+	}
+</style>

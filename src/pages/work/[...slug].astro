@@ -1,0 +1,211 @@
+---
+import { getCollection } from 'astro:content';
+import Layout from '../../layouts/Layout.astro';
+import type { CollectionEntry } from 'astro:content';
+
+export async function getStaticPaths() {
+	const caseStudies = await getCollection('work');
+	return caseStudies.map((study) => ({
+		params: { slug: study.slug },
+		props: { study },
+	}));
+}
+
+type Props = {
+	study: CollectionEntry<'work'>;
+};
+
+const { study } = Astro.props;
+const { Content } = await study.render();
+---
+
+<Layout title={`${study.data.title} | FirstLayer Digital`} description={study.data.description}>
+	<main class="relative overflow-hidden">
+		<!-- Background gradient layers for depth -->
+		<div class="fixed inset-0 -z-10">
+			<div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-cyan-50/20 to-slate-50 dark:from-[#020617] dark:via-[#020617] dark:to-[#020617] transition-colors duration-300"></div>
+			<div class="absolute inset-0 dark:bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] dark:bg-[size:24px_24px]"></div>
+			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/10 dark:bg-cyan-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
+			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-200/10 dark:bg-blue-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
+		</div>
+
+		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
+			<!-- Back Link -->
+			<div class="mb-6 sm:mb-8">
+				<a href="/work" class="inline-flex items-center gap-2 text-sm text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 font-medium transition-colors group">
+					<svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+					</svg>
+					Back to Work
+				</a>
+			</div>
+
+			<div class="grid lg:grid-cols-3 gap-8 lg:gap-12">
+				<!-- Main Content -->
+				<div class="lg:col-span-2">
+					<!-- Case Study Header -->
+					<header class="mb-8 sm:mb-12">
+						<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-950 dark:text-white dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
+							{study.data.title}
+						</h1>
+						<p class="text-lg sm:text-xl md:text-xl lg:text-2xl text-slate-600 dark:text-slate-400 mb-6 leading-relaxed transition-colors duration-300">
+							{study.data.description}
+						</p>
+						{!study.data.anonymous && study.data.clientName && (
+							<div class="text-sm text-slate-500 dark:text-slate-500 font-mono mb-4">
+								Client: {study.data.clientName}
+							</div>
+						)}
+						<div class="flex flex-wrap gap-2">
+							{study.data.techStack.map((tech) => (
+								<span class="bg-cyan-100/80 dark:bg-slate-800/50 text-cyan-700 dark:text-slate-300 px-2.5 py-1 rounded-lg text-xs font-medium border border-cyan-200/50 dark:border-slate-700 font-mono">
+									{tech}
+								</span>
+							))}
+						</div>
+					</header>
+
+					<!-- Case Study Content -->
+					<article class="prose prose-slate dark:prose-invert prose-lg max-w-none mb-12">
+						<div class="text-slate-700 dark:text-slate-300 leading-relaxed">
+							<Content />
+						</div>
+					</article>
+
+					<!-- Result Highlight -->
+					<div class="bg-gradient-to-br from-cyan-50/60 to-blue-50/40 dark:from-slate-800/50 dark:to-slate-800/50 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-cyan-200/40 dark:border-slate-700 mb-12">
+						<h3 class="text-lg sm:text-xl font-bold text-slate-950 dark:text-white dark:font-bold mb-3 sm:mb-4 flex items-center gap-2 transition-colors duration-300">
+							<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
+							</svg>
+							Result
+						</h3>
+						<p class="text-sm sm:text-base text-slate-700 dark:text-slate-300 leading-relaxed transition-colors duration-300">
+							{study.data.result}
+						</p>
+					</div>
+				</div>
+
+				<!-- Sidebar: System Specs -->
+				<aside class="lg:col-span-1">
+					<div class="sticky top-24">
+						<div class="bg-white/80 dark:bg-slate-900/40 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-slate-200/60 dark:border-slate-800">
+							<h2 class="text-lg sm:text-xl font-bold text-slate-950 dark:text-white dark:font-bold mb-4 sm:mb-6 uppercase tracking-wide font-mono">System Specs</h2>
+							
+							<div class="space-y-4 font-mono text-xs sm:text-sm">
+								<div>
+									<div class="text-slate-500 dark:text-slate-500 mb-1 uppercase tracking-wide">Technology Stack</div>
+									<div class="text-slate-700 dark:text-slate-300 space-y-1">
+										{study.data.techStack.map((tech) => (
+											<div class="flex items-center gap-2">
+												<span class="text-cyan-600">•</span>
+												<span>{tech}</span>
+											</div>
+										))}
+									</div>
+								</div>
+
+								<div class="pt-4 border-t border-slate-200 dark:border-slate-700">
+									<div class="text-slate-500 dark:text-slate-500 mb-1 uppercase tracking-wide">Category</div>
+									<div class="text-slate-700 dark:text-slate-300">
+										{study.data.category ? study.data.category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ') : 'Operational Infrastructure'}
+									</div>
+								</div>
+
+								<div class="pt-4 border-t border-slate-200 dark:border-slate-700">
+									<div class="text-slate-500 dark:text-slate-500 mb-1 uppercase tracking-wide">Date</div>
+									<div class="text-slate-700 dark:text-slate-300">
+										{study.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+									</div>
+								</div>
+							</div>
+
+							<div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-700">
+								<a href="/contact" class="block w-full bg-cyan-600 text-white text-center px-4 py-3 rounded-xl font-semibold font-mono text-sm hover:bg-cyan-700 active:bg-cyan-800 transition-all duration-300 shadow-lg shadow-cyan-600/30 hover:shadow-xl hover:shadow-cyan-600/40 hover:-translate-y-0.5 active:translate-y-0">
+									Start Your Project
+								</a>
+							</div>
+						</div>
+					</div>
+				</aside>
+			</div>
+		</div>
+	</main>
+</Layout>
+
+<style>
+	.prose {
+		color: rgb(51 65 85);
+	}
+	.dark .prose {
+		color: rgb(203 213 225);
+	}
+	.prose h2 {
+		font-size: 1.5rem;
+		font-weight: 700;
+		color: rgb(2 6 23);
+		margin-top: 2rem;
+		margin-bottom: 1rem;
+	}
+	@media (min-width: 640px) {
+		.prose h2 {
+			font-size: 1.875rem;
+		}
+	}
+	.dark .prose h2 {
+		color: rgb(255 255 255);
+	}
+	.prose h3 {
+		font-size: 1.25rem;
+		font-weight: 700;
+		color: rgb(2 6 23);
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+	}
+	@media (min-width: 640px) {
+		.prose h3 {
+			font-size: 1.5rem;
+		}
+	}
+	.dark .prose h3 {
+		color: rgb(255 255 255);
+	}
+	.prose p {
+		margin-bottom: 1rem;
+		line-height: 1.625;
+	}
+	.prose ul, .prose ol {
+		margin-bottom: 1rem;
+		margin-left: 1.5rem;
+	}
+	.prose li {
+		margin-bottom: 0.5rem;
+	}
+	.prose strong {
+		font-weight: 700;
+		color: rgb(2 6 23);
+	}
+	.dark .prose strong {
+		color: rgb(255 255 255);
+	}
+	.prose a {
+		color: rgb(8 145 178);
+		text-decoration: underline;
+	}
+	.dark .prose a {
+		color: rgb(34 211 238);
+	}
+	.prose a:hover {
+		text-decoration: underline;
+	}
+	.prose code {
+		background-color: rgb(241 245 249);
+		padding: 0.125rem 0.375rem;
+		border-radius: 0.25rem;
+		font-size: 0.875rem;
+		font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+	}
+	.dark .prose code {
+		background-color: rgb(30 41 59);
+	}
+</style>
