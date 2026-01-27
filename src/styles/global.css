@@ -18,6 +18,11 @@
 	--border: 217 33% 17%;
 }
 
+/* Force deep slate-950 background globally for dark mode */
+.dark body {
+	background-color: #020617 !important;
+}
+
 /* Noise/Grain texture overlay for obsidian theme */
 .dark body::before {
 	content: '';

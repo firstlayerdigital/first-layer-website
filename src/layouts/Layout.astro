@@ -88,36 +88,37 @@ const {
 	
 	<body class="bg-white dark:bg-[#020617] font-sans text-slate-600 dark:text-slate-400 flex flex-col min-h-screen transition-colors duration-300 relative">
 		
-		<nav class="bg-slate-900/95 dark:bg-[#020617]/95 backdrop-blur-md text-white shadow-lg sticky top-0 z-50 border-b border-white/10 dark:border-slate-800/50 transition-colors duration-300">
+		<nav class="bg-slate-900/60 backdrop-blur-lg text-white shadow-lg sticky top-0 z-50 border-b border-white/5 transition-colors duration-300">
 			<div class="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col md:flex-row justify-between items-center">
 				
 				<a href="/" class="mb-3 md:mb-0 flex items-center hover:opacity-80 transition-opacity touch-manipulation">
 					<img src="/logo.svg" alt="First Layer Digital" class="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto" />
 				</a>
 
-				<div class="flex items-center flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 text-sm sm:text-base md:text-base lg:text-base 2xl:text-lg">
-					<a href="/" class="group relative text-slate-300 hover:text-white active:text-cyan-400 font-medium transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center">
-						<span class="relative z-10">Home</span>
-						<span class="absolute bottom-0 left-0 w-0 h-[2px] sm:h-0.5 md:h-0.5 bg-gradient-to-r from-cyan-400 to-cyan-600 group-hover:w-full group-active:w-full transition-all duration-300"></span>
-						<span class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></span>
+				<div class="flex items-center flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6">
+					<a href="/" class="group relative text-slate-300 hover:text-white font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/">
+						<span class="relative z-10">HOME</span>
+						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
+						<span class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 					</a>
-					<a href="/services" class="group relative text-slate-300 hover:text-white active:text-cyan-400 font-medium transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center">
-						<span class="relative z-10">Services</span>
-						<span class="absolute bottom-0 left-0 w-0 h-[2px] sm:h-0.5 md:h-0.5 bg-gradient-to-r from-cyan-400 to-cyan-600 group-hover:w-full group-active:w-full transition-all duration-300"></span>
-						<span class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></span>
+					<a href="/services" class="group relative text-slate-300 hover:text-white font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/services">
+						<span class="relative z-10">SERVICES</span>
+						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
+						<span class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 					</a>
-					<a href="/work" class="group relative text-slate-300 hover:text-white active:text-cyan-400 font-medium transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center">
-						<span class="relative z-10">Work</span>
-						<span class="absolute bottom-0 left-0 w-0 h-[2px] sm:h-0.5 md:h-0.5 bg-gradient-to-r from-cyan-400 to-cyan-600 group-hover:w-full group-active:w-full transition-all duration-300"></span>
-						<span class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></span>
+					<a href="/work" class="group relative text-slate-300 hover:text-white font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/work">
+						<span class="relative z-10">WORK</span>
+						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
+						<span class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 					</a>
-					<a href="/about" class="group relative text-slate-300 hover:text-white active:text-cyan-400 font-medium transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center">
-						<span class="relative z-10">About</span>
-						<span class="absolute bottom-0 left-0 w-0 h-[2px] sm:h-0.5 md:h-0.5 bg-gradient-to-r from-cyan-400 to-cyan-600 group-hover:w-full group-active:w-full transition-all duration-300"></span>
-						<span class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></span>
+					<a href="/about" class="group relative text-slate-300 hover:text-white font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/about">
+						<span class="relative z-10">ABOUT</span>
+						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
+						<span class="absolute inset-0 bg-white/5 rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 					</a>
-					<a href="/contact" class="relative bg-cyan-600 hover:bg-cyan-500 active:bg-cyan-700 text-white px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold font-mono text-sm sm:text-base md:text-base lg:text-base 2xl:text-lg transition-all duration-300 shadow-lg shadow-cyan-600/30 hover:shadow-xl hover:shadow-cyan-600/40 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[44px] flex items-center justify-center">
-						<span class="relative z-10">Contact</span>
+					<a href="/contact" class="relative bg-cyan-500 hover:bg-cyan-400 active:bg-cyan-600 text-white px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold font-mono text-xs tracking-widest transition-all duration-300 shadow-lg shadow-cyan-500/50 hover:shadow-xl hover:shadow-cyan-400/60 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[44px] flex items-center justify-center animate-pulse hover:animate-none">
+						<span class="relative z-10">CONTACT</span>
+						<span class="absolute inset-0 rounded-lg bg-cyan-400/20 blur-xl opacity-0 hover:opacity-100 transition-opacity duration-300"></span>
 					</a>
 					
 					<!-- Theme Toggle -->
@@ -126,6 +127,25 @@ const {
 
 			</div>
 		</nav>
+		
+		<script>
+			// Set active page indicator
+			if (typeof document !== 'undefined') {
+				const currentPath = window.location.pathname;
+				const navLinks = document.querySelectorAll('nav a[data-path]');
+				navLinks.forEach(link => {
+					const linkPath = link.getAttribute('data-path');
+					if (linkPath === currentPath || (currentPath === '/' && linkPath === '/')) {
+						link.classList.add('text-cyan-400');
+						const underline = link.querySelector('span[class*="bg-cyan-400"]');
+						if (underline) {
+							underline.classList.remove('w-0');
+							underline.classList.add('w-full');
+						}
+					}
+				});
+			}
+		</script>
 
 		<slot />
 
