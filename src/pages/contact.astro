@@ -5,8 +5,11 @@ import Layout from '../layouts/Layout.astro';
 export const prerender = true;
 ---
 
-<Layout>
-	<main class="relative overflow-hidden bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]">
+<Layout 
+	title="Contact Us | Get Started with FirstLayer Digital | Pasadena, Maryland"
+	description="Contact FirstLayer Digital for custom software development, operational infrastructure, data dashboards, and private cloud solutions. Schedule a consultation in Pasadena, Maryland."
+>
+	<main class="relative overflow-hidden bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]" role="main">
 		<div class="max-w-2xl 2xl:max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
 			<!-- Floating decorative elements -->
 			<div class="absolute -left-20 top-32 hidden xl:block 2xl:left-0 w-40 h-40 2xl:w-48 2xl:h-48 bg-gradient-to-br from-cyan-500/15 to-transparent rounded-3xl blur-xl rotate-12"></div>
@@ -16,7 +19,7 @@ export const prerender = true;
 				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold text-slate-950 dark:text-white dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
 					Let's Work <span class="text-cyan-600 relative">
 						<span class="relative z-10">Together</span>
-						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/8 to-cyan-600/8 blur-lg -z-0"></span>
+						<span class="absolute inset-0 bg-gradient-to-r from-[var(--accent-cyan)]/8 to-[var(--accent-cyan)]/8 blur-lg -z-0"></span>
 					</span>
 				</h1>
 				<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] dark:text-slate-400 max-w-xl mx-auto leading-relaxed px-2 transition-colors duration-300">
@@ -101,7 +104,7 @@ export const prerender = true;
 				<!-- Submit Button -->
 				<button 
 					type="submit" 
-					class="group relative w-full bg-gradient-to-r from-cyan-600 via-cyan-500 to-cyan-600 text-white font-bold py-4 sm:py-4.5 md:py-5 rounded-xl text-base sm:text-lg hover:from-cyan-700 hover:via-cyan-600 hover:to-cyan-700 active:from-cyan-800 active:via-cyan-700 active:to-cyan-800 transition-all duration-300 shadow-lg shadow-cyan-600/30 hover:shadow-xl hover:shadow-cyan-600/40 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[52px] sm:min-h-[56px] overflow-hidden"
+					class="group relative w-full bg-gradient-to-r from-[var(--button-bg)] via-[var(--button-bg)] to-[var(--button-bg)] text-[var(--button-text)] font-bold py-4 sm:py-4.5 md:py-5 rounded-xl text-base sm:text-lg hover:from-cyan-700 hover:via-cyan-600 hover:to-cyan-700 active:from-cyan-800 active:via-cyan-700 active:to-cyan-800 transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[52px] sm:min-h-[56px] overflow-hidden"
 				>
 					<span class="relative z-10 flex items-center justify-center gap-2">
 						<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -3,12 +3,12 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Services | FirstLayer Digital" description="Operational infrastructure, internal tools, data dashboards (Streamlit), and private cloud solutions (Proxmox, Nextcloud). Custom business infrastructure and web development services.">
-	<main class="relative overflow-hidden bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]">
+	<main class="relative overflow-hidden bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]" role="main">
 		<!-- Background gradient layers for depth -->
 		<div class="fixed inset-0 -z-10">
-			<div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-cyan-50/20 to-slate-50 dark:from-[var(--bg-page)] dark:via-[var(--bg-page)] dark:to-[var(--bg-page)] transition-colors duration-300"></div>
-			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/10 dark:bg-cyan-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
-			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-200/10 dark:bg-blue-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
+			<div class="absolute inset-0 bg-gradient-to-br from-[var(--bg-page)] via-[var(--accent-cyan)]/20 to-[var(--bg-page)] transition-colors duration-300"></div>
+			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl transition-colors duration-300"></div>
+			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl transition-colors duration-300"></div>
 		</div>
 
 		<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
@@ -16,12 +16,12 @@ import Layout from '../layouts/Layout.astro';
 			<div class="relative text-center mb-12 sm:mb-16 md:mb-20">
 				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
 					<span class="text-[var(--text-header)]">Professional</span> <span class="relative inline-block">
-						<span class="relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]" style="color: #22d3ee !important;">Services</span>
+						<span class="relative z-10 drop-shadow-[0_0_12px_color-mix(in_srgb,var(--accent-cyan)_30%,transparent)]" style="color: #22d3ee !important;">Services</span>
 						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-cyan-600/15 blur-3xl -z-0"></span>
-						<span class="absolute -inset-2 bg-gradient-to-r from-cyan-400/10 via-blue-400/10 to-cyan-600/10 blur-2xl -z-0"></span>
+						<span class="absolute -inset-2 bg-gradient-to-r from-[var(--accent-cyan)]/10 via-[var(--accent-cyan)]/10 to-[var(--accent-cyan)]/10 blur-2xl -z-0"></span>
 					</span>
 				</h1>
-				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-[var(--text-body)] dark:text-slate-400 max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2 transition-colors duration-300">
+				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-[var(--text-body)] text-[var(--text-body)] max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2 transition-colors duration-300">
 					Engineering-driven solutions that deliver measurable results. From concept to deployment, we build with precision and purpose.
 				</p>
 			</div>
@@ -29,20 +29,20 @@ import Layout from '../layouts/Layout.astro';
 			<!-- Core Services Section -->
 			<section class="mb-16 sm:mb-20 md:mb-24">
 				<div class="text-center mb-10 sm:mb-12 md:mb-16">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-slate-950 dark:text-white dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">Core Services</h2>
+					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Core Services</h2>
 					<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
 				</div>
 
 				<div class="grid md:grid-cols-2 gap-6 sm:gap-8">
 					<!-- Website Design/Development -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
 						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">🌐</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 transition-colors duration-300">Website Design & Development</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] dark:text-slate-400 leading-relaxed mb-4 transition-colors duration-300">
+							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">🌐</div>
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">Website Design & Development</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
 								Custom-built websites engineered for performance, security, and scalability. We leverage modern frameworks and best practices to deliver sites that load fast, rank well, and convert visitors into customers.
 							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] dark:text-slate-400 space-y-2 transition-colors duration-300">
+							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
 								<li class="flex items-start gap-2">
 									<span class="text-cyan-600 font-bold mt-0.5">•</span>
 									<span>Responsive, mobile-first design</span>
@@ -64,14 +64,14 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 
 					<!-- Custom Software Development -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
 						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">⚙️</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 transition-colors duration-300">Custom Software Development</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] dark:text-slate-400 leading-relaxed mb-4 transition-colors duration-300">
+							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">⚙️</div>
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">Custom Software Development</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
 								Tailored software solutions built to solve specific business challenges. From internal tools and operational infrastructure to customer-facing applications, we develop robust, maintainable code that scales with your needs.
 							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] dark:text-slate-400 space-y-2 transition-colors duration-300">
+							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
 								<li class="flex items-start gap-2">
 									<span class="text-cyan-600 font-bold mt-0.5">•</span>
 									<span>Full-stack development</span>
@@ -97,14 +97,14 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 
 					<!-- E-commerce Optimization -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
 						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">🛒</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 transition-colors duration-300">E-commerce Optimization</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] dark:text-slate-400 leading-relaxed mb-4 transition-colors duration-300">
+							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">🛒</div>
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">E-commerce Optimization</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
 								Maximize your online store's performance and profitability. We optimize checkout flows, improve conversion rates, and integrate payment systems that reduce friction and increase sales.
 							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] dark:text-slate-400 space-y-2 transition-colors duration-300">
+							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
 								<li class="flex items-start gap-2">
 									<span class="text-cyan-600 font-bold mt-0.5">•</span>
 									<span>Platform setup and configuration</span>
@@ -126,14 +126,14 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 
 					<!-- SEO -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
 						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">📈</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 transition-colors duration-300">Search Engine Optimization (SEO)</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] dark:text-slate-400 leading-relaxed mb-4 transition-colors duration-300">
+							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">📈</div>
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">Search Engine Optimization (SEO)</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
 								Technical SEO implementation that improves your search rankings and organic visibility. We optimize site structure, metadata, and performance to help you rank higher and attract qualified traffic.
 							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] dark:text-slate-400 space-y-2 transition-colors duration-300">
+							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
 								<li class="flex items-start gap-2">
 									<span class="text-cyan-600 font-bold mt-0.5">•</span>
 									<span>On-page optimization</span>
@@ -159,8 +159,8 @@ import Layout from '../layouts/Layout.astro';
 			<!-- Operational Infrastructure & Internal Tools Section -->
 			<section id="operational-infrastructure" class="mb-16 sm:mb-20 md:mb-24">
 				<div class="text-center mb-10 sm:mb-12 md:mb-16">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-slate-950 dark:text-white dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">Operational Infrastructure & Internal Tools</h2>
-					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] dark:text-slate-400 max-w-3xl mx-auto leading-relaxed px-2 transition-colors duration-300">
+					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Operational Infrastructure & Internal Tools</h2>
+					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] text-[var(--text-body)] max-w-3xl mx-auto leading-relaxed px-2 transition-colors duration-300">
 						Specialized solutions for custom business infrastructure, data visualization, and private cloud deployments.
 					</p>
 					<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
@@ -168,14 +168,14 @@ import Layout from '../layouts/Layout.astro';
 
 				<div class="grid md:grid-cols-2 gap-6 sm:gap-8">
 					<!-- Data Dashboards & Streamlit -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
 						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">📊</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 transition-colors duration-300">Data Dashboards & Streamlit</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] dark:text-slate-400 leading-relaxed mb-4 transition-colors duration-300">
+							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">📊</div>
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">Data Dashboards & Streamlit</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
 								Custom data dashboards and interactive analytics tools built with <span class="text-cyan-400 font-mono">Streamlit</span>. Transform your business data into actionable insights with intuitive visualizations and real-time reporting.
 							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] dark:text-slate-400 space-y-2 transition-colors duration-300">
+							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
 								<li class="flex items-start gap-2">
 									<span class="text-cyan-600 font-bold mt-0.5">•</span>
 									<span><span class="text-cyan-400 font-mono">Streamlit</span> dashboard development</span>
@@ -197,14 +197,14 @@ import Layout from '../layouts/Layout.astro';
 					</div>
 
 					<!-- Private Cloud & Infrastructure -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
 						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl sm:rounded-2xl flex items-center justify-center text-white text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">☁️</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-2 sm:mb-3 transition-colors duration-300">Private Cloud & Infrastructure</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] dark:text-slate-400 leading-relaxed mb-4 transition-colors duration-300">
+							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">☁️</div>
+							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">Private Cloud & Infrastructure</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
 								Private cloud infrastructure setup and management using <span class="text-cyan-400 font-mono">Proxmox</span> and Nextcloud. Secure, self-hosted solutions for data sovereignty and complete control over your business infrastructure.
 							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] dark:text-slate-400 space-y-2 transition-colors duration-300">
+							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
 								<li class="flex items-start gap-2">
 									<span class="text-cyan-600 font-bold mt-0.5">•</span>
 									<span><span class="text-cyan-400 font-mono">Proxmox</span> virtualization and containerization</span>
@@ -233,8 +233,8 @@ import Layout from '../layouts/Layout.astro';
 					<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 dark:from-cyan-500/5 dark:via-transparent dark:to-blue-500/5 rounded-2xl sm:rounded-3xl -z-10 transition-colors duration-300"></div>
 					
 					<div class="text-center mb-8 sm:mb-10 md:mb-12">
-						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-slate-950 dark:text-white dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">Hybrid Pricing Model</h2>
-						<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] dark:text-slate-400 max-w-2xl mx-auto leading-relaxed transition-colors duration-300">
+						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Hybrid Pricing Model</h2>
+						<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed transition-colors duration-300">
 							Flexible pricing structures designed to align with your project needs and budget. We offer multiple engagement models to ensure you get the right level of service at the right price.
 						</p>
 					</div>
@@ -243,27 +243,27 @@ import Layout from '../layouts/Layout.astro';
 						<!-- Consultation Fees -->
 						<div class="bg-[var(--bg-card)] backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-[var(--stroke)] shadow-lg group-hover:border-cyan-500/50 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-300">
 							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl sm:text-2xl mb-4 sm:mb-6 shadow-lg">💡</div>
-							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">Consultation Fees</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] dark:text-slate-400 leading-relaxed mb-4 transition-colors duration-300">
+							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Consultation Fees</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
 								Strategic planning and technical consultation to help define your project scope, requirements, and optimal technology stack. Perfect for businesses that need expert guidance before committing to a full development project.
 							</p>
-							<div class="bg-cyan-50/60 dark:bg-slate-800/50 rounded-lg p-3 sm:p-4 border border-cyan-200/40 dark:border-slate-700">
-								<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-mono">
-									<strong class="text-slate-950 dark:text-white dark:font-bold">Ideal for:</strong> Project scoping, technology selection, architecture planning, and feasibility analysis.
+							<div class="bg-[var(--box-bg-light)] rounded-lg p-3 sm:p-4 border border-[var(--box-border-light)]">
+								<p class="text-xs sm:text-sm text-[var(--text-body)] font-mono">
+									<strong class="text-[var(--text-header)]">Ideal for:</strong> Project scoping, technology selection, architecture planning, and feasibility analysis.
 								</p>
 							</div>
 						</div>
 
 						<!-- Fixed-Price MVPs -->
-						<div class="bg-[var(--bg-card)] backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-[var(--stroke)] shadow-lg group-hover:border-cyan-500/50 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-300 relative ring-2 ring-cyan-500/20">
+						<div class="bg-[var(--bg-card)] backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-[var(--stroke)] shadow-lg group-hover:border-cyan-500/50 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-300 relative ring-2 ring-[var(--accent-cyan)]/20">
 							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl sm:text-2xl mb-4 sm:mb-6 shadow-lg">🚀</div>
-							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">Fixed-Price MVPs</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] dark:text-slate-400 leading-relaxed mb-4 transition-colors duration-300">
+							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Fixed-Price MVPs</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
 								Predictable pricing for well-defined projects. We deliver complete, production-ready minimum viable products (MVPs) with clear deliverables, timelines, and budgets. Perfect for startups and businesses with specific feature requirements.
 							</p>
-							<div class="bg-cyan-50/60 dark:bg-slate-800/50 rounded-lg p-3 sm:p-4 border border-cyan-200/40 dark:border-slate-700">
-								<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-mono">
-									<strong class="text-slate-950 dark:text-white dark:font-bold">Ideal for:</strong> New product launches, feature-complete websites, and projects with clearly defined scope.
+							<div class="bg-[var(--box-bg-light)] rounded-lg p-3 sm:p-4 border border-[var(--box-border-light)]">
+								<p class="text-xs sm:text-sm text-[var(--text-body)] font-mono">
+									<strong class="text-[var(--text-header)]">Ideal for:</strong> New product launches, feature-complete websites, and projects with clearly defined scope.
 								</p>
 							</div>
 						</div>
@@ -271,18 +271,18 @@ import Layout from '../layouts/Layout.astro';
 						<!-- Operational Maintenance & Oversight -->
 						<div class="bg-[var(--bg-card)] backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-[var(--stroke)] shadow-lg group-hover:border-cyan-500/50 group-hover:shadow-[0_0_30px_rgba(6,182,212,0.1)] transition-all duration-300">
 							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl sm:text-2xl mb-4 sm:mb-6 shadow-lg">🔧</div>
-							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-slate-950 dark:text-white dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">Operational Maintenance & Oversight</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] dark:text-slate-400 leading-relaxed mb-4 transition-colors duration-300">
+							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Operational Maintenance & Oversight</h3>
+							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
 								Ongoing Proxmox host health monitoring, security patching, cloudflared tunnel stability, and automated data integrity backups. This recurring technical oversight retainer ensures your private infrastructure operates reliably and securely.
 							</p>
-							<div class="bg-cyan-50/60 dark:bg-slate-800/50 rounded-lg p-3 sm:p-4 border border-cyan-200/40 dark:border-slate-700 mb-3">
-								<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-mono">
-									<strong class="text-slate-950 dark:text-white dark:font-bold">Services Include:</strong> Proxmox host health monitoring, security patching, cloudflared tunnel stability, automated data integrity backups, and proactive issue resolution.
+							<div class="bg-[var(--box-bg-light)] rounded-lg p-3 sm:p-4 border border-[var(--box-border-light)] mb-3">
+								<p class="text-xs sm:text-sm text-[var(--text-body)] font-mono">
+									<strong class="text-[var(--text-header)]">Services Include:</strong> Proxmox host health monitoring, security patching, cloudflared tunnel stability, automated data integrity backups, and proactive issue resolution.
 								</p>
 							</div>
-							<div class="bg-[var(--bg-card)]/60 dark:bg-slate-800/50 rounded-lg p-3 sm:p-4 border border-[var(--stroke)]/40 dark:border-slate-700">
-								<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-mono">
-									<strong class="text-slate-950 dark:text-white dark:font-bold">Pricing:</strong> Defined in Article 3.3 (Phase 3: Hourly Rate) of the Master Service Agreement. Ideal for established infrastructure requiring ongoing technical oversight and maintenance.
+							<div class="bg-[var(--bg-card)]/60 bg-[var(--box-bg-light)] rounded-lg p-3 sm:p-4 border border-[var(--stroke)]/40 border-[var(--box-border-light)]">
+								<p class="text-xs sm:text-sm text-[var(--text-body)] font-mono">
+									<strong class="text-[var(--text-header)]">Pricing:</strong> Defined in Article 3.3 (Phase 3: Hourly Rate) of the Master Service Agreement. Ideal for established infrastructure requiring ongoing technical oversight and maintenance.
 								</p>
 							</div>
 						</div>
@@ -327,10 +327,10 @@ import Layout from '../layouts/Layout.astro';
 					<div class="absolute inset-0 bg-[radial-gradient(#06b6d40d_1px,transparent_1px)] bg-[size:24px_24px]"></div>
 					<div class="relative z-10">
 						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] dark:text-white dark:font-bold mb-4 sm:mb-6 transition-colors duration-300">Ready to Get Started?</h2>
-						<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] dark:text-slate-300 mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed transition-colors duration-300">
+						<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] text-[var(--text-body)] mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed transition-colors duration-300">
 							Let's discuss your project and determine the best pricing model for your needs.
 						</p>
-						<a href="/contact" class="inline-block bg-cyan-600 text-white px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold font-mono text-base sm:text-lg hover:bg-cyan-700 active:bg-cyan-800 transition-all duration-300 shadow-lg shadow-cyan-600/30 hover:shadow-xl hover:shadow-cyan-600/40 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
+						<a href="/contact" class="inline-block bg-[var(--button-bg)] text-[var(--button-text)] px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold font-mono text-base sm:text-lg hover:bg-[var(--button-bg-hover)] active:bg-[var(--button-bg-active)] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
 							Schedule a Consultation
 						</a>
 					</div>

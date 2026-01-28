@@ -85,7 +85,7 @@ const {
 	
 	<body class="bg-[var(--bg-page)] dark:bg-page font-sans text-body flex flex-col min-h-screen transition-colors duration-300 relative">
 		
-		<nav class="bg-slate-900/60 backdrop-blur-lg text-white shadow-lg sticky top-0 z-50 border-b border-white/10 transition-colors duration-300">
+		<nav class="bg-[var(--bg-card)]/60 backdrop-blur-lg text-white shadow-lg sticky top-0 z-50 border-b border-[var(--stroke)] transition-colors duration-300">
 			<div class="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col md:flex-row justify-between items-center">
 				
 				<a href="/" class="mb-3 md:mb-0 flex items-center hover:opacity-80 transition-opacity touch-manipulation">
@@ -93,34 +93,34 @@ const {
 				</a>
 
 				<div class="flex items-center flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6">
-					<a href="/" class="group relative text-slate-300 hover:text-white font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/">
+					<a href="/" class="group relative text-[var(--text-body)] hover:text-[var(--text-header)] font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/">
 						<span class="relative z-10">HOME</span>
-						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
-						<span class="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--accent-cyan)] group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
+						<span class="absolute inset-0 bg-[var(--bg-muted)]/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 					</a>
-					<a href="/services" class="group relative text-slate-300 hover:text-white font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/services">
+					<a href="/services" class="group relative text-[var(--text-body)] hover:text-[var(--text-header)] font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/services">
 						<span class="relative z-10">SERVICES</span>
-						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
-						<span class="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--accent-cyan)] group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
+						<span class="absolute inset-0 bg-[var(--bg-muted)]/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 					</a>
-					<a href="/work" class="group relative text-slate-300 hover:text-white font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/work">
+					<a href="/work" class="group relative text-[var(--text-body)] hover:text-[var(--text-header)] font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/work">
 						<span class="relative z-10">WORK</span>
-						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
-						<span class="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--accent-cyan)] group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
+						<span class="absolute inset-0 bg-[var(--bg-muted)]/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 					</a>
-					<a href="/blog" class="group relative text-slate-300 hover:text-white font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/blog">
+					<a href="/blog" class="group relative text-[var(--text-body)] hover:text-[var(--text-header)] font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/blog">
 						<span class="relative z-10">INSIGHTS</span>
-						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
-						<span class="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--accent-cyan)] group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
+						<span class="absolute inset-0 bg-[var(--bg-muted)]/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 					</a>
-					<a href="/about" class="group relative text-slate-300 hover:text-white font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/about">
+					<a href="/about" class="group relative text-[var(--text-body)] hover:text-[var(--text-header)] font-mono text-xs tracking-widest transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center" data-path="/about">
 						<span class="relative z-10">ABOUT</span>
-						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
-						<span class="absolute inset-0 bg-white/5 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
+						<span class="absolute bottom-0 left-0 w-0 h-[2px] bg-[var(--accent-cyan)] group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span>
+						<span class="absolute inset-0 bg-[var(--bg-muted)]/50 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
 					</a>
-					<a href="/contact" class="relative bg-cyan-600 hover:bg-cyan-500 active:bg-cyan-700 text-white px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 rounded-xl font-semibold font-mono text-xs tracking-widest transition-all duration-300 shadow-lg shadow-cyan-600/50 hover:shadow-xl hover:shadow-cyan-500/60 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[44px] flex items-center justify-center group">
+					<a href="/contact" class="relative bg-cyan-600 hover:bg-cyan-500 active:bg-cyan-700 text-white px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 rounded-xl font-semibold font-mono text-xs tracking-widest transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[44px] flex items-center justify-center group">
 						<span class="relative z-10">CONTACT</span>
-						<span class="absolute inset-0 rounded-xl bg-cyan-400/30 blur-xl opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></span>
+						<span class="absolute inset-0 rounded-xl bg-[var(--accent-cyan)]/30 blur-xl opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></span>
 					</a>
 					
 					<!-- Theme Toggle -->
@@ -138,8 +138,8 @@ const {
 				navLinks.forEach(link => {
 					const linkPath = link.getAttribute('data-path');
 					if (linkPath === currentPath || (currentPath === '/' && linkPath === '/') || (linkPath === '/blog' && currentPath.startsWith('/blog'))) {
-						link.classList.add('text-cyan-400');
-						const underline = link.querySelector('span[class*="bg-cyan-400"]');
+						link.classList.add('text-[var(--accent-cyan)]');
+						const underline = link.querySelector('span[class*="bg-[var(--accent-cyan)]"]');
 						if (underline) {
 							underline.classList.remove('w-0');
 							underline.classList.add('w-full');
@@ -158,16 +158,16 @@ const {
 					<!-- Column 1: Logo/Tagline -->
 					<div class="text-center md:text-left">
 						<img src="/logo.svg" alt="First Layer Digital" class="h-20 sm:h-24 md:h-28 lg:h-32 w-auto opacity-90 mx-auto md:mx-0 mb-4" />
-						<p class="text-slate-600 dark:text-slate-300 text-sm sm:text-base lg:text-lg">
+						<p class="text-slate-600 dark:text-[var(--text-body)] text-sm sm:text-base lg:text-lg">
 							Building the web of tomorrow, today.
 						</p>
 						<div class="flex justify-center md:justify-start items-center gap-4 sm:gap-6 mt-4">
-							<a href="https://www.instagram.com/firstlayerdigital/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors group" aria-label="Follow us on Instagram">
+							<a href="https://www.instagram.com/firstlayerdigital/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors group" aria-label="Follow us on Instagram">
 								<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
 									<path fill-rule="evenodd" d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z" clip-rule="evenodd"/>
 								</svg>
 							</a>
-							<a href="https://github.com/firstlayerdigital/first-layer-website" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors group" aria-label="View source code on GitHub">
+							<a href="https://github.com/firstlayerdigital/first-layer-website" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors group" aria-label="View source code on GitHub">
 								<svg class="w-5 h-5 sm:w-6 sm:h-6" fill="currentColor" viewBox="0 0 24 24">
 									<path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
 								</svg>
@@ -179,17 +179,17 @@ const {
 					<div class="text-center md:text-left">
 						<h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-4">Navigation</h3>
 						<nav class="flex flex-col gap-3 sm:gap-4">
-							<a href="/" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors text-sm sm:text-base">Home</a>
-							<a href="/services" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors text-sm sm:text-base">Services</a>
-							<a href="/work" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors text-sm sm:text-base">Work</a>
-							<a href="/blog" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors text-sm sm:text-base">Insights</a>
-							<a href="/about" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors text-sm sm:text-base">About</a>
-							<a href="/contact" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors text-sm sm:text-base">Contact</a>
+							<a href="/" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors text-sm sm:text-base">Home</a>
+							<a href="/services" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors text-sm sm:text-base">Services</a>
+							<a href="/work" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors text-sm sm:text-base">Work</a>
+							<a href="/blog" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors text-sm sm:text-base">Insights</a>
+							<a href="/about" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors text-sm sm:text-base">About</a>
+							<a href="/contact" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors text-sm sm:text-base">Contact</a>
 						</nav>
-						<div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800/50">
+						<div class="mt-6 pt-6 border-t border-[var(--stroke)]">
 							<div class="flex flex-col gap-2 text-xs sm:text-sm">
-								<a href="/privacy" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors">Privacy Policy</a>
-								<a href="/terms" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors">Client Terms</a>
+								<a href="/privacy" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors">Privacy Policy</a>
+								<a href="/terms" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors">Client Terms</a>
 							</div>
 						</div>
 					</div>
@@ -200,7 +200,7 @@ const {
 						<div class="space-y-3 sm:space-y-4 text-sm sm:text-base">
 							<div>
 								<p class="text-[var(--text-body)] mb-1">Email</p>
-								<a href="mailto:hello@firstlayer.digital" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors">hello@firstlayer.digital</a>
+								<a href="mailto:hello@firstlayer.digital" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors">hello@firstlayer.digital</a>
 							</div>
 							<div>
 								<p class="text-[var(--text-body)] mb-1">Address</p>
@@ -208,10 +208,10 @@ const {
 							</div>
 							<div class="pt-4">
 								<div class="inline-flex items-center gap-2 bg-slate-800/60 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-slate-700/50">
-									<svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
+									<svg class="w-4 h-4 text-[var(--accent-cyan)]" fill="currentColor" viewBox="0 0 20 20">
 										<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
 									</svg>
-									<span class="text-xs sm:text-sm text-slate-300 font-medium">Maryland-Owned & Operated</span>
+									<span class="text-xs sm:text-sm text-[var(--text-body)] font-medium">Maryland-Owned & Operated</span>
 								</div>
 							</div>
 						</div>
@@ -219,8 +219,8 @@ const {
 				</div>
 
 				<!-- Copyright -->
-				<div class="border-t border-slate-200 dark:border-slate-800/50 pt-6 sm:pt-8 text-center">
-					<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-300">
+				<div class="border-t border-[var(--stroke)] pt-6 sm:pt-8 text-center">
+					<p class="text-xs sm:text-sm text-slate-600 dark:text-[var(--text-body)]">
 						&copy; {new Date().getFullYear()} First Layer Digital LLC. All rights reserved.
 					</p>
 				</div>

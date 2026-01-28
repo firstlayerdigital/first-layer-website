@@ -4,12 +4,12 @@
 <button
 	id="theme-toggle"
 	aria-label="Toggle theme"
-	class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-slate-800/60 dark:bg-slate-800/60 hover:bg-slate-700/60 dark:hover:bg-slate-700/60 border border-slate-700/50 dark:border-slate-700/50 flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 touch-manipulation"
+	class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[var(--bg-muted)] hover:bg-[var(--bg-subtle)] border border-[var(--stroke)] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 touch-manipulation"
 >
 	<!-- Sun icon (shown when dark mode is active, to switch to light) -->
 	<svg
 		id="sun-icon"
-		class="absolute w-4 h-4 sm:w-5 sm:h-5 text-cyan-400 transition-all duration-300 rotate-0 scale-0"
+		class="absolute w-4 h-4 sm:w-5 sm:h-5 text-[var(--accent-cyan)] transition-all duration-300 rotate-0 scale-0"
 		fill="none"
 		stroke="currentColor"
 		viewBox="0 0 24 24"
@@ -24,7 +24,7 @@
 	<!-- Moon icon (shown when light mode is active, to switch to dark) -->
 	<svg
 		id="moon-icon"
-		class="absolute w-4 h-4 sm:w-5 sm:h-5 text-slate-900 dark:text-cyan-400 transition-all duration-300 rotate-0 scale-100"
+		class="absolute w-4 h-4 sm:w-5 sm:h-5 text-[var(--text-header)] dark:text-[var(--accent-cyan)] transition-all duration-300 rotate-0 scale-100"
 		fill="none"
 		stroke="currentColor"
 		viewBox="0 0 24 24"

@@ -136,10 +136,10 @@ const getCategoryLabel = (category: Project['category']) => {
 const getCategoryColorClasses = (category: Project['category']) => {
 	const classes = {
 		'custom-software': {
-			bg: 'from-cyan-600 via-cyan-500 to-cyan-600',
+			bg: 'from-cyan-600 via-[var(--accent-cyan)] to-cyan-600',
 			hover: 'from-cyan-50/0 to-cyan-50/30',
-			badge: 'bg-cyan-100/80 text-cyan-700 border-cyan-200/50',
-			tech: 'bg-cyan-100/80 text-cyan-700 border-cyan-200/50'
+			badge: 'bg-[var(--bg-muted)] text-cyan-700 border-cyan-200/50',
+			tech: 'bg-[var(--bg-muted)] text-cyan-700 border-cyan-200/50'
 		},
 		'digital-transformation': {
 			bg: 'from-blue-600 via-blue-500 to-blue-600',
@@ -162,7 +162,7 @@ const highlightTechKeywords = (text: string) => {
 	let highlighted = text;
 	keywords.forEach(keyword => {
 		const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
-		highlighted = highlighted.replace(regex, `<span class="text-cyan-400 font-mono">${keyword}</span>`);
+		highlighted = highlighted.replace(regex, `<span class="text-[var(--accent-cyan)] font-mono">${keyword}</span>`);
 	});
 	return highlighted;
 };
@@ -182,13 +182,16 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 );
 ---
 
-<Layout title="Our Work | FirstLayer Digital" description="Engineering-driven projects showcasing custom software development, digital transformation, and e-commerce optimization.">
-	<main class="relative overflow-hidden bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]">
+<Layout 
+	title="Our Work | Custom Software Development Projects | FirstLayer Digital"
+	description="Engineering-driven projects showcasing custom software development, digital transformation, e-commerce optimization, operational infrastructure, and data dashboards. Real-world case studies from Pasadena, Maryland."
+>
+	<main class="relative overflow-hidden bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]" role="main">
 		<!-- Background gradient layers for depth -->
 		<div class="fixed inset-0 -z-10">
-			<div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-cyan-50/20 to-slate-50 dark:from-[var(--bg-page)] dark:via-[var(--bg-page)] dark:to-[var(--bg-page)] transition-colors duration-300"></div>
-			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-cyan-200/10 dark:bg-cyan-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
-			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-200/10 dark:bg-blue-900/10 rounded-full blur-3xl transition-colors duration-300"></div>
+			<div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-[var(--accent-cyan)]/20 to-slate-50 dark:from-[var(--bg-page)] dark:via-[var(--bg-page)] dark:to-[var(--bg-page)] transition-colors duration-300"></div>
+			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl transition-colors duration-300"></div>
+			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl transition-colors duration-300"></div>
 		</div>
 
 		<div class="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
@@ -196,12 +199,12 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 			<div class="relative text-center mb-12 sm:mb-16 md:mb-20">
 				<h1 class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl 2xl:text-7xl font-extrabold dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
 					<span class="text-[var(--text-header)]">Our</span> <span class="relative inline-block">
-						<span class="relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]" style="color: #22d3ee !important;">Work</span>
+						<span class="relative z-10 drop-shadow-[0_0_12px_color-mix(in_srgb,var(--accent-cyan)_30%,transparent)]" style="color: #22d3ee !important;">Work</span>
 						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-cyan-600/15 blur-3xl -z-0"></span>
-						<span class="absolute -inset-2 bg-gradient-to-r from-cyan-400/10 via-blue-400/10 to-cyan-600/10 blur-2xl -z-0"></span>
+						<span class="absolute -inset-2 bg-gradient-to-r from-[var(--accent-cyan)]/10 via-[var(--accent-cyan)]/10 to-[var(--accent-cyan)]/10 blur-2xl -z-0"></span>
 					</span>
 				</h1>
-				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-[var(--text-body)] dark:text-slate-400 max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2 transition-colors duration-300">
+				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-[var(--text-body)] text-[var(--text-light)] max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2 transition-colors duration-300">
 					Engineering-driven solutions built with modern tech stacks, automated workflows, and measurable performance.
 				</p>
 			</div>
@@ -213,7 +216,7 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">
 							{getCategoryLabel(category)}
 						</h2>
-						<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
+						<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[var(--accent-cyan)] to-transparent mx-auto"></div>
 					</div>
 
 					<div class="space-y-6 sm:space-y-8">
@@ -222,12 +225,12 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 							return (
 								<div class="grid md:grid-cols-2 gap-6 sm:gap-8">
 									<!-- Left: Main Project Card -->
-									<article class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+									<article class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[var(--accent-cyan)]/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
 									
 									<!-- Project Image/Header -->
 									<div class={`h-48 sm:h-56 md:h-64 bg-gradient-to-br ${colorClasses.bg} flex items-center justify-center relative overflow-hidden`}>
 										<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
-										<span class="text-white font-bold text-base sm:text-lg md:text-xl relative z-10 px-4 text-center">
+										<span class="text-[var(--text-header)] font-bold text-base sm:text-lg md:text-xl relative z-10 px-4 text-center" style="color: #ffffff !important;">
 											{project.anonymous ? 'Client Project' : (project.clientName || project.title)}
 										</span>
 									</div>
@@ -244,21 +247,21 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 										</div>
 
 										<!-- Description -->
-										<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] dark:text-slate-400 mb-4 sm:mb-6 leading-relaxed transition-colors duration-300" set:html={highlightTechKeywords(project.description)}>
+										<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-light)] mb-4 sm:mb-6 leading-relaxed transition-colors duration-300" set:html={highlightTechKeywords(project.description)}>
 										</p>
 
 										<!-- MVP Journey -->
 										<div class="bg-[var(--bg-card)] backdrop-blur-md rounded-xl p-4 sm:p-5 mb-4 sm:mb-6 border border-[var(--stroke)]">
 											<h4 class="text-xs sm:text-sm font-bold text-[var(--text-header)] dark:font-bold mb-2 sm:mb-3 uppercase tracking-wide font-mono transition-colors duration-300">MVP Journey</h4>
-											<div class="space-y-2 text-xs sm:text-sm text-slate-600 dark:text-slate-400 font-mono transition-colors duration-300">
+											<div class="space-y-2 text-xs sm:text-sm text-[var(--text-muted)] font-mono transition-colors duration-300">
 												<div>
-													<span class="font-semibold text-cyan-600">Consultation:</span> {project.mvpJourney.consultation}
+													<span class="font-semibold text-[var(--accent-cyan)]">Consultation:</span> {project.mvpJourney.consultation}
 												</div>
 												<div>
-													<span class="font-semibold text-cyan-600">Scope:</span> {project.mvpJourney.scope}
+													<span class="font-semibold text-[var(--accent-cyan)]">Scope:</span> {project.mvpJourney.scope}
 												</div>
 												<div>
-													<span class="font-semibold text-cyan-600">Launch:</span> {project.mvpJourney.launch}
+													<span class="font-semibold text-[var(--accent-cyan)]">Launch:</span> {project.mvpJourney.launch}
 												</div>
 											</div>
 										</div>
@@ -282,7 +285,7 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 													);
 												})}
 												{project.techStack.tools?.map((tech) => (
-													<span class="bg-slate-100/80 dark:bg-slate-800/50 backdrop-blur-sm text-slate-700 dark:text-slate-300 text-xs px-2.5 py-1 rounded-lg font-medium border border-slate-200/50 dark:border-slate-700">
+													<span class="bg-[var(--bg-muted)] backdrop-blur-sm text-[var(--text-body)] text-xs px-2.5 py-1 rounded-lg font-medium border border-[var(--stroke)]">
 														{tech}
 													</span>
 												))}
@@ -310,22 +313,22 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 										</div>
 
 										<!-- Performance Metrics -->
-										<div class="bg-gradient-to-br from-cyan-50/60 to-blue-50/40 dark:from-slate-800/50 dark:to-slate-800/50 backdrop-blur-md rounded-xl p-4 sm:p-5 mb-4 sm:mb-6 border border-cyan-200/40 dark:border-slate-700">
+										<div class="bg-gradient-to-br from-[var(--bg-muted)] to-[var(--bg-muted)] backdrop-blur-md rounded-xl p-4 sm:p-5 mb-4 sm:mb-6 border border-[var(--stroke)]">
 											<h4 class="text-xs sm:text-sm font-bold text-[var(--text-header)] dark:font-bold mb-2 sm:mb-3 uppercase tracking-wide font-mono transition-colors duration-300">Performance</h4>
 											<div class="grid grid-cols-2 gap-3 text-xs sm:text-sm">
 												<div>
-													<div class="text-slate-600 dark:text-slate-400 mb-1 font-mono transition-colors duration-300">Lighthouse</div>
-													<div class="text-2xl font-bold text-cyan-600 font-mono">{project.performance.lighthouse}+</div>
+													<div class="text-[var(--text-muted)] text-[var(--text-light)] mb-1 font-mono transition-colors duration-300">Lighthouse</div>
+													<div class="text-2xl font-bold text-[var(--accent-cyan)] font-mono">{project.performance.lighthouse}+</div>
 												</div>
 												{project.performance.loadTime && (
 													<div>
-														<div class="text-slate-600 dark:text-slate-400 mb-1 font-mono transition-colors duration-300">Load Time</div>
-														<div class="text-lg font-bold text-cyan-600 font-mono">{project.performance.loadTime}</div>
+														<div class="text-[var(--text-muted)] text-[var(--text-light)] mb-1 font-mono transition-colors duration-300">Load Time</div>
+														<div class="text-lg font-bold text-[var(--accent-cyan)] font-mono">{project.performance.loadTime}</div>
 													</div>
 												)}
 												{project.performance.coreWebVitals && (
 													<div class="col-span-2">
-														<div class="text-slate-600 dark:text-slate-400 mb-1 font-mono transition-colors duration-300">Core Web Vitals</div>
+														<div class="text-[var(--text-muted)] text-[var(--text-light)] mb-1 font-mono transition-colors duration-300">Core Web Vitals</div>
 														<div class="text-sm font-semibold text-green-600 font-mono">{project.performance.coreWebVitals}</div>
 													</div>
 												)}
@@ -360,7 +363,7 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 												href={project.githubUrl} 
 												target="_blank" 
 												rel="noopener noreferrer"
-												class="inline-flex items-center gap-2 text-sm text-cyan-600 hover:text-cyan-700 font-medium transition-colors group"
+												class="inline-flex items-center gap-2 text-sm text-[var(--accent-cyan)] hover:text-[var(--accent-cyan)]/80 font-medium transition-colors group"
 											>
 												<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
 													<path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
@@ -377,12 +380,12 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 										{project.additionalDetails.architecture && (
 											<div class="bg-[var(--bg-card)] backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-[var(--stroke)]">
 												<h4 class="text-lg sm:text-xl font-bold text-[var(--text-header)] dark:font-bold mb-3 sm:mb-4 flex items-center gap-2 transition-colors duration-300">
-													<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<svg class="w-5 h-5 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
 													</svg>
 													Architecture
 												</h4>
-												<p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed transition-colors duration-300">
+												<p class="text-sm sm:text-base text-[var(--text-muted)] text-[var(--text-light)] leading-relaxed transition-colors duration-300">
 													{project.additionalDetails.architecture}
 												</p>
 											</div>
@@ -391,15 +394,15 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 										{project.additionalDetails.features && project.additionalDetails.features.length > 0 && (
 											<div class="bg-[var(--bg-card)] backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-[var(--stroke)]">
 												<h4 class="text-lg sm:text-xl font-bold text-[var(--text-header)] dark:font-bold mb-3 sm:mb-4 flex items-center gap-2 transition-colors duration-300">
-													<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<svg class="w-5 h-5 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
 													</svg>
 													Key Features
 												</h4>
 												<ul class="space-y-2 sm:space-y-3">
 													{project.additionalDetails.features.map((feature) => (
-														<li class="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-slate-600 dark:text-slate-400 transition-colors duration-300">
-															<svg class="w-5 h-5 text-cyan-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
+														<li class="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-[var(--text-muted)] text-[var(--text-light)] transition-colors duration-300">
+															<svg class="w-5 h-5 text-[var(--accent-cyan)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
 																<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
 															</svg>
 															<span>{feature}</span>
@@ -410,14 +413,14 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 										)}
 
 										{project.additionalDetails.results && (
-											<div class="bg-gradient-to-br from-cyan-50/60 to-blue-50/40 dark:from-slate-800/50 dark:to-slate-800/50 backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-cyan-200/40 dark:border-slate-700">
+											<div class="bg-gradient-to-br from-[var(--bg-muted)] to-[var(--bg-muted)] backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-[var(--stroke)]">
 												<h4 class="text-lg sm:text-xl font-bold text-[var(--text-header)] dark:font-bold mb-3 sm:mb-4 flex items-center gap-2 transition-colors duration-300">
-													<svg class="w-5 h-5 text-cyan-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+													<svg class="w-5 h-5 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
 													</svg>
 													Results & Impact
 												</h4>
-												<p class="text-sm sm:text-base text-slate-600 dark:text-slate-400 leading-relaxed transition-colors duration-300">
+												<p class="text-sm sm:text-base text-[var(--text-muted)] text-[var(--text-light)] leading-relaxed transition-colors duration-300">
 													{project.additionalDetails.results}
 												</p>
 											</div>
@@ -438,12 +441,12 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">
 							Case Studies
 						</h2>
-						<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
+						<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[var(--accent-cyan)] to-transparent mx-auto"></div>
 					</div>
 
 					<div class="space-y-6 sm:space-y-8">
 						{caseStudies.map((study) => (
-							<article class="group relative bg-[var(--bg-card)]/40 backdrop-blur-xl border border-[var(--stroke)] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_rgba(6,182,212,0.15)]">
+							<article class="group relative bg-[var(--bg-card)]/40 backdrop-blur-xl border border-[var(--stroke)] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[var(--accent-cyan)]/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
 								
 								<div class="p-6 sm:p-8 relative z-10">
 									<div class="flex items-start justify-between gap-4 mb-4">
@@ -453,7 +456,7 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 													{study.data.title}
 												</a>
 											</h3>
-											<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] dark:text-slate-400 leading-relaxed mb-4 transition-colors duration-300">
+											<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-light)] leading-relaxed mb-4 transition-colors duration-300">
 												{study.data.description}
 											</p>
 										</div>
@@ -462,21 +465,21 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 									<div class="flex flex-wrap items-center gap-4 mb-4">
 										<div class="flex flex-wrap gap-2">
 											{study.data.techStack.slice(0, 5).map((tech) => (
-												<span class="bg-cyan-100/80 dark:bg-slate-800/50 text-cyan-700 dark:text-slate-300 px-2.5 py-1 rounded-lg text-xs font-medium border border-cyan-200/50 dark:border-slate-700 font-mono">
+												<span class="bg-[var(--bg-muted)] dark:bg-slate-800/50 text-[var(--text-header)] px-2.5 py-1 rounded-lg text-xs font-medium border border-[var(--stroke)] font-mono">
 													{tech}
 												</span>
 											))}
 										</div>
 									</div>
 
-									<div class="bg-gradient-to-br from-cyan-50/60 to-blue-50/40 dark:from-slate-800/50 dark:to-slate-800/50 backdrop-blur-md rounded-xl p-4 sm:p-5 mb-4 border border-cyan-200/40 dark:border-slate-700">
+									<div class="bg-gradient-to-br from-[var(--bg-muted)] to-[var(--bg-muted)] backdrop-blur-md rounded-xl p-4 sm:p-5 mb-4 border border-[var(--stroke)]">
 										<div class="text-xs sm:text-sm font-bold text-[var(--text-header)] dark:font-bold mb-1 uppercase tracking-wide font-mono">Result</div>
-										<div class="text-sm sm:text-base text-slate-700 dark:text-slate-300 font-mono">
+										<div class="text-sm sm:text-base text-[var(--text-body)] font-mono">
 											{study.data.result}
 										</div>
 									</div>
 
-									<a href={`/work/${study.slug}`} class="inline-flex items-center gap-2 text-sm text-cyan-600 hover:text-cyan-700 dark:text-cyan-400 dark:hover:text-cyan-300 font-medium transition-colors group">
+									<a href={`/work/${study.slug}`} class="inline-flex items-center gap-2 text-sm text-[var(--accent-cyan)] hover:text-[var(--accent-cyan)]/80 font-medium transition-colors group">
 										Read case study
 										<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
@@ -491,7 +494,7 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 
 			<!-- CTA Section -->
 			<section class="relative mt-16 sm:mt-20 md:mt-24">
-				<div class="relative bg-gradient-to-br from-cyan-600 via-cyan-500 to-blue-600 rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl overflow-hidden">
+				<div class="relative bg-gradient-to-br from-cyan-600 via-[var(--accent-cyan)] to-blue-600 rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl overflow-hidden">
 					<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
 					<div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>
 					<div class="relative z-10 text-center">
@@ -499,7 +502,7 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 						<p class="text-cyan-50/90 mb-8 sm:mb-10 max-w-2xl 2xl:max-w-3xl mx-auto text-base sm:text-lg lg:text-lg 2xl:text-xl leading-relaxed px-2">
 							From consultation to launch, we engineer scalable solutions with modern tech stacks and automated workflows.
 						</p>
-						<a href="/contact" class="inline-block bg-[var(--bg-page)] text-cyan-600 px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-cyan-50 active:bg-cyan-100 transition-all duration-300 shadow-2xl hover:shadow-cyan-900/20 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
+						<a href="/contact" class="inline-block bg-[var(--bg-page)] text-[var(--accent-cyan)] px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[var(--bg-muted)] active:bg-[var(--bg-subtle)] transition-all duration-300 shadow-2xl hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
 							Start Your Project
 						</a>
 					</div>
