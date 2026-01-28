@@ -3,24 +3,41 @@
 
 @import "tailwindcss";
 
-/* Obsidian Color Palette - High Contrast Theme Variables */
+/* Theme-Aware CSS Variables - High-Contrast "Obsidian" Engineering Firm Look */
 :root {
-	--background: 0 0% 100%;
-	--foreground: 222.2 84% 4.9%;
-	--card: 0 0% 100%;
-	--border: 217.2 32.6% 17.5%;
+	--bg-page: #f8fafc;
+	--bg-card: #ffffff;
+	--text-header: #0f172a;
+	--text-body: #334155;
+	--stroke: #cbd5e1;
+	--accent-cyan: #22d3ee; /* Bright cyan-400 for light mode */
 }
 
 .dark {
-	--background: 222 47% 4%;
-	--foreground: 210 40% 98%;
-	--card: 222 47% 7%;
-	--border: 217 33% 17%;
+	--bg-page: #020617;
+	--bg-card: #0f172a;
+	--text-header: #ffffff;
+	--text-body: #cbd5e1;
+	--stroke: #1e293b;
+	--accent-cyan: #22d3ee; /* Bright cyan-400 for dark mode - same as light mode */
 }
 
-/* Force deep slate-950 background globally for dark mode */
+/* Global Typography Application */
+h1, h2, h3, h4, h5, h6 {
+	color: var(--text-header);
+}
+
+p, span, li {
+	color: var(--text-body);
+}
+
+/* Force theme-aware background globally */
+body {
+	background-color: var(--bg-page);
+}
+
 .dark body {
-	background-color: #020617 !important;
+	background-color: var(--bg-page);
 }
 
 /* Noise/Grain texture overlay for obsidian theme */

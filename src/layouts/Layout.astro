@@ -8,8 +8,8 @@ interface Props {
 }
 
 const { 
-	title = "FirstLayer Digital",
-	description = "FirstLayer Digital specializes in operational infrastructure, internal tools, data dashboards (Streamlit), and private cloud solutions (Proxmox, Nextcloud). Custom business infrastructure built for growth."
+	title = "FirstLayer Digital | Pasadena, Maryland Engineering Firm",
+	description = "Pasadena, Maryland engineering firm specializing in custom software development, operational infrastructure, internal tools, data dashboards (Streamlit), and private cloud solutions (Proxmox, Nextcloud). Custom Software Development Maryland."
 } = Astro.props;
 ---
 
@@ -84,11 +84,28 @@ const {
 		</script>
 		
 		<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d9a6d370f7284634a0bcb7486d55264e"}'></script>
+		
+		<!-- JSON-LD ProfessionalService Schema -->
+		<script type="application/ld+json" set:html={JSON.stringify({
+			"@context": "https://schema.org",
+			"@type": "ProfessionalService",
+			"name": "First Layer Digital LLC",
+			"address": {
+				"@type": "PostalAddress",
+				"streetAddress": "4301 Mountain Road, Unit 202",
+				"addressLocality": "Pasadena",
+				"addressRegion": "MD",
+				"postalCode": "21123-0202",
+				"addressCountry": "US"
+			},
+			"email": "hello@firstlayer.digital",
+			"url": "https://firstlayer.digital"
+		})} />
 	</head>
 	
-	<body class="bg-white dark:bg-[#020617] font-sans text-slate-600 dark:text-slate-400 flex flex-col min-h-screen transition-colors duration-300 relative">
+	<body class="bg-page font-sans text-body flex flex-col min-h-screen transition-colors duration-300 relative">
 		
-		<nav class="bg-slate-900/60 backdrop-blur-lg text-white shadow-lg sticky top-0 z-50 border-b border-white/10 transition-colors duration-300">
+		<nav class="bg-[var(--bg-card)]/60 backdrop-blur-lg text-[var(--text-header)] shadow-lg sticky top-0 z-50 border-b border-[var(--stroke)] transition-colors duration-300">
 			<div class="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col md:flex-row justify-between items-center">
 				
 				<a href="/" class="mb-3 md:mb-0 flex items-center hover:opacity-80 transition-opacity touch-manipulation">
@@ -125,9 +142,6 @@ const {
 						<span class="relative z-10">CONTACT</span>
 						<span class="absolute inset-0 rounded-xl bg-cyan-400/30 blur-xl opacity-0 group-hover:opacity-100 group-hover:animate-pulse transition-opacity duration-300"></span>
 					</a>
-					
-					<!-- Theme Toggle -->
-					<ThemeToggle />
 				</div>
 
 			</div>
@@ -154,14 +168,14 @@ const {
 
 		<slot />
 
-		<footer class="relative bg-slate-50 dark:bg-[#020617] py-12 sm:py-14 md:py-16 mt-auto border-t border-slate-200 dark:border-slate-800/50 transition-colors duration-300">
+		<footer class="relative bg-[var(--bg-page)] py-12 sm:py-14 md:py-16 mt-auto border-t border-[var(--stroke)] transition-colors duration-300">
 			<div class="relative max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
 				<!-- Three-Column Layout -->
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-10">
 					<!-- Column 1: Logo/Tagline -->
 					<div class="text-center md:text-left">
 						<img src="/logo.svg" alt="First Layer Digital" class="h-20 sm:h-24 md:h-28 lg:h-32 w-auto opacity-90 mx-auto md:mx-0 mb-4" />
-						<p class="text-slate-600 dark:text-slate-400 text-sm sm:text-base lg:text-lg">
+						<p class="text-[var(--text-body)] text-sm sm:text-base lg:text-lg">
 							Building the web of tomorrow, today.
 						</p>
 						<div class="flex justify-center md:justify-start items-center gap-4 sm:gap-6 mt-4">
@@ -180,7 +194,7 @@ const {
 
 					<!-- Column 2: Navigation Links -->
 					<div class="text-center md:text-left">
-						<h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-4">Navigation</h3>
+						<h3 class="text-base sm:text-lg font-bold text-[var(--text-header)] mb-4">Navigation</h3>
 						<nav class="flex flex-col gap-3 sm:gap-4">
 							<a href="/" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors text-sm sm:text-base">Home</a>
 							<a href="/services" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors text-sm sm:text-base">Services</a>
@@ -199,23 +213,25 @@ const {
 
 					<!-- Column 3: Official Contact Info -->
 					<div class="text-center md:text-left">
-						<h3 class="text-base sm:text-lg font-bold text-slate-900 dark:text-white mb-4">Contact</h3>
+						<h3 class="text-base sm:text-lg font-bold text-[var(--text-header)] mb-4">Contact</h3>
 						<div class="space-y-3 sm:space-y-4 text-sm sm:text-base">
 							<div>
-								<p class="text-slate-600 dark:text-slate-400 mb-1">Email</p>
+								<p class="text-[var(--text-body)] mb-1">Email</p>
 								<a href="mailto:hello@firstlayer.digital" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-cyan-400 transition-colors">hello@firstlayer.digital</a>
 							</div>
 							<div>
-								<p class="text-slate-600 dark:text-slate-400 mb-1">Address</p>
-								<p class="text-slate-600 dark:text-slate-400">4301 Mountain Road, Unit 202, Pasadena, Maryland 21123-0202</p>
+								<p class="text-[var(--text-body)] mb-1">Address</p>
+								<p class="text-[var(--text-body)]">4301 Mountain Road, Unit 202, Pasadena, Maryland 21123-0202</p>
 							</div>
-							<div class="pt-4">
+							<div class="pt-4 flex items-center gap-4">
 								<div class="inline-flex items-center gap-2 bg-slate-800/60 backdrop-blur-sm px-3 sm:px-4 py-1.5 sm:py-2 rounded-full border border-slate-700/50">
 									<svg class="w-4 h-4 text-cyan-400" fill="currentColor" viewBox="0 0 20 20">
 										<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
 									</svg>
 									<span class="text-xs sm:text-sm text-slate-300 font-medium">Maryland-Owned & Operated</span>
 								</div>
+								<!-- Theme Toggle -->
+								<ThemeToggle />
 							</div>
 						</div>
 					</div>
@@ -223,7 +239,7 @@ const {
 
 				<!-- Copyright -->
 				<div class="border-t border-slate-200 dark:border-slate-800/50 pt-6 sm:pt-8 text-center">
-					<p class="text-xs sm:text-sm text-slate-600 dark:text-slate-400">
+					<p class="text-xs sm:text-sm text-[var(--text-body)]">
 						&copy; {new Date().getFullYear()} First Layer Digital LLC. All rights reserved.
 					</p>
 				</div>

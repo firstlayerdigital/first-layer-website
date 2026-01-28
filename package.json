@@ -15,5 +15,8 @@
     "astro": "^5.16.6",
     "openai": "^6.15.0",
     "tailwindcss": "^4.1.18"
+  },
+  "devDependencies": {
+    "@astrojs/sitemap": "^3.7.0"
   }
 }

@@ -3,7 +3,7 @@ title: "VantageDash: Automated Market Intelligence"
 description: "Transforming manual price tracking into an automated market intelligence system, eliminating margin bleed and reclaiming 15+ hours of weekly executive labor through Node.js scrapers, Streamlit visualization, and Proxmox containerization."
 date: 2025-01-15
 techStack: ["Node.js", "Streamlit", "Proxmox", "Python", "Web Scraping", "Data Visualization", "Containerization"]
-result: "100% price synchronization achieved, reclaiming 15+ hours of weekly executive labor"
+result: "Reclaiming 15 hours of weekly executive labor"
 clientName: "P1 Packaging"
 category: "operational-infrastructure"
 anonymous: false
