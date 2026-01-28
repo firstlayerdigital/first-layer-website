@@ -40,141 +40,180 @@ const primaryCategory = post.data.tags && post.data.tags.length > 0
 			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-blue-900/10 rounded-full blur-3xl"></div>
 		</div>
 
-		<div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 relative z-10">
+		<div class="max-w-4xl 2xl:max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 relative z-10">
 			<!-- Back Link -->
 			<div class="mb-6 sm:mb-8">
-				<a href="/blog" class="inline-flex items-center gap-2 text-sm text-cyan-600 dark:text-cyan-400 hover:text-cyan-700 dark:hover:text-cyan-300 font-medium transition-colors group font-mono">
+				<a href="/blog" class="inline-flex items-center gap-2 text-sm font-mono text-[var(--accent-cyan)] hover:text-[var(--accent-cyan)]/80 transition-colors group">
 					<svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
 						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
 					</svg>
-					Back to Insights
+					<span class="border-b border-[var(--accent-cyan)]">Back to Insights</span>
 				</a>
 			</div>
 
-			<!-- Two-Column Layout -->
-			<div class="grid lg:grid-cols-4 gap-8 lg:gap-12">
-				<!-- Main Content (75%) -->
-				<div class="lg:col-span-3">
-					<!-- Article Metadata Ribbon -->
-					<div class="mb-6 sm:mb-8 bg-[var(--bg-card)]/80 dark:bg-slate-950/60 backdrop-blur-sm border border-[var(--stroke)] dark:border-slate-800 rounded-xl p-4 sm:p-5">
-						<div class="flex flex-wrap items-center gap-4 sm:gap-6 text-xs sm:text-sm font-mono text-slate-600 dark:text-slate-300">
-							<div>
-								<span class="text-slate-900 dark:text-white">{primaryCategory}</span>
-							</div>
-							<div>
-								<span class="text-cyan-600 dark:text-cyan-400">DATE:</span> <span class="text-slate-900 dark:text-white">{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
-							</div>
-							<div>
-								<span class="text-cyan-600 dark:text-cyan-400">READ_TIME:</span> <span class="text-slate-900 dark:text-white">{readingTime} MIN</span>
-							</div>
-							{post.data.updatedDate && (
-								<div>
-									<span class="text-cyan-600 dark:text-cyan-400">UPDATED:</span> <span class="text-slate-900 dark:text-white">{post.data.updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}</span>
-								</div>
-							)}
-						</div>
+			<!-- Professional Report Layout -->
+			<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl shadow-lg">
+				<!-- Report Header Section -->
+				<header class="border-b-4 border-[var(--accent-cyan)] p-6 sm:p-8 md:p-10">
+					<!-- Category Badge -->
+					<div class="mb-4">
+						<span class="inline-block px-3 py-1.5 bg-[var(--accent-cyan)]/10 border-2 border-[var(--accent-cyan)] rounded-lg">
+							<span class="text-xs font-mono font-bold text-[var(--accent-cyan)] uppercase tracking-wider">{primaryCategory}</span>
+						</span>
 					</div>
 
-					<!-- Article Header -->
-					<header class="mb-8 sm:mb-12">
-						<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-bold text-[var(--text-header)] dark:text-white mb-4 sm:mb-6 leading-tight">
-							{post.data.title}
-						</h1>
-						<p class="text-lg sm:text-xl md:text-xl lg:text-2xl text-[var(--text-body)] dark:text-slate-300 mb-6 leading-relaxed">
+					<!-- Report Metadata -->
+					<div class="grid sm:grid-cols-2 gap-4 mb-6 pb-6 border-b border-[var(--stroke)] text-xs sm:text-sm font-mono">
+						<div>
+							<span class="text-[var(--accent-cyan)]">PUBLICATION_DATE:</span>
+							<span class="text-[var(--text-body)] ml-2">{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+						</div>
+						<div>
+							<span class="text-[var(--accent-cyan)]">ESTIMATED_READ_TIME:</span>
+							<span class="text-[var(--text-body)] ml-2">{readingTime} MIN</span>
+						</div>
+						{post.data.updatedDate && (
+							<div>
+								<span class="text-[var(--accent-cyan)]">LAST_UPDATED:</span>
+								<span class="text-[var(--text-body)] ml-2">{post.data.updatedDate.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</span>
+							</div>
+						)}
+						{post.data.author && (
+							<div>
+								<span class="text-[var(--accent-cyan)]">AUTHOR:</span>
+								<span class="text-[var(--text-body)] ml-2">{post.data.author}</span>
+							</div>
+						)}
+					</div>
+
+					<!-- Title -->
+					<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-header)] mb-4 sm:mb-6 leading-tight">
+						{post.data.title}
+					</h1>
+
+					<!-- Abstract/Description -->
+					<div class="bg-[var(--bg-page)] border-l-4 border-[var(--accent-cyan)] p-4 sm:p-6 rounded-r-lg">
+						<p class="text-base sm:text-lg text-[var(--text-body)] leading-relaxed font-medium">
 							{post.data.description}
 						</p>
-						<div class="flex flex-wrap items-center gap-3 text-sm text-slate-500 font-mono">
-							<span>By {post.data.author}</span>
-							{post.data.tags && post.data.tags.length > 0 && (
-								<span class="text-slate-600">•</span>
-							)}
-							{post.data.tags && post.data.tags.length > 0 && (
-								<div class="flex flex-wrap gap-2">
-									{post.data.tags.map((tag) => (
-										<span class="bg-slate-800/50 text-slate-300 px-2.5 py-1 rounded-lg text-xs border border-slate-700">
-											{tag}
-										</span>
-									))}
-								</div>
-							)}
+					</div>
+
+					<!-- Tags -->
+					{post.data.tags && post.data.tags.length > 0 && (
+						<div class="mt-6 flex flex-wrap items-center gap-3">
+							<span class="text-xs font-mono text-[var(--accent-cyan)] uppercase">TOPICS:</span>
+							{post.data.tags.map((tag) => (
+								<span class="px-3 py-1.5 bg-[var(--bg-page)] border border-[var(--stroke)] rounded-lg text-xs sm:text-sm font-mono text-[var(--text-body)]">
+									{tag}
+								</span>
+							))}
 						</div>
-					</header>
+					)}
+				</header>
 
-					<!-- Article Content -->
-					<article class="article-content mb-12">
-						<Content />
-					</article>
-				</div>
+				<!-- Article Content -->
+				<article class="article-content p-6 sm:p-8 md:p-10">
+					<Content />
+				</article>
 
-				<!-- Sidebar (25%) -->
-				<aside class="lg:col-span-1">
-					<QuickContact />
-				</aside>
+				<!-- Report Footer -->
+				<footer class="border-t border-[var(--stroke)] p-6 sm:p-8 md:p-10 bg-[var(--bg-page)]">
+					<div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+						<div class="text-sm font-mono text-[var(--text-body)]">
+							<span class="text-[var(--accent-cyan)]">DOCUMENT_ID:</span>
+							<span class="ml-2">{post.slug}</span>
+						</div>
+						<a href="/blog" class="inline-flex items-center gap-2 text-sm font-mono text-[var(--accent-cyan)] hover:text-[var(--accent-cyan)]/80 transition-colors group border-b border-[var(--accent-cyan)] pb-1">
+							<svg class="w-4 h-4 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+							</svg>
+							View All Reports
+						</a>
+					</div>
+				</footer>
 			</div>
 
+			<!-- Quick Contact Sidebar (below on mobile, fixed on desktop) -->
+			<div class="mt-8 lg:mt-12">
+				<QuickContact />
+			</div>
 		</div>
 	</main>
 </InsightLayout>
 
 <style>
-	/* Article Typography - Engineering Report Aesthetic with Light/Dark Mode Support */
+	/* Professional Report Typography - Optimized for Reading */
 	.article-content {
 		color: var(--text-body);
-		line-height: 1.8; /* leading-relaxed */
+		line-height: 1.75;
+		font-size: 1.0625rem; /* 17px base for better readability */
+		max-width: 65ch; /* Optimal reading width */
 	}
 
 	.article-content h1 {
-		font-size: 2.25rem;
+		font-size: 2rem;
 		font-weight: 700;
 		color: var(--text-header);
-		margin-top: 2.5rem;
+		margin-top: 3rem;
 		margin-bottom: 1.5rem;
-		line-height: 1.2;
+		line-height: 1.3;
+		border-bottom: 2px solid var(--stroke);
+		padding-bottom: 0.75rem;
 	}
 
 	.article-content h2 {
-		font-size: 1.875rem;
+		font-size: 1.625rem;
 		font-weight: 700;
 		color: var(--text-header);
 		margin-top: 2.5rem;
-		margin-bottom: 1.5rem;
-		line-height: 1.3;
+		margin-bottom: 1.25rem;
+		line-height: 1.4;
+		border-bottom: 1px solid var(--stroke);
+		padding-bottom: 0.5rem;
 	}
 
 	.article-content h3 {
-		font-size: 1.5rem;
-		font-weight: 700;
+		font-size: 1.375rem;
+		font-weight: 600;
 		color: var(--text-header);
 		margin-top: 2rem;
 		margin-bottom: 1rem;
-		line-height: 1.4;
+		line-height: 1.5;
+	}
+
+	.article-content h4 {
+		font-size: 1.125rem;
+		font-weight: 600;
+		color: var(--text-header);
+		margin-top: 1.5rem;
+		margin-bottom: 0.75rem;
+		line-height: 1.5;
 	}
 
 	.article-content p {
-		margin-bottom: 2rem; /* mb-8 */
-		line-height: 1.8; /* leading-relaxed */
+		margin-bottom: 1.5rem;
+		line-height: 1.75;
 		color: var(--text-body);
+		text-align: justify;
+		hyphens: auto;
 	}
 
 	.article-content ul, .article-content ol {
-		margin-bottom: 2rem;
+		margin-bottom: 1.5rem;
 		margin-left: 1.5rem;
-		color: rgb(51 65 85); /* slate-700 */
-	}
-
-	.dark .article-content ul, .dark .article-content ol {
-		color: rgb(203 213 225); /* slate-300 */
+		padding-left: 0.5rem;
+		color: var(--text-body);
 	}
 
 	.article-content li {
-		margin-bottom: 1rem;
-		line-height: 1.875;
+		margin-bottom: 0.75rem;
+		line-height: 1.75;
 		position: relative;
-		padding-left: 0.5rem;
+		padding-left: 1rem;
 	}
 
 	.article-content ul li::marker {
-		display: none; /* Hide default marker */
+		display: none;
 	}
 
 	.article-content ul li::before {
@@ -185,32 +224,61 @@ const primaryCategory = post.data.tags && post.data.tags.length > 0
 		font-weight: 600;
 	}
 
+	.article-content ol {
+		counter-reset: item;
+		list-style: none;
+	}
+
+	.article-content ol li {
+		counter-increment: item;
+		position: relative;
+		padding-left: 2rem;
+	}
+
+	.article-content ol li::before {
+		content: counter(item) '.';
+		position: absolute;
+		left: 0;
+		color: var(--accent-cyan);
+		font-weight: 600;
+		font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+	}
+
 	.article-content strong {
 		font-weight: 700;
 		color: var(--text-header);
+	}
+
+	.article-content em {
+		font-style: italic;
+		color: var(--text-body);
 	}
 
 	.article-content a {
 		color: var(--accent-cyan);
 		text-decoration: underline;
 		text-decoration-color: color-mix(in srgb, var(--accent-cyan) 50%, transparent);
+		text-underline-offset: 3px;
 		transition: all 0.2s;
 	}
 
 	.article-content a:hover {
-		color: color-mix(in srgb, var(--accent-cyan) 80%, black);
+		color: var(--accent-cyan);
 		text-decoration-color: var(--accent-cyan);
+		text-underline-offset: 2px;
 	}
 
-	/* Code Blocks - Theme-aware (only for code inside pre tags) */
-
+	/* Code Blocks - Professional Report Style */
 	.article-content pre {
-		background-color: color-mix(in srgb, var(--bg-card) 80%, transparent);
-		border: 1px solid color-mix(in srgb, var(--accent-cyan) 30%, transparent);
+		background-color: color-mix(in srgb, var(--bg-page) 95%, var(--bg-card));
+		border: 1px solid var(--stroke);
+		border-left: 4px solid var(--accent-cyan);
 		border-radius: 0.5rem;
-		padding: 1rem;
+		padding: 1.25rem;
 		overflow-x: auto;
-		margin-bottom: 1.5rem;
+		margin: 2rem 0;
+		font-size: 0.9375rem;
+		line-height: 1.6;
 	}
 
 	.article-content pre code {
@@ -218,21 +286,85 @@ const primaryCategory = post.data.tags && post.data.tags.length > 0
 		border: none;
 		padding: 0;
 		color: var(--text-body);
+		font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
 	}
 
-	/* Blockquotes - Cyan Left Border with Theme-aware Background */
+	/* Inline Code */
+	.article-content code:not(pre code) {
+		background-color: color-mix(in srgb, var(--bg-page) 90%, var(--bg-card));
+		color: var(--text-header);
+		padding: 0.1875rem 0.4375rem;
+		border-radius: 0.25rem;
+		font-size: 0.875rem;
+		font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
+		border: 1px solid var(--stroke);
+	}
+
+	/* Blockquotes - Professional Report Style */
 	.article-content blockquote {
 		border-left: 4px solid var(--accent-cyan);
-		background-color: color-mix(in srgb, var(--accent-cyan) 10%, transparent);
-		padding: 1rem 1.5rem;
-		margin: 1.5rem 0;
+		background-color: color-mix(in srgb, var(--accent-cyan) 8%, transparent);
+		padding: 1.25rem 1.75rem;
+		margin: 2rem 0;
 		border-radius: 0 0.5rem 0.5rem 0;
 		color: var(--text-body);
 		font-style: italic;
+		line-height: 1.75;
 	}
 
-	/* Technical Terms - Monospace for hardware, software, metrics */
-	.article-content :global(code),
+	.article-content blockquote p {
+		margin-bottom: 0.75rem;
+	}
+
+	.article-content blockquote p:last-child {
+		margin-bottom: 0;
+	}
+
+	/* Tables - Professional Report Style */
+	.article-content table {
+		width: 100%;
+		border-collapse: collapse;
+		margin: 2rem 0;
+		font-size: 0.9375rem;
+	}
+
+	.article-content th {
+		background-color: color-mix(in srgb, var(--bg-page) 90%, var(--bg-card));
+		color: var(--text-header);
+		font-weight: 600;
+		padding: 0.75rem 1rem;
+		text-align: left;
+		border-bottom: 2px solid var(--stroke);
+		border-top: 1px solid var(--stroke);
+	}
+
+	.article-content td {
+		padding: 0.75rem 1rem;
+		border-bottom: 1px solid var(--stroke);
+		color: var(--text-body);
+	}
+
+	.article-content tr:hover {
+		background-color: color-mix(in srgb, var(--bg-page) 95%, var(--bg-card));
+	}
+
+	/* Images */
+	.article-content img {
+		max-width: 100%;
+		height: auto;
+		border-radius: 0.5rem;
+		margin: 2rem 0;
+		border: 1px solid var(--stroke);
+	}
+
+	/* Horizontal Rules */
+	.article-content hr {
+		border: none;
+		border-top: 2px solid var(--stroke);
+		margin: 3rem 0;
+	}
+
+	/* Technical Terms */
 	.article-content :global(.tech-term),
 	.article-content :global(.hardware),
 	.article-content :global(.software),
@@ -243,42 +375,6 @@ const primaryCategory = post.data.tags && post.data.tags.length > 0
 		background-color: color-mix(in srgb, var(--bg-page) 90%, var(--bg-card));
 		padding: 0.125rem 0.375rem;
 		border-radius: 0.25rem;
-	}
-
-	/* Inline code styling - Light Mode: bg-slate-100 text-slate-900, Dark Mode: bg-slate-800 text-slate-100 */
-	.article-content code:not(pre code) {
-		background-color: rgb(241 245 249); /* slate-100 - Light Mode */
-		color: rgb(15 23 42); /* slate-900 - Light Mode */
-		padding: 0.125rem 0.375rem;
-		border-radius: 0.25rem;
-		font-size: 0.875rem;
-		font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, "Liberation Mono", monospace;
-	}
-
-	.dark .article-content code:not(pre code) {
-		background-color: rgb(30 41 59); /* slate-800 - Dark Mode */
-		color: rgb(241 245 249); /* slate-100 - Dark Mode */
-	}
-
-	/* Ensure all list items use cyan arrow */
-	.article-content ol li::marker {
-		display: none;
-	}
-
-	.article-content ol li::before {
-		content: '→';
-		position: absolute;
-		left: -1.25rem;
-		color: rgb(8 145 178); /* cyan-600 */
-		font-weight: 600;
-	}
-
-	.dark .article-content ol li::before {
-		color: rgb(34 211 238); /* cyan-400 */
-	}
-
-	.article-content ol li {
-		position: relative;
-		padding-left: 0.5rem;
+		border: 1px solid var(--stroke);
 	}
 </style>
