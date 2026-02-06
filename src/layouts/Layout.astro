@@ -8,8 +8,8 @@ interface Props {
 }
 
 const { 
-	title = "FirstLayer Digital | Pasadena, Maryland Engineering Firm",
-	description = "Pasadena, Maryland engineering firm specializing in custom software development, operational infrastructure, internal tools, data dashboards (Streamlit), and private cloud solutions (Proxmox, Nextcloud). Custom Software Development Maryland."
+title = "FirstLayer Digital | Pasadena, Maryland Computer Systems Design & Custom Software",
+		description = "Pasadena, Maryland computer systems design and custom software development: operational infrastructure, internal tools, data dashboards (Streamlit), and private cloud solutions (Proxmox, Nextcloud). Custom Software Development Maryland."
 } = Astro.props;
 ---
 
@@ -90,7 +90,7 @@ const {
 		<script async src="https://www.googletagmanager.com/gtag/js?id=G-QVZKKJSC56"></script>
 		<script>
 			window.dataLayer = window.dataLayer || [];
-			function gtag(){dataLayer.push(arguments);}
+			function gtag(..._args: unknown[]){ (window.dataLayer = window.dataLayer || []).push(arguments); }
 			gtag('js', new Date());
 			gtag('config', 'G-QVZKKJSC56');
 		</script>
@@ -214,15 +214,15 @@ const {
 
 		<slot />
 
-		<footer class="relative bg-[var(--bg-page)] py-12 sm:py-14 md:py-16 mt-auto border-t border-[var(--stroke)] transition-colors duration-300" role="contentinfo">
+		<footer class="relative bg-[var(--bg-page)] py-12 sm:py-14 md:py-16 mt-auto border-t border-[var(--stroke)] transition-colors duration-300 font-sans antialiased" role="contentinfo">
 			<div class="relative max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8">
 				<!-- Three-Column Layout -->
 				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-10 md:gap-12 mb-8 sm:mb-10">
 					<!-- Column 1: Logo/Tagline -->
 					<div class="text-center md:text-left">
 						<img src="/logo.svg" alt="First Layer Digital" class="h-20 sm:h-24 md:h-28 lg:h-32 w-auto opacity-90 mx-auto md:mx-0 mb-4" />
-						<p class="text-[var(--text-body)] text-sm sm:text-base lg:text-lg">
-							A Pasadena, Maryland engineering firm building the web of tomorrow through custom engineering and operational infrastructure.
+						<p class="text-[var(--text-body)] text-sm sm:text-base lg:text-lg leading-relaxed tracking-tight">
+							A Pasadena, Maryland computer systems design practice building the web of tomorrow through custom software and operational infrastructure.
 						</p>
 						<div class="flex justify-center md:justify-start items-center gap-4 sm:gap-6 mt-4">
 							<a href="https://www.instagram.com/firstlayerdigital/" target="_blank" rel="noopener noreferrer" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors group" aria-label="Follow us on Instagram">
@@ -240,7 +240,7 @@ const {
 
 					<!-- Column 2: Navigation Links -->
 					<div class="text-center md:text-left">
-						<h3 class="text-base sm:text-lg font-bold text-[var(--text-header)] mb-4">Navigation</h3>
+						<h3 class="text-base sm:text-lg font-semibold text-[var(--text-header)] mb-4 tracking-tight">Navigation</h3>
 						<nav class="flex flex-col gap-3 sm:gap-4">
 							<a href="/" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors text-sm sm:text-base">Home</a>
 							<a href="/services" class="text-slate-500 hover:text-cyan-600 dark:text-slate-500 dark:hover:text-[var(--accent-cyan)] transition-colors text-sm sm:text-base">Services</a>
@@ -259,7 +259,7 @@ const {
 
 					<!-- Column 3: Official Contact Info -->
 					<div class="text-center md:text-left">
-						<h3 class="text-base sm:text-lg font-bold text-[var(--text-header)] mb-4">Contact</h3>
+						<h3 class="text-base sm:text-lg font-semibold text-[var(--text-header)] mb-4 tracking-tight">Contact</h3>
 						<div class="space-y-3 sm:space-y-4 text-sm sm:text-base">
 							<div>
 								<p class="text-[var(--text-body)] mb-1">Email</p>
@@ -285,7 +285,7 @@ const {
 
 				<!-- Copyright -->
 				<div class="border-t border-[var(--stroke)] pt-6 sm:pt-8 text-center">
-					<p class="text-xs sm:text-sm text-[var(--text-body)]">
+					<p class="text-xs sm:text-sm text-[var(--text-body)] tracking-tight antialiased">
 						&copy; {new Date().getFullYear()} First Layer Digital LLC. All rights reserved.
 					</p>
 				</div>
