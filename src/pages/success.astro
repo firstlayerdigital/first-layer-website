@@ -58,15 +58,18 @@ export const prerender = true;
 		</div>
 	</main>
 
-	<!-- Google Ads conversion: only when user reached this page after submitting the contact form -->
+	<!-- Google Ads conversion: only on this page and only after form submit (flag set by contact.astro before redirect) -->
 	<script is:inline>
 		(function() {
+			if (typeof window === 'undefined') return;
+			var path = window.location.pathname.replace(/\/$/, '') || '/';
+			if (path !== '/success') return;
 			var key = 'fl_form_submitted';
-			if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem(key) === '1') {
-				sessionStorage.removeItem(key);
-				if (typeof gtag === 'function') {
-					gtag('event', 'conversion', { 'send_to': 'AW-17896889359' });
-				}
+			if (typeof sessionStorage === 'undefined') return;
+			if (sessionStorage.getItem(key) !== '1') return;
+			sessionStorage.removeItem(key);
+			if (typeof gtag === 'function') {
+				gtag('event', 'conversion', { 'send_to': 'AW-17896889359' });
 			}
 		})();
 	</script>
