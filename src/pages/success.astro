@@ -58,12 +58,12 @@ export const prerender = true;
 		</div>
 	</main>
 
-	<!-- Google Ads conversion: fires exactly once per session when user reaches success page after form submit -->
+	<!-- Google Ads conversion: only when user reached this page after submitting the contact form -->
 	<script is:inline>
 		(function() {
-			var key = 'fl_ads_conversion_fired';
-			if (typeof sessionStorage !== 'undefined' && !sessionStorage.getItem(key)) {
-				sessionStorage.setItem(key, '1');
+			var key = 'fl_form_submitted';
+			if (typeof sessionStorage !== 'undefined' && sessionStorage.getItem(key) === '1') {
+				sessionStorage.removeItem(key);
 				if (typeof gtag === 'function') {
 					gtag('event', 'conversion', { 'send_to': 'AW-17896889359' });
 				}

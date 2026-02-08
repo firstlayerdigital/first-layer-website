@@ -146,6 +146,7 @@ export const prerender = true;
 				});
 
 				if (response.ok) {
+					try { sessionStorage.setItem('fl_form_submitted', '1'); } catch (e) {}
 					window.location.href = '/success';
 					return;
 				}
