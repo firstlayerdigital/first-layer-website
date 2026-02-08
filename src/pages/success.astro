@@ -68,8 +68,11 @@ export const prerender = true;
 			if (typeof sessionStorage === 'undefined') return;
 			if (sessionStorage.getItem(key) !== '1') return;
 			sessionStorage.removeItem(key);
+			window.dataLayer = window.dataLayer || [];
 			if (typeof gtag === 'function') {
 				gtag('event', 'conversion', { 'send_to': 'AW-17896889359' });
+			} else {
+				window.dataLayer.push(['event', 'conversion', { 'send_to': 'AW-17896889359' }]);
 			}
 		})();
 	</script>
