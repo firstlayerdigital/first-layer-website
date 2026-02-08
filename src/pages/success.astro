@@ -58,16 +58,16 @@ export const prerender = true;
 		</div>
 	</main>
 
-	<!-- Google Ads conversion: only on this page and only after form submit (flag set by contact.astro before redirect) -->
+	<!-- Google Ads conversion: fire once per session when user visits /success or /success/ -->
 	<script is:inline>
 		(function() {
-			if (typeof window === 'undefined') return;
-			var path = window.location.pathname.replace(/\/$/, '') || '/';
+			if (typeof window === 'undefined' || typeof sessionStorage === 'undefined') return;
+			var path = (window.location.pathname || '').replace(/\/$/, '') || '/';
 			if (path !== '/success') return;
-			var key = 'fl_form_submitted';
-			if (typeof sessionStorage === 'undefined') return;
-			if (sessionStorage.getItem(key) !== '1') return;
-			sessionStorage.removeItem(key);
+			var firedKey = 'fl_ads_conversion_fired';
+			if (sessionStorage.getItem(firedKey)) return;
+			sessionStorage.setItem(firedKey, '1');
+
 			window.dataLayer = window.dataLayer || [];
 			if (typeof gtag === 'function') {
 				gtag('event', 'conversion', { 'send_to': 'AW-17896889359' });
