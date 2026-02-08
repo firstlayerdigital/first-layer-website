@@ -1,20 +1,14 @@
 ---
 // Single canonical Google tag (gtag.js) for the site.
-// - Google Ads AW-17896889359: only loaded when pathname !== '/contact' (so contact page never sends data to Ads)
-// - GA4 G-QVZKKJSC56: always loaded
-interface Props { pathname?: string }
-const { pathname = '' } = Astro.props;
-const path = pathname.replace(/\/$/, '') || '/';
-const loadGoogleAds = path !== '/contact';
+// - Google Ads AW-17896889359
+// - GA4 G-QVZKKJSC56
 ---
 <!-- Google tag (gtag.js) - Google Ads + GA4 -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=AW-17896889359"></script>
-<script is:inline define:vars={{ loadGoogleAds }}>
+<script is:inline>
 	window.dataLayer = window.dataLayer || [];
 	function gtag(){dataLayer.push(arguments);}
 	gtag('js', new Date());
-	if (loadGoogleAds) {
-		gtag('config', 'AW-17896889359');
-	}
+	gtag('config', 'AW-17896889359');
 	gtag('config', 'G-QVZKKJSC56');
 </script>

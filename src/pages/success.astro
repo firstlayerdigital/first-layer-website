@@ -58,7 +58,7 @@ export const prerender = true;
 		</div>
 	</main>
 
-	<!-- Google Ads conversion: fire once per session when user visits /success or /success/ -->
+	<!-- Google Ads conversion: fire once per session when user visits /success or /success/. Delay so gtag.js (async) has loaded. -->
 	<script is:inline>
 		(function() {
 			if (typeof window === 'undefined' || typeof sessionStorage === 'undefined') return;
@@ -68,12 +68,15 @@ export const prerender = true;
 			if (sessionStorage.getItem(firedKey)) return;
 			sessionStorage.setItem(firedKey, '1');
 
-			window.dataLayer = window.dataLayer || [];
-			if (typeof gtag === 'function') {
-				gtag('event', 'conversion', { 'send_to': 'AW-17896889359' });
-			} else {
-				window.dataLayer.push(['event', 'conversion', { 'send_to': 'AW-17896889359' }]);
+			function fire() {
+				window.dataLayer = window.dataLayer || [];
+				if (typeof gtag === 'function') {
+					gtag('event', 'conversion', { 'send_to': 'AW-17896889359' });
+				} else {
+					window.dataLayer.push(['event', 'conversion', { 'send_to': 'AW-17896889359' }]);
+				}
 			}
+			setTimeout(fire, 1500);
 		})();
 	</script>
 </Layout>
