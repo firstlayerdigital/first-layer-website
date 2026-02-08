@@ -57,4 +57,17 @@ export const prerender = true;
 			</div>
 		</div>
 	</main>
+
+	<!-- Google Ads conversion: fires exactly once per session when user reaches success page after form submit -->
+	<script is:inline>
+		(function() {
+			var key = 'fl_ads_conversion_fired';
+			if (typeof sessionStorage !== 'undefined' && !sessionStorage.getItem(key)) {
+				sessionStorage.setItem(key, '1');
+				if (typeof gtag === 'function') {
+					gtag('event', 'conversion', { 'send_to': 'AW-17896889359' });
+				}
+			}
+		})();
+	</script>
 </Layout>

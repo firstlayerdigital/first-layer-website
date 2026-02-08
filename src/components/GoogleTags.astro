@@ -1,0 +1,15 @@
+---
+// Single canonical Google tag (gtag.js) for the site.
+// Used in Layout.astro and InsightLayout.astro so every page gets exactly one load.
+// - Google Ads: AW-17896889359
+// - GA4: G-QVZKKJSC56
+---
+<!-- Google tag (gtag.js) - Google Ads + GA4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=AW-17896889359"></script>
+<script is:inline>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'AW-17896889359');
+	gtag('config', 'G-QVZKKJSC56');
+</script>

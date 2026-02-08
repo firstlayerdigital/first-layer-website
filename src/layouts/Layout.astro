@@ -1,6 +1,7 @@
 ---
 import '../styles/global.css';
 import ThemeToggle from '../components/ThemeToggle.astro';
+import GoogleTags from '../components/GoogleTags.astro';
 
 interface Props {
 	title?: string;
@@ -86,15 +87,7 @@ title = "FirstLayer Digital | Pasadena, Maryland Computer Systems Design & Custo
 			})();
 		</script>
 		
-		<!-- Google tag (gtag.js) -->
-		<script async src="https://www.googletagmanager.com/gtag/js?id=G-QVZKKJSC56"></script>
-		<script>
-			window.dataLayer = window.dataLayer || [];
-			function gtag(..._args: unknown[]){ (window.dataLayer = window.dataLayer || []).push(arguments); }
-			gtag('js', new Date());
-			gtag('config', 'G-QVZKKJSC56');
-		</script>
-		
+		<GoogleTags />
 		<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "d9a6d370f7284634a0bcb7486d55264e"}'></script>
 		
 		<!-- JSON-LD ProfessionalService Schema -->
