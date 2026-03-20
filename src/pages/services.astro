@@ -3,340 +3,208 @@ import Layout from '../layouts/Layout.astro';
 ---
 
 <Layout title="Services | FirstLayer Digital" description="Operational infrastructure, internal tools, data dashboards (Streamlit), and private cloud solutions (Proxmox, Nextcloud). Custom business infrastructure and web development services.">
-	<main class="relative overflow-hidden bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]" role="main">
-		<!-- Background gradient layers for depth -->
-		<div class="fixed inset-0 -z-10">
-			<div class="absolute inset-0 bg-gradient-to-br from-[var(--bg-page)] via-[var(--accent-cyan)]/20 to-[var(--bg-page)] transition-colors duration-300"></div>
-			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl transition-colors duration-300"></div>
-			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl transition-colors duration-300"></div>
-		</div>
+	<main role="main">
 
-		<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
-			<!-- Hero Section -->
-			<div class="relative text-center mb-12 sm:mb-16 md:mb-20">
-				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
-					<span class="text-[var(--text-header)]">Professional</span> <span class="relative inline-block">
-						<span class="relative z-10 drop-shadow-[0_0_12px_color-mix(in_srgb,var(--accent-cyan)_30%,transparent)]" style="color: #22d3ee !important;">Services</span>
-						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-cyan-600/15 blur-3xl -z-0"></span>
-						<span class="absolute -inset-2 bg-gradient-to-r from-[var(--accent-cyan)]/10 via-[var(--accent-cyan)]/10 to-[var(--accent-cyan)]/10 blur-2xl -z-0"></span>
-					</span>
+		<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+			<!-- Hero -->
+			<div class="text-center mb-16 sm:mb-20">
+				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+					Professional <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]">Services</span>
 				</h1>
-				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-[var(--text-body)] text-[var(--text-body)] max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2 transition-colors duration-300">
+				<p class="text-lg sm:text-xl text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
 					Engineering-driven solutions that deliver measurable results. From concept to deployment, we build with precision and purpose.
 				</p>
 			</div>
 
-			<!-- Core Services Section -->
-			<section class="mb-16 sm:mb-20 md:mb-24">
-				<div class="text-center mb-10 sm:mb-12 md:mb-16">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Core Services</h2>
-					<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
-				</div>
+			<!-- Core Services -->
+			<section class="mb-16 sm:mb-20">
+				<h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">Core Services</h2>
 
-				<div class="grid md:grid-cols-2 gap-6 sm:gap-8">
-					<!-- Website Design/Development -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">🌐</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">Website Design & Development</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
-								Custom-built websites engineered for performance, security, and scalability. We leverage modern frameworks and best practices to deliver sites that load fast, rank well, and convert visitors into customers.
-							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Responsive, mobile-first design</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>SEO-optimized architecture</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Performance optimization (90+ Lighthouse scores)</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Security hardening and best practices</span>
-								</li>
-							</ul>
-						</div>
+				<div class="grid md:grid-cols-2 gap-6">
+					<!-- Website Design -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Website Design & Development</h3>
+						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
+							Custom-built websites engineered for performance, security, and scalability. We leverage modern frameworks and best practices to deliver sites that load fast, rank well, and convert.
+						</p>
+						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Responsive, mobile-first design</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>SEO-optimized architecture</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Performance optimization (90+ Lighthouse)</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Security hardening and best practices</li>
+						</ul>
 					</div>
 
-					<!-- Custom Software Development -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">⚙️</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">Custom Software Development</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
-								Tailored software solutions built to solve specific business challenges. From internal tools and operational infrastructure to customer-facing applications, we develop robust, maintainable code that scales with your needs.
-							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Full-stack development</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>API design and integration</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Database architecture</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>DevOps and deployment automation</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Internal tools and operational infrastructure</span>
-								</li>
-							</ul>
-						</div>
+					<!-- Custom Software -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Custom Software Development</h3>
+						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
+							Tailored software solutions built to solve specific business challenges. From internal tools to customer-facing applications, we develop robust, maintainable code that scales.
+						</p>
+						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Full-stack development</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>API design and integration</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Database architecture</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>DevOps and deployment automation</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Internal tools and operational infrastructure</li>
+						</ul>
 					</div>
 
-					<!-- E-commerce Optimization -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">🛒</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">E-commerce Optimization</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
-								Maximize your online store's performance and profitability. We optimize checkout flows, improve conversion rates, and integrate payment systems that reduce friction and increase sales.
-							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Platform setup and configuration</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Inventory management systems</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Payment gateway integration</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Conversion rate optimization</span>
-								</li>
-							</ul>
-						</div>
+					<!-- E-commerce -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">E-commerce Optimization</h3>
+						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
+							Maximize your online store's performance and profitability. We optimize checkout flows, improve conversion rates, and integrate payment systems that reduce friction.
+						</p>
+						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Platform setup and configuration</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Inventory management systems</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Payment gateway integration</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Conversion rate optimization</li>
+						</ul>
 					</div>
 
 					<!-- SEO -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">📈</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">Search Engine Optimization (SEO)</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
-								Technical SEO implementation that improves your search rankings and organic visibility. We optimize site structure, metadata, and performance to help you rank higher and attract qualified traffic.
-							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>On-page optimization</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Technical SEO audits</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Schema markup implementation</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Site speed and Core Web Vitals optimization</span>
-								</li>
-							</ul>
-						</div>
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Search Engine Optimization</h3>
+						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
+							Technical SEO implementation that improves your search rankings and organic visibility. We optimize site structure, metadata, and performance to help you rank higher.
+						</p>
+						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>On-page optimization</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Technical SEO audits</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Schema markup implementation</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Core Web Vitals optimization</li>
+						</ul>
 					</div>
 				</div>
 			</section>
 
-			<!-- Operational Infrastructure & Internal Tools Section -->
-			<section id="operational-infrastructure" class="mb-16 sm:mb-20 md:mb-24">
-				<div class="text-center mb-10 sm:mb-12 md:mb-16">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Operational Infrastructure & Internal Tools</h2>
-					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] text-[var(--text-body)] max-w-3xl mx-auto leading-relaxed px-2 transition-colors duration-300">
+			<!-- Operational Infrastructure -->
+			<section id="operational-infrastructure" class="mb-16 sm:mb-20">
+				<div class="text-center mb-8">
+					<h2 class="text-2xl sm:text-3xl font-bold mb-3">Operational Infrastructure & Internal Tools</h2>
+					<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
 						Specialized solutions for custom business infrastructure, data visualization, and private cloud deployments.
 					</p>
-					<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-cyan-500 to-transparent mx-auto"></div>
 				</div>
 
-				<div class="grid md:grid-cols-2 gap-6 sm:gap-8">
-					<!-- Data Dashboards & Streamlit -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">📊</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">Data Dashboards & Streamlit</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
-								Custom data dashboards and interactive analytics tools built with <span class="text-cyan-400 font-mono">Streamlit</span>. Transform your business data into actionable insights with intuitive visualizations and real-time reporting.
-							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span><span class="text-cyan-400 font-mono">Streamlit</span> dashboard development</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Custom data visualization pipelines</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Real-time analytics and reporting</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Data integration and ETL processes</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-
-					<!-- Private Cloud & Infrastructure -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-xl sm:rounded-2xl shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-16 sm:h-16 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl sm:rounded-2xl flex items-center justify-center text-[var(--button-text)] text-2xl sm:text-3xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">☁️</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">Private Cloud & Infrastructure</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
-								Private cloud infrastructure setup and management using <span class="text-cyan-400 font-mono">Proxmox</span> and Nextcloud. Secure, self-hosted solutions for data sovereignty and complete control over your business infrastructure.
-							</p>
-							<ul class="text-sm sm:text-base text-[var(--text-body)] text-[var(--text-body)] space-y-2 transition-colors duration-300">
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span><span class="text-cyan-400 font-mono">Proxmox</span> virtualization and containerization</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Nextcloud private cloud deployment</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Infrastructure automation and orchestration</span>
-								</li>
-								<li class="flex items-start gap-2">
-									<span class="text-cyan-600 font-bold mt-0.5">•</span>
-									<span>Security hardening and backup strategies</span>
-								</li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- Hybrid Pricing Model Section -->
-			<section class="mb-16 sm:mb-20 md:mb-24">
-				<div class="relative bg-[var(--bg-card)] backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border border-[var(--stroke)] p-6 sm:p-8 md:p-10 lg:p-12 overflow-hidden transition-colors duration-300">
-					<div class="absolute inset-0 bg-gradient-to-br from-cyan-50/30 via-transparent to-blue-50/20 dark:from-cyan-500/5 dark:via-transparent dark:to-blue-500/5 rounded-2xl sm:rounded-3xl -z-10 transition-colors duration-300"></div>
-					
-					<div class="text-center mb-8 sm:mb-10 md:mb-12">
-						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Hybrid Pricing Model</h2>
-						<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed transition-colors duration-300">
-							Flexible pricing structures designed to align with your project needs and budget. We offer multiple engagement models to ensure you get the right level of service at the right price.
+				<div class="grid md:grid-cols-2 gap-6">
+					<!-- Data Dashboards -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Data Dashboards & Streamlit</h3>
+						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
+							Custom data dashboards and interactive analytics tools built with Streamlit. Transform your business data into actionable insights with intuitive visualizations.
 						</p>
+						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Streamlit dashboard development</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Custom data visualization pipelines</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Real-time analytics and reporting</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Data integration and ETL processes</li>
+						</ul>
 					</div>
 
-					<div class="grid md:grid-cols-3 gap-6 sm:gap-8">
-						<!-- Consultation Fees -->
-						<div class="group bg-[var(--bg-card)] backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-[var(--stroke)] shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl sm:text-2xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">💡</div>
-							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Consultation Fees</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
-								Strategic planning and technical consultation to help define your project scope, requirements, and optimal technology stack. Perfect for businesses that need expert guidance before committing to a full development project.
-							</p>
-							<div class="bg-[var(--box-bg-light)] rounded-lg p-3 sm:p-4 border border-[var(--box-border-light)] transition-all duration-300 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_12px_color-mix(in_srgb,var(--accent-cyan)_8%,transparent)]">
-								<p class="text-xs sm:text-sm text-[var(--text-body)] font-mono">
-									<strong class="text-[var(--text-header)]">Ideal for:</strong> Project scoping, technology selection, architecture planning, and feasibility analysis.
-								</p>
-							</div>
-						</div>
-
-						<!-- Fixed-Price MVPs -->
-						<div class="group bg-[var(--bg-card)] backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-[var(--stroke)] shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)] relative ring-2 ring-[var(--accent-cyan)]/20">
-							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl sm:text-2xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">🚀</div>
-							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Fixed-Price MVPs</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
-								Predictable pricing for well-defined projects. We deliver complete, production-ready minimum viable products (MVPs) with clear deliverables, timelines, and budgets. Perfect for startups and businesses with specific feature requirements.
-							</p>
-							<div class="bg-[var(--box-bg-light)] rounded-lg p-3 sm:p-4 border border-[var(--box-border-light)] transition-all duration-300 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_12px_color-mix(in_srgb,var(--accent-cyan)_8%,transparent)]">
-								<p class="text-xs sm:text-sm text-[var(--text-body)] font-mono">
-									<strong class="text-[var(--text-header)]">Ideal for:</strong> New product launches, feature-complete websites, and projects with clearly defined scope.
-								</p>
-							</div>
-						</div>
-
-						<!-- Operational Maintenance & Oversight -->
-						<div class="group bg-[var(--bg-card)] backdrop-blur-xl rounded-xl sm:rounded-2xl p-6 sm:p-8 border border-[var(--stroke)] shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-cyan-500/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-cyan-500 to-cyan-600 rounded-xl flex items-center justify-center text-white text-xl sm:text-2xl mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">🔧</div>
-							<h3 class="text-lg sm:text-xl md:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Operational Maintenance & Oversight</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-body)] leading-relaxed mb-4 transition-colors duration-300">
-								Ongoing Proxmox host health monitoring, security patching, cloudflared tunnel stability, and automated data integrity backups. This recurring technical oversight retainer ensures your private infrastructure operates reliably and securely.
-							</p>
-							<div class="bg-[var(--box-bg-light)] rounded-lg p-3 sm:p-4 border border-[var(--box-border-light)] mb-3 transition-all duration-300 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_12px_color-mix(in_srgb,var(--accent-cyan)_8%,transparent)]">
-								<p class="text-xs sm:text-sm text-[var(--text-body)] font-mono">
-									<strong class="text-[var(--text-header)]">Services Include:</strong> Proxmox host health monitoring, security patching, cloudflared tunnel stability, automated data integrity backups, and proactive issue resolution.
-								</p>
-							</div>
-							<div class="bg-[var(--bg-card)]/60 bg-[var(--box-bg-light)] rounded-lg p-3 sm:p-4 border border-[var(--stroke)]/40 border-[var(--box-border-light)] transition-all duration-300 group-hover:border-cyan-400/50 group-hover:shadow-[0_0_12px_color-mix(in_srgb,var(--accent-cyan)_8%,transparent)]">
-								<p class="text-xs sm:text-sm text-[var(--text-body)] font-mono">
-									<strong class="text-[var(--text-header)]">Pricing:</strong> Defined in Article 3.3 (Phase 3: Hourly Rate) of the Master Service Agreement. Ideal for established infrastructure requiring ongoing technical oversight and maintenance.
-								</p>
-							</div>
-						</div>
-					</div>
-				</div>
-			</section>
-
-			<!-- 60-Day Support Section -->
-			<section class="mb-12 sm:mb-16 md:mb-20">
-				<div class="relative bg-gradient-to-br from-cyan-600 via-cyan-500 to-blue-600 rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl overflow-hidden">
-					<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
-					<div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>
-					<div class="relative z-10 text-center">
-						<div class="group w-16 h-16 sm:w-20 sm:h-20 bg-white/20 backdrop-blur-sm rounded-2xl flex items-center justify-center text-white text-3xl sm:text-4xl mb-6 sm:mb-8 mx-auto shadow-lg transition-transform duration-300 hover:scale-110 cursor-default">🛡️</div>
-						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-white mb-4 sm:mb-6">60-Day Post-Launch Support</h2>
-						<p class="text-cyan-50/90 mb-6 sm:mb-8 max-w-2xl 2xl:max-w-3xl mx-auto text-base sm:text-lg lg:text-lg 2xl:text-xl leading-relaxed px-2">
-							Every project includes a comprehensive 60-day post-launch support period at no additional cost. During this time, we address bugs, provide technical assistance, and ensure your site performs as expected.
+					<!-- Private Cloud -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Private Cloud & Infrastructure</h3>
+						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
+							Private cloud infrastructure using Proxmox and Nextcloud. Secure, self-hosted solutions for data sovereignty and complete control over your business infrastructure.
 						</p>
-						<div class="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 max-w-4xl mx-auto text-left">
-							<div class="group bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:border-white/30 hover:shadow-lg hover:shadow-white/10">
-								<h3 class="text-white font-bold text-sm sm:text-base mb-2">Bug Fixes</h3>
-								<p class="text-cyan-50/90 text-xs sm:text-sm">Rapid resolution of any issues discovered after launch</p>
-							</div>
-							<div class="group bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:border-white/30 hover:shadow-lg hover:shadow-white/10">
-								<h3 class="text-white font-bold text-sm sm:text-base mb-2">Technical Support</h3>
-								<p class="text-cyan-50/90 text-xs sm:text-sm">Direct access to our team for questions and guidance</p>
-							</div>
-							<div class="group bg-white/10 backdrop-blur-sm rounded-xl p-4 sm:p-5 border border-white/20 sm:col-span-2 md:col-span-1 transition-all duration-300 hover:-translate-y-1 hover:bg-white/20 hover:border-white/30 hover:shadow-lg hover:shadow-white/10">
-								<h3 class="text-white font-bold text-sm sm:text-base mb-2">Performance Monitoring</h3>
-								<p class="text-cyan-50/90 text-xs sm:text-sm">Ongoing monitoring to ensure optimal performance</p>
-							</div>
-						</div>
+						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Proxmox virtualization and containerization</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Nextcloud private cloud deployment</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Infrastructure automation and orchestration</li>
+							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Security hardening and backup strategies</li>
+						</ul>
 					</div>
-					<div class="absolute bottom-0 left-0 w-full h-20 sm:h-24 bg-gradient-to-t from-white/5 to-transparent"></div>
 				</div>
 			</section>
 
-			<!-- CTA Section -->
+			<!-- Pricing Model -->
+			<section class="mb-16 sm:mb-20">
+				<div class="text-center mb-8">
+					<h2 class="text-2xl sm:text-3xl font-bold mb-3">Hybrid Pricing Model</h2>
+					<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
+						Flexible pricing structures designed to align with your project needs and budget.
+					</p>
+				</div>
+
+				<div class="grid md:grid-cols-3 gap-6">
+					<!-- Consultation -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 sm:p-8">
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Consultation Fees</h3>
+						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
+							Strategic planning and technical consultation to help define your project scope, requirements, and optimal technology stack.
+						</p>
+						<div class="bg-[var(--bg-muted)] rounded-md p-3 border border-[var(--stroke)]">
+							<p class="text-xs sm:text-sm text-[var(--text-body)]">
+								<strong class="text-[var(--text-header)]">Ideal for:</strong> Project scoping, technology selection, architecture planning.
+							</p>
+						</div>
+					</div>
+
+					<!-- Fixed-Price -->
+					<div class="bg-[var(--bg-card)] border-2 border-[var(--accent)] rounded-lg p-6 sm:p-8 relative">
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Fixed-Price MVPs</h3>
+						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
+							Predictable pricing for well-defined projects. Complete, production-ready MVPs with clear deliverables, timelines, and budgets.
+						</p>
+						<div class="bg-[var(--bg-muted)] rounded-md p-3 border border-[var(--stroke)]">
+							<p class="text-xs sm:text-sm text-[var(--text-body)]">
+								<strong class="text-[var(--text-header)]">Ideal for:</strong> New product launches, feature-complete websites, defined scope.
+							</p>
+						</div>
+					</div>
+
+					<!-- Maintenance -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 sm:p-8">
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Operational Maintenance</h3>
+						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
+							Ongoing Proxmox host health monitoring, security patching, cloudflared tunnel stability, and automated data integrity backups.
+						</p>
+						<div class="bg-[var(--bg-muted)] rounded-md p-3 border border-[var(--stroke)]">
+							<p class="text-xs sm:text-sm text-[var(--text-body)]">
+								<strong class="text-[var(--text-header)]">Ideal for:</strong> Established infrastructure requiring ongoing technical oversight.
+							</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- 60-Day Support -->
+			<section class="mb-16 sm:mb-20">
+				<div class="bg-[var(--accent)] rounded-lg p-8 sm:p-12 text-center">
+					<h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">60-Day Post-Launch Support</h2>
+					<p class="text-cyan-50 mb-8 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
+						Every project includes a comprehensive 60-day post-launch support period at no additional cost.
+					</p>
+					<div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
+						<div class="bg-white/10 rounded-md p-4">
+							<h3 class="text-white font-semibold text-sm mb-1">Bug Fixes</h3>
+							<p class="text-cyan-50/80 text-xs sm:text-sm">Rapid resolution of any issues discovered after launch</p>
+						</div>
+						<div class="bg-white/10 rounded-md p-4">
+							<h3 class="text-white font-semibold text-sm mb-1">Technical Support</h3>
+							<p class="text-cyan-50/80 text-xs sm:text-sm">Direct access to our team for questions and guidance</p>
+						</div>
+						<div class="bg-white/10 rounded-md p-4">
+							<h3 class="text-white font-semibold text-sm mb-1">Performance Monitoring</h3>
+							<p class="text-cyan-50/80 text-xs sm:text-sm">Ongoing monitoring to ensure optimal performance</p>
+						</div>
+					</div>
+				</div>
+			</section>
+
+			<!-- CTA -->
 			<section class="text-center">
-				<div class="group relative bg-[var(--bg-card)]/40 backdrop-blur-xl rounded-2xl sm:rounded-3xl shadow-2xl border-t border-[var(--stroke)] p-8 sm:p-12 md:p-16 overflow-hidden transition-all duration-300 hover:-translate-y-1 hover:border-cyan-500/30 hover:shadow-[0_0_24px_color-mix(in_srgb,var(--accent-cyan)_10%,transparent)]">
-					<!-- Blueprint Grid Pattern Background -->
-					<div class="absolute inset-0 bg-[radial-gradient(#06b6d40d_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-					<div class="relative z-10">
-						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] dark:text-white dark:font-bold mb-4 sm:mb-6 transition-colors duration-300">Ready to Get Started?</h2>
-						<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] text-[var(--text-body)] mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed transition-colors duration-300">
-							Let's discuss your project and determine the best pricing model for your needs.
-						</p>
-						<a href="/contact" class="inline-block bg-[var(--button-bg)] text-[var(--button-text)] px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold font-mono text-base sm:text-lg hover:bg-[var(--button-bg-hover)] active:bg-[var(--button-bg-active)] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
-							Schedule a Consultation
-						</a>
-					</div>
-				</div>
+				<h2 class="text-2xl sm:text-3xl font-bold mb-4">Ready to Get Started?</h2>
+				<p class="text-base sm:text-lg text-[var(--text-body)] mb-8 max-w-2xl mx-auto leading-relaxed">
+					Let's discuss your project and determine the best pricing model for your needs.
+				</p>
+				<a href="/contact" class="inline-block bg-[var(--accent)] text-white px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--accent-hover)] transition-colors duration-200 min-h-[48px]">
+					Schedule a Consultation
+				</a>
 			</section>
 		</div>
 	</main>
 </Layout>
-

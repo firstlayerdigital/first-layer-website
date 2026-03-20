@@ -4,37 +4,25 @@
 <button
 	id="theme-toggle"
 	aria-label="Toggle theme"
-	class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-lg bg-[var(--bg-muted)] hover:bg-[var(--bg-subtle)] border border-[var(--stroke)] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 touch-manipulation"
+	class="relative w-9 h-9 sm:w-10 sm:h-10 rounded-md bg-[var(--bg-muted)] hover:bg-[var(--bg-subtle)] border border-[var(--stroke)] flex items-center justify-center transition-colors duration-200"
 >
-	<!-- Sun icon (shown when dark mode is active, to switch to light) -->
 	<svg
 		id="sun-icon"
-		class="absolute w-4 h-4 sm:w-5 sm:h-5 text-[var(--accent-cyan)] transition-all duration-300 rotate-0 scale-0"
+		class="absolute w-4 h-4 sm:w-5 sm:h-5 text-amber-500 transition-all duration-200 scale-0"
 		fill="none"
 		stroke="currentColor"
 		viewBox="0 0 24 24"
 	>
-		<path
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="2"
-			d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
-		></path>
+		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
 	</svg>
-	<!-- Moon icon (shown when light mode is active, to switch to dark) -->
 	<svg
 		id="moon-icon"
-		class="absolute w-4 h-4 sm:w-5 sm:h-5 text-[var(--text-header)] dark:text-[var(--accent-cyan)] transition-all duration-300 rotate-0 scale-100"
+		class="absolute w-4 h-4 sm:w-5 sm:h-5 text-[var(--text-muted)] transition-all duration-200 scale-100"
 		fill="none"
 		stroke="currentColor"
 		viewBox="0 0 24 24"
 	>
-		<path
-			stroke-linecap="round"
-			stroke-linejoin="round"
-			stroke-width="2"
-			d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"
-		></path>
+		<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z"></path>
 	</svg>
 </button>
 
@@ -43,18 +31,13 @@
     const isDark = document.documentElement.classList.contains('dark');
     const sunIcon = document.querySelector('#sun-icon');
     const moonIcon = document.querySelector('#moon-icon');
-    
     if (sunIcon && moonIcon) {
-      // If dark mode is active, show Sun icon (to switch to light)
-      // If light mode is active, show Moon icon (to switch to dark)
       if (isDark) {
-        // Show sun icon, hide moon icon
         sunIcon.classList.remove('scale-0');
         sunIcon.classList.add('scale-100');
         moonIcon.classList.remove('scale-100');
         moonIcon.classList.add('scale-0');
       } else {
-        // Show moon icon, hide sun icon
         sunIcon.classList.remove('scale-100');
         sunIcon.classList.add('scale-0');
         moonIcon.classList.remove('scale-0');
@@ -64,48 +47,25 @@
   };
 
   const applyTheme = () => {
-    const theme = localStorage.getItem('theme') || 
+    const theme = localStorage.getItem('theme') ||
       (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-    
-    // Explicitly set the dark class based on theme
     if (theme === 'dark') {
       document.documentElement.classList.add('dark');
     } else {
       document.documentElement.classList.remove('dark');
     }
-    
     updateIconVisibility();
   };
-  
-  // Initialize immediately and on DOM ready
-  const initTheme = () => {
-    applyTheme();
-  };
-  
-  if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', initTheme);
-  } else {
-    initTheme();
-  }
-  
-  // Re-apply on page navigation (Astro) - ensure it runs after swap
-  document.addEventListener('astro:after-swap', () => {
-    // Small delay to ensure DOM is ready and icons are re-queried
-    setTimeout(() => {
-      applyTheme();
-      updateIconVisibility(); // Explicitly update icons after swap
-    }, 0);
-  });
-  
-  // Also listen for astro:page-load for additional safety
-  document.addEventListener('astro:page-load', () => {
-    setTimeout(() => {
-      applyTheme();
-      updateIconVisibility();
-    }, 0);
-  });
 
-  // Add click listener specifically to the button ID
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', applyTheme);
+  } else {
+    applyTheme();
+  }
+
+  document.addEventListener('astro:after-swap', () => setTimeout(applyTheme, 0));
+  document.addEventListener('astro:page-load', () => setTimeout(applyTheme, 0));
+
   document.addEventListener('click', (e) => {
     if (e.target.closest('#theme-toggle')) {
       const isDark = document.documentElement.classList.toggle('dark');

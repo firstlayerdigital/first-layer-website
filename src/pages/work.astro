@@ -2,11 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import { getCollection } from 'astro:content';
 
-// Project data structure supporting anonymous portfolio option
 interface Project {
 	id: string;
 	title: string;
-	clientName?: string; // Optional for anonymous portfolio
+	clientName?: string;
 	category: 'custom-software' | 'digital-transformation' | 'ecommerce-optimization';
 	description: string;
 	mvpJourney: {
@@ -27,7 +26,7 @@ interface Project {
 	githubUrl?: string;
 	ciCd?: boolean;
 	testing?: boolean;
-	anonymous?: boolean; // If true, don't show client name
+	anonymous?: boolean;
 	additionalDetails?: {
 		architecture?: string;
 		features?: string[];
@@ -39,7 +38,7 @@ const projects: Project[] = [
 	{
 		id: '1',
 		title: 'High-Performance Agency Website',
-		clientName: 'First Layer Digital', // This is your own site, so it's fine to name
+		clientName: 'First Layer Digital',
 		category: 'digital-transformation',
 		description: 'A custom-engineered marketing website built with modern static site generation, achieving sub-second load times and perfect SEO scores through Astro\'s Islands Architecture.',
 		mvpJourney: {
@@ -61,7 +60,7 @@ const projects: Project[] = [
 		testing: false,
 		anonymous: false,
 		additionalDetails: {
-			architecture: 'Islands Architecture ships zero JS by default, resulting in industry-leading Core Web Vitals. Features glassmorphism design elements, gradient effects, and fully responsive mobile-first layout.',
+			architecture: 'Islands Architecture ships zero JS by default, resulting in industry-leading Core Web Vitals. Fully responsive mobile-first layout with clean design system.',
 			features: ['Legal compliance pages (Terms, Privacy Policy)', 'Services page with hybrid pricing model', 'Portfolio showcase with MVP methodology', 'Netlify Forms integration', 'Automated CI/CD via GitHub Actions', 'Analytics integration (Google Analytics, Cloudflare)'],
 			results: 'Achieved 98+ Lighthouse scores across all metrics, sub-0.5s load times, and perfect Core Web Vitals. Site serves as both portfolio showcase and demonstration of engineering excellence.'
 		}
@@ -86,11 +85,11 @@ const projects: Project[] = [
 			loadTime: '< 1.2s',
 			coreWebVitals: 'All Green'
 		},
-		anonymous: true, // Example of anonymous portfolio option
+		anonymous: true,
 		additionalDetails: {
 			architecture: 'Automated inventory synchronization between warehouse management system and Shopify, reducing manual data entry by 85%. Custom theme development with mobile-first responsive design.',
 			features: ['Automated inventory sync via Shopify API', 'Multiple payment options (Stripe, PayPal, Apple Pay, Google Pay)', 'Optimized product pages with rich media galleries', 'Streamlined checkout flow', 'SEO optimization with structured data markup', 'Real-time stock updates'],
-			results: 'Achieved 40% reduction in checkout friction, improved mobile conversion rates, and seamless inventory management workflow. Comprehensive analytics dashboard for tracking performance metrics.'
+			results: 'Achieved 40% reduction in checkout friction, improved mobile conversion rates, and seamless inventory management workflow.'
 		}
 	},
 	{
@@ -117,9 +116,9 @@ const projects: Project[] = [
 		testing: true,
 		anonymous: true,
 		additionalDetails: {
-			architecture: 'Multi-tenant architecture with isolated data per organization, ensuring security and scalability for enterprise use. JWT-based authentication with refresh tokens and role-based access control.',
+			architecture: 'Multi-tenant architecture with isolated data per organization. JWT-based authentication with refresh tokens and role-based access control.',
 			features: ['JWT authentication with refresh tokens', 'Role-based access control (admin, user, viewer)', 'File upload system with cloud storage', 'Data export functionality (CSV, PDF)', 'Real-time data synchronization', 'Comprehensive error handling and logging'],
-			results: 'Production-ready application with automated testing suite, CI/CD pipeline, and comprehensive API documentation. Includes monitoring, logging, and 60-day post-launch support for maintenance and optimization.'
+			results: 'Production-ready application with automated testing suite, CI/CD pipeline, and comprehensive API documentation.'
 		}
 	}
 ];
@@ -133,40 +132,6 @@ const getCategoryLabel = (category: Project['category']) => {
 	return labels[category];
 };
 
-const getCategoryColorClasses = (category: Project['category']) => {
-	const classes = {
-		'custom-software': {
-			bg: 'from-cyan-600 via-[var(--accent-cyan)] to-cyan-600',
-			hover: 'from-cyan-50/0 to-cyan-50/30',
-			badge: 'bg-[var(--bg-muted)] text-cyan-700 border-cyan-200/50',
-			tech: 'bg-[var(--bg-muted)] text-cyan-700 border-cyan-200/50'
-		},
-		'digital-transformation': {
-			bg: 'from-blue-600 via-blue-500 to-blue-600',
-			hover: 'from-blue-50/0 to-blue-50/30',
-			badge: 'bg-blue-100/80 text-blue-700 border-blue-200/50',
-			tech: 'bg-blue-100/80 text-blue-700 border-blue-200/50'
-		},
-		'ecommerce-optimization': {
-			bg: 'from-green-600 via-green-500 to-green-600',
-			hover: 'from-green-50/0 to-green-50/30',
-			badge: 'bg-green-100/80 text-green-700 border-green-200/50',
-			tech: 'bg-green-100/80 text-green-700 border-green-200/50'
-		}
-	};
-	return classes[category];
-};
-
-const highlightTechKeywords = (text: string) => {
-	const keywords = ['Astro', 'Tailwind', 'Proxmox', 'Streamlit'];
-	let highlighted = text;
-	keywords.forEach(keyword => {
-		const regex = new RegExp(`\\b${keyword}\\b`, 'gi');
-		highlighted = highlighted.replace(regex, `<span class="text-[var(--accent-cyan)] font-mono">${keyword}</span>`);
-	});
-	return highlighted;
-};
-
 // Group projects by category
 const groupedProjects = projects.reduce((acc, project) => {
 	if (!acc[project.category]) acc[project.category] = [];
@@ -176,199 +141,108 @@ const groupedProjects = projects.reduce((acc, project) => {
 
 const projectCategories = Object.entries(groupedProjects) as [Project['category'], Project[]][];
 
-// Get case studies from content collection
-const caseStudies = (await getCollection('work')).sort((a, b) => 
+const caseStudies = (await getCollection('work')).sort((a, b) =>
 	b.data.date.getTime() - a.data.date.getTime()
 );
 ---
 
-<Layout 
+<Layout
 	title="Our Work | Custom Software Development Projects | FirstLayer Digital"
-	description="Engineering-driven projects showcasing custom software development, digital transformation, e-commerce optimization, operational infrastructure, and data dashboards. Real-world case studies from Pasadena, Maryland."
+	description="Engineering-driven projects showcasing custom software development, digital transformation, e-commerce optimization, operational infrastructure, and data dashboards."
 >
-	<main class="relative overflow-hidden bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]" role="main">
-		<!-- Background gradient layers for depth -->
-		<div class="fixed inset-0 -z-10">
-			<div class="absolute inset-0 bg-gradient-to-br from-slate-50 via-[var(--accent-cyan)]/20 to-slate-50 dark:from-[var(--bg-page)] dark:via-[var(--bg-page)] dark:to-[var(--bg-page)] transition-colors duration-300"></div>
-			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl transition-colors duration-300"></div>
-			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl transition-colors duration-300"></div>
-		</div>
+	<main role="main">
 
-		<div class="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
-			<!-- Hero Section -->
-			<div class="relative text-center mb-12 sm:mb-16 md:mb-20">
-				<h1 class="text-4xl sm:text-5xl md:text-5xl lg:text-6xl 2xl:text-7xl font-extrabold dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
-					<span class="text-[var(--text-header)]">Our</span> <span class="relative inline-block">
-						<span class="relative z-10 drop-shadow-[0_0_12px_color-mix(in_srgb,var(--accent-cyan)_30%,transparent)]" style="color: #22d3ee !important;">Work</span>
-						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-cyan-600/15 blur-3xl -z-0"></span>
-						<span class="absolute -inset-2 bg-gradient-to-r from-[var(--accent-cyan)]/10 via-[var(--accent-cyan)]/10 to-[var(--accent-cyan)]/10 blur-2xl -z-0"></span>
-					</span>
+		<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+			<!-- Hero -->
+			<div class="text-center mb-16 sm:mb-20">
+				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+					Our <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]">Work</span>
 				</h1>
-				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-[var(--text-body)] text-[var(--text-light)] max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2 transition-colors duration-300">
+				<p class="text-lg sm:text-xl text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
 					Engineering-driven solutions built with modern tech stacks, automated workflows, and measurable performance.
 				</p>
 			</div>
 
 			<!-- Projects by Category -->
 			{projectCategories.map(([category, categoryProjects]) => (
-				<section class="mb-16 sm:mb-20 md:mb-24">
-					<div class="text-center mb-10 sm:mb-12 md:mb-16">
-						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">
-							{getCategoryLabel(category)}
-						</h2>
-						<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[var(--accent-cyan)] to-transparent mx-auto"></div>
-					</div>
+				<section class="mb-16 sm:mb-20">
+					<h2 class="text-xl sm:text-2xl font-bold mb-8">{getCategoryLabel(category)}</h2>
 
-					<div class="space-y-6 sm:space-y-8">
-						{categoryProjects.map((project) => {
-							const colorClasses = getCategoryColorClasses(project.category);
-							return (
-								<div class="grid md:grid-cols-2 gap-6 sm:gap-8">
-									<!-- Left: Main Project Card -->
-									<article class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[var(--accent-cyan)]/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-									
-									<!-- Project Image/Header -->
-									<div class={`h-48 sm:h-56 md:h-64 bg-gradient-to-br ${colorClasses.bg} flex items-center justify-center relative overflow-hidden`}>
-										<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
-										<span class="text-[var(--text-header)] font-bold text-base sm:text-lg md:text-xl relative z-10 px-4 text-center" style="color: #ffffff !important;">
-											{project.anonymous ? 'Client Project' : (project.clientName || project.title)}
-										</span>
-									</div>
-
-									<div class="p-6 sm:p-8 relative z-10">
-										<!-- Title and Category Badge -->
+					<div class="space-y-8">
+						{categoryProjects.map((project) => (
+							<div class="grid md:grid-cols-2 gap-6">
+								<!-- Left: Main Card -->
+								<article class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden">
+									<div class="p-6 sm:p-8">
 										<div class="flex items-start justify-between gap-3 mb-3">
-											<h3 class="text-xl sm:text-2xl lg:text-2xl 2xl:text-3xl font-bold text-[var(--text-header)] dark:font-bold group-hover:text-[var(--accent-cyan)] transition-colors flex-1">
-												{project.title}
-											</h3>
-											<span class={`${colorClasses.badge} backdrop-blur-sm text-xs px-2.5 py-1 rounded-lg font-medium border whitespace-nowrap`}>
-												{getCategoryLabel(project.category).split(' ')[0]}
-											</span>
-										</div>
-
-										<!-- Description -->
-										<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-light)] mb-4 sm:mb-6 leading-relaxed transition-colors duration-300" set:html={highlightTechKeywords(project.description)}>
-										</p>
-
-										<!-- MVP Journey -->
-										<div class="bg-[var(--bg-card)] backdrop-blur-md rounded-xl p-4 sm:p-5 mb-4 sm:mb-6 border border-[var(--stroke)]">
-											<h4 class="text-xs sm:text-sm font-bold text-[var(--text-header)] dark:font-bold mb-2 sm:mb-3 uppercase tracking-wide font-mono transition-colors duration-300">MVP Journey</h4>
-											<div class="space-y-2 text-xs sm:text-sm text-[var(--text-muted)] font-mono transition-colors duration-300">
-												<div>
-													<span class="font-semibold text-[var(--accent-cyan)]">Consultation:</span> {project.mvpJourney.consultation}
-												</div>
-												<div>
-													<span class="font-semibold text-[var(--accent-cyan)]">Scope:</span> {project.mvpJourney.scope}
-												</div>
-												<div>
-													<span class="font-semibold text-[var(--accent-cyan)]">Launch:</span> {project.mvpJourney.launch}
-												</div>
-											</div>
-										</div>
-
-										<!-- Technical Specs -->
-										<div class="mb-4 sm:mb-6">
-											<h4 class="text-xs sm:text-sm font-bold text-[var(--text-header)] dark:font-bold mb-2 sm:mb-3 uppercase tracking-wide font-mono transition-colors duration-300">Tech Stack</h4>
-											<div class="flex flex-wrap gap-2 mb-3">
-												{project.techStack.frontend.map((tech) => {
-													const highlightedTech = highlightTechKeywords(tech);
-													return (
-														<span class={`${colorClasses.tech} backdrop-blur-sm text-xs px-2.5 py-1 rounded-lg font-medium border`} set:html={highlightedTech}>
-														</span>
-													);
-												})}
-												{project.techStack.backend?.map((tech) => {
-													const highlightedTech = highlightTechKeywords(tech);
-													return (
-														<span class={`${colorClasses.tech} backdrop-blur-sm text-xs px-2.5 py-1 rounded-lg font-medium border`} set:html={highlightedTech}>
-														</span>
-													);
-												})}
-												{project.techStack.tools?.map((tech) => (
-													<span class="bg-[var(--bg-muted)] backdrop-blur-sm text-[var(--text-body)] text-xs px-2.5 py-1 rounded-lg font-medium border border-[var(--stroke)]">
-														{tech}
-													</span>
-												))}
-											</div>
-											{(project.ciCd || project.testing) && (
-												<div class="flex flex-wrap gap-2 mt-2">
-													{project.ciCd && (
-														<span class="bg-green-100/80 backdrop-blur-sm text-green-700 text-xs px-2.5 py-1 rounded-lg font-medium border border-green-200/50 flex items-center gap-1">
-															<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-															</svg>
-															CI/CD
-														</span>
-													)}
-													{project.testing && (
-														<span class="bg-green-100/80 backdrop-blur-sm text-green-700 text-xs px-2.5 py-1 rounded-lg font-medium border border-green-200/50 flex items-center gap-1">
-															<svg class="w-3 h-3" fill="currentColor" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-															</svg>
-															Automated Testing
-														</span>
-													)}
-												</div>
+											<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)]">{project.title}</h3>
+											{!project.anonymous && project.clientName && (
+												<span class="text-xs text-[var(--text-muted)] font-mono whitespace-nowrap">{project.clientName}</span>
 											)}
 										</div>
 
-										<!-- Performance Metrics -->
-										<div class="bg-gradient-to-br from-[var(--bg-muted)] to-[var(--bg-muted)] backdrop-blur-md rounded-xl p-4 sm:p-5 mb-4 sm:mb-6 border border-[var(--stroke)]">
-											<h4 class="text-xs sm:text-sm font-bold text-[var(--text-header)] dark:font-bold mb-2 sm:mb-3 uppercase tracking-wide font-mono transition-colors duration-300">Performance</h4>
-											<div class="grid grid-cols-2 gap-3 text-xs sm:text-sm">
+										<p class="text-sm text-[var(--text-body)] mb-5 leading-relaxed">{project.description}</p>
+
+										<!-- MVP Journey -->
+										<div class="bg-[var(--bg-muted)] rounded-md p-4 mb-5 border border-[var(--stroke)]">
+											<h4 class="text-xs font-semibold text-[var(--text-header)] mb-2 uppercase tracking-wide font-mono">MVP Journey</h4>
+											<div class="space-y-1.5 text-xs text-[var(--text-body)] font-mono">
+												<div><span class="font-medium text-[var(--accent)]">Consultation:</span> {project.mvpJourney.consultation}</div>
+												<div><span class="font-medium text-[var(--accent)]">Scope:</span> {project.mvpJourney.scope}</div>
+												<div><span class="font-medium text-[var(--accent)]">Launch:</span> {project.mvpJourney.launch}</div>
+											</div>
+										</div>
+
+										<!-- Tech Stack -->
+										<div class="mb-5">
+											<h4 class="text-xs font-semibold text-[var(--text-header)] mb-2 uppercase tracking-wide font-mono">Tech Stack</h4>
+											<div class="flex flex-wrap gap-1.5">
+												{[...project.techStack.frontend, ...(project.techStack.backend || []), ...(project.techStack.tools || [])].map((tech) => (
+													<span class="bg-[var(--bg-muted)] text-[var(--text-body)] text-xs px-2 py-0.5 rounded font-mono border border-[var(--stroke)]">{tech}</span>
+												))}
+												{project.ciCd && <span class="bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 text-xs px-2 py-0.5 rounded font-mono border border-emerald-200 dark:border-emerald-800">CI/CD</span>}
+												{project.testing && <span class="bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 text-xs px-2 py-0.5 rounded font-mono border border-emerald-200 dark:border-emerald-800">Tests</span>}
+											</div>
+										</div>
+
+										<!-- Performance -->
+										<div class="bg-[var(--bg-muted)] rounded-md p-4 mb-5 border border-[var(--stroke)]">
+											<div class="grid grid-cols-2 gap-3 text-sm">
 												<div>
-													<div class="text-[var(--text-muted)] text-[var(--text-light)] mb-1 font-mono transition-colors duration-300">Lighthouse</div>
-													<div class="text-2xl font-bold text-[var(--accent-cyan)] font-mono">{project.performance.lighthouse}+</div>
+													<div class="text-xs text-[var(--text-muted)] font-mono mb-0.5">Lighthouse</div>
+													<div class="text-xl font-bold text-[var(--text-header)] font-mono">{project.performance.lighthouse}+</div>
 												</div>
 												{project.performance.loadTime && (
 													<div>
-														<div class="text-[var(--text-muted)] text-[var(--text-light)] mb-1 font-mono transition-colors duration-300">Load Time</div>
-														<div class="text-lg font-bold text-[var(--accent-cyan)] font-mono">{project.performance.loadTime}</div>
+														<div class="text-xs text-[var(--text-muted)] font-mono mb-0.5">Load Time</div>
+														<div class="text-lg font-bold text-[var(--text-header)] font-mono">{project.performance.loadTime}</div>
 													</div>
 												)}
 												{project.performance.coreWebVitals && (
 													<div class="col-span-2">
-														<div class="text-[var(--text-muted)] text-[var(--text-light)] mb-1 font-mono transition-colors duration-300">Core Web Vitals</div>
-														<div class="text-sm font-semibold text-green-600 font-mono">{project.performance.coreWebVitals}</div>
+														<div class="text-xs text-[var(--text-muted)] font-mono mb-0.5">Core Web Vitals</div>
+														<div class="text-sm font-medium text-emerald-600 dark:text-emerald-400 font-mono">{project.performance.coreWebVitals}</div>
 													</div>
 												)}
 											</div>
 										</div>
 
-										<!-- Client Confidence Callouts -->
-										<div class="space-y-2 mb-4 sm:mb-6">
-											<div class="bg-green-50/60 backdrop-blur-sm rounded-lg p-3 border border-green-200/40 flex items-start gap-2">
-												<svg class="w-5 h-5 text-green-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-													<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-												</svg>
-												<div class="flex-1">
-													<div class="text-xs sm:text-sm font-bold text-green-900 mb-0.5 font-mono">60-Day Post-Launch Support</div>
-													<div class="text-xs text-green-700 font-mono">Comprehensive bug fixes and technical assistance included</div>
-												</div>
+										<!-- Confidence callouts -->
+										<div class="space-y-2 mb-5">
+											<div class="flex items-start gap-2 text-xs text-[var(--text-body)]">
+												<span class="text-emerald-600 dark:text-emerald-400 mt-0.5 font-bold">&check;</span>
+												<span>60-Day Post-Launch Support included</span>
 											</div>
-											<div class="bg-blue-50/60 backdrop-blur-sm rounded-lg p-3 border border-blue-200/40 flex items-start gap-2">
-												<svg class="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-													<path fill-rule="evenodd" d="M4 4a2 2 0 012-2h4.586A2 2 0 0112 2.586L15.414 6A2 2 0 0116 7.414V16a2 2 0 01-2 2H6a2 2 0 01-2-2V4z" clip-rule="evenodd"/>
-												</svg>
-												<div class="flex-1">
-													<div class="text-xs sm:text-sm font-bold text-blue-900 mb-0.5 font-mono">Perpetual License</div>
-													<div class="text-xs text-blue-700 font-mono">Client receives perpetual, non-exclusive license to custom code upon full payment</div>
-												</div>
+											<div class="flex items-start gap-2 text-xs text-[var(--text-body)]">
+												<span class="text-blue-600 dark:text-blue-400 mt-0.5 font-bold">&check;</span>
+												<span>Perpetual, non-exclusive license to custom code upon full payment</span>
 											</div>
 										</div>
 
-										<!-- GitHub Link (if applicable) -->
 										{project.githubUrl && (
-											<a 
-												href={project.githubUrl} 
-												target="_blank" 
-												rel="noopener noreferrer"
-												class="inline-flex items-center gap-2 text-sm text-[var(--accent-cyan)] hover:text-[var(--accent-cyan)]/80 font-medium transition-colors group"
-											>
-												<svg class="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-													<path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
-												</svg>
-												<span class="group-hover:underline">View on GitHub</span>
+											<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1.5">
+												<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
+												View on GitHub
 											</a>
 										)}
 									</div>
@@ -376,36 +250,22 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 
 								<!-- Right: Additional Details -->
 								{project.additionalDetails && (
-									<div class="space-y-4 sm:space-y-6">
+									<div class="space-y-4">
 										{project.additionalDetails.architecture && (
-											<div class="bg-[var(--bg-card)] backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-[var(--stroke)]">
-												<h4 class="text-lg sm:text-xl font-bold text-[var(--text-header)] dark:font-bold mb-3 sm:mb-4 flex items-center gap-2 transition-colors duration-300">
-													<svg class="w-5 h-5 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
-													</svg>
-													Architecture
-												</h4>
-												<p class="text-sm sm:text-base text-[var(--text-muted)] text-[var(--text-light)] leading-relaxed transition-colors duration-300">
-													{project.additionalDetails.architecture}
-												</p>
+											<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6">
+												<h4 class="text-sm font-semibold text-[var(--text-header)] mb-2">Architecture</h4>
+												<p class="text-sm text-[var(--text-body)] leading-relaxed">{project.additionalDetails.architecture}</p>
 											</div>
 										)}
 
 										{project.additionalDetails.features && project.additionalDetails.features.length > 0 && (
-											<div class="bg-[var(--bg-card)] backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-[var(--stroke)]">
-												<h4 class="text-lg sm:text-xl font-bold text-[var(--text-header)] dark:font-bold mb-3 sm:mb-4 flex items-center gap-2 transition-colors duration-300">
-													<svg class="w-5 h-5 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path>
-													</svg>
-													Key Features
-												</h4>
-												<ul class="space-y-2 sm:space-y-3">
+											<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6">
+												<h4 class="text-sm font-semibold text-[var(--text-header)] mb-2">Key Features</h4>
+												<ul class="space-y-1.5">
 													{project.additionalDetails.features.map((feature) => (
-														<li class="flex items-start gap-2 sm:gap-3 text-sm sm:text-base text-[var(--text-muted)] text-[var(--text-light)] transition-colors duration-300">
-															<svg class="w-5 h-5 text-[var(--accent-cyan)] flex-shrink-0 mt-0.5" fill="currentColor" viewBox="0 0 20 20">
-																<path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd"/>
-															</svg>
-															<span>{feature}</span>
+														<li class="flex items-start gap-2 text-sm text-[var(--text-body)]">
+															<span class="text-[var(--accent)] mt-0.5">&bull;</span>
+															{feature}
 														</li>
 													))}
 												</ul>
@@ -413,77 +273,42 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 										)}
 
 										{project.additionalDetails.results && (
-											<div class="bg-gradient-to-br from-[var(--bg-muted)] to-[var(--bg-muted)] backdrop-blur-md rounded-2xl sm:rounded-3xl p-6 sm:p-8 shadow-lg border border-[var(--stroke)]">
-												<h4 class="text-lg sm:text-xl font-bold text-[var(--text-header)] dark:font-bold mb-3 sm:mb-4 flex items-center gap-2 transition-colors duration-300">
-													<svg class="w-5 h-5 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-														<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
-													</svg>
-													Results & Impact
-												</h4>
-												<p class="text-sm sm:text-base text-[var(--text-muted)] text-[var(--text-light)] leading-relaxed transition-colors duration-300">
-													{project.additionalDetails.results}
-												</p>
+											<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6">
+												<h4 class="text-sm font-semibold text-[var(--text-header)] mb-2">Results & Impact</h4>
+												<p class="text-sm text-[var(--text-body)] leading-relaxed">{project.additionalDetails.results}</p>
 											</div>
 										)}
 									</div>
 								)}
-								</div>
-							);
-						})}
+							</div>
+						))}
 					</div>
 				</section>
 			))}
 
 			<!-- Content Collection Case Studies -->
 			{caseStudies.length > 0 && (
-				<section class="mb-16 sm:mb-20 md:mb-24">
-					<div class="text-center mb-10 sm:mb-12 md:mb-16">
-						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">
-							Case Studies
-						</h2>
-						<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[var(--accent-cyan)] to-transparent mx-auto"></div>
-					</div>
+				<section class="mb-16 sm:mb-20">
+					<h2 class="text-xl sm:text-2xl font-bold mb-8">Case Studies</h2>
 
-					<div class="space-y-6 sm:space-y-8">
+					<div class="space-y-4">
 						{caseStudies.map((study) => (
-							<article class="group relative bg-[var(--bg-card)]/40 backdrop-blur-xl border border-[var(--stroke)] rounded-2xl sm:rounded-3xl overflow-hidden shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[var(--accent-cyan)]/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-								
-								<div class="p-6 sm:p-8 relative z-10">
-									<div class="flex items-start justify-between gap-4 mb-4">
-										<div class="flex-1">
-											<h3 class="text-xl sm:text-2xl lg:text-2xl 2xl:text-3xl font-bold text-[var(--text-header)] dark:font-bold mb-2 sm:mb-3 group-hover:text-[var(--accent-cyan)] transition-colors">
-												<a href={`/work/${study.slug}`} class="hover:underline">
-													{study.data.title}
-												</a>
-											</h3>
-											<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] text-[var(--text-light)] leading-relaxed mb-4 transition-colors duration-300">
-												{study.data.description}
-											</p>
-										</div>
-									</div>
+							<article class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 hover:border-[var(--accent)]/40 transition-colors duration-200">
+								<h3 class="text-lg font-semibold text-[var(--text-header)] mb-2">
+									<a href={`/work/${study.slug}`} class="hover:text-[var(--accent)] transition-colors">{study.data.title}</a>
+								</h3>
+								<p class="text-sm text-[var(--text-body)] mb-4 leading-relaxed">{study.data.description}</p>
 
-									<div class="flex flex-wrap items-center gap-4 mb-4">
-										<div class="flex flex-wrap gap-2">
-											{study.data.techStack.slice(0, 5).map((tech) => (
-												<span class="bg-[var(--bg-muted)] dark:bg-slate-800/50 text-[var(--text-header)] px-2.5 py-1 rounded-lg text-xs font-medium border border-[var(--stroke)] font-mono">
-													{tech}
-												</span>
-											))}
-										</div>
-									</div>
+								<div class="flex flex-wrap gap-1.5 mb-4">
+									{study.data.techStack.slice(0, 5).map((tech) => (
+										<span class="bg-[var(--bg-muted)] text-[var(--text-body)] px-2 py-0.5 rounded text-xs font-mono border border-[var(--stroke)]">{tech}</span>
+									))}
+								</div>
 
-									<div class="bg-gradient-to-br from-[var(--bg-muted)] to-[var(--bg-muted)] backdrop-blur-md rounded-xl p-4 sm:p-5 mb-4 border border-[var(--stroke)]">
-										<div class="text-xs sm:text-sm font-bold text-[var(--text-header)] dark:font-bold mb-1 uppercase tracking-wide font-mono">Result</div>
-										<div class="text-sm sm:text-base text-[var(--text-body)] font-mono">
-											{study.data.result}
-										</div>
-									</div>
-
-									<a href={`/work/${study.slug}`} class="inline-flex items-center gap-2 text-sm text-[var(--accent-cyan)] hover:text-[var(--accent-cyan)]/80 font-medium transition-colors group">
-										Read case study
-										<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-										</svg>
+								<div class="flex items-center justify-between">
+									<span class="text-xs text-[var(--text-muted)] font-mono">{study.data.result}</span>
+									<a href={`/work/${study.slug}`} class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
+										Read more <span>&rarr;</span>
 									</a>
 								</div>
 							</article>
@@ -492,30 +317,16 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 				</section>
 			)}
 
-			<!-- CTA Section -->
-			<section class="relative mt-16 sm:mt-20 md:mt-24">
-				<div class="relative bg-gradient-to-br from-cyan-600 via-[var(--accent-cyan)] to-blue-600 rounded-2xl sm:rounded-3xl p-8 sm:p-12 md:p-16 shadow-2xl overflow-hidden">
-					<div class="absolute inset-0 bg-[radial-gradient(circle_at_30%_50%,rgba(255,255,255,0.1),transparent_50%)]"></div>
-					<div class="absolute inset-0 bg-[radial-gradient(circle_at_70%_80%,rgba(255,255,255,0.05),transparent_50%)]"></div>
-					<div class="relative z-10 text-center">
-						<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-head mb-4 sm:mb-6">Ready to Build Your MVP?</h2>
-						<p class="text-cyan-50/90 mb-8 sm:mb-10 max-w-2xl 2xl:max-w-3xl mx-auto text-base sm:text-lg lg:text-lg 2xl:text-xl leading-relaxed px-2">
-							From consultation to launch, we engineer scalable solutions with modern tech stacks and automated workflows.
-						</p>
-						<a href="/contact" class="inline-block bg-[var(--bg-page)] text-[var(--accent-cyan)] px-6 sm:px-8 py-3.5 sm:py-4 rounded-xl font-semibold text-base sm:text-lg hover:bg-[var(--bg-muted)] active:bg-[var(--bg-subtle)] transition-all duration-300 shadow-2xl hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
-							Start Your Project
-						</a>
-					</div>
-					<div class="absolute bottom-0 left-0 w-full h-20 sm:h-24 bg-gradient-to-t from-white/5 to-transparent"></div>
-				</div>
+			<!-- CTA -->
+			<section class="text-center border-t border-[var(--stroke)] pt-16">
+				<h2 class="text-2xl sm:text-3xl font-bold mb-4">Ready to Build Your MVP?</h2>
+				<p class="text-base sm:text-lg text-[var(--text-body)] mb-8 max-w-2xl mx-auto leading-relaxed">
+					From consultation to launch, we engineer scalable solutions with modern tech stacks and automated workflows.
+				</p>
+				<a href="/contact" class="inline-block bg-[var(--accent)] text-white px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--accent-hover)] transition-colors duration-200 min-h-[48px]">
+					Start Your Project
+				</a>
 			</section>
 		</div>
 	</main>
 </Layout>
-
-<style>
-	/* Use CSS variables for theme-aware text colors */
-	h1 > span:first-child {
-		color: var(--text-header) !important;
-	}
-</style>

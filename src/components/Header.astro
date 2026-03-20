@@ -1,47 +1,38 @@
 ---
 ---
-<nav class="bg-[var(--bg-card)]/95 backdrop-blur-md text-[var(--text-header)] shadow-lg sticky top-0 z-50 border-b border-[var(--stroke)]">
-	<div class="max-w-7xl 2xl:max-w-[90rem] mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col md:flex-row justify-between items-center">
-		
+<nav class="bg-[var(--bg-page)] text-[var(--text-header)] border-b border-[var(--stroke)] sticky top-0 z-50">
+	<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col md:flex-row justify-between items-center">
+
 		<a href="/" class="mb-3 md:mb-0 flex items-center hover:opacity-80 transition-opacity touch-manipulation">
 			<img src="/logo.svg" alt="First Layer Digital" class="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto" />
 		</a>
 
-		<div class="flex items-center flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 lg:gap-6 text-sm sm:text-base md:text-base lg:text-base 2xl:text-lg">
-			<a href="/" class="group relative text-[var(--text-muted)] hover:text-[var(--text-header)] active:text-[var(--accent-cyan)] font-medium transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center">
-				<span class="relative z-10">Home</span>
-				<span class="absolute bottom-0 left-0 w-0 h-[2px] sm:h-0.5 md:h-0.5 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-cyan)] group-hover:w-full group-active:w-full transition-all duration-300"></span>
-				<span class="absolute inset-0 bg-slate-100/50 dark:bg-slate-800/50 rounded-lg opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></span>
+		<div class="flex items-center flex-wrap justify-center gap-1 sm:gap-2 text-sm sm:text-base">
+			<a href="/" class="text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-colors duration-200 px-3 py-2 rounded-md hover:bg-[var(--bg-muted)] min-h-[44px] flex items-center">
+				Home
 			</a>
-			<a href="/services" class="group relative text-[var(--text-muted)] hover:text-[var(--text-header)] active:text-[var(--accent-cyan)] font-medium transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center">
-				<span class="relative z-10">Services</span>
-				<span class="absolute bottom-0 left-0 w-0 h-[2px] sm:h-0.5 md:h-0.5 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-cyan)] group-hover:w-full group-active:w-full transition-all duration-300"></span>
-				<span class="absolute inset-0 bg-slate-100/50 dark:bg-slate-800/50 rounded-lg opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></span>
+			<a href="/services" class="text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-colors duration-200 px-3 py-2 rounded-md hover:bg-[var(--bg-muted)] min-h-[44px] flex items-center">
+				Services
 			</a>
-			<a href="/work" class="group relative text-[var(--text-muted)] hover:text-[var(--text-header)] active:text-[var(--accent-cyan)] font-medium transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center">
-				<span class="relative z-10">Work</span>
-				<span class="absolute bottom-0 left-0 w-0 h-[2px] sm:h-0.5 md:h-0.5 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-cyan)] group-hover:w-full group-active:w-full transition-all duration-300"></span>
-				<span class="absolute inset-0 bg-slate-100/50 dark:bg-slate-800/50 rounded-lg opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></span>
+			<a href="/work" class="text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-colors duration-200 px-3 py-2 rounded-md hover:bg-[var(--bg-muted)] min-h-[44px] flex items-center">
+				Work
 			</a>
-			<a href="/about" class="group relative text-[var(--text-muted)] hover:text-[var(--text-header)] active:text-[var(--accent-cyan)] font-medium transition-all duration-300 touch-manipulation px-3 sm:px-4 md:px-5 lg:px-6 py-2 min-h-[44px] sm:min-h-[44px] flex items-center">
-				<span class="relative z-10">About</span>
-				<span class="absolute bottom-0 left-0 w-0 h-[2px] sm:h-0.5 md:h-0.5 bg-gradient-to-r from-[var(--accent-cyan)] to-[var(--accent-cyan)] group-hover:w-full group-active:w-full transition-all duration-300"></span>
-				<span class="absolute inset-0 bg-slate-100/50 dark:bg-slate-800/50 rounded-lg opacity-0 group-hover:opacity-100 group-active:opacity-100 transition-opacity duration-300"></span>
+			<a href="/about" class="text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-colors duration-200 px-3 py-2 rounded-md hover:bg-[var(--bg-muted)] min-h-[44px] flex items-center">
+				About
 			</a>
-			<a href="/contact" class="relative bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] active:bg-[var(--button-bg-active)] text-[var(--text-header)] px-4 sm:px-5 md:px-6 lg:px-7 py-2 sm:py-2.5 md:py-3 rounded-lg font-semibold text-sm sm:text-base md:text-base lg:text-base 2xl:text-lg transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[44px] flex items-center justify-center">
-				<span class="relative z-10">Contact</span>
+			<a href="/contact" class="bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-md font-medium text-sm sm:text-base transition-colors duration-200 min-h-[44px] flex items-center justify-center ml-2">
+				Contact
 			</a>
-			
-			<!-- Dark Mode Toggle Button -->
+
+			<!-- Dark Mode Toggle -->
 			<button
 				id="theme-toggle"
 				aria-label="Toggle theme"
-				class="relative w-10 h-10 sm:w-11 sm:h-11 rounded-lg bg-[var(--bg-muted)] hover:bg-[var(--bg-subtle)] border border-[var(--stroke)] flex items-center justify-center transition-all duration-300 hover:scale-105 active:scale-95 touch-manipulation"
-				style="z-index: 100;"
+				class="w-10 h-10 sm:w-10 sm:h-10 rounded-md bg-[var(--bg-muted)] hover:bg-[var(--bg-subtle)] border border-[var(--stroke)] flex items-center justify-center transition-colors duration-200 ml-2"
 			>
-				<!-- Sun icon (shown when dark mode is active, to switch to light) -->
+				<!-- Sun icon -->
 				<svg
-					class="absolute w-5 h-5 sm:w-6 sm:h-6 text-cyan-400 dark:text-cyan-400 transition-all duration-300 rotate-0 scale-0 dark:rotate-0 dark:scale-100"
+					class="absolute w-5 h-5 text-amber-500 transition-all duration-200 scale-0 dark:scale-100"
 					fill="none"
 					stroke="currentColor"
 					viewBox="0 0 24 24"
@@ -53,9 +44,9 @@
 						d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"
 					></path>
 				</svg>
-				<!-- Moon icon (shown when light mode is active, to switch to dark) -->
+				<!-- Moon icon -->
 				<svg
-					class="absolute w-5 h-5 sm:w-6 sm:h-6 text-[var(--text-header)] dark:text-[var(--accent-cyan)] transition-all duration-300 rotate-0 scale-100 dark:rotate-90 dark:scale-0"
+					class="absolute w-5 h-5 text-[var(--text-muted)] transition-all duration-200 scale-100 dark:scale-0"
 					fill="none"
 					stroke="currentColor"
 					viewBox="0 0 24 24"
@@ -73,19 +64,14 @@
 </nav>
 
 <script>
-	// Robust dark mode toggle with Astro page transitions support
 	function initThemeToggle() {
 		if (typeof document === 'undefined' || typeof window === 'undefined') return;
-		
+
 		const themeToggle = document.getElementById('theme-toggle');
-		const html = document.documentElement; // Target document.documentElement specifically
-		
-		if (!html) {
-			console.error('document.documentElement not found');
-			return;
-		}
-		
-		// Apply theme function - toggles 'dark' class on document.documentElement
+		const html = document.documentElement;
+
+		if (!html) return;
+
 		const applyTheme = (theme) => {
 			if (theme === 'dark') {
 				html.classList.add('dark');
@@ -93,52 +79,34 @@
 				html.classList.remove('dark');
 			}
 			html.setAttribute('data-theme', theme);
-			
-			// Persist to localStorage
 			if (typeof localStorage !== 'undefined') {
 				localStorage.setItem('theme', theme);
 			}
-			
-			console.log('Theme applied:', theme);
 		};
-		
-		// Initialize theme from localStorage or system preference
+
 		const initTheme = () => {
 			const stored = localStorage.getItem('theme');
 			const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
 			const theme = stored || (prefersDark ? 'dark' : 'light');
 			applyTheme(theme);
-			console.log('Theme initialized:', theme);
 		};
-		
-		// Initialize on load
+
 		initTheme();
-		
-		// Toggle theme on button click - use classList.toggle for specificity
+
 		if (themeToggle) {
-			// Remove existing listeners to prevent duplicates
 			const newToggle = themeToggle.cloneNode(true);
 			themeToggle.parentNode.replaceChild(newToggle, themeToggle);
-			
+
 			newToggle.addEventListener('click', () => {
-				const isDark = html.classList.contains('dark');
-				// Use classList.toggle for maximum specificity
 				html.classList.toggle('dark');
-				const newIsDark = html.classList.contains('dark');
-				const newTheme = newIsDark ? 'dark' : 'light';
-				console.log('Theme toggled to:', newTheme, '(was:', isDark ? 'dark' : 'light', ')');
-				
-				// Update localStorage and data attribute
+				const newTheme = html.classList.contains('dark') ? 'dark' : 'light';
 				if (typeof localStorage !== 'undefined') {
 					localStorage.setItem('theme', newTheme);
 				}
 				html.setAttribute('data-theme', newTheme);
 			});
-		} else {
-			console.error('Theme toggle button not found');
 		}
-		
-		// Listen for system theme changes (only if no manual preference)
+
 		if (window.matchMedia) {
 			window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
 				if (!localStorage.getItem('theme')) {
@@ -147,29 +115,16 @@
 			});
 		}
 	}
-	
-	// Initialize on page load
+
 	if (document.readyState === 'loading') {
 		document.addEventListener('DOMContentLoaded', initThemeToggle);
 	} else {
 		initThemeToggle();
 	}
-	
-	// Re-initialize on navigation events and view transitions
+
 	if (typeof window !== 'undefined') {
-		// Listen for Astro page transitions
-		document.addEventListener('astro:page-load', () => {
-			console.log('Page loaded, re-initializing theme toggle');
-			initThemeToggle();
-		});
-		
-		// View Transitions support
-		document.addEventListener('astro:after-swap', () => {
-			console.log('View transition complete, re-initializing theme toggle');
-			initThemeToggle();
-		});
-		
-		// Fallback for regular navigation
+		document.addEventListener('astro:page-load', () => initThemeToggle());
+		document.addEventListener('astro:after-swap', () => initThemeToggle());
 		window.addEventListener('popstate', initThemeToggle);
 	}
 </script>
