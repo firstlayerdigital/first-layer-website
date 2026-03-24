@@ -7,7 +7,7 @@ interface Project {
 	id: string;
 	title: string;
 	clientName?: string; // Optional for anonymous portfolio
-	category: 'custom-software' | 'digital-transformation' | 'ecommerce-optimization';
+	category: 'custom-software' | 'digital-transformation' | 'ecommerce-optimization' | 'operational-infrastructure';
 	description: string;
 	mvpJourney: {
 		consultation: string;
@@ -25,6 +25,7 @@ interface Project {
 		coreWebVitals?: string;
 	};
 	githubUrl?: string;
+	caseStudyUrl?: string;
 	ciCd?: boolean;
 	testing?: boolean;
 	anonymous?: boolean; // If true, don't show client name
@@ -36,6 +37,37 @@ interface Project {
 }
 
 const projects: Project[] = [
+	{
+		id: 'vantagedash',
+		title: 'VantageDash: Automated Market Intelligence',
+		clientName: 'P1 Packaging',
+		category: 'operational-infrastructure',
+		description: 'Transforming manual price tracking into an automated market intelligence system, eliminating margin bleed and reclaiming 15+ hours of weekly executive labor through Node.js scrapers, Streamlit visualization, and Proxmox containerization.',
+		mvpJourney: {
+			consultation: 'Identified margin bleed and 15+ hours/week of manual competitor price tracking as key pain points',
+			scope: 'Automated scraping engine, real-time Streamlit dashboard, and containerized deployment on Proxmox',
+			launch: 'Production deployment with GitHub Actions CI/CD, automated health monitoring, and zero-downtime updates'
+		},
+		techStack: {
+			frontend: ['Streamlit', 'Python'],
+			backend: ['Node.js', 'Web Scraping', 'Time-Series DB'],
+			tools: ['Proxmox LXC', 'GitHub Actions', 'Cloudflared']
+		},
+		performance: {
+			lighthouse: 95,
+			loadTime: '< 1s',
+			coreWebVitals: 'All Green'
+		},
+		caseStudyUrl: '/work/vantagedash',
+		ciCd: true,
+		testing: true,
+		anonymous: false,
+		additionalDetails: {
+			architecture: 'Node.js scraping engine with intelligent rate limiting feeds into a Python data processing pipeline. Streamlit dashboard provides real-time market intelligence. Fully containerized on Proxmox LXC with Cloudflared tunnel for secure remote access.',
+			features: ['Automated competitor price scraping with configurable schedules', 'Real-time Streamlit dashboard with interactive charts and trend analysis', 'Automated alerting for significant price movements', 'Time-series database for historical price tracking', 'Proxmox LXC containerization for isolated deployment', 'GitHub Actions CI/CD with automated health monitoring'],
+			results: 'Reclaimed 15+ hours of weekly executive labor (780+ hours annually). Achieved 100% price synchronization across all monitored competitors. Eliminated margin bleed through real-time price detection within minutes instead of days.'
+		}
+	},
 	{
 		id: '1',
 		title: 'High-Performance Agency Website',
@@ -128,7 +160,8 @@ const getCategoryLabel = (category: Project['category']) => {
 	const labels = {
 		'custom-software': 'Custom Software Development',
 		'digital-transformation': 'Digital Transformation',
-		'ecommerce-optimization': 'E-commerce Optimization'
+		'ecommerce-optimization': 'E-commerce Optimization',
+		'operational-infrastructure': 'Operational Infrastructure'
 	};
 	return labels[category];
 };
@@ -152,6 +185,12 @@ const getCategoryColorClasses = (category: Project['category']) => {
 			hover: 'from-green-50/0 to-green-50/30',
 			badge: 'bg-green-100/80 text-green-700 border-green-200/50',
 			tech: 'bg-green-100/80 text-green-700 border-green-200/50'
+		},
+		'operational-infrastructure': {
+			bg: 'from-purple-600 via-purple-500 to-purple-600',
+			hover: 'from-purple-50/0 to-purple-50/30',
+			badge: 'bg-purple-100/80 text-purple-700 border-purple-200/50',
+			tech: 'bg-purple-100/80 text-purple-700 border-purple-200/50'
 		}
 	};
 	return classes[category];
@@ -358,6 +397,7 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 										</div>
 
 										<!-- GitHub Link (if applicable) -->
+										<div class="flex flex-wrap gap-4">
 										{project.githubUrl && (
 											<a 
 												href={project.githubUrl} 
@@ -369,6 +409,11 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 													<path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/>
 												</svg>
 												<span class="group-hover:underline">View on GitHub</span>
+											</a>
+										)}
+										{project.caseStudyUrl && (
+											<a href={project.caseStudyUrl} class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
+												Read Case Study <span>&rarr;</span>
 											</a>
 										)}
 									</div>
