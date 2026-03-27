@@ -4,7 +4,10 @@
 <section class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20" id="hero-section">
 	<div class="text-center mb-12">
 		<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
-			Engineering the Web's <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]">First Layer</span>
+			Engineering the Web's <span class="text-[var(--accent-cyan)] relative inline-block">
+				<span class="relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]">First Layer</span>
+				<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/20 to-cyan-500/20 blur-2xl -z-0"></span>
+			</span>
 		</h1>
 
 		<p class="text-lg sm:text-xl text-[var(--text-body)] mb-10 leading-relaxed max-w-2xl mx-auto">
@@ -13,10 +16,10 @@
 		</p>
 
 		<div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-4 mb-16">
-			<a href="/contact" class="bg-[var(--accent)] text-white px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--accent-hover)] transition-colors duration-200 min-h-[48px] flex items-center justify-center">
+			<a href="/contact" class="bg-cyan-500 text-slate-950 px-6 py-3 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center">
 				Start Your Project
 			</a>
-			<a href="/work" class="bg-[var(--bg-page)] text-[var(--text-header)] border border-[var(--stroke)] px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--bg-muted)] transition-colors duration-200 min-h-[48px] flex items-center justify-center">
+			<a href="/work" class="bg-[var(--bg-page)] text-[var(--text-header)] border border-[var(--stroke)] px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--bg-muted)] hover:border-cyan-500/60 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center">
 				See Our Work
 			</a>
 		</div>

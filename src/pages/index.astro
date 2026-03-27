@@ -7,24 +7,33 @@ import ProjectCard from '../components/ProjectCard.astro';
 	title="Bespoke Web Design & SEO | High-Performance Websites | Pasadena, Maryland | First Layer Digital"
 	description="Pasadena, Maryland computer systems design specializing in bespoke web design, technical SEO, e-commerce optimization, and high-performance web development. Optimized for search & speed."
 >
-	<main role="main">
+	<main class="relative overflow-hidden" role="main">
+		<!-- Background glow orbs -->
+		<div class="fixed inset-0 -z-10 pointer-events-none">
+			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl"></div>
+		</div>
 
 		<!-- Hero Section -->
 		<section class="max-w-3xl mx-auto pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 text-center px-4 sm:px-6" aria-label="Hero Section">
 			<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
 				Not Just Pretty.<br />
-				<span class="text-[var(--accent-cyan)] drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]">Built to Run.</span>
+				<span class="text-[var(--accent-cyan)] relative inline-block">
+					<span class="relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]">Built to Run.</span>
+					<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-cyan-500/15 blur-3xl -z-0"></span>
+					<span class="absolute -inset-2 bg-gradient-to-r from-cyan-400/10 via-cyan-500/10 to-cyan-400/10 blur-2xl -z-0"></span>
+				</span>
 			</h1>
 
 			<p class="text-lg sm:text-xl text-[var(--text-body)] mb-10 leading-relaxed max-w-2xl mx-auto">
-				We bridge the gap between stunning digital storefronts and the automated systems that run them. From SEO-optimized websites to custom market intelligence dashboards, we build what your business actually needs.
+				Websites that load fast, rank high, and look sharp. Plus the custom tools behind the scenes that save you hours every week.
 			</p>
 
 			<div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-4">
-				<a href="/contact" class="bg-[var(--accent)] text-white px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--accent-hover)] transition-colors duration-200 min-h-[48px] flex items-center justify-center">
+				<a href="/contact" class="bg-cyan-500 text-slate-950 px-6 py-3 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center">
 					Get Started
 				</a>
-				<a href="/work" class="bg-[var(--bg-page)] text-[var(--text-header)] border border-[var(--stroke)] px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--bg-muted)] transition-colors duration-200 min-h-[48px] flex items-center justify-center">
+				<a href="/work" class="bg-[var(--bg-page)] text-[var(--text-header)] border border-[var(--stroke)] px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--bg-muted)] hover:border-cyan-500/60 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center">
 					See Our Work
 				</a>
 			</div>
@@ -35,7 +44,7 @@ import ProjectCard from '../components/ProjectCard.astro';
 			<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-12">
 					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
-						Two Layers. <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]">One Foundation.</span>
+						What You See. <span class="text-[var(--accent-cyan)] relative inline-block"><span class="relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]">What You Don't.</span><span class="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-cyan-500/15 blur-3xl -z-0"></span></span>
 					</h2>
 				</div>
 
@@ -47,9 +56,9 @@ import ProjectCard from '../components/ProjectCard.astro';
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
 							</svg>
 						</div>
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">The Front Layer</h3>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">The Website</h3>
 						<p class="text-[var(--text-body)] leading-relaxed">
-							High-performance websites and e-commerce platforms designed to dominate search rankings and captivate creative audiences.
+							Beautiful, blazing-fast sites that your customers actually find on Google. And love once they get there.
 						</p>
 					</div>
 
@@ -61,9 +70,9 @@ import ProjectCard from '../components/ProjectCard.astro';
 								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
 							</svg>
 						</div>
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">The Operational Layer</h3>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">The Engine Room</h3>
 						<p class="text-[var(--text-body)] leading-relaxed">
-							Custom Node.js scrapers, Streamlit visualizations, and Proxmox containerization that reclaim 15+ hours of executive labor every week.
+							Custom dashboards, automations, and data tools that do in seconds what used to eat up your whole afternoon.
 						</p>
 					</div>
 				</div>
@@ -71,14 +80,17 @@ import ProjectCard from '../components/ProjectCard.astro';
 		</section>
 
 		<!-- Efficiency Section -->
-		<section class="bg-[var(--bg-muted)] py-16 sm:py-20">
-			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">
-					Turn Manual Work Into Automated Intelligence.
-				</h2>
-				<p class="text-base sm:text-lg text-[var(--text-body)] leading-relaxed">
-					In operational infrastructure, manual tracking is a failure of scale. We transform manual processes into automated intelligence systems, allowing you to focus on strategic decision-making while your systems eliminate margin bleed.
-				</p>
+		<section class="py-16 sm:py-20">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-8 sm:p-12 text-center overflow-hidden">
+					<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-500"></div>
+					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+						Stop Copy-Pasting.<br class="sm:hidden" /> <span class="text-[var(--accent-cyan)]">Start Deciding.</span>
+					</h2>
+					<p class="text-base sm:text-lg text-[var(--text-body)] leading-relaxed max-w-xl mx-auto">
+						If you're still pulling numbers from five different tabs into a spreadsheet every Monday, we should talk. We build systems that collect, organize, and present your data so you can skip the busywork and focus on what actually moves the needle.
+					</p>
+				</div>
 			</div>
 		</section>
 
@@ -88,49 +100,49 @@ import ProjectCard from '../components/ProjectCard.astro';
 				<div class="text-center mb-12">
 					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">Featured Work</h2>
 					<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto">
-						Real projects showcasing our full-stack approach: from stunning front-layer websites to powerful back-layer systems.
+						A few things we've built recently.
 					</p>
 				</div>
 
 				<div class="grid md:grid-cols-3 gap-6">
 					<!-- Case Study 1 -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 transition-colors duration-200">
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300">
 						<div class="h-2 bg-[var(--accent)]"></div>
 						<div class="p-6">
-							<span class="text-xs font-mono text-[var(--accent)] uppercase tracking-wide">Operational Infrastructure</span>
-							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">VantageDash: Automated Market Intelligence</h3>
+							<span class="text-xs font-mono text-[var(--accent)] uppercase tracking-wide">Competitive Intelligence</span>
+							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">VantageDash</h3>
 							<p class="text-sm text-[var(--text-body)] mb-4 leading-relaxed">
-								Custom Node.js scrapers and Streamlit visualizations that reclaim 15+ hours of executive labor weekly.
+								Track competitor prices across 8+ e-commerce platforms with AI-powered product matching and real-time alerts.
 							</p>
 
 							<div class="text-xs font-mono text-[var(--text-muted)] mb-4 pb-4 border-b border-[var(--stroke)]">
-								Astro &middot; Tailwind &middot; Netlify
+								Next.js &middot; AI Matching &middot; Slack Alerts
 							</div>
 
 							<div class="space-y-2 mb-5 text-sm">
 								<div class="flex justify-between">
-									<span class="text-[var(--text-muted)]">Lighthouse</span>
-									<span class="font-medium text-[var(--text-header)]">98/100</span>
+									<span class="text-[var(--text-muted)]">AI Match Accuracy</span>
+									<span class="font-medium text-[var(--text-header)]">90%+</span>
 								</div>
 								<div class="flex justify-between">
-									<span class="text-[var(--text-muted)]">Result</span>
-									<span class="font-medium text-[var(--accent)]">40% Faster Load</span>
+									<span class="text-[var(--text-muted)]">Products Tracked</span>
+									<span class="font-medium text-[var(--accent)]">47,000+</span>
 								</div>
 							</div>
-							<a href="/work/vantagedash" class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
-								View Case Study <span>&rarr;</span>
+							<a href="https://vantagedash.io" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
+								Visit VantageDash <span>&rarr;</span>
 							</a>
 						</div>
 					</div>
 
 					<!-- Case Study 2 -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 transition-colors duration-200">
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300">
 						<div class="h-2 bg-emerald-500"></div>
 						<div class="p-6">
 							<span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">Web Design</span>
-							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">High-Performance Agency Website</h3>
+							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">Agency Website Rebuild</h3>
 							<p class="text-sm text-[var(--text-body)] mb-4 leading-relaxed">
-								SEO-optimized agency website with 98 Lighthouse score and sub-0.5s load times.
+								Took a slow site, made it fast, and watched the conversions climb.
 							</p>
 
 							<div class="text-xs font-mono text-[var(--text-muted)] mb-4 pb-4 border-b border-[var(--stroke)]">
@@ -154,13 +166,13 @@ import ProjectCard from '../components/ProjectCard.astro';
 					</div>
 
 					<!-- Case Study 3 -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 transition-colors duration-200">
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300">
 						<div class="h-2 bg-violet-500"></div>
 						<div class="p-6">
 							<span class="text-xs font-mono text-violet-600 dark:text-violet-400 uppercase tracking-wide">Infrastructure Engineering</span>
-							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">Proactive Resilience: SSD Health Monitoring</h3>
+							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">SSD Health Monitor</h3>
 							<p class="text-sm text-[var(--text-body)] mb-4 leading-relaxed">
-								Automated hardware health monitoring that triggers swaps before the 24-hour failure window.
+								Catches dying drives before they take your data with them. Automated alerts, zero surprises.
 							</p>
 
 							<div class="text-xs font-mono text-[var(--text-muted)] mb-4 pb-4 border-b border-[var(--stroke)]">
@@ -189,11 +201,11 @@ import ProjectCard from '../components/ProjectCard.astro';
 		<!-- CTA Section -->
 		<section class="border-t border-[var(--stroke)] py-16 sm:py-20">
 			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Ready to Optimize Your Digital Presence?</h2>
+				<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Let's Build Something.</h2>
 				<p class="text-base sm:text-lg text-[var(--text-body)] mb-8 max-w-2xl mx-auto leading-relaxed">
-					As a Pasadena, Maryland computer systems design practice, we specialize in high-performance web development and e-commerce optimization. Let's discuss how we can help.
+					Got a project in mind? Just an idea? That works too. We're based in Pasadena, Maryland and we love talking shop.
 				</p>
-				<a href="/contact" class="inline-block bg-[var(--accent)] text-white px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--accent-hover)] transition-colors duration-200 min-h-[48px]">
+				<a href="/contact" class="inline-block bg-cyan-500 text-slate-950 px-6 py-3 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5 min-h-[48px]">
 					Start a Conversation
 				</a>
 			</div>

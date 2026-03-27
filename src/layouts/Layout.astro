@@ -146,20 +146,20 @@ title = "FirstLayer Digital | Pasadena, Maryland Computer Systems Design & Custo
 
 	<body class="bg-[var(--bg-page)] bg-[radial-gradient(#06b6d440_1px,transparent_1px)] bg-[size:24px_24px] font-sans text-[var(--text-body)] flex flex-col min-h-screen">
 
-		<nav class="bg-[var(--bg-page)] text-[var(--text-header)] border-b border-[var(--stroke)] sticky top-0 z-50" role="navigation" aria-label="Main navigation">
+		<nav class="bg-[var(--bg-page)]/80 backdrop-blur-lg text-[var(--text-header)] shadow-lg border-b border-[var(--stroke)] sticky top-0 z-50" role="navigation" aria-label="Main navigation">
 			<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-3 sm:py-4 flex flex-col md:flex-row justify-between items-center">
 
 				<a href="/" class="mb-3 md:mb-0 flex items-center hover:opacity-80 transition-opacity">
 					<img src="/logo.svg" alt="First Layer Digital" class="h-16 sm:h-20 md:h-24 lg:h-28 xl:h-32 w-auto" />
 				</a>
 
-				<div class="flex items-center flex-wrap justify-center gap-1 sm:gap-2 text-sm sm:text-base">
-					<a href="/" class="text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-colors duration-200 px-3 py-2 rounded-md hover:bg-[var(--bg-muted)] min-h-[44px] flex items-center">Home</a>
-					<a href="/services" class="text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-colors duration-200 px-3 py-2 rounded-md hover:bg-[var(--bg-muted)] min-h-[44px] flex items-center">Services</a>
-					<a href="/work" class="text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-colors duration-200 px-3 py-2 rounded-md hover:bg-[var(--bg-muted)] min-h-[44px] flex items-center">Work</a>
-					<a href="/blog" class="text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-colors duration-200 px-3 py-2 rounded-md hover:bg-[var(--bg-muted)] min-h-[44px] flex items-center">Insights</a>
-					<a href="/about" class="text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-colors duration-200 px-3 py-2 rounded-md hover:bg-[var(--bg-muted)] min-h-[44px] flex items-center">About</a>
-					<a href="/contact" class="bg-[var(--accent)] hover:bg-[var(--accent-hover)] text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-md font-medium text-sm sm:text-base transition-colors duration-200 min-h-[44px] flex items-center justify-center ml-2">Contact</a>
+				<div class="flex items-center flex-wrap justify-center gap-2 sm:gap-3 text-sm sm:text-base">
+					<a href="/" class="group relative text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-all duration-300 px-3 py-2 min-h-[44px] flex items-center" data-path="/"><span class="relative z-10">Home</span><span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span></a>
+					<a href="/services" class="group relative text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-all duration-300 px-3 py-2 min-h-[44px] flex items-center" data-path="/services"><span class="relative z-10">Services</span><span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span></a>
+					<a href="/work" class="group relative text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-all duration-300 px-3 py-2 min-h-[44px] flex items-center" data-path="/work"><span class="relative z-10">Work</span><span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span></a>
+					<a href="/blog" class="group relative text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-all duration-300 px-3 py-2 min-h-[44px] flex items-center" data-path="/blog"><span class="relative z-10">Insights</span><span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span></a>
+					<a href="/about" class="group relative text-[var(--text-muted)] hover:text-[var(--text-header)] font-medium transition-all duration-300 px-3 py-2 min-h-[44px] flex items-center" data-path="/about"><span class="relative z-10">About</span><span class="absolute bottom-0 left-0 w-0 h-[2px] bg-cyan-400 group-hover:w-full transition-all duration-300 shadow-[0_0_8px_rgba(34,211,238,0.6)]"></span></a>
+					<a href="/contact" class="relative bg-cyan-600 hover:bg-cyan-500 text-white px-4 sm:px-5 py-2 sm:py-2.5 rounded-md font-medium text-sm sm:text-base transition-all duration-300 shadow-lg shadow-cyan-600/50 hover:shadow-xl hover:shadow-cyan-500/60 hover:-translate-y-0.5 min-h-[44px] flex items-center justify-center ml-2 group"><span class="relative z-10">Contact</span><span class="absolute inset-0 rounded-md bg-cyan-400/30 blur-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span></a>
 
 					<!-- Dark Mode Toggle -->
 					<button
@@ -177,6 +177,25 @@ title = "FirstLayer Digital | Pasadena, Maryland Computer Systems Design & Custo
 				</div>
 			</div>
 		</nav>
+
+		<script>
+			// Set active page indicator
+			if (typeof document !== 'undefined') {
+				const currentPath = window.location.pathname;
+				const navLinks = document.querySelectorAll('nav a[data-path]');
+				navLinks.forEach(link => {
+					const linkPath = link.getAttribute('data-path');
+					if (linkPath === currentPath || (currentPath === '/' && linkPath === '/') || (linkPath === '/blog' && currentPath.startsWith('/blog'))) {
+						link.classList.add('text-[var(--accent-cyan)]');
+						const underline = link.querySelector('span[class*="bg-cyan-400"]');
+						if (underline) {
+							underline.classList.remove('w-0');
+							underline.classList.add('w-full');
+						}
+					}
+				});
+			}
+		</script>
 
 		<script>
 			function initLayoutThemeToggle() {

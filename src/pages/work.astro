@@ -38,33 +38,33 @@ interface Project {
 const projects: Project[] = [
 	{
 		id: 'vantagedash',
-		title: 'VantageDash: Automated Market Intelligence',
-		clientName: 'P1 Packaging',
-		category: 'operational-infrastructure',
-		description: 'Transforming manual price tracking into an automated market intelligence system, eliminating margin bleed and reclaiming 15+ hours of weekly executive labor through Node.js scrapers, Streamlit visualization, and Proxmox containerization.',
+		title: 'VantageDash: Competitive Price Intelligence',
+		clientName: 'First Layer Digital',
+		category: 'custom-software',
+		description: 'A competitive intelligence platform that lets e-commerce brands track competitor prices, match products with AI, and get alerts when prices change. Supports 8+ e-commerce platforms with 90%+ AI match accuracy across 47,000+ tracked products.',
 		mvpJourney: {
-			consultation: 'Identified margin bleed and 15+ hours/week of manual competitor price tracking as key pain points',
-			scope: 'Automated scraping engine, real-time Streamlit dashboard, and containerized deployment on Proxmox',
-			launch: 'Production deployment with GitHub Actions CI/CD, automated health monitoring, and zero-downtime updates'
+			consultation: 'Identified the pain of manual competitor price tracking across dozens of sites as a universal e-commerce problem',
+			scope: 'Full SaaS platform with auto-detection of e-commerce platforms, AI product matching, and real-time Slack/email alerts',
+			launch: 'Live at vantagedash.io with free tier, pro tier ($49/mo), and enterprise tier ($199/mo)'
 		},
 		techStack: {
-			frontend: ['Streamlit', 'Python'],
-			backend: ['Node.js', 'Web Scraping', 'Time-Series DB'],
-			tools: ['Proxmox LXC', 'GitHub Actions', 'Cloudflared']
+			frontend: ['Next.js', 'React', 'Tailwind CSS'],
+			backend: ['Web Scraping', 'AI Product Matching', 'Time-Series DB'],
+			tools: ['Slack Integration', 'Umami Analytics', 'Vercel']
 		},
 		performance: {
 			lighthouse: 95,
 			loadTime: '< 1s',
 			coreWebVitals: 'All Green'
 		},
-		caseStudyUrl: '/work/vantagedash',
+		caseStudyUrl: 'https://vantagedash.io',
 		ciCd: true,
 		testing: true,
 		anonymous: false,
 		additionalDetails: {
-			architecture: 'Node.js scraping engine with intelligent rate limiting feeds into a Python data processing pipeline. Streamlit dashboard provides real-time market intelligence. Fully containerized on Proxmox LXC with Cloudflared tunnel for secure remote access.',
-			features: ['Automated competitor price scraping with configurable schedules', 'Real-time Streamlit dashboard with interactive charts and trend analysis', 'Automated alerting for significant price movements', 'Time-series database for historical price tracking', 'Proxmox LXC containerization for isolated deployment', 'GitHub Actions CI/CD with automated health monitoring'],
-			results: 'Reclaimed 15+ hours of weekly executive labor (780+ hours annually). Achieved 100% price synchronization across all monitored competitors. Eliminated margin bleed through real-time price detection within minutes instead of days.'
+			architecture: 'Next.js frontend with server-side rendering. Scraping engine auto-detects e-commerce platforms (Shopify, WooCommerce, Uline, Ecwid, Wix, Squarespace) and pulls full product catalogs. AI matching engine identifies equivalent products across different naming conventions with confidence scoring.',
+			features: ['Auto-detection of 8+ e-commerce platforms', 'AI-powered product matching with confidence scores', 'Real-time Slack and email price change alerts', 'Price trend charts and competitor heatmaps', 'CSV/PDF export reports', 'Enterprise-grade encryption with audit logging', 'Free tier with 2 competitors, Pro with 10, Enterprise unlimited'],
+			results: '47,000+ products tracked. 90%+ AI match accuracy. Supports packaging, cosmetics, supplements, electronics, food & beverage, apparel, home & garden, and pet products industries.'
 		}
 	},
 	{

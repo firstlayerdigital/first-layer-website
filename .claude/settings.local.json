@@ -1,0 +1,13 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(pkill -f \"astro dev\")",
+      "mcp__Claude_Preview__preview_start",
+      "Bash(git checkout:*)",
+      "Bash(git add:*)",
+      "Bash(git commit:*)",
+      "mcp__proxmox__proxmox_container_exec_command",
+      "mcp__proxmox__proxmox_list_containers"
+    ]
+  }
+}
