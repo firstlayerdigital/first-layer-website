@@ -1,29 +1,23 @@
-/* Import JetBrains Mono + DM Sans (professional sans for body/footer) */
+/* Import DM Sans + JetBrains Mono */
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;0,9..40,700;1,9..40,400&family=JetBrains+Mono:wght@400;500;600;700&display=swap');
 
 @import "tailwindcss";
 
-/* Theme-Aware CSS Variables - High-Contrast "Obsidian" Engineering Firm Look */
+/* Theme Variables */
 :root {
 	--bg-page: #f8fafc;
 	--bg-card: #ffffff;
 	--text-header: #0f172a;
 	--text-body: #334155;
 	--stroke: #cbd5e1;
-	--accent-cyan: #22d3ee; /* Bright cyan-400 for light mode */
-	--text-muted: #64748b; /* slate-500 for light mode */
-	--text-light: #94a3b8; /* slate-400 for light mode */
-	--bg-muted: #f1f5f9; /* slate-100 for light mode */
-	--bg-subtle: #e2e8f0; /* slate-200 for light mode */
-	--button-bg: #0891b2; /* cyan-600 for buttons */
-	--button-bg-hover: #0e7490; /* cyan-700 for button hover */
-	--button-bg-active: #155e75; /* cyan-800 for button active */
-	--button-text: #ffffff; /* white text on buttons */
-	--button-shadow: rgba(8, 145, 178, 0.3); /* cyan-600 shadow */
-	--box-bg-light: #f0f9ff; /* cyan-50 for light boxes */
-	--box-bg-alt: #eff6ff; /* blue-50 for alternate boxes */
-	--box-border-light: #bae6fd; /* cyan-200 for light box borders */
-	--box-border-alt: #bfdbfe; /* blue-200 for alternate box borders */
+	--accent: #0891b2;
+	--accent-hover: #0e7490;
+	--accent-subtle: #ecfeff;
+	--accent-cyan: #22d3ee;
+	--text-muted: #64748b;
+	--text-light: #94a3b8;
+	--bg-muted: #f1f5f9;
+	--bg-subtle: #e2e8f0;
 }
 
 .dark {
@@ -32,23 +26,17 @@
 	--text-header: #ffffff;
 	--text-body: #cbd5e1;
 	--stroke: #1e293b;
-	--accent-cyan: #22d3ee; /* Bright cyan-400 for dark mode - same as light mode */
-	--text-muted: #cbd5e1; /* slate-300 for dark mode */
-	--text-light: #94a3b8; /* slate-400 for dark mode */
-	--bg-muted: #1e293b; /* slate-800 for dark mode */
-	--bg-subtle: #334155; /* slate-700 for dark mode */
-	--button-bg: #0891b2; /* cyan-600 for buttons - same in both themes */
-	--button-bg-hover: #0e7490; /* cyan-700 for button hover */
-	--button-bg-active: #155e75; /* cyan-800 for button active */
-	--button-text: #ffffff; /* white text on buttons */
-	--button-shadow: rgba(8, 145, 178, 0.3); /* cyan-600 shadow */
-	--box-bg-light: #1e293b; /* slate-800 for dark boxes */
-	--box-bg-alt: #1e293b; /* slate-800 for alternate dark boxes */
-	--box-border-light: #334155; /* slate-700 for dark box borders */
-	--box-border-alt: #334155; /* slate-700 for alternate dark box borders */
+	--accent: #22d3ee;
+	--accent-hover: #67e8f9;
+	--accent-subtle: #083344;
+	--accent-cyan: #22d3ee;
+	--text-muted: #cbd5e1;
+	--text-light: #94a3b8;
+	--bg-muted: #1e293b;
+	--bg-subtle: #334155;
 }
 
-/* Global Typography Application */
+/* Global Typography */
 h1, h2, h3, h4, h5, h6 {
 	color: var(--text-header);
 }
@@ -57,25 +45,10 @@ p, span, li {
 	color: var(--text-body);
 }
 
-/* Force theme-aware background globally */
 body {
 	background-color: var(--bg-page);
 }
 
 .dark body {
 	background-color: var(--bg-page);
-}
-
-/* Noise/Grain texture overlay for obsidian theme */
-.dark body::before {
-	content: '';
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
-	background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 400 400' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)' opacity='0.03'/%3E%3C/svg%3E");
-	pointer-events: none;
-	z-index: 1;
-	opacity: 0.4;
 }

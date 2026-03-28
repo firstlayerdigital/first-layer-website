@@ -4,101 +4,71 @@ import type { CollectionEntry } from 'astro:content';
 import Layout from '../../layouts/Layout.astro';
 
 const allBlogPosts = await getCollection('blog');
-const blogPosts = [...allBlogPosts].sort((a, b) => 
-	b.data.pubDate.getTime() - a.data.pubDate.getTime() // Newest first
+const blogPosts = [...allBlogPosts].sort((a, b) =>
+	b.data.pubDate.getTime() - a.data.pubDate.getTime()
 );
 ---
 
 <Layout title="Insights | FirstLayer Digital" description="Engineering-driven insights on data sovereignty, private cloud infrastructure, technical consulting, and operational resilience.">
-	<main class="relative overflow-hidden bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]" role="main">
+	<main role="main">
 
-		<div class="max-w-5xl 2xl:max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 relative z-10">
-			<!-- Hero Section -->
-			<div class="relative text-center mb-12 sm:mb-16 md:mb-20">
-				<h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-extrabold font-bold mb-4 sm:mb-6 leading-tight">
-					<span class="text-[var(--text-header)]">Technical</span> <span class="relative inline-block">
-						<span class="relative z-10 drop-shadow-[0_0_12px_color-mix(in_srgb,var(--accent-cyan)_30%,transparent)]" style="color: #22d3ee !important;">Insights</span>
-						<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-cyan-600/15 blur-3xl -z-0"></span>
-						<span class="absolute -inset-2 bg-gradient-to-r from-[var(--accent-cyan)]/10 via-[var(--accent-cyan)]/10 to-[var(--accent-cyan)]/10 blur-2xl -z-0"></span>
-					</span>
+		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
+			<!-- Hero -->
+			<div class="text-center mb-12 sm:mb-16">
+				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
+					Technical <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]">Insights</span>
 				</h1>
-				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-[var(--text-body)] dark:text-slate-300 max-w-3xl 2xl:max-w-4xl mx-auto leading-relaxed px-2">
+				<p class="text-lg sm:text-xl text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
 					Engineering-driven insights on data sovereignty, private cloud infrastructure, and operational resilience.
 				</p>
 			</div>
 
-			<!-- Professional Report-Style Article List -->
-			<div class="space-y-6 sm:space-y-8">
+			<!-- Article List -->
+			<div class="space-y-6">
 				{blogPosts.map((post) => {
-					const primaryTag = (post.data.tags && post.data.tags.length > 0) 
-						? post.data.tags[0].toUpperCase() 
+					const primaryTag = (post.data.tags && post.data.tags.length > 0)
+						? post.data.tags[0].toUpperCase()
 						: 'TECHNICAL';
-					
-					// Calculate reading time
+
 					const estimatedWords = post.data.description.split(/\s+/).length * 20;
 					const readingTime = Math.max(5, Math.ceil(estimatedWords / 200));
-					
+
 					return (
-						<article class="group relative bg-[var(--bg-card)] border-l-4 border-[var(--accent-cyan)] border-t border-r border-b border-[var(--stroke)] rounded-r-xl shadow-md hover:shadow-lg transition-all duration-300">
-							<div class="p-6 sm:p-8 md:p-10">
-								<!-- Report Header: Category, Date, Reading Time -->
-								<div class="flex flex-wrap items-center gap-4 sm:gap-6 mb-4 pb-4 border-b border-[var(--stroke)]">
-									<div class="flex items-center gap-2">
-										<span class="text-xs font-mono font-bold text-[var(--accent-cyan)] uppercase tracking-wider">{primaryTag}</span>
-									</div>
-									<div class="flex items-center gap-2 text-xs sm:text-sm font-mono text-[var(--text-body)]">
-										<span class="text-[var(--accent-cyan)]">DATE:</span>
-										<time datetime={post.data.pubDate.toISOString()}>
-											{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-										</time>
-									</div>
-									<div class="flex items-center gap-2 text-xs sm:text-sm font-mono text-[var(--text-body)]">
-										<span class="text-[var(--accent-cyan)]">READ_TIME:</span>
-										<span>{readingTime} MIN</span>
-									</div>
-								</div>
-
-								<!-- Title -->
-								<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 leading-tight group-hover:text-[var(--accent-cyan)] transition-colors">
-									<a href={`/blog/${post.slug}`} class="hover:underline">
-										{post.data.title}
-									</a>
-								</h2>
-
-								<!-- Description/Abstract -->
-								<p class="text-base sm:text-lg text-[var(--text-body)] leading-relaxed mb-4 sm:mb-6 max-w-4xl">
-									{post.data.description}
-								</p>
-
-								<!-- Author and Tags -->
-								<div class="flex flex-wrap items-center gap-4 text-sm font-mono text-[var(--text-body)] mb-4">
-									{post.data.author && (
-										<div>
-											<span class="text-[var(--accent-cyan)]">AUTHOR:</span> <span>{post.data.author}</span>
-										</div>
-									)}
-									{post.data.tags && post.data.tags.length > 0 && (
-										<div class="flex flex-wrap gap-2">
-											<span class="text-[var(--accent-cyan)]">TAGS:</span>
-											{post.data.tags.map((tag) => (
-												<span class="px-2 py-1 bg-[var(--bg-page)] border border-[var(--stroke)] rounded text-xs">
-													{tag}
-												</span>
-											))}
-										</div>
-									)}
-								</div>
-
-								<!-- Read More Link -->
-								<div class="mt-6">
-									<a href={`/blog/${post.slug}`} class="inline-flex items-center gap-2 text-sm font-mono font-semibold text-[var(--accent-cyan)] hover:text-[var(--accent-cyan)]/80 transition-colors group border-b-2 border-[var(--accent-cyan)] pb-1">
-										Read Full Report
-										<svg class="w-4 h-4 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
-										</svg>
-									</a>
-								</div>
+						<article class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 sm:p-8 hover:border-[var(--accent)]/40 transition-colors duration-200">
+							<!-- Meta -->
+							<div class="flex flex-wrap items-center gap-4 mb-3 text-xs text-[var(--text-muted)] font-mono">
+								<span class="text-[var(--accent)] font-medium">{primaryTag}</span>
+								<time datetime={post.data.pubDate.toISOString()}>
+									{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+								</time>
+								<span>{readingTime} min read</span>
 							</div>
+
+							<!-- Title -->
+							<h2 class="text-xl sm:text-2xl font-semibold text-[var(--text-header)] mb-3 leading-tight">
+								<a href={`/blog/${post.slug}`} class="hover:text-[var(--accent)] transition-colors">
+									{post.data.title}
+								</a>
+							</h2>
+
+							<!-- Description -->
+							<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
+								{post.data.description}
+							</p>
+
+							<!-- Tags -->
+							{post.data.tags && post.data.tags.length > 0 && (
+								<div class="flex flex-wrap gap-1.5 mb-4">
+									{post.data.tags.map((tag) => (
+										<span class="bg-[var(--bg-muted)] text-[var(--text-muted)] px-2 py-0.5 rounded text-xs border border-[var(--stroke)]">{tag}</span>
+									))}
+								</div>
+							)}
+
+							<!-- Read More -->
+							<a href={`/blog/${post.slug}`} class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
+								Read full article <span>&rarr;</span>
+							</a>
 						</article>
 					);
 				})}
@@ -106,10 +76,9 @@ const blogPosts = [...allBlogPosts].sort((a, b) =>
 
 			{blogPosts.length === 0 && (
 				<div class="text-center py-12">
-					<p class="text-slate-600 dark:text-slate-300 text-lg">No blog posts yet. Check back soon!</p>
+					<p class="text-[var(--text-body)] text-lg">No blog posts yet. Check back soon!</p>
 				</div>
 			)}
 		</div>
 	</main>
 </Layout>
-

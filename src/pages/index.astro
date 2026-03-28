@@ -3,325 +3,195 @@ import Layout from '../layouts/Layout.astro';
 import ProjectCard from '../components/ProjectCard.astro';
 ---
 
-<Layout 
+<Layout
 	title="Bespoke Web Design & SEO | High-Performance Websites | Pasadena, Maryland | First Layer Digital"
 	description="Pasadena, Maryland computer systems design specializing in bespoke web design, technical SEO, e-commerce optimization, and high-performance web development. Optimized for search & speed."
 >
-	<main class="relative overflow-hidden bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]" role="main">
-		<!-- Background gradient layers for depth -->
-		<div class="fixed inset-0 -z-10">
-			<div class="absolute inset-0 bg-gradient-to-br from-[var(--bg-page)] via-cyan-50/20 to-[var(--bg-page)] transition-colors duration-300"></div>
-			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl transition-colors duration-300"></div>
-			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl transition-colors duration-300"></div>
+	<main class="relative overflow-hidden" role="main">
+		<!-- Background glow orbs -->
+		<div class="fixed inset-0 -z-10 pointer-events-none">
+			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl"></div>
+			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl"></div>
 		</div>
 
-		<!-- Hero Section with Mesh Gradient -->
-		<section class="relative max-w-6xl 2xl:max-w-7xl mx-auto mt-12 sm:mt-16 md:mt-20 text-center px-4 sm:px-6 lg:px-8 mb-12 sm:mb-16 md:mb-20" aria-label="Hero Section">
-			<!-- Mesh gradient background pattern -->
-			<div class="absolute inset-0 -z-10 overflow-hidden rounded-3xl">
-				<div class="absolute inset-0 bg-[radial-gradient(circle_at_20%_50%,color-mix(in srgb, var(--accent-cyan) 10%, transparent),transparent_50%),radial-gradient(circle_at_80%_80%,color-mix(in srgb, var(--accent-cyan) 10%, transparent),transparent_50%),radial-gradient(circle_at_40%_20%,color-mix(in srgb, var(--accent-cyan) 8%, transparent),transparent_50%)]"></div>
-				<!-- Code-themed pattern overlay -->
-				<div class="absolute inset-0 opacity-[0.03]" style="background-image: repeating-linear-gradient(0deg, transparent, transparent 2px, rgb(15,23,42) 2px, rgb(15,23,42) 4px), repeating-linear-gradient(90deg, transparent, transparent 2px, rgb(15,23,42) 2px, rgb(15,23,42) 4px); background-size: 40px 40px;"></div>
+		<!-- Hero Section -->
+		<section class="max-w-3xl mx-auto pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 text-center px-4 sm:px-6" aria-label="Hero Section">
+			<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
+				Not Just Pretty.<br />
+				<span class="text-[var(--accent-cyan)] relative inline-block">
+					<span class="relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]">Built to Run.</span>
+					<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-cyan-500/15 blur-3xl -z-0"></span>
+					<span class="absolute -inset-2 bg-gradient-to-r from-cyan-400/10 via-cyan-500/10 to-cyan-400/10 blur-2xl -z-0"></span>
+				</span>
+			</h1>
+
+			<p class="text-lg sm:text-xl text-[var(--text-body)] mb-10 leading-relaxed max-w-2xl mx-auto">
+				Websites that load fast, rank high, and look sharp. Plus the custom tools behind the scenes that save you hours every week.
+			</p>
+
+			<div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-4">
+				<a href="/contact" class="bg-cyan-500 text-slate-950 px-6 py-3 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center">
+					Get Started
+				</a>
+				<a href="/work" class="bg-[var(--bg-page)] text-[var(--text-header)] border border-[var(--stroke)] px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--bg-muted)] hover:border-cyan-500/60 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center">
+					See Our Work
+				</a>
 			</div>
+		</section>
 
-			<!-- Floating decorative elements -->
-			<div class="absolute -left-20 top-20 hidden xl:block 2xl:left-0 w-32 h-32 2xl:w-40 2xl:h-40 bg-gradient-to-br from-cyan-500/20 to-transparent rounded-2xl blur-xl rotate-12"></div>
-			<div class="absolute -right-20 top-40 hidden xl:block 2xl:right-0 w-40 h-40 2xl:w-48 2xl:h-48 bg-gradient-to-br from-blue-500/20 to-transparent rounded-3xl blur-xl -rotate-12"></div>
-			
-			<div class="relative py-12 sm:py-16 md:py-20 pb-8 sm:pb-10 md:pb-12">
-				<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl 2xl:text-8xl font-extrabold tracking-tight dark:font-bold mb-4 sm:mb-6 leading-tight transition-colors duration-300">
-					<span class="text-[var(--text-header)]">Not Just Pretty.</span> <span class="relative inline-block">
-						<span class="relative z-10 drop-shadow-[0_0_12px_color-mix(in_srgb,var(--accent-cyan)_30%,transparent)]" style="color: #22d3ee !important;">Built to Run.</span>
-						<span class="absolute inset-0 bg-gradient-to-r from-[var(--accent-cyan)]/15 to-[var(--accent-cyan)]/15 blur-3xl -z-0"></span>
-						<span class="absolute -inset-2 bg-gradient-to-r from-[var(--accent-cyan)]/10 via-[var(--accent-cyan)]/10 to-[var(--accent-cyan)]/10 blur-2xl -z-0"></span>
-					</span>
-				</h1>
-				
-				<p class="text-lg sm:text-xl md:text-2xl lg:text-2xl 2xl:text-3xl text-[var(--text-body)] mb-8 sm:mb-10 md:mb-12 leading-relaxed max-w-3xl 2xl:max-w-4xl mx-auto px-2 transition-colors duration-300">
-					We bridge the gap between stunning digital storefronts and the automated systems that run them. From SEO-optimized agency websites to custom market intelligence dashboards, we build the tools your business needs to reclaim its time and maximize its margin.
-				</p>
-
-				<div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-4 mb-6 sm:mb-8 px-2">
-					<a href="/contact" class="bg-[var(--button-bg)] text-[var(--button-text)] px-6 sm:px-8 py-3.5 sm:py-4 md:py-4 rounded-xl font-semibold font-mono text-base sm:text-lg hover:bg-[var(--button-bg-hover)] active:bg-[var(--button-bg-active)] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px] flex items-center justify-center" style="box-shadow: 0 10px 15px -3px var(--button-shadow), 0 4px 6px -4px var(--button-shadow);">
-						Optimize Your Foundation
-					</a>
-					<a href="/work" class="bg-[var(--bg-card)]/40 backdrop-blur-xl text-[var(--text-body)] border-2 border-[var(--stroke)] px-6 sm:px-8 py-3.5 sm:py-4 md:py-4 rounded-xl font-semibold font-mono text-base sm:text-lg hover:border-[var(--accent-cyan)]/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)] active:bg-[var(--bg-card)]/60 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px] flex items-center justify-center">
-						See My Work
-					</a>
+		<!-- Dual-Focus Value Proposition -->
+		<section class="border-t border-[var(--stroke)] py-16 sm:py-20">
+			<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+						What You See. <span class="text-[var(--accent-cyan)] relative inline-block"><span class="relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]">What You Don't.</span><span class="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-cyan-500/15 blur-3xl -z-0"></span></span>
+					</h2>
 				</div>
-				<div class="mt-6 sm:mt-8 flex justify-center">
-					<div class="relative inline-flex items-center gap-2 sm:gap-3 bg-[var(--bg-card)]/60 backdrop-blur-xl border border-[var(--stroke)] rounded-full px-4 sm:px-6 py-2.5 sm:py-3 shadow-md hover:shadow-lg hover:border-[var(--accent-cyan)]/50 transition-all duration-300 group">
-						<svg class="w-4 h-4 sm:w-5 sm:h-5 text-[var(--accent-cyan)] flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-							<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path>
-						</svg>
-						<p class="text-xs sm:text-sm text-[var(--text-body)] font-medium transition-colors duration-300">
-							<span class="text-[var(--accent-cyan)] font-semibold">Ready to reclaim 15+ hours</span> of executive labor and boost your digital ROI? <span class="text-[var(--accent-cyan)] font-semibold">Let's build your foundation.</span>
+
+				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
+					<!-- Pillar 1 -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 sm:p-8">
+						<div class="w-10 h-10 bg-[var(--accent-subtle)] rounded-md flex items-center justify-center text-[var(--accent)] mb-5">
+							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+							</svg>
+						</div>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">The Website</h3>
+						<p class="text-[var(--text-body)] leading-relaxed">
+							Beautiful, blazing-fast sites that your customers actually find on Google. And love once they get there.
+						</p>
+					</div>
+
+					<!-- Pillar 2 -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 sm:p-8">
+						<div class="w-10 h-10 bg-[var(--accent-subtle)] rounded-md flex items-center justify-center text-[var(--accent)] mb-5">
+							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
+							</svg>
+						</div>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">The Engine Room</h3>
+						<p class="text-[var(--text-body)] leading-relaxed">
+							Custom dashboards, automations, and data tools that do in seconds what used to eat up your whole afternoon.
 						</p>
 					</div>
 				</div>
 			</div>
 		</section>
 
-		<!-- Dual-Focus Value Proposition Section -->
-		<section class="relative py-12 sm:py-16 md:py-20 mb-12 sm:mb-16 md:mb-20">
-			<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center mb-10 sm:mb-12 md:mb-16">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">
-						<span class="text-[var(--text-header)]">Two Layers.</span> <span class="relative inline-block">
-							<span class="relative z-10 drop-shadow-[0_0_12px_color-mix(in_srgb,var(--accent-cyan)_30%,transparent)]" style="color: #22d3ee !important;">One Foundation.</span>
-							<span class="absolute inset-0 bg-gradient-to-r from-[var(--accent-cyan)]/15 to-[var(--accent-cyan)]/15 blur-3xl -z-0"></span>
-							<span class="absolute -inset-2 bg-gradient-to-r from-[var(--accent-cyan)]/10 via-[var(--accent-cyan)]/10 to-[var(--accent-cyan)]/10 blur-2xl -z-0"></span>
-						</span>
+		<!-- Efficiency Section -->
+		<section class="py-16 sm:py-20">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-8 sm:p-12 text-center overflow-hidden">
+					<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-500"></div>
+					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+						Stop Copy-Pasting.<br class="sm:hidden" /> <span class="text-[var(--accent-cyan)]">Start Deciding.</span>
 					</h2>
-				</div>
-
-				<!-- Two-Column Pillar Grid -->
-				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-					<!-- Pillar 1: The Front Layer -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[var(--accent-cyan)]/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl flex items-center justify-center text-[var(--button-text)] mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-								<svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-								</svg>
-							</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">The Front Layer (Web & SEO)</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] leading-relaxed transition-colors duration-300">
-								High-performance websites and e-commerce platforms designed to dominate search rankings and captivate creative audiences.
-							</p>
-						</div>
-					</div>
-
-					<!-- Pillar 2: The Operational Layer -->
-					<div class="group relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-8 shadow-lg transition-all duration-300 hover:-translate-y-2 hover:border-[var(--accent-cyan)]/50 hover:shadow-[0_0_20px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)]">
-						<div class="relative z-10">
-							<div class="w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br from-[var(--button-bg)] to-[var(--button-bg)] rounded-xl flex items-center justify-center text-[var(--button-text)] mb-4 sm:mb-6 shadow-lg group-hover:scale-110 transition-transform duration-300">
-								<svg class="w-6 h-6 sm:w-7 sm:h-7" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-								</svg>
-							</div>
-							<h3 class="text-lg sm:text-xl lg:text-xl 2xl:text-2xl font-bold text-[var(--text-header)] mb-2 sm:mb-3 transition-colors duration-300">The Operational Layer (Systems & ROI)</h3>
-							<p class="text-sm sm:text-base lg:text-base 2xl:text-lg text-[var(--text-body)] leading-relaxed transition-colors duration-300">
-								Custom Node.js scrapers, Streamlit visualizations, and Proxmox containerization that reclaim 15+ hours of executive labor every week.
-							</p>
-						</div>
-					</div>
-				</div>
-			</div>
-		</section>
-
-		<!-- Efficiency Metric Section -->
-		<section class="relative py-12 sm:py-16 md:py-20 mb-12 sm:mb-16 md:mb-20 bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]">
-			<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center mb-10 sm:mb-12 md:mb-16">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold dark:font-bold mb-3 sm:mb-4 transition-colors duration-300">
-						<span class="text-[var(--text-header)]">Turn Manual Work Into Automated Intelligence.</span>
-					</h2>
-					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] max-w-3xl mx-auto leading-relaxed px-2 transition-colors duration-300">
-						In operational infrastructure, manual tracking is a failure of scale. We transform manual processes into automated intelligence systems, allowing you to focus on strategic decision-making while your systems eliminate margin bleed.
+					<p class="text-base sm:text-lg text-[var(--text-body)] leading-relaxed max-w-xl mx-auto">
+						If you're still pulling numbers from five different tabs into a spreadsheet every Monday, we should talk. We build systems that collect, organize, and present your data so you can skip the busywork and focus on what actually moves the needle.
 					</p>
 				</div>
 			</div>
 		</section>
 
-		<!-- MVP Case Studies Section -->
-		<section class="relative py-12 sm:py-16 md:py-20 lg:py-24 bg-[var(--bg-page)] bg-[radial-gradient(#06b6d412_1px,transparent_1px)] bg-[size:24px_24px]" aria-label="MVP Case Studies">
-			
-			<div class="max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-				<div class="text-center mb-10 sm:mb-12 md:mb-16">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl lg:text-4xl 2xl:text-5xl font-bold text-[var(--text-header)] mb-3 sm:mb-4 transition-colors duration-300">Featured Work</h2>
-					<p class="text-base sm:text-lg md:text-lg lg:text-xl 2xl:text-xl text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed px-2 transition-colors duration-300">
-						Real projects showcasing our full-stack approach: from stunning front-layer websites to powerful back-layer systems
+		<!-- Featured Work -->
+		<section class="py-16 sm:py-20" aria-label="Featured Work">
+			<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12">
+					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">Featured Work</h2>
+					<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto">
+						A few things we've built recently.
 					</p>
-					<div class="w-20 sm:w-24 h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[var(--accent-cyan)] to-transparent mx-auto mt-4"></div>
 				</div>
-				
-				<div class="grid md:grid-cols-3 gap-6 sm:gap-8">
-					<!-- MVP Case Study 1: VantageDash -->
-					<div class="group relative bg-[var(--bg-card)]/40 backdrop-blur-xl rounded-xl overflow-hidden border border-[var(--stroke)] hover:border-[var(--accent-cyan)]/50 hover:shadow-[0_0_25px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02]">
-						<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-cyan-500/15 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-						<div class="relative z-10">
-							<!-- Header with gradient -->
-							<div class="h-32 sm:h-40 bg-gradient-to-br from-[var(--button-bg)] via-[var(--accent-cyan)] to-[var(--button-bg)] flex items-center justify-center relative overflow-hidden">
-								<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
-								<div class="relative z-10 text-center px-4">
-									<div class="text-white text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider mb-1">MVP Case Study</div>
-									<div class="text-white text-lg sm:text-xl font-bold"><span class="text-[var(--accent-cyan)]">Operational</span> <span class="text-white">Infrastructure</span></div>
+
+				<div class="grid md:grid-cols-3 gap-6">
+					<!-- Case Study 1 -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300">
+						<div class="h-2 bg-[var(--accent)]"></div>
+						<div class="p-6">
+							<span class="text-xs font-mono text-[var(--accent)] uppercase tracking-wide">Competitive Intelligence</span>
+							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">VantageDash</h3>
+							<p class="text-sm text-[var(--text-body)] mb-4 leading-relaxed">
+								Track competitor prices across 8+ e-commerce platforms with AI-powered product matching and real-time alerts.
+							</p>
+
+							<div class="text-xs font-mono text-[var(--text-muted)] mb-4 pb-4 border-b border-[var(--stroke)]">
+								Next.js &middot; AI Matching &middot; Slack Alerts
+							</div>
+
+							<div class="space-y-2 mb-5 text-sm">
+								<div class="flex justify-between">
+									<span class="text-[var(--text-muted)]">AI Match Accuracy</span>
+									<span class="font-medium text-[var(--text-header)]">90%+</span>
+								</div>
+								<div class="flex justify-between">
+									<span class="text-[var(--text-muted)]">Products Tracked</span>
+									<span class="font-medium text-[var(--accent)]">47,000+</span>
 								</div>
 							</div>
-							<div class="p-6 sm:p-8">
-								<h3 class="text-xl sm:text-2xl font-bold text-[var(--text-header)] mb-3 group-hover:text-[var(--accent-cyan)] transition-colors">VantageDash: Automated Market Intelligence</h3>
-								<p class="text-sm sm:text-base text-[var(--text-body)] mb-4 sm:mb-6 leading-relaxed transition-colors duration-300">
-									Custom Node.js scrapers and Streamlit visualizations that reclaim 15+ hours of executive labor weekly. Focus: ROI/Automation.
-								</p>
-								
-								<!-- Tech Stack Tag -->
-								<div class="mb-4 sm:mb-6">
-									<div class="inline-block bg-[var(--bg-card)]/60 border border-[var(--stroke)] px-3 py-1.5 rounded-xl">
-										<span class="text-xs font-mono text-[var(--accent-cyan)]">STACK: </span>
-										<span class="text-xs font-mono text-white">ASTRO + TAILWIND + NETLIFY</span>
-									</div>
-								</div>
-								
-								<!-- Technical Specs -->
-								<div class="mb-4 sm:mb-6">
-									<h4 class="text-xs sm:text-sm font-bold text-white mb-2 sm:mb-3 uppercase tracking-wide font-mono">Technical Specs</h4>
-									<ul class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm font-mono">
-										<li class="flex items-start gap-2 text-[var(--text-body)]">
-											<span class="!text-[var(--accent-cyan)] mt-0.5">→</span>
-											<span><span class="!text-[var(--accent-cyan)]">STACK:</span> Astro Islands Architecture</span>
-										</li>
-										<li class="flex items-start gap-2 text-[var(--text-body)]">
-											<span class="!text-[var(--accent-cyan)] mt-0.5">→</span>
-											<span><span class="!text-[var(--accent-cyan)]">STYLING:</span> Tailwind CSS Configuration</span>
-										</li>
-										<li class="flex items-start gap-2 text-[var(--text-body)]">
-											<span class="!text-[var(--accent-cyan)] mt-0.5">→</span>
-											<span><span class="!text-[var(--accent-cyan)]">INFRA:</span> Automated GitHub Actions CI/CD</span>
-										</li>
-									</ul>
-								</div>
-								
-								<div class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-[var(--text-body)] font-mono">Lighthouse Score</span>
-										<span class="font-bold text-[var(--accent-cyan)] font-mono">98/100</span>
-									</div>
-									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-[var(--text-body)] font-mono">Result</span>
-										<span class="font-bold text-green-400 font-mono">40% Faster Load</span>
-									</div>
-								</div>
-								<a href="/work/vantagedash" class="inline-flex items-center gap-2 bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-text)] px-4 py-2 rounded-xl font-semibold hover:gap-3 transition-all text-sm sm:text-base font-mono">
-									View Case Study 
-									<span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
-								</a>
-							</div>
+							<a href="https://vantagedash.io" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
+								Visit VantageDash <span>&rarr;</span>
+							</a>
 						</div>
 					</div>
 
-					<!-- MVP Case Study 2: High-Performance Agency Website -->
-					<div class="group relative bg-[var(--bg-card)]/40 backdrop-blur-xl rounded-xl overflow-hidden border border-[var(--stroke)] hover:border-[var(--accent-cyan)]/50 hover:shadow-[0_0_25px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02]">
-						<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-cyan-500/15 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-						<div class="relative z-10">
-							<div class="h-32 sm:h-40 bg-gradient-to-br from-green-600 via-green-500 to-green-600 flex items-center justify-center relative overflow-hidden">
-								<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
-								<div class="relative z-10 text-center px-4">
-									<div class="text-white text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider mb-1">MVP Case Study</div>
-									<div class="text-white text-lg sm:text-xl font-bold"><span class="text-[var(--accent-cyan)]">Web</span> <span class="text-white">Design</span></div>
+					<!-- Case Study 2 -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300">
+						<div class="h-2 bg-emerald-500"></div>
+						<div class="p-6">
+							<span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">Web Design</span>
+							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">Agency Website Rebuild</h3>
+							<p class="text-sm text-[var(--text-body)] mb-4 leading-relaxed">
+								Took a slow site, made it fast, and watched the conversions climb.
+							</p>
+
+							<div class="text-xs font-mono text-[var(--text-muted)] mb-4 pb-4 border-b border-[var(--stroke)]">
+								Shopify &middot; Node.js &middot; Stripe
+							</div>
+
+							<div class="space-y-2 mb-5 text-sm">
+								<div class="flex justify-between">
+									<span class="text-[var(--text-muted)]">Lighthouse</span>
+									<span class="font-medium text-[var(--text-header)]">92/100</span>
+								</div>
+								<div class="flex justify-between">
+									<span class="text-[var(--text-muted)]">Result</span>
+									<span class="font-medium text-emerald-600 dark:text-emerald-400">40% Checkout Improvement</span>
 								</div>
 							</div>
-							<div class="p-6 sm:p-8">
-								<h3 class="text-xl sm:text-2xl font-bold text-[var(--text-header)] mb-3 group-hover:text-[var(--accent-cyan)] transition-colors">High-Performance Agency Website</h3>
-								<p class="text-sm sm:text-base text-[var(--text-body)] mb-4 sm:mb-6 leading-relaxed transition-colors duration-300">
-									SEO-optimized agency website with 98 Lighthouse score and sub-0.5s load times. Focus: Design/SEO.
-								</p>
-								
-								<!-- Tech Stack Tag -->
-								<div class="mb-4 sm:mb-6">
-									<div class="inline-block bg-[var(--bg-card)]/60 border border-[var(--stroke)] px-3 py-1.5 rounded-xl">
-										<span class="text-xs font-mono text-[var(--accent-cyan)]">STACK: </span>
-										<span class="text-xs font-mono text-white">SHOPIFY + NODE.JS + STRIPE</span>
-									</div>
-								</div>
-								
-								<!-- Technical Specs -->
-								<div class="mb-4 sm:mb-6">
-									<h4 class="text-xs sm:text-sm font-bold text-white mb-2 sm:mb-3 uppercase tracking-wide font-mono">Technical Specs</h4>
-									<ul class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm font-mono">
-										<li class="flex items-start gap-2 text-[var(--text-body)]">
-											<span class="!text-[var(--accent-cyan)] mt-0.5">→</span>
-											<span><span class="!text-[var(--accent-cyan)]">PLATFORM:</span> Shopify Liquid + Custom APIs</span>
-										</li>
-										<li class="flex items-start gap-2 text-[var(--text-body)]">
-											<span class="!text-[var(--accent-cyan)] mt-0.5">→</span>
-											<span><span class="!text-[var(--accent-cyan)]">UTIL:</span> Image Optimization & WebP Scripts</span>
-										</li>
-										<li class="flex items-start gap-2 text-[var(--text-body)]">
-											<span class="!text-[var(--accent-cyan)] mt-0.5">→</span>
-											<span><span class="!text-[var(--accent-cyan)]">RESULT:</span> High Performance & Core Web Vitals</span>
-										</li>
-									</ul>
-								</div>
-								
-								<div class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-[var(--text-body)] font-mono">Lighthouse Score</span>
-										<span class="font-bold text-green-400 font-mono">92/100</span>
-									</div>
-									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-[var(--text-body)] font-mono">Result</span>
-										<span class="font-bold text-green-400 font-mono">40% Checkout Improvement</span>
-									</div>
-								</div>
-								<a href="/work" class="inline-flex items-center gap-2 bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-text)] px-4 py-2 rounded-xl font-semibold hover:gap-3 transition-all text-sm sm:text-base font-mono">
-									View Case Study 
-									<span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
-								</a>
-							</div>
+							<a href="/work" class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
+								View Case Study <span>&rarr;</span>
+							</a>
 						</div>
 					</div>
 
-					<!-- MVP Case Study 3: Proactive Resilience -->
-					<div class="group relative bg-[var(--bg-card)]/40 backdrop-blur-xl rounded-xl overflow-hidden border border-[var(--stroke)] hover:border-[var(--accent-cyan)]/50 hover:shadow-[0_0_25px_color-mix(in_srgb,var(--accent-cyan)_15%,transparent)] transition-all duration-300 hover:-translate-y-2 hover:scale-[1.02]">
-						<div class="absolute inset-0 bg-gradient-to-br from-cyan-500/5 to-cyan-500/15 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
-						<div class="relative z-10">
-							<div class="h-32 sm:h-40 bg-gradient-to-br from-[var(--button-bg)] via-[var(--accent-cyan)] to-[var(--button-bg)] flex items-center justify-center relative overflow-hidden">
-								<div class="absolute inset-0 bg-[radial-gradient(circle_at_50%_50%,rgba(255,255,255,0.15),transparent_70%)]"></div>
-								<div class="relative z-10 text-center px-4">
-									<div class="text-white text-xs sm:text-sm font-semibold font-mono uppercase tracking-wider mb-1">MVP Case Study</div>
-									<div class="text-white text-lg sm:text-xl font-bold"><span class="text-[var(--accent-cyan)]">Infrastructure</span> <span class="text-white">Engineering</span></div>
+					<!-- Case Study 3 -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300">
+						<div class="h-2 bg-violet-500"></div>
+						<div class="p-6">
+							<span class="text-xs font-mono text-violet-600 dark:text-violet-400 uppercase tracking-wide">Infrastructure Engineering</span>
+							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">SSD Health Monitor</h3>
+							<p class="text-sm text-[var(--text-body)] mb-4 leading-relaxed">
+								Catches dying drives before they take your data with them. Automated alerts, zero surprises.
+							</p>
+
+							<div class="text-xs font-mono text-[var(--text-muted)] mb-4 pb-4 border-b border-[var(--stroke)]">
+								React &middot; Express &middot; PostgreSQL
+							</div>
+
+							<div class="space-y-2 mb-5 text-sm">
+								<div class="flex justify-between">
+									<span class="text-[var(--text-muted)]">Lighthouse</span>
+									<span class="font-medium text-[var(--text-header)]">95/100</span>
+								</div>
+								<div class="flex justify-between">
+									<span class="text-[var(--text-muted)]">Result</span>
+									<span class="font-medium text-violet-600 dark:text-violet-400">50% Faster API Response</span>
 								</div>
 							</div>
-							<div class="p-6 sm:p-8">
-								<h3 class="text-xl sm:text-2xl font-bold text-[var(--text-header)] mb-3 group-hover:text-[var(--accent-cyan)] transition-colors">Proactive Resilience: SSD Health Monitoring</h3>
-								<p class="text-sm sm:text-base text-[var(--text-body)] mb-4 sm:mb-6 leading-relaxed transition-colors duration-300">
-									Automated hardware health monitoring that triggers swaps before the 24-hour failure window. Focus: Engineering/Reliability.
-								</p>
-								
-								<!-- Tech Stack Tag -->
-								<div class="mb-4 sm:mb-6">
-									<div class="inline-block bg-[var(--bg-card)]/60 border border-[var(--stroke)] px-3 py-1.5 rounded-xl">
-										<span class="text-xs font-mono text-[var(--accent-cyan)]">STACK: </span>
-										<span class="text-xs font-mono text-white">REACT + EXPRESS + POSTGRESQL</span>
-									</div>
-								</div>
-								
-								<!-- Technical Specs -->
-								<div class="mb-4 sm:mb-6">
-									<h4 class="text-xs sm:text-sm font-bold text-white mb-2 sm:mb-3 uppercase tracking-wide font-mono">Technical Specs</h4>
-									<ul class="space-y-1.5 sm:space-y-2 text-xs sm:text-sm font-mono">
-										<li class="flex items-start gap-2 text-[var(--text-body)]">
-											<span class="!text-[var(--accent-cyan)] mt-0.5">→</span>
-											<span><span class="!text-[var(--accent-cyan)]">BACKEND:</span> Node.js Express API Server</span>
-										</li>
-										<li class="flex items-start gap-2 text-[var(--text-body)]">
-											<span class="!text-[var(--accent-cyan)] mt-0.5">→</span>
-											<span><span class="!text-[var(--accent-cyan)]">UI:</span> Streamlit Data Dashboard</span>
-										</li>
-										<li class="flex items-start gap-2 text-[var(--text-body)]">
-											<span class="!text-[var(--accent-cyan)] mt-0.5">→</span>
-											<span><span class="!text-[var(--accent-cyan)]">VIRTUALIZATION:</span> Proxmox LXC Containerization</span>
-										</li>
-									</ul>
-								</div>
-								
-								<div class="space-y-2 sm:space-y-3 mb-4 sm:mb-6">
-									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-[var(--text-body)] font-mono">Lighthouse Score</span>
-										<span class="font-bold text-purple-400 font-mono">95/100</span>
-									</div>
-									<div class="flex items-center justify-between text-xs sm:text-sm">
-										<span class="text-[var(--text-body)] font-mono">Result</span>
-										<span class="font-bold text-purple-400 font-mono">50% Faster API Response</span>
-									</div>
-								</div>
-								<a href="/work" class="inline-flex items-center gap-2 bg-[var(--button-bg)] hover:bg-[var(--button-bg-hover)] text-[var(--button-text)] px-4 py-2 rounded-xl font-semibold hover:gap-3 transition-all text-sm sm:text-base font-mono">
-									View Case Study 
-									<span class="inline-block group-hover:translate-x-1 transition-transform">→</span>
-								</a>
-							</div>
+							<a href="/work" class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
+								View Case Study <span>&rarr;</span>
+							</a>
 						</div>
 					</div>
 				</div>
@@ -329,33 +199,16 @@ import ProjectCard from '../components/ProjectCard.astro';
 		</section>
 
 		<!-- CTA Section -->
-		<section class="relative py-12 sm:py-16 md:py-20 lg:py-24 overflow-hidden bg-[var(--bg-page)] transition-colors duration-300">
-			<!-- Blueprint Grid Pattern Background -->
-			<div class="absolute inset-0 bg-[linear-gradient(to_right,#80808012_1px,transparent_1px),linear-gradient(to_bottom,#80808012_1px,transparent_1px)] bg-[size:24px_24px]"></div>
-			<div class="relative max-w-6xl 2xl:max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 z-10">
-				<div class="bg-[var(--bg-card)]/40 backdrop-blur-xl rounded-xl shadow-2xl border border-[var(--stroke)] p-8 sm:p-12 md:p-16 lg:p-20 text-center">
-					<h2 class="text-3xl sm:text-4xl md:text-5xl lg:text-5xl 2xl:text-6xl font-bold text-[var(--text-header)] mb-4 sm:mb-6 leading-tight transition-colors duration-300">Ready to Optimize Your Digital Presence?</h2>
-					<p class="text-base sm:text-lg md:text-xl lg:text-xl 2xl:text-2xl text-[var(--text-body)] mb-8 sm:mb-10 leading-relaxed max-w-2xl 2xl:max-w-3xl mx-auto transition-colors duration-300">
-						As a Pasadena, Maryland computer systems design practice, we specialize in high-performance web development and e-commerce optimization. Let's discuss how we can help your business with technical SEO and performance-driven solutions.
-					</p>
-					<a href="/contact" class="inline-block bg-[var(--button-bg)] text-[var(--button-text)] px-6 sm:px-8 py-3.5 sm:py-4 md:py-4 rounded-xl font-semibold font-mono text-base sm:text-lg hover:bg-[var(--button-bg-hover)] active:bg-[var(--button-bg-active)] transition-all duration-300 shadow-lg hover:shadow-xl hover:-translate-y-0.5 active:translate-y-0 touch-manipulation min-h-[44px] sm:min-h-[48px]">
-						Optimize Your Presence
-					</a>
-				</div>
+		<section class="border-t border-[var(--stroke)] py-16 sm:py-20">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Let's Build Something.</h2>
+				<p class="text-base sm:text-lg text-[var(--text-body)] mb-8 max-w-2xl mx-auto leading-relaxed">
+					Got a project in mind? Just an idea? That works too. We're based in Pasadena, Maryland and we love talking shop.
+				</p>
+				<a href="/contact" class="inline-block bg-cyan-500 text-slate-950 px-6 py-3 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5 min-h-[48px]">
+					Start a Conversation
+				</a>
 			</div>
 		</section>
 	</main>
 </Layout>
-
-<style>
-	/* Use CSS variables for theme-aware text colors */
-	h1 > span:first-child,
-	h2 > span:first-child {
-		color: var(--text-header) !important;
-	}
-	
-	/* Fix "Websites" text - it's the last direct child span of h1 */
-	section h1 > span:last-child:not([class*="relative"]) {
-		color: var(--text-header) !important;
-	}
-</style>

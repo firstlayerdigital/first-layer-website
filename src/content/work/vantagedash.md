@@ -1,106 +1,70 @@
 ---
-title: "VantageDash: Automated Market Intelligence"
-description: "Transforming manual price tracking into an automated market intelligence system, eliminating margin bleed and reclaiming 15+ hours of weekly executive labor through Node.js scrapers, Streamlit visualization, and Proxmox containerization."
+title: "VantageDash: Competitive Price Intelligence for E-commerce"
+description: "A SaaS platform that tracks competitor prices across 8+ e-commerce platforms, matches products with AI at 90%+ accuracy, and sends real-time alerts when prices change."
 date: 2025-01-15
-techStack: ["Node.js", "Streamlit", "Proxmox", "Python", "Web Scraping", "Data Visualization", "Containerization"]
-result: "Reclaiming 15 hours of weekly executive labor"
-clientName: "P1 Packaging"
-category: "operational-infrastructure"
+techStack: ["Next.js", "React", "AI Product Matching", "Web Scraping", "Slack Integration", "Tailwind CSS"]
+result: "47,000+ products tracked with 90%+ AI accuracy"
+clientName: "First Layer Digital"
+category: "custom-software"
 anonymous: false
 ---
 
-## The Problem: Margin Bleed & Executive Labor Inefficiency
+## The Problem: Blind Spots in Competitive Pricing
 
-In the competitive packaging industry, price synchronization isn't just a convenience—it's a survival mechanism. P1 Packaging faced a critical operational challenge: **margin bleed** from outdated pricing data and **executive labor inefficiency** consuming 15+ hours weekly on manual market intelligence gathering.
+E-commerce brands live and die by pricing. But most are flying blind. They're checking competitor sites one by one, copying numbers into spreadsheets, and hoping they catch changes before their margins take a hit.
 
-### The Hidden Costs
+It doesn't scale. It's boring. And it's always out of date by the time anyone acts on it.
 
-- **Margin Bleed**: Competitor price changes went undetected for days, resulting in lost revenue opportunities and market share erosion
-- **Executive Labor Inefficiency**: Senior leadership spent 15+ hours weekly manually tracking competitor pricing across multiple channels
-- **Data Fragmentation**: Pricing intelligence existed in spreadsheets, emails, and mental notes—never consolidated or actionable
-- **Reactive Decision-Making**: By the time pricing discrepancies were identified, competitive advantages had already been lost
+## The Solution: VantageDash
 
-## The Solution: Automated Systems Design
+VantageDash is a competitive intelligence platform built from the ground up for e-commerce teams who need to know what competitors are charging, right now.
 
-VantageDash transforms manual price tracking into a fully automated market intelligence system, built on a modern stack designed for reliability, scalability, and zero-maintenance operation.
+### How It Works
 
-### Architecture Overview
+**Drop in a competitor URL. That's it.**
 
-**Data Collection Layer**
-- Node.js web scrapers with intelligent rate limiting and error handling
-- Multi-source data aggregation (competitor websites, marketplaces, industry databases)
-- Automated scheduling with configurable update frequencies
+VantageDash auto-detects the e-commerce platform (Shopify, WooCommerce, Uline, Ecwid, Wix, Squarespace, and more) and pulls the full product catalog automatically. No API keys, no special access, no setup headaches.
 
-**Processing & Storage**
-- Python-based data processing pipeline
-- Structured data normalization and validation
-- Time-series database for historical price tracking
+**AI matches your products to theirs.**
 
-**Visualization & Interface**
-- Streamlit dashboard for real-time market intelligence
-- Interactive charts and trend analysis
-- Automated alerting for significant price movements
+Different brands call the same product different things. VantageDash's AI matching engine handles naming variations, bulk vs. single pricing, and cross-platform differences. Every match comes with a confidence score so you know what to trust.
 
-**Infrastructure**
-- Proxmox containerization for isolated, scalable deployment
-- Automated backup and recovery systems
-- Cloudflared tunnel for secure remote access
+**Get alerts the moment prices change.**
 
-### System Specs
+Slack ping. Email notification. Your call. Set custom thresholds so you only hear about the changes that matter.
 
-**STACK: NODE.JS + STREAMLIT + PROXMOX LXC + GITHUB ACTIONS**
+### What You Get
 
-**Technology Stack:**
-- **Backend**: Node.js (v18+) scraping engine with intelligent rate limiting
-- **Visualization**: Streamlit dashboard for real-time market intelligence
-- **Infrastructure**: Proxmox LXC containerization for isolated, scalable deployment
-- **CI/CD**: GitHub Actions for automated deployment and health monitoring
-- **Data Storage**: Time-series database with automated retention policies
+- **Price trend charts** showing how competitor pricing moves over time
+- **Competitor heatmaps** for a bird's-eye view of the market
+- **CSV/PDF export reports** for team sharing and presentations
+- **Role-based team access** with enterprise audit logging
 
-**Deployment:**
-- Containerized architecture for portability and scalability
-- Automated health monitoring and self-healing capabilities
-- Zero-downtime update procedures via GitHub Actions
+## Tech Stack
 
-**Security:**
-- Encrypted data transmission
-- Secure credential management via Proxmox secrets
-- Access control and audit logging
+- **Frontend**: Next.js with React and Tailwind CSS
+- **Scraping Engine**: Auto-detects 8+ e-commerce platforms
+- **AI Matching**: Product matching with confidence scoring
+- **Alerts**: Slack and email integration with custom thresholds
+- **Security**: Enterprise-grade encryption, credential isolation, and audit trails
+- **Analytics**: Umami for privacy-respecting usage tracking
 
-## The Impact: Measurable Business Value
+## Pricing Tiers
 
-### 100% Price Synchronization
+VantageDash ships with three tiers designed to grow with the business:
 
-VantageDash achieves complete price synchronization across all monitored competitors and channels. Real-time updates ensure pricing decisions are based on current market conditions, not yesterday's data.
+- **Scout (Free)**: Monitor 2 competitors, on-demand price checks, basic matching, trend analytics
+- **Vantage ($49/mo)**: 10 competitors, automated daily checks, AI matching, Slack/email alerts, CSV/PDF exports
+- **Summit ($199/mo)**: Unlimited competitors, unlimited monitoring, team invitations, role-based permissions, audit trails, priority support
 
-### Reclaiming 15+ Hours of Weekly Executive Labor
+## Results
 
-The automation eliminates manual data collection entirely. What once consumed 15+ hours of executive time weekly now requires zero manual intervention. Leadership can focus on strategic decision-making rather than data gathering.
+- **47,000+ products** scraped and tracked
+- **90%+ AI match accuracy** across naming conventions and pricing structures
+- **8+ e-commerce platforms** supported out of the box
+- **< 5 minute setup** from signup to first competitor scan
+- Industries served: packaging, cosmetics, supplements, electronics, food & beverage, apparel, home & garden, pet products
 
-### Operational Benefits
+## Live Product
 
-- **Proactive Decision-Making**: Price changes detected within minutes, not days
-- **Data-Driven Strategy**: Historical trend analysis enables predictive pricing strategies
-- **Scalability**: System handles increasing data volumes without proportional labor increases
-- **Reliability**: Automated systems operate 24/7 without human oversight
-
-### ROI Metrics
-
-- **Time Savings**: 15+ hours/week × 52 weeks = 780+ hours annually reclaimed
-- **Revenue Impact**: Eliminated margin bleed through real-time price synchronization
-- **Strategic Value**: Executive time redirected from data collection to strategic planning
-
-## Technical Excellence
-
-VantageDash demonstrates engineering-driven solutions that deliver measurable results. The system architecture prioritizes:
-
-- **Maintainability**: Clean, documented code with automated testing
-- **Reliability**: Error handling, retry logic, and automated recovery
-- **Scalability**: Containerized design supports horizontal scaling
-- **Security**: Encrypted communications and secure credential management
-
-## Conclusion
-
-VantageDash transforms a manual, time-intensive process into an automated, intelligent system. By eliminating margin bleed and reclaiming executive labor, the solution delivers both immediate operational benefits and long-term strategic value.
-
-The project exemplifies First Layer Digital's approach: **engineering-driven solutions that deliver measurable results**. From concept to deployment, we build with precision and purpose.
+VantageDash is live at [vantagedash.io](https://vantagedash.io). Free tier available with no time limits.
