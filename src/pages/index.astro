@@ -1,196 +1,322 @@
 ---
 import Layout from '../layouts/Layout.astro';
-import ProjectCard from '../components/ProjectCard.astro';
 ---
 
 <Layout
-	title="Bespoke Web Design & SEO | High-Performance Websites | Pasadena, Maryland | First Layer Digital"
-	description="Pasadena, Maryland computer systems design specializing in bespoke web design, technical SEO, e-commerce optimization, and high-performance web development. Optimized for search & speed."
+	title="Custom Software, Online Stores & Automation | Pasadena, Maryland | First Layer Digital"
+	description="Fast websites, custom online stores, and tools that cut the busywork. Real software for businesses that want to grow. Based in Pasadena, Maryland."
 >
 	<main class="relative overflow-hidden" role="main">
-		<!-- Background glow orbs -->
-		<div class="fixed inset-0 -z-10 pointer-events-none">
-			<div class="absolute top-1/4 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl"></div>
-			<div class="absolute bottom-1/4 left-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl"></div>
-		</div>
 
-		<!-- Hero Section -->
-		<section class="max-w-3xl mx-auto pt-16 sm:pt-24 md:pt-32 pb-16 sm:pb-20 text-center px-4 sm:px-6" aria-label="Hero Section">
-			<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.1]">
-				Not Just Pretty.<br />
-				<span class="text-[var(--accent-cyan)] relative inline-block">
-					<span class="relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]">Built to Run.</span>
-					<span class="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-cyan-500/15 blur-3xl -z-0"></span>
-					<span class="absolute -inset-2 bg-gradient-to-r from-cyan-400/10 via-cyan-500/10 to-cyan-400/10 blur-2xl -z-0"></span>
-				</span>
-			</h1>
+		<!-- ============================================
+		     1. HERO (split layout with product mockup)
+		     ============================================ -->
+		<section class="relative pt-12 sm:pt-16 md:pt-24 pb-16 sm:pb-20 px-4 sm:px-6" aria-label="Hero">
+			<!-- Decorative background -->
+			<div class="absolute inset-0 -z-10 pointer-events-none">
+				<div class="absolute top-0 right-0 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl"></div>
+				<div class="absolute bottom-0 left-1/3 w-72 h-72 bg-[var(--accent-cyan)]/8 rounded-full blur-3xl"></div>
+			</div>
 
-			<p class="text-lg sm:text-xl text-[var(--text-body)] mb-10 leading-relaxed max-w-2xl mx-auto">
-				Websites that load fast, rank high, and look sharp. Plus the custom tools behind the scenes that save you hours every week.
-			</p>
+			<div class="max-w-6xl mx-auto grid lg:grid-cols-5 gap-10 lg:gap-12 items-center">
+				<!-- Left: Text -->
+				<div class="lg:col-span-3 text-center lg:text-left">
+					<div class="inline-flex items-center gap-2 bg-[var(--bg-card)] border border-[var(--stroke)] rounded-full px-4 py-1.5 mb-6 text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">
+						<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+						Pasadena, Maryland
+					</div>
 
-			<div class="flex flex-col sm:flex-row justify-center items-stretch sm:items-center gap-3 sm:gap-4">
-				<a href="/contact" class="bg-cyan-500 text-slate-950 px-6 py-3 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center">
-					Get Started
-				</a>
-				<a href="/work" class="bg-[var(--bg-page)] text-[var(--text-header)] border border-[var(--stroke)] px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--bg-muted)] hover:border-cyan-500/60 transition-all duration-300 shadow-md hover:shadow-lg hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center">
-					See Our Work
-				</a>
+					<h1 class="text-4xl sm:text-5xl md:text-6xl lg:text-6xl font-bold tracking-tight mb-6 leading-[1.05]">
+						Not Just Pretty.<br />
+						<span style="color: #3b82f6;">Built to Run.</span>
+					</h1>
+
+					<p class="text-lg sm:text-xl text-[var(--text-body)] mb-8 leading-relaxed max-w-xl mx-auto lg:mx-0">
+						Fast websites that rank on Google. Online stores that actually sell. And the custom tools behind the scenes that save you hours every week.
+					</p>
+
+					<div class="flex flex-col sm:flex-row justify-center lg:justify-start items-stretch sm:items-center gap-3 sm:gap-4">
+						<a href="/contact" class="bg-cyan-500 text-slate-950 px-6 py-3 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center">
+							Get Started
+						</a>
+						<a href="/work" class="bg-[var(--bg-card)] text-[var(--text-header)] border border-[var(--stroke)] px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:border-cyan-500/60 hover:bg-[var(--bg-muted)] transition-all duration-300 hover:-translate-y-0.5 min-h-[48px] flex items-center justify-center">
+							See Our Work
+						</a>
+					</div>
+				</div>
+
+				<!-- Right: Product Mockup -->
+				<div class="lg:col-span-2 relative">
+					<!-- Floating decorative shapes -->
+					<div class="absolute -top-6 -left-6 w-12 h-12 rounded-lg bg-cyan-500/20 rotate-12 float-shape hidden lg:block"></div>
+					<div class="absolute -bottom-4 -right-2 w-8 h-8 rounded-full bg-cyan-400/30 float-shape float-shape-slow hidden lg:block"></div>
+					<div class="absolute top-1/2 -right-8 w-3 h-3 rounded-full bg-emerald-400/50 float-shape hidden lg:block"></div>
+
+					<div class="browser-frame">
+						<img src="/images/hero-mockup.png" alt="VantageDash competitive intelligence dashboard" loading="eager" width="1280" height="800" />
+					</div>
+				</div>
 			</div>
 		</section>
 
-		<!-- Dual-Focus Value Proposition -->
-		<section class="border-t border-[var(--stroke)] py-16 sm:py-20">
-			<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+		<!-- ============================================
+		     2. VALUE PROPS STRIP (3 icon cards)
+		     ============================================ -->
+		<section class="relative py-16 sm:py-20 border-t border-[var(--stroke)]" aria-label="What we do">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
 				<div class="text-center mb-12">
 					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
-						What You See. <span class="text-[var(--accent-cyan)] relative inline-block"><span class="relative z-10 drop-shadow-[0_0_12px_rgba(34,211,238,0.4)]">What You Don't.</span><span class="absolute inset-0 bg-gradient-to-r from-cyan-400/15 to-cyan-500/15 blur-3xl -z-0"></span></span>
+						The Stuff That <span class="text-[var(--accent-cyan)]">Moves The Needle</span>
 					</h2>
+					<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto">
+						Three things we're really good at. Pick one, or pick all three.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-5 sm:gap-6">
+					<!-- Card 1: See Your Numbers -->
+					<div class="group bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7 hover:border-cyan-500/40 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(34,211,238,0.12)] transition-all duration-300">
+						<div class="w-12 h-12 rounded-lg bg-[var(--accent-subtle)] border border-cyan-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+							<svg class="w-6 h-6 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"/>
+							</svg>
+						</div>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">See Your Numbers</h3>
+						<p class="text-[var(--text-body)] leading-relaxed text-sm sm:text-base">
+							Live dashboards that pull from every platform you use. No spreadsheets, no tab-switching, no Monday morning panic.
+						</p>
+					</div>
+
+					<!-- Card 2: Cut the Busywork -->
+					<div class="group bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7 hover:border-cyan-500/40 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(34,211,238,0.12)] transition-all duration-300">
+						<div class="w-12 h-12 rounded-lg bg-[var(--accent-subtle)] border border-cyan-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+							<svg class="w-6 h-6 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+							</svg>
+						</div>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">Cut the Busywork</h3>
+						<p class="text-[var(--text-body)] leading-relaxed text-sm sm:text-base">
+							If you're doing it by hand and it follows a pattern, we can automate it. Get hours back every week.
+						</p>
+					</div>
+
+					<!-- Card 3: Sell More Online -->
+					<div class="group bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7 hover:border-cyan-500/40 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(34,211,238,0.12)] transition-all duration-300">
+						<div class="w-12 h-12 rounded-lg bg-[var(--accent-subtle)] border border-cyan-500/20 flex items-center justify-center mb-5 group-hover:scale-110 transition-transform duration-300">
+							<svg class="w-6 h-6 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 11V7a4 4 0 00-8 0v4M5 9h14l1 12H4L5 9z"/>
+							</svg>
+						</div>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">Sell More Online</h3>
+						<p class="text-[var(--text-body)] leading-relaxed text-sm sm:text-base">
+							Online stores wired into the rest of your business. Wholesale portals, ad tracking, shipping. The works.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============================================
+		     PRODUCT SHOWCASE ("What We Build")
+		     ============================================ -->
+		<section class="relative py-16 sm:py-20 md:py-24" aria-label="What we build">
+			<!-- Decorative background -->
+			<div class="absolute inset-0 -z-10 pointer-events-none dot-grid-subtle opacity-50"></div>
+
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12 sm:mb-16">
+					<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-3">
+						Recent Builds
+					</span>
+					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+						What We <span class="text-[var(--accent-cyan)]">Build</span>
+					</h2>
+					<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto">
+						Real projects, real customers, real outcomes. Here's a look at what we've shipped recently.
+					</p>
 				</div>
 
 				<div class="grid grid-cols-1 md:grid-cols-2 gap-6 sm:gap-8">
-					<!-- Pillar 1 -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 sm:p-8">
-						<div class="w-10 h-10 bg-[var(--accent-subtle)] rounded-md flex items-center justify-center text-[var(--accent)] mb-5">
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
-							</svg>
+					<!-- VantageDash Showcase -->
+					<a href="https://vantagedash.io" target="_blank" rel="noopener noreferrer" class="group block bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl overflow-hidden hover:border-cyan-500/40 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.25)] transition-all duration-300">
+						<div class="p-4 sm:p-5">
+							<div class="browser-frame">
+								<img src="/images/vantagedash-showcase.png" alt="VantageDash homepage" loading="lazy" width="1280" height="800" />
+							</div>
 						</div>
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">The Website</h3>
-						<p class="text-[var(--text-body)] leading-relaxed">
-							Beautiful, blazing-fast sites that your customers actually find on Google. And love once they get there.
-						</p>
-					</div>
+						<div class="p-6 sm:p-7 pt-2">
+							<span class="inline-block text-xs font-mono uppercase tracking-wider text-[var(--accent-cyan)] mb-2">
+								Competitive Intelligence Platform
+							</span>
+							<h3 class="text-xl sm:text-2xl font-bold text-[var(--text-header)] mb-2 group-hover:text-[var(--accent-cyan)] transition-colors">
+								VantageDash
+							</h3>
+							<p class="text-[var(--text-body)] leading-relaxed text-sm sm:text-base">
+								Track competitor prices across the web and get alerts the moment they change.
+							</p>
+						</div>
+					</a>
 
-					<!-- Pillar 2 -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 sm:p-8">
-						<div class="w-10 h-10 bg-[var(--accent-subtle)] rounded-md flex items-center justify-center text-[var(--accent)] mb-5">
-							<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"></path>
-								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"></path>
-							</svg>
+					<!-- P1 Packaging Showcase -->
+					<a href="https://p1packaging.com" target="_blank" rel="noopener noreferrer" class="group block bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl overflow-hidden hover:border-cyan-500/40 hover:-translate-y-1 hover:shadow-[0_20px_40px_-15px_rgba(34,211,238,0.25)] transition-all duration-300">
+						<div class="p-4 sm:p-5">
+							<div class="browser-frame">
+								<img src="/images/p1-packaging-showcase.png" alt="P1 Packaging online store" loading="lazy" width="1280" height="800" />
+							</div>
 						</div>
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">The Engine Room</h3>
-						<p class="text-[var(--text-body)] leading-relaxed">
-							Custom dashboards, automations, and data tools that do in seconds what used to eat up your whole afternoon.
-						</p>
-					</div>
+						<div class="p-6 sm:p-7 pt-2">
+							<span class="inline-block text-xs font-mono uppercase tracking-wider text-emerald-400 mb-2">
+								E-commerce with Custom Integrations
+							</span>
+							<h3 class="text-xl sm:text-2xl font-bold text-[var(--text-header)] mb-2 group-hover:text-[var(--accent-cyan)] transition-colors">
+								P1 Packaging
+							</h3>
+							<p class="text-[var(--text-body)] leading-relaxed text-sm sm:text-base">
+								Not just a store. A store wired into the wholesale portal, ad tracking, and shipping pipeline.
+							</p>
+						</div>
+					</a>
 				</div>
 			</div>
 		</section>
 
-		<!-- Efficiency Section -->
-		<section class="py-16 sm:py-20">
-			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-8 sm:p-12 text-center overflow-hidden">
-					<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-500"></div>
-					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight">
-						Stop Copy-Pasting.<br class="sm:hidden" /> <span class="text-[var(--accent-cyan)]">Start Deciding.</span>
+		<!-- ============================================
+		     5. HOW IT WORKS (3-step process)
+		     ============================================ -->
+		<section class="relative py-16 sm:py-20 md:py-24 section-muted border-y border-[var(--stroke)]" aria-label="How it works">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12 sm:mb-16">
+					<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-3">
+						The Process
+					</span>
+					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+						How It <span class="text-[var(--accent-cyan)]">Works</span>
 					</h2>
-					<p class="text-base sm:text-lg text-[var(--text-body)] leading-relaxed max-w-xl mx-auto">
-						If you're still pulling numbers from five different tabs into a spreadsheet every Monday, we should talk. We build systems that collect, organize, and present your data so you can skip the busywork and focus on what actually moves the needle.
-					</p>
-				</div>
-			</div>
-		</section>
-
-		<!-- Featured Work -->
-		<section class="py-16 sm:py-20" aria-label="Featured Work">
-			<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
-				<div class="text-center mb-12">
-					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">Featured Work</h2>
 					<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto">
-						A few things we've built recently.
+						Three steps. No mystery, no scope creep, no surprise invoices.
 					</p>
 				</div>
 
-				<div class="grid md:grid-cols-3 gap-6">
-					<!-- Case Study 1 -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300">
-						<div class="h-2 bg-[var(--accent)]"></div>
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-8 sm:gap-6 relative">
+					<!-- Step 1 -->
+					<div class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7 z-10">
+						<div class="hidden md:block step-connector"></div>
+						<div class="step-number mb-5 relative z-10">1</div>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">We Talk</h3>
+						<p class="text-[var(--text-body)] leading-relaxed text-sm sm:text-base">
+							You tell us what's eating up your time or holding your business back. We figure out what's worth building.
+						</p>
+					</div>
+
+					<!-- Step 2 -->
+					<div class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7 z-10">
+						<div class="hidden md:block step-connector"></div>
+						<div class="step-number mb-5 relative z-10">2</div>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">We Build</h3>
+						<p class="text-[var(--text-body)] leading-relaxed text-sm sm:text-base">
+							Fixed price, clear timeline. You see progress along the way, not a stack of confusing invoices.
+						</p>
+					</div>
+
+					<!-- Step 3 -->
+					<div class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7 z-10">
+						<div class="step-number mb-5 relative z-10">3</div>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-2">You Launch</h3>
+						<p class="text-[var(--text-body)] leading-relaxed text-sm sm:text-base">
+							Go live with 60 days of post-launch support included. We're around if anything breaks or needs a tweak.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============================================
+		     6. EFFICIENCY CALLOUT (kept, with dot grid)
+		     ============================================ -->
+		<section class="relative py-16 sm:py-20" aria-label="Efficiency callout">
+			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-2xl p-8 sm:p-12 text-center overflow-hidden">
+					<!-- Dot grid background -->
+					<div class="absolute inset-0 dot-grid opacity-30 pointer-events-none"></div>
+					<!-- Top accent line -->
+					<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-500"></div>
+					<!-- Floating shape -->
+					<div class="absolute top-6 right-6 w-3 h-3 rounded-full bg-cyan-400/40 float-shape hidden sm:block"></div>
+
+					<div class="relative z-10">
+						<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+							Stop Copy-Pasting.<br class="sm:hidden" /> <span class="text-[var(--accent-cyan)]">Start Deciding.</span>
+						</h2>
+						<p class="text-base sm:text-lg text-[var(--text-body)] leading-relaxed max-w-xl mx-auto">
+							If you're still pulling numbers from five different tabs into a spreadsheet every Monday, we should talk. We build systems that collect, organize, and present your data so you can skip the busywork and focus on what actually matters.
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<!-- ============================================
+		     7. FEATURED WORK (image-led cards)
+		     ============================================ -->
+		<section class="relative py-16 sm:py-20 md:py-24 border-t border-[var(--stroke)]" aria-label="Featured Work">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12 sm:mb-16">
+					<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-3">
+						Real Examples
+					</span>
+					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+						Featured <span class="text-[var(--accent-cyan)]">Work</span>
+					</h2>
+					<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto">
+						A few projects we're proud of.
+					</p>
+				</div>
+
+				<div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+					<!-- VantageDash -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl overflow-hidden hover:border-cyan-500/40 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(34,211,238,0.15)] transition-all duration-300">
+						<div class="h-1.5 bg-cyan-500"></div>
+						<img src="/images/work-vantagedash.png" alt="VantageDash" loading="lazy" class="w-full h-44 object-cover object-top" width="1280" height="800" />
 						<div class="p-6">
-							<span class="text-xs font-mono text-[var(--accent)] uppercase tracking-wide">Competitive Intelligence</span>
+							<span class="text-xs font-mono text-cyan-400 uppercase tracking-wide">Competitive Intelligence</span>
 							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">VantageDash</h3>
-							<p class="text-sm text-[var(--text-body)] mb-4 leading-relaxed">
-								Track competitor prices across 8+ e-commerce platforms with AI-powered product matching and real-time alerts.
+							<p class="text-sm text-[var(--text-body)] leading-relaxed mb-4">
+								47,000+ products tracked across 8 platforms with smart product matching that actually works.
 							</p>
-
-							<div class="text-xs font-mono text-[var(--text-muted)] mb-4 pb-4 border-b border-[var(--stroke)]">
-								Next.js &middot; AI Matching &middot; Slack Alerts
-							</div>
-
-							<div class="space-y-2 mb-5 text-sm">
-								<div class="flex justify-between">
-									<span class="text-[var(--text-muted)]">AI Match Accuracy</span>
-									<span class="font-medium text-[var(--text-header)]">90%+</span>
-								</div>
-								<div class="flex justify-between">
-									<span class="text-[var(--text-muted)]">Products Tracked</span>
-									<span class="font-medium text-[var(--accent)]">47,000+</span>
-								</div>
-							</div>
-							<a href="https://vantagedash.io" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
-								Visit VantageDash <span>&rarr;</span>
+							<a href="https://vantagedash.io" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-[var(--accent-cyan)] hover:text-cyan-300 inline-flex items-center gap-1 transition-colors">
+								Visit Site <span aria-hidden="true">&rarr;</span>
 							</a>
 						</div>
 					</div>
 
-					<!-- Case Study 2 -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300">
-						<div class="h-2 bg-emerald-500"></div>
+					<!-- P1 Packaging -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl overflow-hidden hover:border-cyan-500/40 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(34,211,238,0.15)] transition-all duration-300">
+						<div class="h-1.5 bg-emerald-500"></div>
+						<img src="/images/work-p1-packaging.png" alt="P1 Packaging" loading="lazy" class="w-full h-44 object-cover object-top" width="1280" height="800" />
 						<div class="p-6">
-							<span class="text-xs font-mono text-emerald-600 dark:text-emerald-400 uppercase tracking-wide">Web Design</span>
-							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">Agency Website Rebuild</h3>
-							<p class="text-sm text-[var(--text-body)] mb-4 leading-relaxed">
-								Took a slow site, made it fast, and watched the conversions climb.
+							<span class="text-xs font-mono text-emerald-400 uppercase tracking-wide">E-commerce</span>
+							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">P1 Packaging</h3>
+							<p class="text-sm text-[var(--text-body)] leading-relaxed mb-4">
+								Custom online store with a wholesale portal, ad tracking, and shipping built right in.
 							</p>
-
-							<div class="text-xs font-mono text-[var(--text-muted)] mb-4 pb-4 border-b border-[var(--stroke)]">
-								Shopify &middot; Node.js &middot; Stripe
-							</div>
-
-							<div class="space-y-2 mb-5 text-sm">
-								<div class="flex justify-between">
-									<span class="text-[var(--text-muted)]">Lighthouse</span>
-									<span class="font-medium text-[var(--text-header)]">92/100</span>
-								</div>
-								<div class="flex justify-between">
-									<span class="text-[var(--text-muted)]">Result</span>
-									<span class="font-medium text-emerald-600 dark:text-emerald-400">40% Checkout Improvement</span>
-								</div>
-							</div>
-							<a href="/work" class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
-								View Case Study <span>&rarr;</span>
+							<a href="https://p1packaging.com" target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-[var(--accent-cyan)] hover:text-cyan-300 inline-flex items-center gap-1 transition-colors">
+								Visit Site <span aria-hidden="true">&rarr;</span>
 							</a>
 						</div>
 					</div>
 
-					<!-- Case Study 3 -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden hover:border-[var(--accent)]/40 hover:shadow-[0_0_20px_rgba(34,211,238,0.15)] transition-all duration-300">
-						<div class="h-2 bg-violet-500"></div>
+					<!-- First Layer Digital -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl overflow-hidden hover:border-cyan-500/40 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(34,211,238,0.15)] transition-all duration-300">
+						<div class="h-1.5 bg-violet-500"></div>
+						<img src="/images/work-fld.png" alt="First Layer Digital" loading="lazy" class="w-full h-44 object-cover object-top" width="1280" height="800" />
 						<div class="p-6">
-							<span class="text-xs font-mono text-violet-600 dark:text-violet-400 uppercase tracking-wide">Infrastructure Engineering</span>
-							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">SSD Health Monitor</h3>
-							<p class="text-sm text-[var(--text-body)] mb-4 leading-relaxed">
-								Catches dying drives before they take your data with them. Automated alerts, zero surprises.
+							<span class="text-xs font-mono text-violet-400 uppercase tracking-wide">Web Design</span>
+							<h3 class="text-lg font-semibold text-[var(--text-header)] mt-2 mb-3">First Layer Digital</h3>
+							<p class="text-sm text-[var(--text-body)] leading-relaxed mb-4">
+								The site you're looking at. Lighthouse score of 98 and pages that load before you blink.
 							</p>
-
-							<div class="text-xs font-mono text-[var(--text-muted)] mb-4 pb-4 border-b border-[var(--stroke)]">
-								React &middot; Express &middot; PostgreSQL
-							</div>
-
-							<div class="space-y-2 mb-5 text-sm">
-								<div class="flex justify-between">
-									<span class="text-[var(--text-muted)]">Lighthouse</span>
-									<span class="font-medium text-[var(--text-header)]">95/100</span>
-								</div>
-								<div class="flex justify-between">
-									<span class="text-[var(--text-muted)]">Result</span>
-									<span class="font-medium text-violet-600 dark:text-violet-400">50% Faster API Response</span>
-								</div>
-							</div>
-							<a href="/work" class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
-								View Case Study <span>&rarr;</span>
+							<a href="/work" class="text-sm font-medium text-[var(--accent-cyan)] hover:text-cyan-300 inline-flex items-center gap-1 transition-colors">
+								See All Work <span aria-hidden="true">&rarr;</span>
 							</a>
 						</div>
 					</div>
@@ -198,17 +324,32 @@ import ProjectCard from '../components/ProjectCard.astro';
 			</div>
 		</section>
 
-		<!-- CTA Section -->
-		<section class="border-t border-[var(--stroke)] py-16 sm:py-20">
-			<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
-				<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4">Let's Build Something.</h2>
-				<p class="text-base sm:text-lg text-[var(--text-body)] mb-8 max-w-2xl mx-auto leading-relaxed">
-					Got a project in mind? Just an idea? That works too. We're based in Pasadena, Maryland and we love talking shop.
+		<!-- ============================================
+		     8. BOLD CTA BANNER
+		     ============================================ -->
+		<section class="relative py-20 sm:py-24 overflow-hidden" aria-label="Get started">
+			<!-- Gradient background -->
+			<div class="absolute inset-0 -z-10 bg-gradient-to-br from-[var(--bg-card)] via-[var(--bg-page)] to-cyan-950/30"></div>
+			<div class="absolute inset-0 -z-10 dot-grid opacity-40"></div>
+			<!-- Glow orbs -->
+			<div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+			<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+			<div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 leading-tight">
+					Ready to stop wasting time on <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_18px_rgba(34,211,238,0.5)]">busywork?</span>
+				</h2>
+				<p class="text-base sm:text-lg md:text-xl text-[var(--text-body)] mb-10 max-w-xl mx-auto leading-relaxed">
+					Tell us what's slowing you down. We'll figure out what's worth building.
 				</p>
-				<a href="/contact" class="inline-block bg-cyan-500 text-slate-950 px-6 py-3 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5 min-h-[48px]">
+				<a href="/contact" class="inline-flex items-center justify-center bg-cyan-500 text-slate-950 px-8 py-4 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/40 hover:shadow-xl hover:shadow-cyan-500/50 hover:-translate-y-0.5 min-h-[52px]">
 					Start a Conversation
+					<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+					</svg>
 				</a>
 			</div>
 		</section>
+
 	</main>
 </Layout>
