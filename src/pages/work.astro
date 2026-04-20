@@ -5,174 +5,111 @@ import { getCollection } from 'astro:content';
 interface Project {
 	id: string;
 	title: string;
-	clientName?: string;
-	category: 'custom-software' | 'digital-transformation' | 'ecommerce-optimization' | 'operational-infrastructure';
+	tagline: string;
+	url?: string;
+	image: string;
+	imageAlt: string;
+	accent: 'cyan' | 'emerald' | 'violet';
 	description: string;
-	mvpJourney: {
-		consultation: string;
-		scope: string;
-		launch: string;
-	};
-	techStack: {
-		frontend: string[];
-		backend?: string[];
-		tools?: string[];
-	};
-	performance: {
-		lighthouse: number;
-		loadTime?: string;
-		coreWebVitals?: string;
-	};
-	githubUrl?: string;
-	caseStudyUrl?: string;
-	ciCd?: boolean;
-	testing?: boolean;
-	anonymous?: boolean;
-	additionalDetails?: {
-		architecture?: string;
-		features?: string[];
-		results?: string;
-	};
+	features: string[];
+	stats: { label: string; value: string }[];
 }
 
 const projects: Project[] = [
 	{
+		id: 'p1-packaging',
+		title: 'P1 Packaging',
+		tagline: 'Custom Online Store & Wholesale Portal',
+		url: 'https://p1packaging.com',
+		image: '/images/p1-packaging-showcase.png',
+		imageAlt: 'P1 Packaging online store with wholesale portal',
+		accent: 'emerald',
+		description: 'A Maryland-based packaging supplier with a retail storefront and a separate wholesale business. They needed both to feel native, with ad tracking that actually works and shipping hooked straight in.',
+		features: [
+			'Custom wholesale portal with a quick-order page for repeat buyers',
+			'Accurate ad conversion tracking through to the final sale',
+			'Shipping costs and labels wired into the order flow',
+			'Private analytics so the numbers stay in-house',
+			'Hidden arcade easter egg, because why not',
+		],
+		stats: [
+			{ label: 'Google Ads ROAS', value: '10x' },
+			{ label: 'Channels', value: 'Retail + Wholesale' },
+			{ label: 'Ad Tracking', value: 'End-to-End' },
+			{ label: 'Support', value: 'Ongoing' },
+		],
+	},
+	{
 		id: 'vantagedash',
-		title: 'VantageDash: Competitive Price Intelligence',
-		clientName: 'First Layer Digital',
-		category: 'custom-software',
-		description: 'A competitive intelligence platform that lets e-commerce brands track competitor prices, match products with AI, and get alerts when prices change. Supports 8+ e-commerce platforms with 90%+ AI match accuracy across 47,000+ tracked products.',
-		mvpJourney: {
-			consultation: 'Identified the pain of manual competitor price tracking across dozens of sites as a universal e-commerce problem',
-			scope: 'Full SaaS platform with auto-detection of e-commerce platforms, AI product matching, and real-time Slack/email alerts',
-			launch: 'Live at vantagedash.io with free tier, pro tier ($49/mo), and enterprise tier ($199/mo)'
-		},
-		techStack: {
-			frontend: ['Next.js', 'React', 'Tailwind CSS'],
-			backend: ['Web Scraping', 'AI Product Matching', 'Time-Series DB'],
-			tools: ['Slack Integration', 'Umami Analytics', 'Vercel']
-		},
-		performance: {
-			lighthouse: 95,
-			loadTime: '< 1s',
-			coreWebVitals: 'All Green'
-		},
-		caseStudyUrl: 'https://vantagedash.io',
-		ciCd: true,
-		testing: true,
-		anonymous: false,
-		additionalDetails: {
-			architecture: 'Next.js frontend with server-side rendering. Scraping engine auto-detects e-commerce platforms (Shopify, WooCommerce, Uline, Ecwid, Wix, Squarespace) and pulls full product catalogs. AI matching engine identifies equivalent products across different naming conventions with confidence scoring.',
-			features: ['Auto-detection of 8+ e-commerce platforms', 'AI-powered product matching with confidence scores', 'Real-time Slack and email price change alerts', 'Price trend charts and competitor heatmaps', 'CSV/PDF export reports', 'Enterprise-grade encryption with audit logging', 'Free tier with 2 competitors, Pro with 10, Enterprise unlimited'],
-			results: '47,000+ products tracked. 90%+ AI match accuracy. Supports packaging, cosmetics, supplements, electronics, food & beverage, apparel, home & garden, and pet products industries.'
-		}
+		title: 'VantageDash',
+		tagline: 'Competitive Intelligence Platform',
+		url: 'https://vantagedash.io',
+		image: '/images/vantagedash-showcase.png',
+		imageAlt: 'VantageDash homepage showing competitor price tracking',
+		accent: 'cyan',
+		description: 'E-commerce brands live and die by pricing. VantageDash tracks every competitor you have, matches their products to yours, and pings you the moment something changes.',
+		features: [
+			'Auto-detects 8+ online store platforms from a single URL',
+			'AI product matching handles different names and bundle sizes',
+			'Real-time alerts via Slack or email when prices move',
+			'Price trend charts and competitor heatmaps',
+			'Exports for team sharing and reporting',
+		],
+		stats: [
+			{ label: 'Products Tracked', value: '47,000+' },
+			{ label: 'Match Accuracy', value: '90%+' },
+			{ label: 'Platforms Supported', value: '8+' },
+			{ label: 'Setup Time', value: '< 5 min' },
+		],
 	},
 	{
-		id: '1',
-		title: 'High-Performance Agency Website',
-		clientName: 'First Layer Digital',
-		category: 'digital-transformation',
-		description: 'A custom-engineered marketing website built with modern static site generation, achieving sub-second load times and perfect SEO scores through Astro\'s Islands Architecture.',
-		mvpJourney: {
-			consultation: 'Requirements analysis focused on performance, SEO, and developer experience',
-			scope: 'Fixed-price MVP including responsive design, contact forms, and Netlify deployment',
-			launch: 'Production deployment with automated CI/CD pipeline and 60-day support period'
-		},
-		techStack: {
-			frontend: ['Astro', 'Tailwind CSS', 'TypeScript'],
-			tools: ['Netlify', 'GitHub Actions']
-		},
-		performance: {
-			lighthouse: 98,
-			loadTime: '< 0.5s',
-			coreWebVitals: 'All Green'
-		},
-		githubUrl: 'https://github.com/firstlayerdigital/first-layer-website',
-		ciCd: true,
-		testing: false,
-		anonymous: false,
-		additionalDetails: {
-			architecture: 'Islands Architecture ships zero JS by default, resulting in industry-leading Core Web Vitals. Fully responsive mobile-first layout with clean design system.',
-			features: ['Legal compliance pages (Terms, Privacy Policy)', 'Services page with hybrid pricing model', 'Portfolio showcase with MVP methodology', 'Netlify Forms integration', 'Automated CI/CD via GitHub Actions', 'Analytics integration (Google Analytics, Cloudflare)'],
-			results: 'Achieved 98+ Lighthouse scores across all metrics, sub-0.5s load times, and perfect Core Web Vitals. Site serves as both portfolio showcase and demonstration of engineering excellence.'
-		}
+		id: 'first-layer-digital',
+		title: 'First Layer Digital',
+		tagline: 'The Site You\'re On Right Now',
+		url: '/',
+		image: '/images/work-fld.png',
+		imageAlt: 'First Layer Digital marketing site',
+		accent: 'violet',
+		description: 'Our own marketing site. Built with the same tools we use for clients: fast, dark by default, and engineered to rank. A Lighthouse score of 98 and pages that load before you blink.',
+		features: [
+			'Zero JavaScript shipped on most pages',
+			'Perfect Core Web Vitals across the board',
+			'Dark theme with cyan accents and visual rhythm',
+			'Automated deploys on every push to main',
+			'Private analytics, no cookie banners needed',
+		],
+		stats: [
+			{ label: 'Lighthouse', value: '98' },
+			{ label: 'Load Time', value: '< 0.5s' },
+			{ label: 'Core Web Vitals', value: 'All Green' },
+			{ label: 'JS Shipped', value: '~0 KB' },
+		],
 	},
-	{
-		id: '2',
-		title: 'E-commerce Platform Optimization',
-		category: 'ecommerce-optimization',
-		description: 'Complete Shopify store setup with custom inventory management system, payment gateway integration, and conversion rate optimization. Reduced checkout friction by 40% and improved mobile conversion rates.',
-		mvpJourney: {
-			consultation: 'E-commerce strategy session identifying platform requirements and integration needs',
-			scope: 'Fixed-price MVP covering store setup, product catalog, payment processing, and inventory sync',
-			launch: 'Live store with automated inventory management and 60-day post-launch support for bug fixes'
-		},
-		techStack: {
-			frontend: ['Shopify Liquid', 'Custom CSS/JS'],
-			backend: ['Shopify API', 'Node.js'],
-			tools: ['Shopify CLI', 'GitHub']
-		},
-		performance: {
-			lighthouse: 92,
-			loadTime: '< 1.2s',
-			coreWebVitals: 'All Green'
-		},
-		anonymous: true,
-		additionalDetails: {
-			architecture: 'Automated inventory synchronization between warehouse management system and Shopify, reducing manual data entry by 85%. Custom theme development with mobile-first responsive design.',
-			features: ['Automated inventory sync via Shopify API', 'Multiple payment options (Stripe, PayPal, Apple Pay, Google Pay)', 'Optimized product pages with rich media galleries', 'Streamlined checkout flow', 'SEO optimization with structured data markup', 'Real-time stock updates'],
-			results: 'Achieved 40% reduction in checkout friction, improved mobile conversion rates, and seamless inventory management workflow.'
-		}
-	},
-	{
-		id: '3',
-		title: 'Custom Web Application',
-		category: 'custom-software',
-		description: 'Full-stack web application with RESTful API, authentication system, and real-time data synchronization. Built with modern Node.js/Express backend and responsive frontend.',
-		mvpJourney: {
-			consultation: 'Technical architecture planning and API design consultation',
-			scope: 'Fixed-price MVP including authentication, core features, and deployment infrastructure',
-			launch: 'Production deployment with automated testing, CI/CD pipeline, and comprehensive documentation'
-		},
-		techStack: {
-			frontend: ['React', 'Tailwind CSS', 'TypeScript'],
-			backend: ['Node.js', 'Express.js', 'PostgreSQL'],
-			tools: ['Jest', 'GitHub Actions', 'Docker']
-		},
-		performance: {
-			lighthouse: 95,
-			loadTime: '< 0.8s',
-			coreWebVitals: 'All Green'
-		},
-		ciCd: true,
-		testing: true,
-		anonymous: true,
-		additionalDetails: {
-			architecture: 'Multi-tenant architecture with isolated data per organization. JWT-based authentication with refresh tokens and role-based access control.',
-			features: ['JWT authentication with refresh tokens', 'Role-based access control (admin, user, viewer)', 'File upload system with cloud storage', 'Data export functionality (CSV, PDF)', 'Real-time data synchronization', 'Comprehensive error handling and logging'],
-			results: 'Production-ready application with automated testing suite, CI/CD pipeline, and comprehensive API documentation.'
-		}
-	}
 ];
 
-const getCategoryLabel = (category: Project['category']) => {
-	const labels = {
-		'custom-software': 'Custom Software Development',
-		'digital-transformation': 'Digital Transformation',
-		'ecommerce-optimization': 'E-commerce Optimization',
-		'operational-infrastructure': 'Operational Infrastructure'
-	};
-	return labels[category];
+const accentMap = {
+	cyan: {
+		eyebrow: 'text-cyan-400',
+		border: 'border-cyan-500/30',
+		glow: 'shadow-cyan-500/20',
+		bar: 'bg-cyan-500',
+		hover: 'hover:text-cyan-300',
+	},
+	emerald: {
+		eyebrow: 'text-emerald-400',
+		border: 'border-emerald-500/30',
+		glow: 'shadow-emerald-500/20',
+		bar: 'bg-emerald-500',
+		hover: 'hover:text-emerald-300',
+	},
+	violet: {
+		eyebrow: 'text-violet-400',
+		border: 'border-violet-500/30',
+		glow: 'shadow-violet-500/20',
+		bar: 'bg-violet-500',
+		hover: 'hover:text-violet-300',
+	},
 };
-
-// Group projects by category
-const groupedProjects = projects.reduce((acc, project) => {
-	if (!acc[project.category]) acc[project.category] = [];
-	acc[project.category].push(project);
-	return acc;
-}, {} as Record<string, Project[]>);
-
-const projectCategories = Object.entries(groupedProjects) as [Project['category'], Project[]][];
 
 const caseStudies = (await getCollection('work')).sort((a, b) =>
 	b.data.date.getTime() - a.data.date.getTime()
@@ -180,193 +117,170 @@ const caseStudies = (await getCollection('work')).sort((a, b) =>
 ---
 
 <Layout
-	title="Our Work | Custom Software Development Projects | FirstLayer Digital"
-	description="Engineering-driven projects showcasing custom software development, digital transformation, e-commerce optimization, operational infrastructure, and data dashboards."
+	title="Our Work | Real Projects, Real Outcomes | First Layer Digital"
+	description="A look at what we've actually shipped. Custom software, online stores, and fast marketing sites built for real businesses."
 >
-	<main role="main">
+	<main class="relative overflow-hidden" role="main">
 
-		<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-			<!-- Hero -->
-			<div class="text-center mb-16 sm:mb-20">
-				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-					Our <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]">Work</span>
-				</h1>
-				<p class="text-lg sm:text-xl text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
-					Engineering-driven solutions built with modern tech stacks, automated workflows, and measurable performance.
-				</p>
+		<!-- ============================================
+		     HERO
+		     ============================================ -->
+		<section class="relative pt-12 sm:pt-16 md:pt-24 pb-12 sm:pb-16 px-4 sm:px-6" aria-label="Work hero">
+			<div class="absolute inset-0 -z-10 pointer-events-none">
+				<div class="absolute top-0 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl"></div>
+				<div class="absolute bottom-0 left-1/4 w-72 h-72 bg-[var(--accent-cyan)]/8 rounded-full blur-3xl"></div>
 			</div>
 
-			<!-- Projects by Category -->
-			{projectCategories.map(([category, categoryProjects]) => (
-				<section class="mb-16 sm:mb-20">
-					<h2 class="text-xl sm:text-2xl font-bold mb-8">{getCategoryLabel(category)}</h2>
+			<div class="max-w-4xl mx-auto text-center">
+				<div class="inline-flex items-center gap-2 bg-[var(--bg-card)] border border-[var(--stroke)] rounded-full px-4 py-1.5 mb-6 text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">
+					<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+					Real Projects
+				</div>
 
-					<div class="space-y-8">
-						{categoryProjects.map((project) => (
-							<div class="grid md:grid-cols-2 gap-6">
-								<!-- Left: Main Card -->
-								<article class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg overflow-hidden">
-									<div class="p-6 sm:p-8">
-										<div class="flex items-start justify-between gap-3 mb-3">
-											<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)]">{project.title}</h3>
-											{!project.anonymous && project.clientName && (
-												<span class="text-xs text-[var(--text-muted)] font-mono whitespace-nowrap">{project.clientName}</span>
-											)}
-										</div>
+				<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]">
+					Real Work.<br />
+					<span style="color: #3b82f6;">Real Outcomes.</span>
+				</h1>
 
-										<p class="text-sm text-[var(--text-body)] mb-5 leading-relaxed">{project.description}</p>
+				<p class="text-lg sm:text-xl text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
+					A look at what we've actually shipped. Not mockups, not template demos. The live stuff that keeps running every day.
+				</p>
+			</div>
+		</section>
 
-										<!-- MVP Journey -->
-										<div class="bg-[var(--bg-muted)] rounded-md p-4 mb-5 border border-[var(--stroke)]">
-											<h4 class="text-xs font-semibold text-[var(--text-header)] mb-2 uppercase tracking-wide font-mono">MVP Journey</h4>
-											<div class="space-y-1.5 text-xs text-[var(--text-body)] font-mono">
-												<div><span class="font-medium text-[var(--accent)]">Consultation:</span> {project.mvpJourney.consultation}</div>
-												<div><span class="font-medium text-[var(--accent)]">Scope:</span> {project.mvpJourney.scope}</div>
-												<div><span class="font-medium text-[var(--accent)]">Launch:</span> {project.mvpJourney.launch}</div>
-											</div>
-										</div>
+		<!-- ============================================
+		     PROJECTS (alternating showcase)
+		     ============================================ -->
+		<section class="relative py-12 sm:py-16 md:py-20 border-t border-[var(--stroke)]" aria-label="Projects">
+			<div class="absolute inset-0 -z-10 pointer-events-none dot-grid-subtle opacity-40"></div>
 
-										<!-- Tech Stack -->
-										<div class="mb-5">
-											<h4 class="text-xs font-semibold text-[var(--text-header)] mb-2 uppercase tracking-wide font-mono">Tech Stack</h4>
-											<div class="flex flex-wrap gap-1.5">
-												{[...project.techStack.frontend, ...(project.techStack.backend || []), ...(project.techStack.tools || [])].map((tech) => (
-													<span class="bg-[var(--bg-muted)] text-[var(--text-body)] text-xs px-2 py-0.5 rounded font-mono border border-[var(--stroke)]">{tech}</span>
-												))}
-												{project.ciCd && <span class="bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 text-xs px-2 py-0.5 rounded font-mono border border-emerald-200 dark:border-emerald-800">CI/CD</span>}
-												{project.testing && <span class="bg-emerald-50 dark:bg-emerald-900/20 text-emerald-700 dark:text-emerald-400 text-xs px-2 py-0.5 rounded font-mono border border-emerald-200 dark:border-emerald-800">Tests</span>}
-											</div>
-										</div>
-
-										<!-- Performance -->
-										<div class="bg-[var(--bg-muted)] rounded-md p-4 mb-5 border border-[var(--stroke)]">
-											<div class="grid grid-cols-2 gap-3 text-sm">
-												<div>
-													<div class="text-xs text-[var(--text-muted)] font-mono mb-0.5">Lighthouse</div>
-													<div class="text-xl font-bold text-[var(--text-header)] font-mono">{project.performance.lighthouse}+</div>
-												</div>
-												{project.performance.loadTime && (
-													<div>
-														<div class="text-xs text-[var(--text-muted)] font-mono mb-0.5">Load Time</div>
-														<div class="text-lg font-bold text-[var(--text-header)] font-mono">{project.performance.loadTime}</div>
-													</div>
-												)}
-												{project.performance.coreWebVitals && (
-													<div class="col-span-2">
-														<div class="text-xs text-[var(--text-muted)] font-mono mb-0.5">Core Web Vitals</div>
-														<div class="text-sm font-medium text-emerald-600 dark:text-emerald-400 font-mono">{project.performance.coreWebVitals}</div>
-													</div>
-												)}
-											</div>
-										</div>
-
-										<!-- Confidence callouts -->
-										<div class="space-y-2 mb-5">
-											<div class="flex items-start gap-2 text-xs text-[var(--text-body)]">
-												<span class="text-emerald-600 dark:text-emerald-400 mt-0.5 font-bold">&check;</span>
-												<span>60-Day Post-Launch Support included</span>
-											</div>
-											<div class="flex items-start gap-2 text-xs text-[var(--text-body)]">
-												<span class="text-blue-600 dark:text-blue-400 mt-0.5 font-bold">&check;</span>
-												<span>Perpetual, non-exclusive license to custom code upon full payment</span>
-											</div>
-										</div>
-
-										<div class="flex flex-wrap gap-4">
-										{project.githubUrl && (
-											<a href={project.githubUrl} target="_blank" rel="noopener noreferrer" class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1.5">
-												<svg class="w-4 h-4" fill="currentColor" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.531 1.032 1.531 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" clip-rule="evenodd"/></svg>
-												View on GitHub
-											</a>
-										)}
-										{project.caseStudyUrl && (
-											<a href={project.caseStudyUrl} class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
-												Read Case Study <span>&rarr;</span>
-											</a>
-										)}
-									</div>
-									</div>
-								</article>
-
-								<!-- Right: Additional Details -->
-								{project.additionalDetails && (
-									<div class="space-y-4">
-										{project.additionalDetails.architecture && (
-											<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6">
-												<h4 class="text-sm font-semibold text-[var(--text-header)] mb-2">Architecture</h4>
-												<p class="text-sm text-[var(--text-body)] leading-relaxed">{project.additionalDetails.architecture}</p>
-											</div>
-										)}
-
-										{project.additionalDetails.features && project.additionalDetails.features.length > 0 && (
-											<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6">
-												<h4 class="text-sm font-semibold text-[var(--text-header)] mb-2">Key Features</h4>
-												<ul class="space-y-1.5">
-													{project.additionalDetails.features.map((feature) => (
-														<li class="flex items-start gap-2 text-sm text-[var(--text-body)]">
-															<span class="text-[var(--accent)] mt-0.5">&bull;</span>
-															{feature}
-														</li>
-													))}
-												</ul>
-											</div>
-										)}
-
-										{project.additionalDetails.results && (
-											<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6">
-												<h4 class="text-sm font-semibold text-[var(--text-header)] mb-2">Results & Impact</h4>
-												<p class="text-sm text-[var(--text-body)] leading-relaxed">{project.additionalDetails.results}</p>
-											</div>
-										)}
-									</div>
-								)}
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
+				{projects.map((project, idx) => {
+					const accent = accentMap[project.accent];
+					const reverse = idx % 2 === 1;
+					const isExternal = project.url?.startsWith('http');
+					return (
+						<article class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+							<!-- Image -->
+							<div class={`relative ${reverse ? 'md:order-2' : ''}`}>
+								{project.accent === 'cyan' && <div class="absolute -top-6 -right-6 w-12 h-12 rounded-lg bg-cyan-500/20 rotate-12 float-shape hidden md:block"></div>}
+								{project.accent === 'emerald' && <div class="absolute -bottom-4 -left-4 w-8 h-8 rounded-full bg-emerald-400/30 float-shape float-shape-slow hidden md:block"></div>}
+								{project.accent === 'violet' && <div class="absolute top-1/2 -right-8 w-4 h-4 rounded-full bg-violet-400/50 float-shape hidden md:block"></div>}
+								<div class="browser-frame">
+									<img src={project.image} alt={project.imageAlt} loading="lazy" width="1280" height="800" />
+								</div>
 							</div>
-						))}
-					</div>
-				</section>
-			))}
 
-			<!-- Content Collection Case Studies -->
-			{caseStudies.length > 0 && (
-				<section class="mb-16 sm:mb-20">
-					<h2 class="text-xl sm:text-2xl font-bold mb-8">Case Studies</h2>
+							<!-- Text -->
+							<div class={reverse ? 'md:order-1' : ''}>
+								<span class={`inline-block text-xs font-mono uppercase tracking-[0.2em] ${accent.eyebrow} mb-3`}>
+									{project.tagline}
+								</span>
+								<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+									{project.title}
+								</h2>
+								<p class="text-base sm:text-lg text-[var(--text-body)] mb-6 leading-relaxed">
+									{project.description}
+								</p>
 
-					<div class="space-y-4">
-						{caseStudies.map((study) => (
-							<article class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 hover:border-[var(--accent)]/40 transition-colors duration-200">
-								<h3 class="text-lg font-semibold text-[var(--text-header)] mb-2">
-									<a href={`/work/${study.slug}`} class="hover:text-[var(--accent)] transition-colors">{study.data.title}</a>
-								</h3>
-								<p class="text-sm text-[var(--text-body)] mb-4 leading-relaxed">{study.data.description}</p>
+								<ul class="space-y-2.5 mb-6">
+									{project.features.map((feature) => (
+										<li class="flex items-start gap-2.5 text-sm sm:text-base text-[var(--text-body)]">
+											<span class={`${accent.eyebrow} mt-1 flex-shrink-0`}>&rarr;</span>
+											<span>{feature}</span>
+										</li>
+									))}
+								</ul>
 
-								<div class="flex flex-wrap gap-1.5 mb-4">
-									{study.data.techStack.slice(0, 5).map((tech) => (
-										<span class="bg-[var(--bg-muted)] text-[var(--text-body)] px-2 py-0.5 rounded text-xs font-mono border border-[var(--stroke)]">{tech}</span>
+								<!-- Stat grid -->
+								<div class={`grid grid-cols-2 gap-3 mb-6 bg-[var(--bg-card)] border ${accent.border} rounded-xl p-4 sm:p-5`}>
+									{project.stats.map((stat) => (
+										<div>
+											<div class="text-[10px] sm:text-xs text-[var(--text-muted)] font-mono uppercase tracking-wider mb-0.5">{stat.label}</div>
+											<div class={`text-base sm:text-lg font-bold ${accent.eyebrow} font-mono`}>{stat.value}</div>
+										</div>
 									))}
 								</div>
 
-								<div class="flex items-center justify-between">
-									<span class="text-xs text-[var(--text-muted)] font-mono">{study.data.result}</span>
-									<a href={`/work/${study.slug}`} class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
-										Read more <span>&rarr;</span>
+								{project.url && (
+									<a href={project.url} target={isExternal ? '_blank' : undefined} rel={isExternal ? 'noopener noreferrer' : undefined} class={`inline-flex items-center gap-1.5 text-sm font-semibold ${accent.eyebrow} ${accent.hover} transition-colors`}>
+										{isExternal ? 'Visit Site' : 'Back to Homepage'}
+										<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+											<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+										</svg>
 									</a>
+								)}
+							</div>
+						</article>
+					);
+				})}
+			</div>
+		</section>
+
+		{caseStudies.length > 0 && (
+			<!-- ============================================
+			     CASE STUDIES (content collection)
+			     ============================================ -->
+			<section class="relative py-16 sm:py-20 md:py-24 section-muted border-y border-[var(--stroke)]" aria-label="Case studies">
+				<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+					<div class="text-center mb-12">
+						<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-3">
+							Deeper Dives
+						</span>
+						<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+							Case <span class="text-[var(--accent-cyan)]">Studies</span>
+						</h2>
+						<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto">
+							The longer stories behind the builds.
+						</p>
+					</div>
+
+					<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+						{caseStudies.map((study) => (
+							<a href={`/work/${study.slug}`} class="group bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7 hover:border-cyan-500/40 hover:-translate-y-1 hover:shadow-[0_0_24px_rgba(34,211,238,0.12)] transition-all duration-300">
+								<h3 class="text-lg font-semibold text-[var(--text-header)] mb-2 group-hover:text-[var(--accent-cyan)] transition-colors">
+									{study.data.title}
+								</h3>
+								<p class="text-sm text-[var(--text-body)] leading-relaxed mb-4 line-clamp-3">{study.data.description}</p>
+								<div class="flex items-center justify-between pt-4 border-t border-[var(--stroke)]">
+									<span class="text-xs text-[var(--text-muted)] font-mono">{study.data.result}</span>
+									<span class="text-sm font-medium text-[var(--accent-cyan)] inline-flex items-center gap-1">
+										Read <span aria-hidden="true">&rarr;</span>
+									</span>
 								</div>
-							</article>
+							</a>
 						))}
 					</div>
-				</section>
-			)}
-
-			<!-- CTA -->
-			<section class="text-center border-t border-[var(--stroke)] pt-16">
-				<h2 class="text-2xl sm:text-3xl font-bold mb-4">Ready to Build Your MVP?</h2>
-				<p class="text-base sm:text-lg text-[var(--text-body)] mb-8 max-w-2xl mx-auto leading-relaxed">
-					From consultation to launch, we engineer scalable solutions with modern tech stacks and automated workflows.
-				</p>
-				<a href="/contact" class="inline-block bg-[var(--accent)] text-white px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--accent-hover)] transition-colors duration-200 min-h-[48px]">
-					Start Your Project
-				</a>
+				</div>
 			</section>
-		</div>
+		)}
+
+		<!-- ============================================
+		     CTA BANNER
+		     ============================================ -->
+		<section class="relative py-20 sm:py-24 overflow-hidden" aria-label="Start a project">
+			<div class="absolute inset-0 -z-10 bg-gradient-to-br from-[var(--bg-card)] via-[var(--bg-page)] to-cyan-950/30"></div>
+			<div class="absolute inset-0 -z-10 dot-grid opacity-40"></div>
+			<div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+			<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+			<div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 leading-tight">
+					Got an idea worth <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_18px_rgba(34,211,238,0.5)]">shipping?</span>
+				</h2>
+				<p class="text-base sm:text-lg md:text-xl text-[var(--text-body)] mb-10 max-w-xl mx-auto leading-relaxed">
+					Tell us what you're working on. We'll tell you if we can help.
+				</p>
+				<a href="/contact" class="inline-flex items-center justify-center bg-cyan-500 text-slate-950 px-8 py-4 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/40 hover:shadow-xl hover:shadow-cyan-500/50 hover:-translate-y-0.5 min-h-[52px]">
+					Start a Conversation
+					<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+					</svg>
+				</a>
+			</div>
+		</section>
+
 	</main>
 </Layout>
+</content>
+</invoke>

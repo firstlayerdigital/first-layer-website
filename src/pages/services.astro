@@ -2,209 +2,394 @@
 import Layout from '../layouts/Layout.astro';
 ---
 
-<Layout title="Services | FirstLayer Digital" description="Operational infrastructure, internal tools, data dashboards (Streamlit), and private cloud solutions (Proxmox, Nextcloud). Custom business infrastructure and web development services.">
-	<main role="main">
+<Layout
+	title="Services | Custom Software, Online Stores & Automation | First Layer Digital"
+	description="Live dashboards, workflow automation, custom online stores, and fast marketing sites. Built for small businesses that want to grow without hiring a second team."
+>
+	<main class="relative overflow-hidden" role="main">
 
-		<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-			<!-- Hero -->
-			<div class="text-center mb-16 sm:mb-20">
-				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-					Professional <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]">Services</span>
-				</h1>
-				<p class="text-lg sm:text-xl text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
-					Engineering-driven solutions that deliver measurable results. From concept to deployment, we build with precision and purpose.
-				</p>
+		<!-- ============================================
+		     HERO
+		     ============================================ -->
+		<section class="relative pt-12 sm:pt-16 md:pt-24 pb-12 sm:pb-16 px-4 sm:px-6" aria-label="Services hero">
+			<!-- Decorative background -->
+			<div class="absolute inset-0 -z-10 pointer-events-none">
+				<div class="absolute top-0 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl"></div>
+				<div class="absolute bottom-0 left-1/4 w-72 h-72 bg-[var(--accent-cyan)]/8 rounded-full blur-3xl"></div>
 			</div>
 
-			<!-- Core Services -->
-			<section class="mb-16 sm:mb-20">
-				<h2 class="text-2xl sm:text-3xl font-bold mb-8 text-center">Core Services</h2>
+			<div class="max-w-4xl mx-auto text-center">
+				<div class="inline-flex items-center gap-2 bg-[var(--bg-card)] border border-[var(--stroke)] rounded-full px-4 py-1.5 mb-6 text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">
+					<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+					What We Do
+				</div>
 
-				<div class="grid md:grid-cols-2 gap-6">
-					<!-- Website Design -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Website Design & Development</h3>
-						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
-							Custom-built websites engineered for performance, security, and scalability. We leverage modern frameworks and best practices to deliver sites that load fast, rank well, and convert.
+				<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]">
+					Built for Real Work.<br />
+					<span style="color: #3b82f6;">Not Just Demos.</span>
+				</h1>
+
+				<p class="text-lg sm:text-xl text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
+					Dashboards, automations, online stores, and fast websites. Pick one, or pick a few. We build what earns its keep.
+				</p>
+			</div>
+		</section>
+
+		<!-- ============================================
+		     4 SERVICE OFFERINGS (alternating layout)
+		     ============================================ -->
+		<section class="relative py-16 sm:py-20 md:py-24 border-t border-[var(--stroke)]" aria-label="Services">
+			<!-- Subtle dot grid background -->
+			<div class="absolute inset-0 -z-10 pointer-events-none dot-grid-subtle opacity-40"></div>
+
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 space-y-16 sm:space-y-20">
+
+				<!-- Service 1: Live Dashboards -->
+				<div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+					<div class="order-2 md:order-1">
+						<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-3">
+							01 / Live Dashboards
+						</span>
+						<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+							See Your Numbers. <span class="text-[var(--accent-cyan)]">All of Them.</span>
+						</h2>
+						<p class="text-base sm:text-lg text-[var(--text-body)] mb-6 leading-relaxed">
+							Stop pulling numbers out of five different tabs into a spreadsheet every Monday. We build live dashboards that pull from every platform you use and show you what actually moves the needle.
 						</p>
-						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Responsive, mobile-first design</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>SEO-optimized architecture</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Performance optimization (90+ Lighthouse)</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Security hardening and best practices</li>
+						<ul class="space-y-3 text-[var(--text-body)]">
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Sales, traffic, and ad spend in one place</span></li>
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Alerts when something needs your attention</span></li>
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Weekly reports sent to your inbox, ready to read</span></li>
 						</ul>
 					</div>
+					<div class="order-1 md:order-2 relative">
+						<div class="absolute -top-4 -right-4 w-10 h-10 rounded-lg bg-cyan-500/20 rotate-12 float-shape hidden md:block"></div>
+						<div class="browser-frame">
+							<div class="bg-[var(--bg-card)] p-5 sm:p-6 space-y-4">
+								<!-- KPI row -->
+								<div class="grid grid-cols-3 gap-3">
+									<div class="bg-[var(--bg-muted)] border border-[var(--stroke)] rounded-lg p-3">
+										<div class="text-[10px] text-[var(--text-muted)] font-mono uppercase tracking-wider mb-1">Revenue</div>
+										<div class="text-lg font-bold text-[var(--text-header)] font-mono">$48,210</div>
+										<div class="text-[10px] text-emerald-400 font-mono mt-0.5">&uarr; 12.4%</div>
+									</div>
+									<div class="bg-[var(--bg-muted)] border border-[var(--stroke)] rounded-lg p-3">
+										<div class="text-[10px] text-[var(--text-muted)] font-mono uppercase tracking-wider mb-1">Orders</div>
+										<div class="text-lg font-bold text-[var(--text-header)] font-mono">312</div>
+										<div class="text-[10px] text-emerald-400 font-mono mt-0.5">&uarr; 8.1%</div>
+									</div>
+									<div class="bg-[var(--bg-muted)] border border-[var(--stroke)] rounded-lg p-3">
+										<div class="text-[10px] text-[var(--text-muted)] font-mono uppercase tracking-wider mb-1">ROAS</div>
+										<div class="text-lg font-bold text-[var(--text-header)] font-mono">10.2x</div>
+										<div class="text-[10px] text-emerald-400 font-mono mt-0.5">&uarr; 0.4x</div>
+									</div>
+								</div>
 
-					<!-- Custom Software -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Custom Software Development</h3>
-						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
-							Tailored software solutions built to solve specific business challenges. From internal tools to customer-facing applications, we develop robust, maintainable code that scales.
-						</p>
-						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Full-stack development</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>API design and integration</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Database architecture</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>DevOps and deployment automation</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Internal tools and operational infrastructure</li>
-						</ul>
+								<!-- Chart card -->
+								<div class="bg-[var(--bg-muted)] border border-[var(--stroke)] rounded-lg p-4">
+									<div class="flex items-center justify-between mb-3">
+										<span class="text-xs text-[var(--text-header)] font-semibold">Weekly Revenue</span>
+										<span class="text-[10px] text-[var(--text-muted)] font-mono">Last 7 days</span>
+									</div>
+									<!-- SVG sparkline / bar chart -->
+									<svg viewBox="0 0 300 90" class="w-full h-20" preserveAspectRatio="none" aria-hidden="true">
+										<defs>
+											<linearGradient id="chartFill" x1="0" y1="0" x2="0" y2="1">
+												<stop offset="0%" stop-color="#22d3ee" stop-opacity="0.4" />
+												<stop offset="100%" stop-color="#22d3ee" stop-opacity="0" />
+											</linearGradient>
+										</defs>
+										<path d="M0,70 L42,55 L84,60 L126,40 L168,45 L210,25 L252,30 L300,12 L300,90 L0,90 Z" fill="url(#chartFill)" />
+										<path d="M0,70 L42,55 L84,60 L126,40 L168,45 L210,25 L252,30 L300,12" fill="none" stroke="#22d3ee" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+										<circle cx="300" cy="12" r="3" fill="#22d3ee" />
+									</svg>
+								</div>
+
+								<!-- Alert row -->
+								<div class="bg-[var(--bg-muted)] border border-emerald-500/30 rounded-lg p-3 flex items-center gap-3">
+									<div class="w-8 h-8 rounded-md bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0">
+										<svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg>
+									</div>
+									<div class="flex-1 min-w-0">
+										<div class="text-xs text-[var(--text-header)] font-semibold truncate">Checkout conversion up 14%</div>
+										<div class="text-[10px] text-[var(--text-muted)] font-mono">Sent to Slack · 2 min ago</div>
+									</div>
+								</div>
+							</div>
+						</div>
 					</div>
+				</div>
 
-					<!-- E-commerce -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">E-commerce Optimization</h3>
-						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
-							Maximize your online store's performance and profitability. We optimize checkout flows, improve conversion rates, and integrate payment systems that reduce friction.
-						</p>
-						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Platform setup and configuration</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Inventory management systems</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Payment gateway integration</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Conversion rate optimization</li>
-						</ul>
+				<!-- Service 2: Workflow Automation -->
+				<div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+					<div class="relative">
+						<div class="absolute -bottom-4 -left-4 w-8 h-8 rounded-full bg-emerald-400/30 float-shape float-shape-slow hidden md:block"></div>
+						<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-8 sm:p-10 relative overflow-hidden">
+							<div class="absolute inset-0 dot-grid opacity-20"></div>
+							<div class="relative z-10 space-y-4">
+								<div class="flex items-center gap-3 p-3 rounded-lg bg-[var(--bg-muted)] border border-[var(--stroke)]">
+									<div class="w-8 h-8 rounded-md bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center flex-shrink-0">
+										<svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/></svg>
+									</div>
+									<span class="text-sm text-[var(--text-body)] font-mono">Order placed</span>
+								</div>
+								<div class="pl-4 border-l-2 border-cyan-500/40 ml-4 h-4"></div>
+								<div class="flex items-center gap-3 p-3 rounded-lg bg-[var(--bg-muted)] border border-[var(--stroke)]">
+									<div class="w-8 h-8 rounded-md bg-cyan-500/20 border border-cyan-500/40 flex items-center justify-center flex-shrink-0">
+										<svg class="w-4 h-4 text-cyan-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+									</div>
+									<span class="text-sm text-[var(--text-body)] font-mono">Shipping label printed</span>
+								</div>
+								<div class="pl-4 border-l-2 border-cyan-500/40 ml-4 h-4"></div>
+								<div class="flex items-center gap-3 p-3 rounded-lg bg-[var(--bg-muted)] border border-[var(--stroke)]">
+									<div class="w-8 h-8 rounded-md bg-violet-500/20 border border-violet-500/40 flex items-center justify-center flex-shrink-0">
+										<svg class="w-4 h-4 text-violet-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+									</div>
+									<span class="text-sm text-[var(--text-body)] font-mono">Customer notified</span>
+								</div>
+							</div>
+						</div>
 					</div>
-
-					<!-- SEO -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Search Engine Optimization</h3>
-						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
-							Technical SEO implementation that improves your search rankings and organic visibility. We optimize site structure, metadata, and performance to help you rank higher.
+					<div>
+						<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-3">
+							02 / Workflow Automation
+						</span>
+						<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+							Cut the <span class="text-[var(--accent-cyan)]">Busywork.</span>
+						</h2>
+						<p class="text-base sm:text-lg text-[var(--text-body)] mb-6 leading-relaxed">
+							If you're doing it by hand and it follows a pattern, we can automate it. Get hours back every week so you can focus on what actually grows the business.
 						</p>
-						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>On-page optimization</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Technical SEO audits</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Schema markup implementation</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Core Web Vitals optimization</li>
+						<ul class="space-y-3 text-[var(--text-body)]">
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Connect tools that don't talk to each other</span></li>
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Auto-send reports, invoices, and notifications</span></li>
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Sync inventory, orders, and shipping data</span></li>
 						</ul>
 					</div>
 				</div>
-			</section>
 
-			<!-- Operational Infrastructure -->
-			<section id="operational-infrastructure" class="mb-16 sm:mb-20">
-				<div class="text-center mb-8">
-					<h2 class="text-2xl sm:text-3xl font-bold mb-3">Operational Infrastructure & Internal Tools</h2>
-					<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
-						Specialized solutions for custom business infrastructure, data visualization, and private cloud deployments.
-					</p>
-				</div>
-
-				<div class="grid md:grid-cols-2 gap-6">
-					<!-- Data Dashboards -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Data Dashboards & Streamlit</h3>
-						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
-							Custom data dashboards and interactive analytics tools built with Streamlit. Transform your business data into actionable insights with intuitive visualizations.
+				<!-- Service 3: Online Stores -->
+				<div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+					<div class="order-2 md:order-1">
+						<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-3">
+							03 / Online Stores
+						</span>
+						<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+							Stores That <span class="text-[var(--accent-cyan)]">Actually Sell.</span>
+						</h2>
+						<p class="text-base sm:text-lg text-[var(--text-body)] mb-6 leading-relaxed">
+							Not just a pretty storefront. A store wired into the rest of your business, with a wholesale portal, ad tracking that actually works, and shipping that runs itself.
 						</p>
-						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Streamlit dashboard development</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Custom data visualization pipelines</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Real-time analytics and reporting</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Data integration and ETL processes</li>
+						<ul class="space-y-3 text-[var(--text-body)]">
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Custom wholesale portals with quick-order pages</span></li>
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Accurate ad conversion tracking, no guessing</span></li>
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Shipping, inventory, and tax hooked straight in</span></li>
 						</ul>
 					</div>
+					<div class="order-1 md:order-2 relative">
+						<div class="absolute top-1/2 -right-6 w-3 h-3 rounded-full bg-emerald-400/50 float-shape hidden md:block"></div>
+						<div class="browser-frame">
+							<img src="/images/p1-packaging-showcase.png" alt="Custom online store with wholesale portal" loading="lazy" width="1280" height="800" />
+						</div>
+					</div>
+				</div>
 
-					<!-- Private Cloud -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] p-6 sm:p-8 rounded-lg">
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Private Cloud & Infrastructure</h3>
-						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
-							Private cloud infrastructure using Proxmox and Nextcloud. Secure, self-hosted solutions for data sovereignty and complete control over your business infrastructure.
+				<!-- Service 4: Fast Websites -->
+				<div class="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+					<div class="relative">
+						<div class="absolute -top-4 -right-4 w-12 h-12 rounded-lg bg-violet-500/20 rotate-12 float-shape hidden md:block"></div>
+						<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-8 sm:p-10 relative overflow-hidden">
+							<div class="absolute inset-0 dot-grid opacity-20"></div>
+							<div class="relative z-10">
+								<div class="grid grid-cols-2 gap-4 mb-6">
+									<div class="bg-[var(--bg-muted)] border border-[var(--stroke)] rounded-lg p-4 text-center">
+										<div class="text-xs text-[var(--text-muted)] font-mono mb-1 uppercase tracking-wider">Lighthouse</div>
+										<div class="text-3xl font-bold text-emerald-400 font-mono">98</div>
+									</div>
+									<div class="bg-[var(--bg-muted)] border border-[var(--stroke)] rounded-lg p-4 text-center">
+										<div class="text-xs text-[var(--text-muted)] font-mono mb-1 uppercase tracking-wider">Load Time</div>
+										<div class="text-3xl font-bold text-cyan-400 font-mono">&lt;0.5s</div>
+									</div>
+								</div>
+								<div class="bg-[var(--bg-muted)] border border-[var(--stroke)] rounded-lg p-4">
+									<div class="flex items-center justify-between mb-2">
+										<span class="text-xs text-[var(--text-muted)] font-mono uppercase tracking-wider">Core Web Vitals</span>
+										<span class="text-xs font-semibold text-emerald-400 font-mono">All Green</span>
+									</div>
+									<div class="flex gap-1.5">
+										<div class="flex-1 h-2 rounded-full bg-emerald-500"></div>
+										<div class="flex-1 h-2 rounded-full bg-emerald-500"></div>
+										<div class="flex-1 h-2 rounded-full bg-emerald-500"></div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div>
+						<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-3">
+							04 / Fast Websites
+						</span>
+						<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 leading-tight">
+							Websites That <span class="text-[var(--accent-cyan)]">Load & Rank.</span>
+						</h2>
+						<p class="text-base sm:text-lg text-[var(--text-body)] mb-6 leading-relaxed">
+							Pages that load before your visitor blinks. Built to rank on Google and convert real customers, not just win design awards.
 						</p>
-						<ul class="text-sm sm:text-base text-[var(--text-body)] space-y-2">
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Proxmox virtualization and containerization</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Nextcloud private cloud deployment</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Infrastructure automation and orchestration</li>
-							<li class="flex items-start gap-2"><span class="text-[var(--accent)] mt-1">&bull;</span>Security hardening and backup strategies</li>
+						<ul class="space-y-3 text-[var(--text-body)]">
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Under a second load time on real devices</span></li>
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Built right for Google from day one</span></li>
+							<li class="flex items-start gap-3"><span class="text-[var(--accent-cyan)] mt-1 flex-shrink-0">&rarr;</span><span>Easy to update, cheap to host, nothing breaking in the background</span></li>
 						</ul>
 					</div>
 				</div>
-			</section>
 
-			<!-- Pricing Model -->
-			<section class="mb-16 sm:mb-20">
-				<div class="text-center mb-8">
-					<h2 class="text-2xl sm:text-3xl font-bold mb-3">Hybrid Pricing Model</h2>
-					<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
-						Flexible pricing structures designed to align with your project needs and budget.
+			</div>
+		</section>
+
+		<!-- ============================================
+		     HOW WE PRICE
+		     ============================================ -->
+		<section class="relative py-16 sm:py-20 md:py-24 section-muted border-y border-[var(--stroke)]" aria-label="How we price">
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="text-center mb-12 sm:mb-16">
+					<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-3">
+						No Surprise Invoices
+					</span>
+					<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-3">
+						How We <span class="text-[var(--accent-cyan)]">Price</span>
+					</h2>
+					<p class="text-base sm:text-lg text-[var(--text-body)] max-w-2xl mx-auto">
+						Flexible pricing that matches the shape of the work.
 					</p>
 				</div>
 
 				<div class="grid md:grid-cols-3 gap-6">
 					<!-- Consultation -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 sm:p-8">
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Consultation Fees</h3>
-						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
-							Strategic planning and technical consultation to help define your project scope, requirements, and optimal technology stack.
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-8 hover:border-cyan-500/40 transition-all duration-300">
+						<div class="w-12 h-12 rounded-lg bg-[var(--accent-subtle)] border border-cyan-500/20 flex items-center justify-center mb-5">
+							<svg class="w-6 h-6 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z"/>
+							</svg>
+						</div>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Consultation</h3>
+						<p class="text-[var(--text-body)] leading-relaxed text-sm sm:text-base mb-4">
+							We sit down, you tell us what's broken or what you're trying to figure out. We come back with a plan and a number.
 						</p>
 						<div class="bg-[var(--bg-muted)] rounded-md p-3 border border-[var(--stroke)]">
 							<p class="text-xs sm:text-sm text-[var(--text-body)]">
-								<strong class="text-[var(--text-header)]">Ideal for:</strong> Project scoping, technology selection, architecture planning.
+								<strong class="text-[var(--text-header)]">Best for:</strong> Scoping a project, figuring out where to start.
 							</p>
 						</div>
 					</div>
 
 					<!-- Fixed-Price -->
-					<div class="bg-[var(--bg-card)] border-2 border-[var(--accent)] rounded-lg p-6 sm:p-8 relative">
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Fixed-Price MVPs</h3>
-						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
-							Predictable pricing for well-defined projects. Complete, production-ready MVPs with clear deliverables, timelines, and budgets.
+					<div class="bg-[var(--bg-card)] border-2 border-[var(--accent-cyan)] rounded-xl p-6 sm:p-8 relative shadow-[0_0_40px_rgba(34,211,238,0.1)]">
+						<span class="absolute -top-3 left-1/2 -translate-x-1/2 bg-cyan-500 text-slate-950 text-xs font-semibold px-3 py-1 rounded-full uppercase tracking-wider">
+							Most Common
+						</span>
+						<div class="w-12 h-12 rounded-lg bg-[var(--accent-subtle)] border border-cyan-500/40 flex items-center justify-center mb-5">
+							<svg class="w-6 h-6 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+							</svg>
+						</div>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Fixed-Price Build</h3>
+						<p class="text-[var(--text-body)] leading-relaxed text-sm sm:text-base mb-4">
+							Clear scope, clear timeline, one number on the invoice. No surprise charges when we hit a snag.
 						</p>
 						<div class="bg-[var(--bg-muted)] rounded-md p-3 border border-[var(--stroke)]">
 							<p class="text-xs sm:text-sm text-[var(--text-body)]">
-								<strong class="text-[var(--text-header)]">Ideal for:</strong> New product launches, feature-complete websites, defined scope.
+								<strong class="text-[var(--text-header)]">Best for:</strong> Launching a product, rebuilding a site, shipping a defined feature.
 							</p>
 						</div>
 					</div>
 
-					<!-- Maintenance -->
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 sm:p-8">
-						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Operational Maintenance</h3>
-						<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
-							Ongoing Proxmox host health monitoring, security patching, cloudflared tunnel stability, and automated data integrity backups.
+					<!-- Ongoing -->
+					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-8 hover:border-cyan-500/40 transition-all duration-300">
+						<div class="w-12 h-12 rounded-lg bg-[var(--accent-subtle)] border border-cyan-500/20 flex items-center justify-center mb-5">
+							<svg class="w-6 h-6 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"/>
+							</svg>
+						</div>
+						<h3 class="text-lg sm:text-xl font-semibold text-[var(--text-header)] mb-3">Ongoing Support</h3>
+						<p class="text-[var(--text-body)] leading-relaxed text-sm sm:text-base mb-4">
+							After launch we stick around. Monthly retainers for updates, improvements, and keeping everything running without a hitch.
 						</p>
 						<div class="bg-[var(--bg-muted)] rounded-md p-3 border border-[var(--stroke)]">
 							<p class="text-xs sm:text-sm text-[var(--text-body)]">
-								<strong class="text-[var(--text-header)]">Ideal for:</strong> Established infrastructure requiring ongoing technical oversight.
+								<strong class="text-[var(--text-header)]">Best for:</strong> Keeping things healthy, rolling out improvements, staying ahead.
 							</p>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<!-- 60-Day Support -->
-			<section class="mb-16 sm:mb-20">
-				<div class="bg-[var(--accent)] rounded-lg p-8 sm:p-12 text-center">
-					<h2 class="text-2xl sm:text-3xl font-bold text-white mb-4">60-Day Post-Launch Support</h2>
-					<p class="text-cyan-50 mb-8 max-w-2xl mx-auto text-base sm:text-lg leading-relaxed">
-						Every project includes a comprehensive 60-day post-launch support period at no additional cost.
-					</p>
-					<div class="grid sm:grid-cols-3 gap-4 max-w-3xl mx-auto text-left">
-						<div class="bg-white/10 rounded-md p-4">
-							<h3 class="text-white font-semibold text-sm mb-1">Bug Fixes</h3>
-							<p class="text-cyan-50/80 text-xs sm:text-sm">Rapid resolution of any issues discovered after launch</p>
-						</div>
-						<div class="bg-white/10 rounded-md p-4">
-							<h3 class="text-white font-semibold text-sm mb-1">Technical Support</h3>
-							<p class="text-cyan-50/80 text-xs sm:text-sm">Direct access to our team for questions and guidance</p>
-						</div>
-						<div class="bg-white/10 rounded-md p-4">
-							<h3 class="text-white font-semibold text-sm mb-1">Performance Monitoring</h3>
-							<p class="text-cyan-50/80 text-xs sm:text-sm">Ongoing monitoring to ensure optimal performance</p>
+		<!-- ============================================
+		     60-DAY SUPPORT CALLOUT
+		     ============================================ -->
+		<section class="relative py-16 sm:py-20" aria-label="Post-launch support">
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-2xl p-8 sm:p-12 overflow-hidden">
+					<div class="absolute inset-0 dot-grid opacity-30 pointer-events-none"></div>
+					<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-500"></div>
+					<div class="absolute top-6 right-6 w-3 h-3 rounded-full bg-cyan-400/40 float-shape hidden sm:block"></div>
+
+					<div class="relative z-10 text-center">
+						<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-3">
+							Included with Every Build
+						</span>
+						<h2 class="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+							60 Days of <span class="text-[var(--accent-cyan)]">Post-Launch Support</span>
+						</h2>
+						<p class="text-base sm:text-lg text-[var(--text-body)] leading-relaxed max-w-2xl mx-auto mb-8">
+							Every project ships with two months of support baked in. If something breaks or needs a tweak after launch, we're on it.
+						</p>
+
+						<div class="grid sm:grid-cols-3 gap-4 text-left max-w-2xl mx-auto">
+							<div class="bg-[var(--bg-muted)] border border-[var(--stroke)] rounded-lg p-4">
+								<h3 class="text-[var(--text-header)] font-semibold text-sm mb-1">Bug Fixes</h3>
+								<p class="text-[var(--text-muted)] text-xs sm:text-sm">Anything we missed gets fixed, fast.</p>
+							</div>
+							<div class="bg-[var(--bg-muted)] border border-[var(--stroke)] rounded-lg p-4">
+								<h3 class="text-[var(--text-header)] font-semibold text-sm mb-1">Direct Access</h3>
+								<p class="text-[var(--text-muted)] text-xs sm:text-sm">Email us with questions, real humans reply.</p>
+							</div>
+							<div class="bg-[var(--bg-muted)] border border-[var(--stroke)] rounded-lg p-4">
+								<h3 class="text-[var(--text-header)] font-semibold text-sm mb-1">Performance Watch</h3>
+								<p class="text-[var(--text-muted)] text-xs sm:text-sm">We keep an eye on load times and uptime.</p>
+							</div>
 						</div>
 					</div>
 				</div>
-			</section>
+			</div>
+		</section>
 
-			<!-- CTA -->
-			<section class="text-center">
-				<h2 class="text-2xl sm:text-3xl font-bold mb-4">Ready to Get Started?</h2>
-				<p class="text-base sm:text-lg text-[var(--text-body)] mb-8 max-w-2xl mx-auto leading-relaxed">
-					Let's discuss your project and determine the best pricing model for your needs.
+		<!-- ============================================
+		     BOLD CTA BANNER
+		     ============================================ -->
+		<section class="relative py-20 sm:py-24 overflow-hidden" aria-label="Start a conversation">
+			<div class="absolute inset-0 -z-10 bg-gradient-to-br from-[var(--bg-card)] via-[var(--bg-page)] to-cyan-950/30"></div>
+			<div class="absolute inset-0 -z-10 dot-grid opacity-40"></div>
+			<div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+			<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+			<div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 leading-tight">
+					Not sure what you <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_18px_rgba(34,211,238,0.5)]">need yet?</span>
+				</h2>
+				<p class="text-base sm:text-lg md:text-xl text-[var(--text-body)] mb-10 max-w-xl mx-auto leading-relaxed">
+					That's fine. Tell us what's slowing you down and we'll figure it out together.
 				</p>
-				<a href="/contact" class="inline-block bg-[var(--accent)] text-white px-6 py-3 rounded-md font-medium text-base sm:text-lg hover:bg-[var(--accent-hover)] transition-colors duration-200 min-h-[48px]">
-					Schedule a Consultation
+				<a href="/contact" class="inline-flex items-center justify-center bg-cyan-500 text-slate-950 px-8 py-4 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/40 hover:shadow-xl hover:shadow-cyan-500/50 hover:-translate-y-0.5 min-h-[52px]">
+					Start a Conversation
+					<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+					</svg>
 				</a>
-			</section>
-		</div>
+			</div>
+		</section>
+
 	</main>
 </Layout>
+</content>
+</invoke>
