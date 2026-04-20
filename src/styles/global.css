@@ -52,3 +52,124 @@ body {
 .dark body {
 	background-color: var(--bg-page);
 }
+
+/* ============================================
+   Visual Utilities (homepage redesign)
+   ============================================ */
+
+/* Browser Frame Mockup
+   Wraps screenshots with a fake browser chrome (3 dots + URL bar) */
+.browser-frame {
+	border-radius: 12px;
+	overflow: hidden;
+	border: 1px solid var(--stroke);
+	background: var(--bg-card);
+	box-shadow: 0 20px 60px -20px rgba(0, 0, 0, 0.5),
+	            0 0 0 1px rgba(34, 211, 238, 0.05),
+	            0 0 40px rgba(34, 211, 238, 0.08);
+	position: relative;
+}
+
+.browser-frame::before {
+	content: "";
+	display: block;
+	height: 32px;
+	background: var(--bg-muted);
+	border-bottom: 1px solid var(--stroke);
+	background-image:
+		radial-gradient(circle at 16px center, #ef4444 4px, transparent 4.5px),
+		radial-gradient(circle at 36px center, #f59e0b 4px, transparent 4.5px),
+		radial-gradient(circle at 56px center, #10b981 4px, transparent 4.5px);
+	background-repeat: no-repeat;
+}
+
+.browser-frame > img,
+.browser-frame > .frame-content {
+	display: block;
+	width: 100%;
+	height: auto;
+}
+
+/* Image placeholder (used until real screenshots are added) */
+.frame-placeholder {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 280px;
+	background: linear-gradient(135deg, var(--bg-muted) 0%, var(--bg-subtle) 100%);
+	color: var(--text-muted);
+	font-family: 'JetBrains Mono', monospace;
+	font-size: 0.75rem;
+	text-align: center;
+	padding: 2rem;
+	letter-spacing: 0.05em;
+}
+
+/* Dot grid background pattern */
+.dot-grid {
+	background-image: radial-gradient(circle, rgba(34, 211, 238, 0.15) 1px, transparent 1px);
+	background-size: 24px 24px;
+}
+
+.dot-grid-subtle {
+	background-image: radial-gradient(circle, rgba(148, 163, 184, 0.12) 1px, transparent 1px);
+	background-size: 32px 32px;
+}
+
+/* Section background variants for visual rhythm */
+.section-muted {
+	background-color: var(--bg-muted);
+}
+
+.section-card {
+	background-color: var(--bg-card);
+}
+
+.section-tinted {
+	background: linear-gradient(180deg, var(--bg-page) 0%, rgba(34, 211, 238, 0.03) 50%, var(--bg-page) 100%);
+}
+
+/* Floating decorative shapes */
+.float-shape {
+	position: absolute;
+	pointer-events: none;
+	opacity: 0.4;
+	animation: float 8s ease-in-out infinite;
+}
+
+.float-shape-slow {
+	animation-duration: 14s;
+}
+
+@keyframes float {
+	0%, 100% { transform: translateY(0px) rotate(0deg); }
+	50% { transform: translateY(-12px) rotate(6deg); }
+}
+
+/* Numbered step circle (used in How It Works) */
+.step-number {
+	width: 48px;
+	height: 48px;
+	border-radius: 50%;
+	background: var(--accent-cyan);
+	color: #020617;
+	font-weight: 700;
+	font-size: 1.25rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 0 24px rgba(34, 211, 238, 0.4);
+	flex-shrink: 0;
+}
+
+/* Connecting line between How It Works steps (desktop only) */
+.step-connector {
+	position: absolute;
+	top: 24px;
+	left: 50%;
+	right: -50%;
+	height: 2px;
+	background: linear-gradient(90deg, var(--accent-cyan), transparent);
+	opacity: 0.3;
+	z-index: 0;
+}

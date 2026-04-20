@@ -28,3 +28,5 @@ pnpm-debug.log*
 
 #Local Business documents
 internal-docs/
+# Claude Code worktrees
+.claude/worktrees/
