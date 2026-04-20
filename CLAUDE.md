@@ -50,8 +50,19 @@ Each project has: title, description, category, techStack, mvpJourney, performan
 - `src/styles/global.css` — Global styles and CSS variables
 - `internal-docs/` — Legal docs (MSA, Operating Agreement)
 
+## Email Signature
+- File: `email-signature.html` (HTML table-based, inline styles for email client compatibility)
+- **Name:** Kenny Adams
+- **Title:** Developer & Digital Strategist
+- **Email:** kenny@firstlayer.digital
+- **Logo:** Links to https://www.firstlayer.digital
+- No phone number, no separate website URL text — logo is the website link
+- Cyan accent divider (`#22d3ee`) matches brand
+- **TODO:** Export logo SVG to PNG (~120x60px), host at `www.firstlayer.digital/logo-email.png` and update `img src` in signature (SVG doesn't render in Outlook)
+
 ## Recent Session History
 - Added VantageDash project card to work page (both branches)
 - Fixed dark theme readability on work page: category tags, CI/CD badges, confidence callout boxes, Core Web Vitals text
 - All fixes committed and pushed to main
 - Dev branch has uncommitted design overhaul WIP (Hero, Layout, index)
+- Created email signature: compact design, title changed from "Web Developer & Strategist" to "Developer & Digital Strategist", removed phone number, logo links to www.firstlayer.digital
