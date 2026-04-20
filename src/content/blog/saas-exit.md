@@ -152,4 +152,4 @@ For Pasadena Maryland technical consulting firms and performance-focused busines
 
 ---
 
-*First Layer Digital specializes in operational infrastructure, private cloud deployments (Proxmox, Nextcloud), and helping performance firms achieve data sovereignty. Based in Pasadena, Maryland, we serve technical consulting firms throughout the region.*
+*First Layer Digital is a Pasadena, Maryland software studio that builds fast websites, custom online stores, and tools that cut the busywork for small businesses.*

@@ -210,4 +210,4 @@ By implementing automated monitoring with smartmontools, you're not just prevent
 
 ---
 
-*First Layer Digital specializes in operational infrastructure, Proxmox deployments, and automated monitoring systems. Based in Pasadena, Maryland, we help performance firms build resilient, proactive infrastructure.*
+*First Layer Digital is a Pasadena, Maryland software studio that builds fast websites, custom online stores, and tools that cut the busywork for small businesses.*

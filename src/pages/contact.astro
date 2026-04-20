@@ -6,85 +6,196 @@ export const prerender = true;
 ---
 
 <Layout
-	title="Contact Us | Get Started with FirstLayer Digital | Pasadena, Maryland"
-	description="Contact FirstLayer Digital for custom software development, operational infrastructure, data dashboards, and private cloud solutions. Schedule a consultation in Pasadena, Maryland."
+	title="Contact | Start a Conversation | First Layer Digital"
+	description="Tell us what you're trying to build or fix. We'll get back within 24 hours with a plan and a number. Based in Pasadena, Maryland."
 >
-	<main role="main">
-		<div class="max-w-xl mx-auto px-4 sm:px-6 py-16 sm:py-20">
+	<main class="relative overflow-hidden" role="main">
 
-			<div class="text-center mb-10">
-				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-					Let's Work <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]">Together</span>
-				</h1>
-				<p class="text-base sm:text-lg text-[var(--text-body)] max-w-md mx-auto leading-relaxed">
-					Tell us about your project. We'll get back to you within 24 hours.
-				</p>
+		<!-- ============================================
+		     HERO
+		     ============================================ -->
+		<section class="relative pt-12 sm:pt-16 md:pt-24 pb-10 sm:pb-14 px-4 sm:px-6" aria-label="Contact hero">
+			<!-- Decorative background -->
+			<div class="absolute inset-0 -z-10 pointer-events-none">
+				<div class="absolute top-0 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl"></div>
+				<div class="absolute bottom-0 left-1/4 w-72 h-72 bg-[var(--accent-cyan)]/8 rounded-full blur-3xl"></div>
 			</div>
 
-			<form
-				name="contact"
-				method="POST"
-				data-netlify="true"
-				netlify-honeypot="bot-field"
-				action="/contact"
-				data-netlify-redirect="/success"
-				class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 sm:p-8"
-			>
-				<!-- Hidden fields for Netlify -->
-				<input type="hidden" name="form-name" value="contact" />
-				<input type="hidden" name="_to" value="/success" />
-				<p class="hidden">
-					<label>Don't fill this out if you're human: <input name="bot-field" /></label>
+			<div class="max-w-4xl mx-auto text-center">
+				<div class="inline-flex items-center gap-2 bg-[var(--bg-card)] border border-[var(--stroke)] rounded-full px-4 py-1.5 mb-6 text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">
+					<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+					Usually Replies Within 24 Hours
+				</div>
+
+				<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]">
+					Let's Figure Out<br />
+					<span style="color: #3b82f6;">What To Build.</span>
+				</h1>
+
+				<p class="text-lg sm:text-xl text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
+					Tell us what's slowing you down. We'll come back with a plan and a number. No hard sell, no obligation.
 				</p>
+			</div>
+		</section>
 
-				<!-- Name -->
-				<div class="mb-5">
-					<label for="name" class="block text-sm font-medium text-[var(--text-header)] mb-1.5">Name</label>
-					<input
-						type="text"
-						id="name"
-						name="name"
-						required
-						placeholder="Your full name"
-						class="w-full px-4 py-3 rounded-md border border-[var(--stroke)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 outline-none transition-colors text-base bg-[var(--bg-page)] text-[var(--text-header)] placeholder:text-[var(--text-light)]"
-					/>
+		<!-- ============================================
+		     FORM + SIDE PANEL
+		     ============================================ -->
+		<section class="relative py-10 sm:py-14 md:py-16 border-t border-[var(--stroke)]" aria-label="Contact form">
+			<div class="absolute inset-0 -z-10 pointer-events-none dot-grid-subtle opacity-40"></div>
+
+			<div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+				<div class="grid lg:grid-cols-5 gap-8 lg:gap-10 items-start">
+
+					<!-- Form -->
+					<div class="lg:col-span-3 relative">
+						<div class="absolute -top-4 -left-4 w-10 h-10 rounded-lg bg-cyan-500/20 rotate-12 float-shape hidden lg:block"></div>
+
+						<form
+							name="contact"
+							method="POST"
+							data-netlify="true"
+							netlify-honeypot="bot-field"
+							action="/contact"
+							data-netlify-redirect="/success"
+							class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-8 md:p-10 overflow-hidden"
+						>
+							<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-500"></div>
+
+							<!-- Hidden fields for Netlify -->
+							<input type="hidden" name="form-name" value="contact" />
+							<input type="hidden" name="_to" value="/success" />
+							<p class="hidden">
+								<label>Don't fill this out if you're human: <input name="bot-field" /></label>
+							</p>
+
+							<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-2">
+								Step 1 / Tell Us The Basics
+							</span>
+							<h2 class="text-xl sm:text-2xl font-bold text-[var(--text-header)] mb-6 leading-tight">
+								Drop your details.
+							</h2>
+
+							<!-- Name -->
+							<div class="mb-5">
+								<label for="name" class="block text-sm font-medium text-[var(--text-header)] mb-1.5">Name</label>
+								<input
+									type="text"
+									id="name"
+									name="name"
+									required
+									placeholder="Your full name"
+									class="w-full px-4 py-3 rounded-md border border-[var(--stroke)] focus:border-[var(--accent-cyan)] focus:ring-2 focus:ring-cyan-500/20 outline-none transition-colors text-base bg-[var(--bg-page)] text-[var(--text-header)] placeholder:text-[var(--text-muted)]"
+								/>
+							</div>
+
+							<!-- Email -->
+							<div class="mb-5">
+								<label for="email" class="block text-sm font-medium text-[var(--text-header)] mb-1.5">Email</label>
+								<input
+									type="email"
+									id="email"
+									name="email"
+									required
+									placeholder="you@yourbusiness.com"
+									class="w-full px-4 py-3 rounded-md border border-[var(--stroke)] focus:border-[var(--accent-cyan)] focus:ring-2 focus:ring-cyan-500/20 outline-none transition-colors text-base bg-[var(--bg-page)] text-[var(--text-header)] placeholder:text-[var(--text-muted)]"
+								/>
+							</div>
+
+							<!-- Message -->
+							<div class="mb-6">
+								<label for="message" class="block text-sm font-medium text-[var(--text-header)] mb-1.5">What's on your mind?</label>
+								<textarea
+									id="message"
+									name="message"
+									rows="6"
+									required
+									placeholder="What are you trying to build, fix, or figure out? A rough idea is plenty to get started."
+									class="w-full px-4 py-3 rounded-md border border-[var(--stroke)] focus:border-[var(--accent-cyan)] focus:ring-2 focus:ring-cyan-500/20 outline-none transition-colors text-base resize-y bg-[var(--bg-page)] text-[var(--text-header)] placeholder:text-[var(--text-muted)] min-h-[140px] leading-relaxed"
+								></textarea>
+							</div>
+
+							<!-- Submit -->
+							<button
+								type="submit"
+								class="w-full bg-cyan-500 text-slate-950 font-semibold py-3.5 rounded-md hover:bg-cyan-400 transition-all duration-300 text-base min-h-[48px] shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5 flex items-center justify-center gap-2"
+							>
+								Send It
+								<svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+								</svg>
+							</button>
+						</form>
+					</div>
+
+					<!-- Side Panel -->
+					<div class="lg:col-span-2 space-y-5">
+						<!-- Contact card -->
+						<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7">
+							<h3 class="text-base font-semibold text-[var(--text-header)] mb-4 flex items-center gap-2">
+								<svg class="w-5 h-5 text-[var(--accent-cyan)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+									<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+								</svg>
+								Email
+							</h3>
+							<a href="mailto:hello@firstlayer.digital" class="block text-[var(--text-body)] hover:text-[var(--accent-cyan)] transition-colors text-base font-medium mb-4 break-all">
+								hello@firstlayer.digital
+							</a>
+							<div class="flex items-center gap-2 text-xs font-mono text-[var(--text-muted)] uppercase tracking-wider pt-4 border-t border-[var(--stroke)]">
+								<svg class="w-4 h-4 text-[var(--accent-cyan)]" fill="currentColor" viewBox="0 0 20 20">
+									<path fill-rule="evenodd" d="M5.05 4.05a7 7 0 119.9 9.9L10 18.9l-4.95-4.95a7 7 0 010-9.9zM10 11a2 2 0 100-4 2 2 0 000 4z" clip-rule="evenodd"/>
+								</svg>
+								Pasadena, Maryland
+							</div>
+						</div>
+
+						<!-- What happens next -->
+						<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7">
+							<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-3">
+								What Happens Next
+							</span>
+							<ul class="space-y-4 text-sm text-[var(--text-body)]">
+								<li class="flex items-start gap-3">
+									<span class="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--accent-subtle)] border border-cyan-500/30 text-[var(--accent-cyan)] text-xs font-mono font-bold flex items-center justify-center mt-0.5">1</span>
+									<span class="leading-relaxed">You hit send. We get a note in our inbox.</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--accent-subtle)] border border-cyan-500/30 text-[var(--accent-cyan)] text-xs font-mono font-bold flex items-center justify-center mt-0.5">2</span>
+									<span class="leading-relaxed">We reply within 24 hours, usually sooner.</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--accent-subtle)] border border-cyan-500/30 text-[var(--accent-cyan)] text-xs font-mono font-bold flex items-center justify-center mt-0.5">3</span>
+									<span class="leading-relaxed">We jump on a short call to understand what you need.</span>
+								</li>
+								<li class="flex items-start gap-3">
+									<span class="flex-shrink-0 w-6 h-6 rounded-full bg-[var(--accent-subtle)] border border-cyan-500/30 text-[var(--accent-cyan)] text-xs font-mono font-bold flex items-center justify-center mt-0.5">4</span>
+									<span class="leading-relaxed">You get a plan and a number. No pressure.</span>
+								</li>
+							</ul>
+						</div>
+
+						<!-- FYI panel -->
+						<div class="relative bg-[var(--bg-card)] border border-emerald-500/30 rounded-xl p-5 sm:p-6 overflow-hidden">
+							<div class="absolute inset-0 dot-grid opacity-20 pointer-events-none"></div>
+							<div class="relative z-10 flex gap-3">
+								<div class="flex-shrink-0 w-8 h-8 rounded-md bg-emerald-500/20 border border-emerald-500/40 flex items-center justify-center">
+									<svg class="w-4 h-4 text-emerald-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+										<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z"/>
+									</svg>
+								</div>
+								<div>
+									<p class="text-sm text-[var(--text-body)] leading-relaxed">
+										<strong class="text-[var(--text-header)]">Not sure what you need?</strong>
+										<span class="block mt-1">That's fine. Describe the problem and we'll help sort it out.</span>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
 				</div>
+			</div>
+		</section>
 
-				<!-- Email -->
-				<div class="mb-5">
-					<label for="email" class="block text-sm font-medium text-[var(--text-header)] mb-1.5">Email</label>
-					<input
-						type="email"
-						id="email"
-						name="email"
-						required
-						placeholder="your.email@example.com"
-						class="w-full px-4 py-3 rounded-md border border-[var(--stroke)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 outline-none transition-colors text-base bg-[var(--bg-page)] text-[var(--text-header)] placeholder:text-[var(--text-light)]"
-					/>
-				</div>
-
-				<!-- Message -->
-				<div class="mb-6">
-					<label for="message" class="block text-sm font-medium text-[var(--text-header)] mb-1.5">Project Details</label>
-					<textarea
-						id="message"
-						name="message"
-						rows="5"
-						required
-						placeholder="Tell us about your project, goals, and timeline..."
-						class="w-full px-4 py-3 rounded-md border border-[var(--stroke)] focus:border-[var(--accent)] focus:ring-2 focus:ring-[var(--accent)]/20 outline-none transition-colors text-base resize-y bg-[var(--bg-page)] text-[var(--text-header)] placeholder:text-[var(--text-light)] min-h-[120px] leading-relaxed"
-					></textarea>
-				</div>
-
-				<!-- Submit -->
-				<button
-					type="submit"
-					class="w-full bg-[var(--accent)] text-white font-medium py-3 rounded-md hover:bg-[var(--accent-hover)] transition-colors duration-200 text-base min-h-[48px]"
-				>
-					Send Message
-				</button>
-			</form>
-		</div>
 	</main>
 
 	<script>

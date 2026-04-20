@@ -1,7 +1,6 @@
 ---
 import { getCollection } from 'astro:content';
 import InsightLayout from '../../layouts/InsightLayout.astro';
-import QuickContact from '../../components/QuickContact.astro';
 import type { CollectionEntry } from 'astro:content';
 
 export async function getStaticPaths() {
@@ -19,99 +18,140 @@ type Props = {
 const { study } = Astro.props;
 const { Content } = await study.render();
 
+const categoryLabels: Record<string, string> = {
+	'custom-software': 'Custom Software',
+	'digital-transformation': 'Digital Transformation',
+	'ecommerce-optimization': 'Online Stores',
+	'operational-infrastructure': 'Custom Tools',
+};
+
 const category = study.data.category
-	? study.data.category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' ')
-	: 'Operational Infrastructure';
+	? (categoryLabels[study.data.category] || study.data.category.split('-').map(word => word.charAt(0).toUpperCase() + word.slice(1)).join(' '))
+	: 'Case Study';
 ---
 
-<InsightLayout title={`${study.data.title} | FirstLayer Digital`} description={study.data.description}>
-	<main class="bg-[var(--bg-page)]">
-		<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16">
+<InsightLayout title={`${study.data.title} | First Layer Digital`} description={study.data.description}>
+	<main class="relative overflow-hidden">
+		<!-- Decorative background -->
+		<div class="absolute inset-0 -z-10 pointer-events-none">
+			<div class="absolute top-0 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/8 rounded-full blur-3xl"></div>
+		</div>
+
+		<div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 py-10 sm:py-14">
 			<!-- Back Link -->
-			<div class="mb-6">
-				<a href="/work" class="text-sm text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
+			<div class="mb-8">
+				<a href="/work" class="text-sm font-medium text-[var(--text-muted)] hover:text-[var(--accent-cyan)] transition-colors inline-flex items-center gap-1.5">
 					<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
-					Back to Work
+					All work
 				</a>
 			</div>
 
-			<div class="grid lg:grid-cols-4 gap-8">
+			<div class="grid lg:grid-cols-3 gap-10 lg:gap-12">
 				<!-- Main Content -->
-				<div class="lg:col-span-3">
-					<header class="mb-8">
-						<div class="text-xs font-mono text-[var(--accent)] mb-3 uppercase tracking-wider">{category}</div>
-						<h1 class="text-2xl sm:text-3xl md:text-4xl font-bold text-[var(--text-header)] mb-4 leading-tight">
+				<div class="lg:col-span-2 min-w-0">
+					<header class="mb-10">
+						<div class="flex flex-wrap items-center gap-3 mb-5 text-xs font-mono">
+							<span class="inline-flex items-center gap-1.5 bg-[var(--bg-muted)] text-[var(--accent-cyan)] border border-cyan-500/30 px-2.5 py-1 rounded-full uppercase tracking-wider font-medium">
+								<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent-cyan)]"></span>
+								{category}
+							</span>
+							<time class="text-[var(--text-muted)] uppercase tracking-wider" datetime={study.data.date.toISOString()}>
+								{study.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+							</time>
+						</div>
+
+						<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold text-[var(--text-header)] mb-5 leading-[1.1] tracking-tight">
 							{study.data.title}
 						</h1>
 
+						<p class="text-lg sm:text-xl text-[var(--text-body)] leading-relaxed mb-6">
+							{study.data.description}
+						</p>
+
 						{study.data.result && study.data.result.includes('15') && (
-							<div class="bg-[var(--bg-card)] border-2 border-[var(--accent)] rounded-lg p-6 sm:p-8 mb-6">
-								<div class="text-xs font-mono text-[var(--accent)] uppercase tracking-wider mb-2 font-medium">ROI Metric</div>
-								<p class="text-2xl sm:text-3xl font-bold text-[var(--text-header)] leading-tight font-mono mb-3">
-									15+ hours of executive labor reclaimed weekly
-								</p>
-								<p class="text-sm text-[var(--text-body)]">
-									<strong class="text-[var(--accent)]">780+ hours annually</strong> reclaimed for strategic decision-making
-								</p>
+							<div class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7 mb-6 overflow-hidden">
+								<div class="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-cyan-500 via-cyan-400 to-cyan-500"></div>
+								<div class="absolute inset-0 dot-grid opacity-20 pointer-events-none"></div>
+								<div class="relative z-10">
+									<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-2">
+										The Result
+									</span>
+									<p class="text-xl sm:text-2xl font-bold text-[var(--text-header)] leading-tight mb-2">
+										15+ hours a week back on the calendar
+									</p>
+									<p class="text-sm text-[var(--text-body)]">
+										<strong class="text-[var(--accent-cyan)]">780+ hours a year</strong> freed up for actual decision-making.
+									</p>
+								</div>
 							</div>
 						)}
-
-						<p class="text-lg text-[var(--text-body)] mb-6 leading-relaxed">{study.data.description}</p>
-
-						<div class="flex flex-wrap gap-1.5">
-							{study.data.techStack.map((tech) => (
-								<span class="bg-[var(--bg-muted)] text-[var(--text-body)] px-2 py-0.5 rounded text-xs font-mono border border-[var(--stroke)]">{tech}</span>
-							))}
-						</div>
 					</header>
 
-					<article class="article-content mb-12">
+					<!-- Divider -->
+					<div class="h-px bg-gradient-to-r from-transparent via-[var(--stroke)] to-transparent mb-10"></div>
+
+					<article class="article-content mb-10">
 						<Content />
 					</article>
 
-					{study.data.category === 'operational-infrastructure' && (
-						<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 mb-8">
-							<h3 class="text-lg font-semibold text-[var(--text-header)] mb-2">Related Service</h3>
-							<p class="text-sm text-[var(--text-body)] mb-4">Learn more about our Operational Infrastructure & Internal Tools services.</p>
-							<a href="/services#operational-infrastructure" class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
-								View Services <span>&rarr;</span>
-							</a>
+					<!-- Result card -->
+					<div class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7 overflow-hidden">
+						<div class="absolute top-0 left-0 bottom-0 w-1 bg-gradient-to-b from-cyan-500 to-cyan-400"></div>
+						<div class="pl-4">
+							<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-2">
+								Outcome
+							</span>
+							<p class="text-base sm:text-lg text-[var(--text-header)] font-medium leading-relaxed">{study.data.result}</p>
 						</div>
-					)}
-
-					<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6">
-						<h3 class="text-sm font-semibold text-[var(--text-header)] mb-1">Result</h3>
-						<p class="text-base text-[var(--text-body)] font-medium">{study.data.result}</p>
 					</div>
 				</div>
 
 				<!-- Sidebar -->
-				<aside class="lg:col-span-1 space-y-4">
-					<div class="sticky top-24 space-y-4">
-						<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6">
-							<h2 class="text-sm font-semibold text-[var(--text-header)] mb-4 uppercase tracking-wide font-mono">System Specs</h2>
-							<div class="space-y-3 text-sm">
+				<aside class="lg:col-span-1">
+					<div class="lg:sticky lg:top-24 space-y-5">
+						<!-- Project details card -->
+						<div class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl overflow-hidden">
+							<div class="p-6 border-b border-[var(--stroke)]">
+								<span class="inline-block text-xs font-mono uppercase tracking-[0.2em] text-[var(--accent-cyan)] mb-1">
+									Project Details
+								</span>
+							</div>
+							<div class="p-6 space-y-5">
 								<div>
-									<div class="text-xs text-[var(--text-muted)] mb-1 uppercase font-mono">Tech Stack</div>
-									<div class="space-y-1">
+									<div class="text-xs font-mono text-[var(--text-muted)] uppercase tracking-wider mb-2">Tech</div>
+									<div class="flex flex-wrap gap-1.5">
 										{study.data.techStack.map((tech) => (
-											<div class="flex items-center gap-2 text-[var(--text-body)]">
-												<span class="text-[var(--accent)]">&bull;</span>{tech}
-											</div>
+											<span class="bg-[var(--bg-muted)] text-[var(--text-body)] px-2 py-0.5 rounded text-xs font-mono border border-[var(--stroke)]">{tech}</span>
 										))}
 									</div>
 								</div>
-								<div class="pt-3 border-t border-[var(--stroke)]">
-									<div class="text-xs text-[var(--text-muted)] mb-1 uppercase font-mono">Category</div>
-									<div class="text-[var(--text-body)]">{category}</div>
+								<div class="pt-4 border-t border-[var(--stroke)]">
+									<div class="text-xs font-mono text-[var(--text-muted)] uppercase tracking-wider mb-1.5">Category</div>
+									<div class="text-sm text-[var(--text-body)]">{category}</div>
 								</div>
-								<div class="pt-3 border-t border-[var(--stroke)]">
-									<div class="text-xs text-[var(--text-muted)] mb-1 uppercase font-mono">Date</div>
-									<div class="text-[var(--text-body)]">{study.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
+								<div class="pt-4 border-t border-[var(--stroke)]">
+									<div class="text-xs font-mono text-[var(--text-muted)] uppercase tracking-wider mb-1.5">Date</div>
+									<div class="text-sm text-[var(--text-body)]">{study.data.date.toLocaleDateString('en-US', { year: 'numeric', month: 'long', day: 'numeric' })}</div>
 								</div>
 							</div>
 						</div>
-						<QuickContact />
+
+						<!-- CTA card -->
+						<div class="relative bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-7 overflow-hidden">
+							<div class="absolute inset-0 dot-grid opacity-20 pointer-events-none"></div>
+							<div class="relative z-10">
+								<h3 class="text-lg font-semibold text-[var(--text-header)] mb-2">Want something similar?</h3>
+								<p class="text-sm text-[var(--text-body)] leading-relaxed mb-5">
+									Tell us what you're trying to build. We'll come back with a plan.
+								</p>
+								<a
+									href="/contact"
+									class="block w-full bg-cyan-500 text-slate-950 text-center px-4 py-3 rounded-md font-semibold text-sm transition-all duration-300 hover:bg-cyan-400 shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 hover:-translate-y-0.5"
+								>
+									Start a Conversation
+								</a>
+							</div>
+						</div>
 					</div>
 				</aside>
 			</div>
@@ -120,18 +160,23 @@ const category = study.data.category
 </InsightLayout>
 
 <style>
-	.article-content { color: var(--text-body); line-height: 1.8; }
-	.article-content h1 { font-size: 2rem; font-weight: 700; color: var(--text-header); margin-top: 2.5rem; margin-bottom: 1.5rem; }
-	.article-content h2 { font-size: 1.625rem; font-weight: 700; color: var(--text-header); margin-top: 2.5rem; margin-bottom: 1rem; border-bottom: 1px solid var(--stroke); padding-bottom: 0.5rem; }
-	.article-content h3 { font-size: 1.375rem; font-weight: 600; color: var(--text-header); margin-top: 2rem; margin-bottom: 0.75rem; }
-	.article-content p { margin-bottom: 1.5rem; line-height: 1.8; color: var(--text-body); }
+	.article-content { color: var(--text-body); line-height: 1.75; font-size: 1.0625rem; }
+	.article-content h1 { font-size: 2rem; font-weight: 700; color: var(--text-header); margin-top: 2.5rem; margin-bottom: 1.5rem; line-height: 1.3; }
+	.article-content h2 { font-size: 1.625rem; font-weight: 700; color: var(--text-header); margin-top: 2.5rem; margin-bottom: 1rem; line-height: 1.4; border-bottom: 1px solid var(--stroke); padding-bottom: 0.5rem; }
+	.article-content h3 { font-size: 1.375rem; font-weight: 600; color: var(--text-header); margin-top: 2rem; margin-bottom: 0.75rem; line-height: 1.5; }
+	.article-content p { margin-bottom: 1.5rem; line-height: 1.75; color: var(--text-body); }
 	.article-content ul, .article-content ol { margin-bottom: 1.5rem; margin-left: 1.5rem; color: var(--text-body); }
-	.article-content li { margin-bottom: 0.75rem; line-height: 1.8; }
+	.article-content li { margin-bottom: 0.75rem; line-height: 1.75; }
 	.article-content strong { font-weight: 700; color: var(--text-header); }
-	.article-content a { color: var(--accent); text-decoration: underline; transition: color 0.2s; }
-	.article-content a:hover { color: var(--accent-hover); }
+	.article-content a { color: var(--accent-cyan); text-decoration: underline; text-underline-offset: 3px; transition: color 0.2s; }
+	.article-content a:hover { color: #67e8f9; }
 	.article-content code:not(pre code) { background-color: var(--bg-muted); color: var(--text-header); padding: 0.125rem 0.375rem; border-radius: 0.25rem; font-size: 0.875rem; font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; border: 1px solid var(--stroke); }
-	.article-content pre { background-color: var(--bg-muted); border: 1px solid var(--stroke); border-radius: 0.375rem; padding: 1rem; overflow-x: auto; margin-bottom: 1.5rem; }
+	.article-content pre { background-color: var(--bg-muted); border: 1px solid var(--stroke); border-radius: 0.5rem; padding: 1.25rem; overflow-x: auto; margin: 2rem 0; }
 	.article-content pre code { background: transparent; border: none; padding: 0; color: var(--text-body); }
-	.article-content blockquote { border-left: 3px solid var(--accent); background-color: var(--bg-muted); padding: 1rem 1.5rem; margin: 1.5rem 0; border-radius: 0 0.375rem 0.375rem 0; font-style: italic; }
+	.article-content blockquote { border-left: 3px solid var(--accent-cyan); background-color: var(--bg-muted); padding: 1rem 1.5rem; margin: 2rem 0; border-radius: 0 0.5rem 0.5rem 0; font-style: italic; color: var(--text-body); }
+	.article-content img { max-width: 100%; height: auto; border-radius: 0.5rem; margin: 2rem 0; border: 1px solid var(--stroke); }
+	.article-content hr { border: none; border-top: 1px solid var(--stroke); margin: 3rem 0; }
+	.article-content table { width: 100%; border-collapse: collapse; margin: 2rem 0; font-size: 0.9375rem; }
+	.article-content th { background-color: var(--bg-muted); color: var(--text-header); font-weight: 600; padding: 0.75rem 1rem; text-align: left; border-bottom: 2px solid var(--stroke); }
+	.article-content td { padding: 0.75rem 1rem; border-bottom: 1px solid var(--stroke); color: var(--text-body); }
 </style>

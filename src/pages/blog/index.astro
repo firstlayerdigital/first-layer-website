@@ -9,76 +9,137 @@ const blogPosts = [...allBlogPosts].sort((a, b) =>
 );
 ---
 
-<Layout title="Insights | FirstLayer Digital" description="Engineering-driven insights on data sovereignty, private cloud infrastructure, technical consulting, and operational resilience.">
-	<main role="main">
+<Layout
+	title="Notes & Insights | First Layer Digital"
+	description="Notes on building real software, running it well, and cutting the busywork. From a Pasadena, Maryland software studio."
+>
+	<main class="relative overflow-hidden" role="main">
 
-		<div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-20">
-			<!-- Hero -->
-			<div class="text-center mb-12 sm:mb-16">
-				<h1 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-4 leading-tight">
-					Technical <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_12px_rgba(34,211,238,0.3)]">Insights</span>
+		<!-- ============================================
+		     HERO
+		     ============================================ -->
+		<section class="relative pt-12 sm:pt-16 md:pt-24 pb-10 sm:pb-14 px-4 sm:px-6" aria-label="Insights hero">
+			<div class="absolute inset-0 -z-10 pointer-events-none">
+				<div class="absolute top-0 right-1/4 w-96 h-96 bg-[var(--accent-cyan)]/10 rounded-full blur-3xl"></div>
+				<div class="absolute bottom-0 left-1/4 w-72 h-72 bg-[var(--accent-cyan)]/8 rounded-full blur-3xl"></div>
+			</div>
+
+			<div class="max-w-4xl mx-auto text-center">
+				<div class="inline-flex items-center gap-2 bg-[var(--bg-card)] border border-[var(--stroke)] rounded-full px-4 py-1.5 mb-6 text-xs font-mono uppercase tracking-wider text-[var(--text-muted)]">
+					<span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+					Notes From The Studio
+				</div>
+
+				<h1 class="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight mb-6 leading-[1.05]">
+					Things We've<br />
+					<span style="color: #3b82f6;">Written Down.</span>
 				</h1>
+
 				<p class="text-lg sm:text-xl text-[var(--text-body)] max-w-2xl mx-auto leading-relaxed">
-					Engineering-driven insights on data sovereignty, private cloud infrastructure, and operational resilience.
+					Notes on building real software, running it well, and cutting the busywork. Short posts, no fluff.
 				</p>
 			</div>
+		</section>
 
-			<!-- Article List -->
-			<div class="space-y-6">
-				{blogPosts.map((post) => {
-					const primaryTag = (post.data.tags && post.data.tags.length > 0)
-						? post.data.tags[0].toUpperCase()
-						: 'TECHNICAL';
+		<!-- ============================================
+		     ARTICLE LIST
+		     ============================================ -->
+		<section class="relative py-10 sm:py-14 md:py-16 border-t border-[var(--stroke)]" aria-label="Article list">
+			<div class="absolute inset-0 -z-10 pointer-events-none dot-grid-subtle opacity-40"></div>
 
-					const estimatedWords = post.data.description.split(/\s+/).length * 20;
-					const readingTime = Math.max(5, Math.ceil(estimatedWords / 200));
+			<div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+				{blogPosts.length === 0 ? (
+					<div class="text-center py-16">
+						<div class="inline-flex items-center justify-center w-16 h-16 rounded-2xl bg-[var(--bg-muted)] border border-[var(--stroke)] mb-4">
+							<svg class="w-8 h-8 text-[var(--text-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+								<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"/>
+							</svg>
+						</div>
+						<p class="text-[var(--text-body)] text-lg">Nothing here yet. Check back soon.</p>
+					</div>
+				) : (
+					<div class="space-y-5 sm:space-y-6">
+						{blogPosts.map((post, index) => {
+							const primaryTag = (post.data.tags && post.data.tags.length > 0)
+								? post.data.tags[0]
+								: 'Notes';
 
-					return (
-						<article class="bg-[var(--bg-card)] border border-[var(--stroke)] rounded-lg p-6 sm:p-8 hover:border-[var(--accent)]/40 transition-colors duration-200">
-							<!-- Meta -->
-							<div class="flex flex-wrap items-center gap-4 mb-3 text-xs text-[var(--text-muted)] font-mono">
-								<span class="text-[var(--accent)] font-medium">{primaryTag}</span>
-								<time datetime={post.data.pubDate.toISOString()}>
-									{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
-								</time>
-								<span>{readingTime} min read</span>
-							</div>
+							const estimatedWords = post.data.description.split(/\s+/).length * 20;
+							const readingTime = Math.max(5, Math.ceil(estimatedWords / 200));
 
-							<!-- Title -->
-							<h2 class="text-xl sm:text-2xl font-semibold text-[var(--text-header)] mb-3 leading-tight">
-								<a href={`/blog/${post.slug}`} class="hover:text-[var(--accent)] transition-colors">
-									{post.data.title}
+							return (
+								<a href={`/blog/${post.slug}`} class="group block bg-[var(--bg-card)] border border-[var(--stroke)] rounded-xl p-6 sm:p-8 hover:border-cyan-500/40 hover:-translate-y-0.5 hover:shadow-[0_0_24px_rgba(34,211,238,0.12)] transition-all duration-300">
+									<!-- Meta -->
+									<div class="flex flex-wrap items-center gap-3 mb-3 text-xs font-mono text-[var(--text-muted)]">
+										<span class="inline-flex items-center gap-1.5 bg-[var(--bg-muted)] text-[var(--accent-cyan)] border border-cyan-500/30 px-2.5 py-1 rounded-full uppercase tracking-wider font-medium">
+											<span class="w-1.5 h-1.5 rounded-full bg-[var(--accent-cyan)]"></span>
+											{primaryTag}
+										</span>
+										<time datetime={post.data.pubDate.toISOString()} class="uppercase tracking-wider">
+											{post.data.pubDate.toLocaleDateString('en-US', { year: 'numeric', month: 'short', day: 'numeric' })}
+										</time>
+										<span class="text-[var(--text-muted)]">{readingTime} min read</span>
+									</div>
+
+									<!-- Title -->
+									<h2 class="text-xl sm:text-2xl md:text-[1.625rem] font-bold text-[var(--text-header)] mb-3 leading-tight group-hover:text-[var(--accent-cyan)] transition-colors">
+										{post.data.title}
+									</h2>
+
+									<!-- Description -->
+									<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
+										{post.data.description}
+									</p>
+
+									<!-- Tags + Read More -->
+									<div class="flex flex-wrap items-center justify-between gap-3">
+										{post.data.tags && post.data.tags.length > 0 ? (
+											<div class="flex flex-wrap gap-1.5">
+												{post.data.tags.slice(0, 4).map((tag) => (
+													<span class="bg-[var(--bg-muted)] text-[var(--text-muted)] px-2 py-0.5 rounded text-xs border border-[var(--stroke)]">{tag}</span>
+												))}
+											</div>
+										) : <span></span>}
+
+										<span class="text-sm font-medium text-[var(--accent-cyan)] inline-flex items-center gap-1 group-hover:gap-2 transition-all">
+											Read article
+											<svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+												<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+											</svg>
+										</span>
+									</div>
 								</a>
-							</h2>
-
-							<!-- Description -->
-							<p class="text-sm sm:text-base text-[var(--text-body)] leading-relaxed mb-4">
-								{post.data.description}
-							</p>
-
-							<!-- Tags -->
-							{post.data.tags && post.data.tags.length > 0 && (
-								<div class="flex flex-wrap gap-1.5 mb-4">
-									{post.data.tags.map((tag) => (
-										<span class="bg-[var(--bg-muted)] text-[var(--text-muted)] px-2 py-0.5 rounded text-xs border border-[var(--stroke)]">{tag}</span>
-									))}
-								</div>
-							)}
-
-							<!-- Read More -->
-							<a href={`/blog/${post.slug}`} class="text-sm font-medium text-[var(--accent)] hover:text-[var(--accent-hover)] transition-colors inline-flex items-center gap-1">
-								Read full article <span>&rarr;</span>
-							</a>
-						</article>
-					);
-				})}
+							);
+						})}
+					</div>
+				)}
 			</div>
+		</section>
 
-			{blogPosts.length === 0 && (
-				<div class="text-center py-12">
-					<p class="text-[var(--text-body)] text-lg">No blog posts yet. Check back soon!</p>
-				</div>
-			)}
-		</div>
+		<!-- ============================================
+		     BOLD CTA BANNER
+		     ============================================ -->
+		<section class="relative py-20 sm:py-24 overflow-hidden border-t border-[var(--stroke)]" aria-label="Start a conversation">
+			<div class="absolute inset-0 -z-10 bg-gradient-to-br from-[var(--bg-card)] via-[var(--bg-page)] to-cyan-950/30"></div>
+			<div class="absolute inset-0 -z-10 dot-grid opacity-40"></div>
+			<div class="absolute top-0 left-1/4 w-96 h-96 bg-cyan-500/10 rounded-full blur-3xl pointer-events-none"></div>
+			<div class="absolute bottom-0 right-1/4 w-96 h-96 bg-cyan-400/10 rounded-full blur-3xl pointer-events-none"></div>
+
+			<div class="relative max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+				<h2 class="text-3xl sm:text-4xl md:text-5xl font-bold mb-5 leading-tight">
+					Got a project in <span class="text-[var(--accent-cyan)] drop-shadow-[0_0_18px_rgba(34,211,238,0.5)]">mind?</span>
+				</h2>
+				<p class="text-base sm:text-lg md:text-xl text-[var(--text-body)] mb-10 max-w-xl mx-auto leading-relaxed">
+					Tell us what you're trying to build or fix. We'll come back with a plan.
+				</p>
+				<a href="/contact" class="inline-flex items-center justify-center bg-cyan-500 text-slate-950 px-8 py-4 rounded-md font-semibold text-base sm:text-lg hover:bg-cyan-400 transition-all duration-300 shadow-lg shadow-cyan-500/40 hover:shadow-xl hover:shadow-cyan-500/50 hover:-translate-y-0.5 min-h-[52px]">
+					Start a Conversation
+					<svg class="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+						<path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"/>
+					</svg>
+				</a>
+			</div>
+		</section>
+
 	</main>
 </Layout>
