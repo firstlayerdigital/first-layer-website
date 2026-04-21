@@ -1,10 +1,10 @@
 ---
 title: "The SaaS Exit: Why Performance Firms Choose Data Sovereignty"
-description: "Moving from tenant to owner: How performance firms are reclaiming control by self-hosting business tools on private infrastructure. Exploring the ROI of data sovereignty, private cloud deployments, and why Pasadena Maryland technical consulting firms are leading the migration."
+description: "Tenant to owner: how small businesses are cutting recurring SaaS costs by self-hosting the tools they actually use. The math, the trade-offs, and when it's worth it."
 pubDate: 2025-01-20
 updatedDate: 2025-01-26
 author: "First Layer Digital"
-tags: ["Data Sovereignty", "Private Cloud", "Proxmox", "Nextcloud", "Business Infrastructure", "Technical Consulting"]
+tags: ["Self-hosting", "SaaS", "Cost Control", "Small Business", "Infrastructure"]
 ---
 
 ## From Tenant to Owner: The SaaS Exit Movement

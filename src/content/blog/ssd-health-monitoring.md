@@ -1,10 +1,10 @@
 ---
 title: "Proactive Resilience: Automated SSD Health Monitoring"
-description: "In operational infrastructure, reactive replacement is a failure. Learn how to implement proactive SSD health monitoring using smartmontools and smartctl within Proxmox, with automated Discord/Email alerts to trigger hardware swaps before the 24-hour failure window."
+description: "Reactive replacement is a failure. How to catch failing drives 24 hours before they die using SMART attributes and automated alerts to Discord and email."
 pubDate: 2025-01-26
 updatedDate: 2025-01-26
 author: "First Layer Digital"
-tags: ["Infrastructure", "Proxmox", "Hardware Monitoring", "Automation", "DevOps", "System Reliability"]
+tags: ["Infrastructure", "Hardware Monitoring", "Automation", "DevOps", "System Reliability"]
 ---
 
 ## The Philosophy: Proactive Over Reactive
